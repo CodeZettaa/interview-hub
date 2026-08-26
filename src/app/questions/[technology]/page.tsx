@@ -2,11 +2,19 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { TOPIC_MAP, TOPICS } from "@/lib/constants";
 import { getQuestionsRepository } from "@/lib/repositories";
+import {
+  breadcrumbJsonLd,
+  buildPageMetadata,
+  faqPageJsonLd,
+  itemListJsonLd,
+  technologyPageCopy,
+} from "@/lib/seo";
 import { questionPath, technologyLabel } from "@/lib/utils";
 import type { Technology } from "@/types/interview";
 
@@ -29,12 +37,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const repo = getQuestionsRepository();
   const questions = await repo.getQuestions({ technologies: [technology] });
-  const name = technologyLabel(technology);
   const count = questions.length || TOPIC_MAP[technology].targetCount;
-  return {
-    title: `${count} ${name} Interview Questions & Answers | CodeZetta`,
-    description: `Practice ${name} interview questions with short answers, detailed explanations, and interview tips.`,
-  };
+  const copy = technologyPageCopy(technology, count);
+  const name = technologyLabel(technology);
+
+  return buildPageMetadata({
+    title: copy.title,
+    description: copy.description,
+    path: `/questions/${technology}`,
+    keywords: [
+      `${name} interview questions`,
+      `${name} interview questions and answers`,
+      `${name} coding interview`,
+      `${name} technical interview`,
+    ],
+  });
 }
 
 export default async function TechnologyQuestionsPage({ params }: Props) {
@@ -45,6 +62,9 @@ export default async function TechnologyQuestionsPage({ params }: Props) {
   const questions = await repo.getQuestions({ technologies: [technology] });
   const topic = TOPIC_MAP[technology];
   const categories = topic.categories;
+  const name = technologyLabel(technology);
+  const copy = technologyPageCopy(technology, questions.length || topic.targetCount);
+  const path = `/questions/${technology}`;
 
   const byCategory = new Map<string, typeof questions>();
   for (const q of questions) {
@@ -53,33 +73,62 @@ export default async function TechnologyQuestionsPage({ params }: Props) {
     byCategory.set(q.categorySlug, list);
   }
 
+  const related = TOPICS.filter(
+    (t) => t.id !== technology && (t.group === topic.group || t.track === topic.track),
+  ).slice(0, 6);
+
   return (
     <div className="surface-grid">
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Question Bank", path: "/questions" },
+            { name: `${name} Interview Questions`, path },
+          ]),
+          itemListJsonLd(technology, questions, path),
+          ...(questions.length > 0 ? [faqPageJsonLd(questions, 15)] : []),
+        ]}
+      />
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
+        <nav className="mb-4 text-sm text-muted-foreground" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-accent">
+            Home
+          </Link>
+          <span className="mx-2">/</span>
+          <Link href="/questions" className="hover:text-accent">
+            Question Bank
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="text-foreground">{name}</span>
+        </nav>
+
         <div
           className="mb-3 h-2 w-12 rounded-full"
           style={{ backgroundColor: topic.color }}
         />
         <h1 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-          {technologyLabel(technology)} Interview Questions
+          {copy.h1}
         </h1>
-        <p className="mt-3 max-w-2xl text-muted-foreground">
-          {topic.description} {questions.length} questions available
-          {questions.length === 0
-            ? " — bank coming soon."
-            : "."}
+        <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
+          {copy.intro}
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
           <Link href={`/practice/${technology}`}>
-            <Button>Practice {technologyLabel(technology)}</Button>
+            <Button>Practice {name}</Button>
           </Link>
           <Link href="/questions">
-            <Button variant="outline">Back to Question Bank</Button>
+            <Button variant="outline">Browse all technologies</Button>
           </Link>
         </div>
 
-        <section className="mt-10">
-          <h2 className="font-display text-xl font-semibold">Categories</h2>
+        <section className="mt-10" aria-labelledby="categories-heading">
+          <h2 id="categories-heading" className="font-display text-xl font-semibold">
+            {name} interview topics
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Jump into a category — each bank is independent and interview-focused.
+          </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((cat) => {
               const count = byCategory.get(cat.slug)?.length ?? 0;
@@ -93,7 +142,7 @@ export default async function TechnologyQuestionsPage({ params }: Props) {
                       <div>
                         <p className="font-medium">{cat.name}</p>
                         <p className="mt-1 text-xs text-muted-foreground">
-                          {count} question{count === 1 ? "" : "s"}
+                          {count} {name} question{count === 1 ? "" : "s"}
                         </p>
                       </div>
                       <ArrowRight className="h-4 w-4 text-muted-foreground" />
@@ -106,8 +155,10 @@ export default async function TechnologyQuestionsPage({ params }: Props) {
         </section>
 
         {questions.length > 0 && (
-          <section className="mt-12 space-y-8">
-            <h2 className="font-display text-xl font-semibold">All questions</h2>
+          <section className="mt-12 space-y-8" aria-labelledby="all-questions-heading">
+            <h2 id="all-questions-heading" className="font-display text-xl font-semibold">
+              All {name} interview questions
+            </h2>
             {categories.map((cat) => {
               const list = byCategory.get(cat.slug) ?? [];
               if (list.length === 0) return null;
@@ -115,7 +166,7 @@ export default async function TechnologyQuestionsPage({ params }: Props) {
                 <div key={cat.slug}>
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <h3 className="font-display text-lg font-semibold">
-                      {cat.name}
+                      {cat.name} interview questions
                     </h3>
                     <Link
                       href={`/questions/${technology}/${cat.slug}`}
@@ -149,6 +200,25 @@ export default async function TechnologyQuestionsPage({ params }: Props) {
                 </div>
               );
             })}
+          </section>
+        )}
+
+        {related.length > 0 && (
+          <section className="mt-14" aria-labelledby="related-heading">
+            <h2 id="related-heading" className="font-display text-xl font-semibold">
+              Related interview question banks
+            </h2>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {related.map((t) => (
+                <Link
+                  key={t.id}
+                  href={`/questions/${t.id}`}
+                  className="rounded-xl border border-border bg-card px-3 py-2 text-sm transition hover:border-accent/40"
+                >
+                  {t.name} interview questions
+                </Link>
+              ))}
+            </div>
           </section>
         )}
       </div>

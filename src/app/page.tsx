@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import {
   ArrowRight,
   Code2,
@@ -9,7 +11,9 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { JsonLd } from "@/components/seo/json-ld";
 import { BRAND, TOPICS } from "@/lib/constants";
+import { absoluteUrl, buildPageMetadata, SITE_URL } from "@/lib/seo";
 
 const stats = [
   { label: "Interview Questions", value: "1100+" },
@@ -17,13 +21,44 @@ const stats = [
   { label: "Experience Levels", value: "5" },
 ];
 
+export const metadata: Metadata = buildPageMetadata({
+  title: `${BRAND.product} — ${BRAND.tagline}`,
+  description: BRAND.subtitle,
+  path: "/",
+  keywords: [
+    "tech interview prep",
+    "software engineer interview questions",
+    "frontend interview prep",
+    "backend interview prep",
+  ],
+});
+
 export default function HomePage() {
   const fundamentals = TOPICS.filter((t) => t.group === "fundamentals");
   const frameworks = TOPICS.filter((t) => t.group === "frameworks");
   const backend = TOPICS.filter((t) => t.group === "backend");
 
+  const websiteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: `${BRAND.name} ${BRAND.product}`,
+    url: SITE_URL,
+    description: BRAND.subtitle,
+    publisher: {
+      "@type": "Organization",
+      name: BRAND.name,
+      url: SITE_URL,
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${absoluteUrl("/questions")}?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <div className="surface-grid">
+      <JsonLd data={websiteLd} />
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-accent/20 blur-3xl animate-pulse-soft" />
         <div className="pointer-events-none absolute -right-16 top-40 h-64 w-64 rounded-full bg-teal-400/10 blur-3xl" />
@@ -84,15 +119,15 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div>
-            <h2 className="font-display text-2xl font-semibold sm:text-3xl">
-              Choose your stack
-            </h2>
-            <p className="mt-2 text-muted-foreground">
-              Independent question banks for every technology — no mixing.
-            </p>
-          </div>
+        <div className="mb-8">
+          <h2 className="font-display text-2xl font-semibold sm:text-3xl">
+            Interview questions by technology
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            Independent question banks for every technology — built for searches
+            like &ldquo;React interview questions&rdquo; and &ldquo;Node.js
+            interview questions and answers.&rdquo;
+          </p>
         </div>
 
         <TechGroup
@@ -155,8 +190,7 @@ export default function HomePage() {
               </h2>
               <p className="mt-2 max-w-xl text-muted-foreground">
                 Start with a guided setup, then practice with real interview
-                scenarios — beginning with a complete JavaScript bank of 100
-                questions.
+                scenarios across 1,100+ questions.
               </p>
             </div>
             <Link href="/onboarding">
@@ -179,7 +213,7 @@ function TechGroup({
   className,
 }: {
   title: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   topics: typeof TOPICS;
   className?: string;
 }) {
@@ -198,9 +232,9 @@ function TechGroup({
                   className="mb-3 h-1.5 w-8 rounded-full"
                   style={{ backgroundColor: topic.color }}
                 />
-                <p className="font-medium">{topic.name}</p>
+                <p className="font-medium">{topic.name} interview questions</p>
                 <p className="mt-1 text-xs text-muted-foreground">
-                  Target: {topic.targetCount} questions
+                  {topic.targetCount} questions &amp; answers
                 </p>
               </CardContent>
             </Card>

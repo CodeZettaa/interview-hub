@@ -5,6 +5,7 @@ import { AppStateProvider } from "@/components/layout/app-state-provider";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { BRAND } from "@/lib/constants";
+import { DEFAULT_KEYWORDS, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -23,18 +24,45 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: `${BRAND.product} | ${BRAND.name}`,
+    default: `${BRAND.product} — ${BRAND.tagline} | ${BRAND.name}`,
     template: `%s | ${BRAND.name}`,
   },
   description: BRAND.subtitle,
-  metadataBase: new URL("https://interview.codezetta.dev"),
+  applicationName: `${BRAND.name} ${BRAND.product}`,
+  authors: [{ name: BRAND.name }],
+  creator: BRAND.name,
+  publisher: BRAND.name,
+  keywords: [...DEFAULT_KEYWORDS],
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     title: `${BRAND.product} — ${BRAND.tagline}`,
     description: BRAND.subtitle,
-    siteName: BRAND.name,
+    url: SITE_URL,
+    siteName: `${BRAND.name} ${BRAND.product}`,
+    locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${BRAND.product} — ${BRAND.tagline}`,
+    description: BRAND.subtitle,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "education",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
