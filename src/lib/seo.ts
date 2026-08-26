@@ -3,10 +3,14 @@ import { BRAND, TOPIC_MAP } from "@/lib/constants";
 import type { InterviewQuestion, Technology } from "@/types/interview";
 import { technologyLabel } from "@/lib/utils";
 
-/** Canonical production site URL — update when deploying. */
+/** Canonical production site URL — prefers explicit env, then Vercel host. */
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://interview-hub.codezetta.dev";
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : undefined) ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined) ||
+  "https://codezetta-interview-hub.vercel.app";
 
 export const DEFAULT_KEYWORDS = [
   "interview questions",
