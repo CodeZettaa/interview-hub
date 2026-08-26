@@ -1,0 +1,92 @@
+[
+  {
+    "id": "next-middleware-001",
+    "technology": "nextjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "what-is-next-js-middleware",
+    "question": "What is Next.js Middleware?",
+    "shortAnswer": "A function running before a request is completed, often at the Edge, for redirects, rewrites, headers, and coarse auth.",
+    "detailedAnswer": "Configured via `middleware.ts` and a matcher. Keep it light — not a full app server. It cannot replace server-side authorization for data access.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "next-middleware-002",
+    "technology": "nextjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "what-should-you-avoid-doing-in-middleware",
+    "question": "What should you avoid doing in Middleware?",
+    "shortAnswer": "Heavy DB calls, complex business logic, large dependencies, and assuming it is the only security layer.",
+    "detailedAnswer": "Cold start and CPU limits matter on Edge. Prefer JWT/session cookie checks that are cheap. Defer deep authz to server code.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "next-middleware-003",
+    "technology": "nextjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "how-do-matchers-work",
+    "question": "How do matchers work?",
+    "shortAnswer": "They specify which paths invoke middleware using path patterns.",
+    "detailedAnswer": "Exclude static assets and Next internals carefully. Over-broad matchers add latency to every request.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "next-middleware-004",
+    "technology": "nextjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "can-middleware-read-the-request-body",
+    "question": "Can Middleware read the request body?",
+    "shortAnswer": "Generally not for arbitrary body parsing the way route handlers can — it's geared to URL/headers/cookies.",
+    "detailedAnswer": "Design auth and redirects around headers/cookies. Body-dependent logic belongs in handlers/actions.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "next-middleware-005",
+    "technology": "nextjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "how-do-you-implement-locale-detection-in-middleware",
+    "question": "How do you implement locale detection in Middleware?",
+    "shortAnswer": "Inspect Accept-Language/cookies/path, rewrite or redirect to locale-prefixed routes.",
+    "detailedAnswer": "Avoid redirect loops. Persist locale cookie. Coordinate with next-intl or custom i18n routing.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "next-middleware-006",
+    "technology": "nextjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "senior-middleware-auth-redirect-vs-server-component-redirect-when-each",
+    "question": "Senior: middleware auth redirect vs server component redirect — when each?",
+    "shortAnswer": "Middleware for early anonymous gates; server redirects when decision needs DB/session details.",
+    "detailedAnswer": "Hybrid is common: middleware ensures cookie presence; RSC loads user and enforces roles. Measure latency impact of middleware chains.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "middleware"
+    ]
+  }
+]

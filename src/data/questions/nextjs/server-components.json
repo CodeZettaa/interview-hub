@@ -1,0 +1,110 @@
+[
+  {
+    "id": "next-server-components-001",
+    "technology": "nextjs",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "what-are-react-server-components-rsc-in-next-js",
+    "question": "What are React Server Components (RSC) in Next.js?",
+    "shortAnswer": "Components that render on the server by default, can be async, and do not ship their JS to the client.",
+    "detailedAnswer": "RSCs can access backend resources directly, reducing client bundle size. They cannot use hooks, browser APIs, or event handlers. Composition with Client Components happens across the server/client boundary via serializable props.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "next-server-components-002",
+    "technology": "nextjs",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "what-can-server-components-do-that-client-components-cannot",
+    "question": "What can Server Components do that Client Components cannot?",
+    "shortAnswer": "Directly await databases/APIs, keep secrets server-side, and omit heavy logic from the client bundle.",
+    "detailedAnswer": "Fetch with cookies/headers, read files, and use server-only modules. Pass serializable data to Client Components for interactivity. This shifts the default toward less JS on the wire.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "next-server-components-003",
+    "technology": "nextjs",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "why-can-t-you-use-usestate-or-onclick-in-a-server-component",
+    "question": "Why can't you use useState or onClick in a Server Component?",
+    "shortAnswer": "Those require client runtime and interactivity; Server Components have no client hook runtime.",
+    "detailedAnswer": "Mark interactive leaves with `'use client'`. Keep parents as Server Components when possible so only interactive islands hydrate. Passing event handlers as props from server to client is not allowed — pass data and define handlers in client code.",
+    "commonMistake": "Sprinkling 'use client' at the root and losing RSC benefits.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "next-server-components-004",
+    "technology": "nextjs",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "how-do-you-share-data-between-nested-server-components-without-prop-drilling",
+    "question": "How do you share data between nested Server Components without prop drilling?",
+    "shortAnswer": "Fetch where needed (React cache/dedupe) or lift data in a parent and pass props; avoid global client stores for server data.",
+    "detailedAnswer": "Next/fetch caching and `React.cache` help dedupe identical requests in one render. For cross-request sharing use proper HTTP/data cache. Don't reach for Context for server-only data trees unless you understand serialization boundaries.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "next-server-components-005",
+    "technology": "nextjs",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "what-does-the-server-only-package-prevent",
+    "question": "What does the `server-only` package prevent?",
+    "shortAnswer": "Accidentally importing server-only modules into Client Components.",
+    "detailedAnswer": "Importing `server-only` throws at build if a client bundle pulls it in — useful for DB clients and secret helpers. Pair with `client-only` for browser-only modules.",
+    "example": "import 'server-only';\nexport function getDb() { /* ... */ }",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "next-server-components-006",
+    "technology": "nextjs",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "how-should-you-design-the-server-client-component-boundary",
+    "question": "How should you design the server/client component boundary?",
+    "shortAnswer": "Push `'use client'` to the leaves; keep data-heavy trees on the server.",
+    "detailedAnswer": "Interactive widgets become client islands. Pass serializable props only. Avoid huge client wrappers. Measure bundle impact after boundary moves.",
+    "interviewTip": "Draw a tree and mark the boundary — strong senior signal.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "next-server-components-007",
+    "technology": "nextjs",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "lead-scenario-team-is-marking-whole-pages-as-client-components-for-convenience-w",
+    "question": "Lead scenario: team is marking whole pages as Client Components for convenience. What do you do?",
+    "shortAnswer": "Re-establish RSC defaults, create interactive leaf patterns, lint for root-level 'use client', and educate on bundle/cost trade-offs.",
+    "detailedAnswer": "Provide shared client primitives (dialogs, forms). Audit top routes for unnecessary client roots. Track JS payload in CI. Make the default path the performant one.",
+    "difficulty": "lead",
+    "type": "scenario",
+    "tags": [
+      "server-components"
+    ]
+  }
+]

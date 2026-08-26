@@ -1,0 +1,182 @@
+[
+  {
+    "id": "css-performance-001",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "css-layout-thrashing",
+    "question": "What CSS patterns cause layout thrashing?",
+    "shortAnswer": "Forcing sync layout by reading geometry then writing styles in loops; animating layout props.",
+    "detailedAnswer": "Batch reads/writes. Prefer transforms. Use DevTools performance panel.",
+    "difficulty": "fresh",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-002",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "css-rendering-pipeline",
+    "question": "How does CSS affect rendering pipeline stages?",
+    "shortAnswer": "Styles → layout → paint → composite; some changes skip earlier stages.",
+    "detailedAnswer": "Knowing what invalidates helps choose properties (transform vs top).",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-003",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "critical-css-strategy",
+    "question": "Critical CSS strategy?",
+    "shortAnswer": "Inline minimal above-the-fold CSS; defer the rest; avoid huge inlined blobs.",
+    "detailedAnswer": "Automate extraction carefully. Reassess as designs change.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-004",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "css-bundle-size",
+    "question": "Selector and stylesheet size — what to optimize?",
+    "shortAnswer": "Remove dead CSS, split by route, avoid huge unused frameworks on critical path.",
+    "detailedAnswer": "Purge carefully with dynamic class names. Compression + caching matter.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-005",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "contain-content-visibility",
+    "question": "contain and content-visibility benefits?",
+    "shortAnswer": "Hint browsers to isolate layout/paint work; skip rendering offscreen content.",
+    "detailedAnswer": "content-visibility:auto can boost long pages. Need contain-intrinsic-size to reduce scrolljump.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-006",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "font-loading-css-perf",
+    "question": "Font loading performance with CSS?",
+    "shortAnswer": "font-display strategies, subsetting, preload, limit weights.",
+    "detailedAnswer": "FOIT/FOUT trade-offs. System font stacks for speed when brand allows.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-007",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "box-shadow-filter-cost",
+    "question": "Why are large box-shadows/filters costly?",
+    "shortAnswer": "They can expand paint areas and be expensive on scroll/animate.",
+    "detailedAnswer": "Prefer simpler shadows; animate opacity/transform on pre-promoted layers.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-008",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "find-unused-css",
+    "question": "How do you find unused CSS?",
+    "shortAnswer": "Coverage tool, PurgeCSS/UnCSS with caveats, design-system adoption metrics.",
+    "detailedAnswer": "Dynamic classes and runtime CSS-in-JS complicate static purge.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-009",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "css-in-js-runtime-cost",
+    "question": "CSS-in-JS runtime cost concerns?",
+    "shortAnswer": "Runtime injection/hashing can cost CPU and delay paint vs static extraction.",
+    "detailedAnswer": "Prefer zero-runtime or build-time extraction for critical UI when possible.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-010",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "image-set-perf",
+    "question": "image-set and CSS backgrounds performance?",
+    "shortAnswer": "Offer resolution/format alternatives; still prefer HTML img for content LCP.",
+    "detailedAnswer": "Don't hide LCP content in CSS backgrounds.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-011",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "long-list-css-perf",
+    "question": "Long lists: CSS techniques to help?",
+    "shortAnswer": "content-visibility, virtualization (JS), avoid expensive per-item effects.",
+    "detailedAnswer": "Pure CSS can't fully virtualize like windowing libraries.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "css-performance-012",
+    "technology": "css",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "css-performance-budget",
+    "question": "Set a CSS performance budget for a team.",
+    "shortAnswer": "Max critical CSS KB, banned properties for animation, lint rules, monitoring CLS/INP.",
+    "detailedAnswer": "Encode in CI. Review third-party CSS.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  }
+]

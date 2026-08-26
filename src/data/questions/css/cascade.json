@@ -1,0 +1,197 @@
+[
+  {
+    "id": "css-cascade-001",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "what-is-css-cascade",
+    "question": "What is the CSS cascade?",
+    "shortAnswer": "The algorithm that resolves conflicting declarations via origin, importance, specificity, and order.",
+    "detailedAnswer": "Cascade layers and inline styles participate too. Understanding it prevents !important wars and specificity traps.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-002",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "css-specificity",
+    "question": "Explain specificity in simple terms.",
+    "shortAnswer": "IDs > classes/attributes/pseudo-classes > elements/pseudo-elements; inline beats all except !important.",
+    "detailedAnswer": "Equal specificity → source order. :where() has zero specificity; :is() takes most specific argument.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-003",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "important-when-justified",
+    "question": "What does !important do, and when is it justified?",
+    "shortAnswer": "Raises importance so normal rules lose; justified rarely for utilities/overrides/third-party escapes.",
+    "detailedAnswer": "Importance has its own cascade between origins. Prefer refactoring specificity/layers over spraying !important.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-004",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "stylesheet-origins",
+    "question": "Author vs user vs user-agent stylesheets?",
+    "shortAnswer": "Three origins; user !important can override author; UA provides defaults.",
+    "detailedAnswer": "Normalize/reboot styles manage UA differences. Accessibility user styles must be respected.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-005",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "cascade-layers",
+    "question": "What are cascade layers (@layer)?",
+    "shortAnswer": "Explicit control of cascade priority independent of specificity within layered rules.",
+    "detailedAnswer": "Unlayered styles beat layered. Great for resets → tokens → components → utilities ordering.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-006",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "inheritance-vs-cascade",
+    "question": "How does inheritance differ from the cascade?",
+    "shortAnswer": "Inheritance passes computed values to children for inheritable properties; cascade resolves conflicts per element.",
+    "detailedAnswer": "Use inherit, initial, unset, revert intentionally. color inherits; margin does not.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-007",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "unset-revert-revert-layer",
+    "question": "What is the difference between unset, revert, and revert-layer?",
+    "shortAnswer": "unset acts as inherit/initial; revert rolls toward user/UA; revert-layer rolls back within layers.",
+    "detailedAnswer": "Useful in component isolation and undo utilities. Know which 'previous' you mean.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-008",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "inline-styles-vs-classes",
+    "question": "How do inline styles interact with classes?",
+    "shortAnswer": "Inline declarations have high specificity; only !important in stylesheets can override non-important inline.",
+    "detailedAnswer": "Prefer classes for maintainability. Inline for true one-offs or framework style bindings carefully.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-009",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "shadow-dom-cascade",
+    "question": "Shadow DOM and the cascade — what changes?",
+    "shortAnswer": "Shadow trees encapsulate styles; ::part and CSS variables pierce carefully; :host styles the host.",
+    "detailedAnswer": "Global selectors don't reach inside closed shadows. Design tokens via custom properties are common bridges.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-010",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "debug-style-not-applying",
+    "question": "How would you debug a style that 'won't apply'?",
+    "shortAnswer": "Check specificity, layers, importance, invalid values, typos, and whether selector matches.",
+    "detailedAnswer": "DevTools Computed and Styles panes show crossed-out winners. Verify not overridden by later equal rules.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-011",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "css-scope",
+    "question": "What is @scope and why does it help?",
+    "shortAnswer": "Scopes selectors to a subtree/root to reduce leakage without heavy specificity.",
+    "detailedAnswer": "Helps component-local CSS in light DOM. Browser support considerations apply.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-012",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "utility-vs-semantic-cascade",
+    "question": "Presentational class soup vs semantic classes — cascade implications?",
+    "shortAnswer": "Utility-first relies on order/layers; semantic BEM relies on low conflict and structure.",
+    "detailedAnswer": "Teams must pick conventions. Mixing without layers causes specificity fights.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "cascade"
+    ]
+  },
+  {
+    "id": "css-cascade-013",
+    "technology": "css",
+    "category": "Cascade",
+    "categorySlug": "cascade",
+    "slug": "multi-brand-cascade-strategy",
+    "question": "Design a cascade strategy for a multi-brand design system.",
+    "shortAnswer": "Tokens in low layers, components mid, brand overrides high, utilities carefully layered, document !important policy.",
+    "detailedAnswer": "Enforce via linting and Stylelint. Prefer tokens over one-off overrides.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "cascade"
+    ]
+  }
+]

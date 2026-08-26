@@ -1,0 +1,182 @@
+[
+  {
+    "id": "html-media-001",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "img-vs-css-background",
+    "question": "When do you use <img> vs CSS background-image?",
+    "shortAnswer": "img for content images that need alt and intrinsic sizing; CSS for decorative chrome.",
+    "detailedAnswer": "Content images belong in HTML for a11y/SEO. Backgrounds don't expose alt and are harder to print/select.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-002",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "srcset-and-sizes",
+    "question": "Explain srcset and sizes.",
+    "shortAnswer": "srcset lists candidates; sizes tells the browser layout width so it picks an appropriate resource.",
+    "detailedAnswer": "Descriptors can be width (w) or density (x). Wrong sizes causes over/under-fetching. Pair with modern formats.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-003",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "picture-element",
+    "question": "What does the <picture> element solve?",
+    "shortAnswer": "Art direction and format negotiation (AVIF/WebP) with fallbacks.",
+    "detailedAnswer": "source media/type choose among candidates; img is mandatory fallback. Different from srcset-only density switching.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-004",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "accessible-video",
+    "question": "How do you make video accessible?",
+    "shortAnswer": "Captions/subtitles tracks, transcripts, keyboard controls, no autoplay with sound.",
+    "detailedAnswer": "Prefer native controls or fully accessible custom players. Describe significant visuals when needed.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-005",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "media-preload-autoplay-muted",
+    "question": "What are preload, autoplay, and muted on media elements?",
+    "shortAnswer": "Hints for buffering and playback policy; autoplay usually requires muted for video.",
+    "detailedAnswer": "Browsers restrict autoplay. preload=none saves bandwidth. Don't autoplay unexpected audio.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-006",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "native-lazy-loading",
+    "question": "How does lazy loading images work in HTML?",
+    "shortAnswer": "loading=\"lazy\" defers offscreen images; still provide dimensions to reduce CLS.",
+    "detailedAnswer": "Critical LCP images should not be lazy. Native lazy is simpler than IntersectionObserver for many cases.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-007",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "object-fit-vs-intrinsic-size",
+    "question": "Explain object-fit vs changing intrinsic image size.",
+    "shortAnswer": "object-fit controls how replaced content fills a box; width/height attributes reserve space.",
+    "detailedAnswer": "cover/contain are common. Always set dimensions or aspect-ratio to avoid layout shift.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-008",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "responsive-hero-images",
+    "question": "How would you deliver responsive hero images efficiently?",
+    "shortAnswer": "picture for art direction, AVIF/WebP sources, accurate sizes, high fetchpriority for LCP, no lazy.",
+    "detailedAnswer": "Compress appropriately. Avoid huge PNG heroes. Measure LCP in the field.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-009",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "track-element",
+    "question": "What is the track element used for?",
+    "shortAnswer": "Timed text tracks like captions, subtitles, descriptions, chapters for media.",
+    "detailedAnswer": "WebVTT is common. Kind and srclang matter for AT and UX.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-010",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "audio-vs-third-party-players",
+    "question": "When is <audio> preferable to embedding third-party players?",
+    "shortAnswer": "Simple self-hosted audio with native controls and fewer privacy/perf costs.",
+    "detailedAnswer": "Third-party players add scripts/trackers. Custom UI must remain accessible.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-011",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "prevent-media-layout-shift",
+    "question": "How do you prevent layout shift with media?",
+    "shortAnswer": "Reserve space via width/height or CSS aspect-ratio; avoid injecting media without placeholders.",
+    "detailedAnswer": "Fonts and ads also shift layout — treat media as part of a CLS budget.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "media"
+    ]
+  },
+  {
+    "id": "html-media-012",
+    "technology": "html",
+    "category": "Media",
+    "categorySlug": "media",
+    "slug": "media-pipeline-architecture",
+    "question": "Architect a media pipeline for a content site.",
+    "shortAnswer": "CDN transforms, format negotiation, responsive variants, caching headers, a11y requirements in CMS.",
+    "detailedAnswer": "Editors need alt requirements. Automate compression. Monitor bandwidth and LCP.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "media"
+    ]
+  }
+]

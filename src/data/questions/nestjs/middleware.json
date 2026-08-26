@@ -1,0 +1,78 @@
+[
+  {
+    "id": "nest-middleware-001",
+    "technology": "nestjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "what-is-nest-middleware-vs-express-middleware",
+    "question": "What is Nest middleware vs Express middleware?",
+    "shortAnswer": "Nest middleware is framework-aware (implements NestMiddleware) but often wraps Express/Fastify style (req,res,next).",
+    "detailedAnswer": "Configured in modules via MiddlewareConsumer with route matching. Runs before guards — pipeline order awareness matters.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "nest-middleware-002",
+    "technology": "nestjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "where-do-you-apply-middleware-selectively",
+    "question": "Where do you apply middleware selectively?",
+    "shortAnswer": "In configure(consumer) with .forRoutes / .exclude, by controller or path.",
+    "detailedAnswer": "Global middleware applies everywhere — use for logging/correlation IDs. Keep auth preferably in guards for Nest idiomatic style.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "nest-middleware-003",
+    "technology": "nestjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "middleware-vs-guard-vs-interceptor-which-for-auth",
+    "question": "Middleware vs Guard vs Interceptor — which for auth?",
+    "shortAnswer": "Guards are the Nest-idiomatic authn/authz gate; middleware for low-level request shaping; interceptors for AOP around handlers.",
+    "detailedAnswer": "You can authenticate in middleware, but guards integrate better with roles/metadata. Know the official pipeline order.",
+    "interviewTip": "Recite middleware → guards → interceptors(before) → pipes → handler → interceptors(after) → filters.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "nest-middleware-004",
+    "technology": "nestjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "debugging-middleware-not-running-for-a-route",
+    "question": "Debugging: middleware not running for a route.",
+    "shortAnswer": "Path mismatch, global prefix, versioning, or excluded routes; Fastify vs Express adapter differences.",
+    "detailedAnswer": "Log consumer config. Confirm route registration. Check middleware order.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "middleware"
+    ]
+  },
+  {
+    "id": "nest-middleware-005",
+    "technology": "nestjs",
+    "category": "Middleware",
+    "categorySlug": "middleware",
+    "slug": "lead-correlation-id-middleware-standards-across-services",
+    "question": "Lead: correlation ID middleware standards across services.",
+    "shortAnswer": "Accept inbound trace headers, create if missing, store in ALS, propagate outbound, and include in logs.",
+    "detailedAnswer": "Align with OpenTelemetry. Document header names. Make it a platform module, not per-service one-offs.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "middleware"
+    ]
+  }
+]

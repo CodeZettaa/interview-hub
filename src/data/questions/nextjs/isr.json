@@ -1,0 +1,93 @@
+[
+  {
+    "id": "next-isr-001",
+    "technology": "nextjs",
+    "category": "ISR",
+    "categorySlug": "isr",
+    "slug": "what-is-incremental-static-regeneration-isr",
+    "question": "What is Incremental Static Regeneration (ISR)?",
+    "shortAnswer": "Serve static pages and regenerate them in the background after a revalidation period or on demand.",
+    "detailedAnswer": "Combines static speed with eventual freshness. Stale-while-revalidate semantics are common. Ideal for content that updates occasionally.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "isr"
+    ]
+  },
+  {
+    "id": "next-isr-002",
+    "technology": "nextjs",
+    "category": "ISR",
+    "categorySlug": "isr",
+    "slug": "how-do-you-set-a-revalidate-interval-in-app-router",
+    "question": "How do you set a revalidate interval in App Router?",
+    "shortAnswer": "Export `revalidate` segment config or use fetch `next: { revalidate: seconds }`.",
+    "detailedAnswer": "Time-based revalidation refreshes after TTL. Prefer tagging + on-demand revalidation for editorial workflows when possible.",
+    "example": "export const revalidate = 60;",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "isr"
+    ]
+  },
+  {
+    "id": "next-isr-003",
+    "technology": "nextjs",
+    "category": "ISR",
+    "categorySlug": "isr",
+    "slug": "what-is-on-demand-revalidation",
+    "question": "What is on-demand revalidation?",
+    "shortAnswer": "Explicitly invalidate cached pages/data after a CMS publish via revalidatePath/revalidateTag.",
+    "detailedAnswer": "Gives editors immediate updates without short TTLs everywhere. Secure the revalidation API route with a secret.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "isr"
+    ]
+  },
+  {
+    "id": "next-isr-004",
+    "technology": "nextjs",
+    "category": "ISR",
+    "categorySlug": "isr",
+    "slug": "explain-revalidatetag-vs-revalidatepath",
+    "question": "Explain revalidateTag vs revalidatePath.",
+    "shortAnswer": "Tag invalidates cached data fetches sharing a tag; path invalidates a route's cache entries.",
+    "detailedAnswer": "Tagging models domain entities (product:123). Paths are coarser. Design tag taxonomy early for scalable invalidation.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "isr"
+    ]
+  },
+  {
+    "id": "next-isr-005",
+    "technology": "nextjs",
+    "category": "ISR",
+    "categorySlug": "isr",
+    "slug": "what-race-conditions-exist-with-isr",
+    "question": "What race conditions exist with ISR?",
+    "shortAnswer": "Concurrent regenerations, stampede after expiry, and users briefly seeing stale content.",
+    "detailedAnswer": "Understand stale-while-revalidate. For strong consistency needs, use dynamic rendering or carefully designed cache keys.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "isr"
+    ]
+  },
+  {
+    "id": "next-isr-006",
+    "technology": "nextjs",
+    "category": "ISR",
+    "categorySlug": "isr",
+    "slug": "when-would-you-avoid-isr",
+    "question": "When would you avoid ISR?",
+    "shortAnswer": "When correctness requires read-after-write consistency or per-request personalization.",
+    "detailedAnswer": "Checkout inventory, permissions, and financial data often need request-time reads. ISR is for cacheable public content.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "isr"
+    ]
+  }
+]

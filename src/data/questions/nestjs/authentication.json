@@ -1,0 +1,93 @@
+[
+  {
+    "id": "nest-authentication-001",
+    "technology": "nestjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "passport-in-nest-typical-pattern",
+    "question": "Passport in Nest — typical pattern?",
+    "shortAnswer": "AuthModule with PassportStrategy providers, AuthGuard('jwt'|'local'), and strategies encapsulating validation.",
+    "detailedAnswer": "Keep strategies thin; issue tokens in auth service. Prefer cookie or bearer consistently.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "auth"
+    ]
+  },
+  {
+    "id": "nest-authentication-002",
+    "technology": "nestjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "jwt-authguard-flow-in-nest",
+    "question": "JWT AuthGuard flow in Nest?",
+    "shortAnswer": "Extract bearer token, verify signature/claims via strategy, attach user to request.",
+    "detailedAnswer": "Handle expiration and clock skew. Use JWKS for asymmetric keys. Don't trust unverified payloads.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "nest-authentication-003",
+    "technology": "nestjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "how-do-you-implement-refresh-tokens-with-nest",
+    "question": "How do you implement refresh tokens with Nest?",
+    "shortAnswer": "Store hashed refresh tokens, rotate on use, protect refresh route, and short-lived access JWTs.",
+    "detailedAnswer": "Reuse detection revokes families. Separate secrets. Prefer httpOnly cookies for browsers.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "nest-authentication-004",
+    "technology": "nestjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "global-authguard-with-public-routes-pattern",
+    "question": "Global AuthGuard with public routes — pattern?",
+    "shortAnswer": "APP_GUARD with Reflector checking @Public() metadata to skip auth.",
+    "detailedAnswer": "E2e test both public and protected. Don't rely on omission of guards alone in large apps.",
+    "example": "if (this.reflector.getAllAndOverride('isPublic', [ctx.getHandler(), ctx.getClass()])) return true;",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "nest-authentication-005",
+    "technology": "nestjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "session-based-auth-with-nest-considerations",
+    "question": "Session-based auth with Nest — considerations?",
+    "shortAnswer": "express-session/fastify session store (Redis), CSRF for cookie auth, and secure cookie flags.",
+    "detailedAnswer": "Stateless JWT vs sessions trade-offs still apply. Sticky sessions without external store don't scale.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "nest-authentication-006",
+    "technology": "nestjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "lead-integrate-nest-services-with-corporate-oidc-sso",
+    "question": "Lead: integrate Nest services with corporate OIDC/SSO.",
+    "shortAnswer": "OIDC authorization code at BFF/gateway, validate JWTs with JWKS cache, map claims to internal principals.",
+    "detailedAnswer": "Centralize claim-to-role mapping. Plan key rotation. Audit login events.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "authentication"
+    ]
+  }
+]

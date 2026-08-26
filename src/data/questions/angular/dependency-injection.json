@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ng-dependency-injection-001",
+    "technology": "angular",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "how-does-angular-dependency-injection-work",
+    "question": "How does Angular dependency injection work?",
+    "shortAnswer": "Angular resolves constructor (or inject()) dependencies from hierarchical injectors.",
+    "detailedAnswer": "Providers register tokens → implementations. Components, routes, and root injectors form a hierarchy. Child injectors can override parents. inject() works in injection contexts.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "di"
+    ]
+  },
+  {
+    "id": "ng-dependency-injection-002",
+    "technology": "angular",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "what-is-providedin-root-vs-providing-in-a-component",
+    "question": "What is providedIn: 'root' vs providing in a component?",
+    "shortAnswer": "Root creates an app-wide singleton; component providers create an instance per component injector.",
+    "detailedAnswer": "Use root for shared services. Provide on a component/route to scope state to a feature subtree. Mis-scoping causes shared mutable state bugs.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "ng-dependency-injection-003",
+    "technology": "angular",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "what-are-injectiontoken-and-multi-providers",
+    "question": "What are InjectionToken and multi providers?",
+    "shortAnswer": "InjectionToken identifies non-class dependencies; multi: true collects an array of providers.",
+    "detailedAnswer": "Use tokens for config objects and interfaces. HTTP_INTERCEPTORS is a classic multi provider. Prefer opaque tokens over string tokens.",
+    "example": "export const API_URL = new InjectionToken<string>('API_URL');",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "ng-dependency-injection-004",
+    "technology": "angular",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "when-do-you-use-useclass-usevalue-usefactory-and-useexisting",
+    "question": "When do you use useClass, useValue, useFactory, and useExisting?",
+    "shortAnswer": "They map a token to a class, literal, factory function, or alias of another token.",
+    "detailedAnswer": "Factories enable runtime config. useExisting aliases tokens. Prefer useClass for simple swaps in tests.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "ng-dependency-injection-005",
+    "technology": "angular",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "what-is-an-injection-context-and-why-does-inject-fail-outside-it",
+    "question": "What is an injection context and why does inject() fail outside it?",
+    "shortAnswer": "inject() must run during construction/DI setup (or runInInjectionContext), not in arbitrary async callbacks.",
+    "detailedAnswer": "Call inject() in field initializers, constructors, or factories. Capturing Injector and running later is the escape hatch. This trips people migrating from constructor DI.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "ng-dependency-injection-006",
+    "technology": "angular",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "how-do-you-provide-different-implementations-per-environment",
+    "question": "How do you provide different implementations per environment?",
+    "shortAnswer": "Use environment providers, APP_INITIALIZER factories, or file replacements with alternate providers.",
+    "detailedAnswer": "Keep interfaces stable; swap implementations for mock/API. Avoid branching business logic on environment strings everywhere.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "ng-dependency-injection-007",
+    "technology": "angular",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "explain-hierarchical-injectors-in-a-routed-angular-app",
+    "question": "Explain hierarchical injectors in a routed Angular app.",
+    "shortAnswer": "Root → platform/app → lazy route injectors → component injectors form a lookup chain.",
+    "detailedAnswer": "Lazy routes get their own injector for provided services. Element injectors (directives/components) participate too. Understanding the chain explains 'NullInjectorError' and unexpected singletons.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "dependency-injection"
+    ]
+  }
+]

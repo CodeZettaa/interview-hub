@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ts-conditional-types-001",
+    "technology": "typescript",
+    "category": "Conditional Types",
+    "categorySlug": "conditional-types",
+    "slug": "what-is-conditional-type",
+    "question": "What is a conditional type?",
+    "shortAnswer": "T extends U ? X : Y — choose types based on assignability.",
+    "detailedAnswer": "Foundation of many utilities (Exclude, Extract). Distributes over naked type params.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "conditional-types"
+    ]
+  },
+  {
+    "id": "ts-conditional-types-002",
+    "technology": "typescript",
+    "category": "Conditional Types",
+    "categorySlug": "conditional-types",
+    "slug": "conditional-distributivity",
+    "question": "What is distributivity in conditional types?",
+    "shortAnswer": "Naked T extends U ? X : Y applied to unions distributes over members.",
+    "detailedAnswer": "Wrap in [] to disable. Explains Exclude behavior on unions.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "conditional-types"
+    ]
+  },
+  {
+    "id": "ts-conditional-types-003",
+    "technology": "typescript",
+    "category": "Conditional Types",
+    "categorySlug": "conditional-types",
+    "slug": "infer-keyword",
+    "question": "infer keyword — what does it do?",
+    "shortAnswer": "Declare a type variable to capture from extends patterns.",
+    "detailedAnswer": "Example: T extends (...args: infer P) => any ? P : never. Core of ReturnType.",
+    "example": "type Elem<T> = T extends (infer U)[] ? U : T;",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "conditional-types"
+    ]
+  },
+  {
+    "id": "ts-conditional-types-004",
+    "technology": "typescript",
+    "category": "Conditional Types",
+    "categorySlug": "conditional-types",
+    "slug": "extract-exclude",
+    "question": "Extract and Exclude implemented how?",
+    "shortAnswer": "Conditional types filtering unions by assignability to a type.",
+    "detailedAnswer": "Useful for refining event maps and removing nullish members.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "conditional-types"
+    ]
+  },
+  {
+    "id": "ts-conditional-types-005",
+    "technology": "typescript",
+    "category": "Conditional Types",
+    "categorySlug": "conditional-types",
+    "slug": "flatten-promise-conditional",
+    "question": "How do you flatten Promise types with conditionals?",
+    "shortAnswer": "Recursive Awaited-like conditionals unwrapping thenables.",
+    "detailedAnswer": "Handle non-promise passthrough. Avoid infinite recursion.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "conditional-types"
+    ]
+  },
+  {
+    "id": "ts-conditional-types-006",
+    "technology": "typescript",
+    "category": "Conditional Types",
+    "categorySlug": "conditional-types",
+    "slug": "debug-conditional-types",
+    "question": "Debugging monstrous conditional types?",
+    "shortAnswer": "Simplify intermediates, use helper aliases, TypeScript language service hover, type tests.",
+    "detailedAnswer": "Split steps. Prefer readable incremental transforms.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "conditional-types"
+    ]
+  },
+  {
+    "id": "ts-conditional-types-007",
+    "technology": "typescript",
+    "category": "Conditional Types",
+    "categorySlug": "conditional-types",
+    "slug": "conditionals-in-public-apis",
+    "question": "Library design: expose conditionals or simpler overloads?",
+    "shortAnswer": "Prefer ergonomic overloads/docs for app devs; keep heavy conditionals internal.",
+    "detailedAnswer": "Public types are API — optimize for error message clarity.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "conditional-types"
+    ]
+  }
+]

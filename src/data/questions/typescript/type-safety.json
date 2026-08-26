@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ts-type-safety-001",
+    "technology": "typescript",
+    "category": "Type Safety",
+    "categorySlug": "type-safety",
+    "slug": "strict-mode",
+    "question": "What does strict mode enable that's important?",
+    "shortAnswer": "strictNullChecks, noImplicitAny, strictFunctionTypes, etc. — core soundness options.",
+    "detailedAnswer": "Turn on for new projects. Migrate incrementally for legacy.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "type-safety"
+    ]
+  },
+  {
+    "id": "ts-type-safety-002",
+    "technology": "typescript",
+    "category": "Type Safety",
+    "categorySlug": "type-safety",
+    "slug": "any-is-contagious",
+    "question": "Why is any contagious?",
+    "shortAnswer": "Flows through assignments and disables checking downstream.",
+    "detailedAnswer": "Ban via eslint @typescript-eslint/no-explicit-any with controlled exceptions.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "type-safety"
+    ]
+  },
+  {
+    "id": "ts-type-safety-003",
+    "technology": "typescript",
+    "category": "Type Safety",
+    "categorySlug": "type-safety",
+    "slug": "safe-json-parse",
+    "question": "Safe patterns for JSON.parse?",
+    "shortAnswer": "Parse unknown then validate (zod); avoid casting to a detailed interface blindly.",
+    "detailedAnswer": "Runtime validation is part of type safety at boundaries.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "type-safety"
+    ]
+  },
+  {
+    "id": "ts-type-safety-004",
+    "technology": "typescript",
+    "category": "Type Safety",
+    "categorySlug": "type-safety",
+    "slug": "non-null-assertion-risks",
+    "question": "Non-null assertion (!) risks?",
+    "shortAnswer": "Tells compiler to ignore nullish — can crash at runtime if wrong.",
+    "detailedAnswer": "Prefer narrowing. Reserve ! for proven invariants after checks.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "type-safety"
+    ]
+  },
+  {
+    "id": "ts-type-safety-005",
+    "technology": "typescript",
+    "category": "Type Safety",
+    "categorySlug": "type-safety",
+    "slug": "assertion-vs-conversion",
+    "question": "Type assertion vs type conversion?",
+    "shortAnswer": "as Type is compile-time only; conversion is runtime (Number(x)).",
+    "detailedAnswer": "Assertions don't change values. Double assertions via unknown are escape hatches — use sparingly.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "type-safety"
+    ]
+  },
+  {
+    "id": "ts-type-safety-006",
+    "technology": "typescript",
+    "category": "Type Safety",
+    "categorySlug": "type-safety",
+    "slug": "migrate-js-to-ts-safety",
+    "question": "How do you migrate a JS codebase toward type safety?",
+    "shortAnswer": "allowJs + checkJs, incremental strictness, typed boundaries first, any budgets.",
+    "detailedAnswer": "Don't boil the ocean. Prioritize domain core and public APIs.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "type-safety"
+    ]
+  },
+  {
+    "id": "ts-type-safety-007",
+    "technology": "typescript",
+    "category": "Type Safety",
+    "categorySlug": "type-safety",
+    "slug": "soundness-vs-productivity",
+    "question": "Soundness vs productivity trade-offs?",
+    "shortAnswer": "TS is intentionally unsound in places (bivariance historical, excess property limited).",
+    "detailedAnswer": "Understand holes. Use lint/runtime checks to compensate critical paths.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "type-safety"
+    ]
+  }
+]

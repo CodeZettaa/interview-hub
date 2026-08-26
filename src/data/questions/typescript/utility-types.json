@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ts-utility-types-001",
+    "technology": "typescript",
+    "category": "Utility Types",
+    "categorySlug": "utility-types",
+    "slug": "partial-utility",
+    "question": "What does Partial<T> do?",
+    "shortAnswer": "Makes all properties optional — useful for patches/updates.",
+    "detailedAnswer": "Shallow only. Deep partial needs custom mapped types.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "utility-types"
+    ]
+  },
+  {
+    "id": "ts-utility-types-002",
+    "technology": "typescript",
+    "category": "Utility Types",
+    "categorySlug": "utility-types",
+    "slug": "pick-vs-omit",
+    "question": "Pick vs Omit?",
+    "shortAnswer": "Pick selects keys; Omit removes keys from a type.",
+    "detailedAnswer": "Prefer them over manual duplication. Combine with Partial for update DTOs.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "utility-types"
+    ]
+  },
+  {
+    "id": "ts-utility-types-003",
+    "technology": "typescript",
+    "category": "Utility Types",
+    "categorySlug": "utility-types",
+    "slug": "record-utility",
+    "question": "Record<K, V> use cases?",
+    "shortAnswer": "Object type with keys K and values V — dictionaries and maps of known keys.",
+    "detailedAnswer": "Prefer Map at runtime when keys are dynamic/frequent add-delete. Record is a type.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "utility-types"
+    ]
+  },
+  {
+    "id": "ts-utility-types-004",
+    "technology": "typescript",
+    "category": "Utility Types",
+    "categorySlug": "utility-types",
+    "slug": "required-readonly",
+    "question": "Required and Readonly?",
+    "shortAnswer": "Required removes optionality; Readonly makes props readonly.",
+    "detailedAnswer": "Shallow. Useful for freezing config types and completing option bags.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "utility-types"
+    ]
+  },
+  {
+    "id": "ts-utility-types-005",
+    "technology": "typescript",
+    "category": "Utility Types",
+    "categorySlug": "utility-types",
+    "slug": "returntype-parameters",
+    "question": "ReturnType and Parameters?",
+    "shortAnswer": "Extract return type or parameter tuple from a function type.",
+    "detailedAnswer": "Great for wrapping APIs without importing private types. Doesn't run the function.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "utility-types"
+    ]
+  },
+  {
+    "id": "ts-utility-types-006",
+    "technology": "typescript",
+    "category": "Utility Types",
+    "categorySlug": "utility-types",
+    "slug": "nonnullable-awaited",
+    "question": "NonNullable and Awaited?",
+    "shortAnswer": "NonNullable removes null|undefined; Awaited unwraps Promise-like chains.",
+    "detailedAnswer": "Common in async data pipelines and strict null cleanup.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "utility-types"
+    ]
+  },
+  {
+    "id": "ts-utility-types-007",
+    "technology": "typescript",
+    "category": "Utility Types",
+    "categorySlug": "utility-types",
+    "slug": "custom-vs-builtin-utilities",
+    "question": "When should you write custom utilities instead of built-ins?",
+    "shortAnswer": "When you need deep variants, key remapping, or domain-specific transforms.",
+    "detailedAnswer": "Keep utilities documented and tested via type tests (expectType).",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "utility-types"
+    ]
+  }
+]

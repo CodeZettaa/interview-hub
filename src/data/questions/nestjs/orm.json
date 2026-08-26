@@ -1,0 +1,92 @@
+[
+  {
+    "id": "nest-orm-001",
+    "technology": "nestjs",
+    "category": "ORM Concepts",
+    "categorySlug": "orm",
+    "slug": "typeorm-vs-prisma-with-nest-practical-trade-offs",
+    "question": "TypeORM vs Prisma with Nest — practical trade-offs?",
+    "shortAnswer": "TypeORM: Active Record/Data Mapper, Nest module mature; Prisma: strong typing/DX, separate client lifecycle.",
+    "detailedAnswer": "Either can work — migrations, transactions, and testing matter more than brand. Know N+1 risks in both.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "orm"
+    ]
+  },
+  {
+    "id": "nest-orm-002",
+    "technology": "nestjs",
+    "category": "ORM Concepts",
+    "categorySlug": "orm",
+    "slug": "where-should-repositories-live-in-nest-modules",
+    "question": "Where should repositories live in Nest modules?",
+    "shortAnswer": "As providers in the feature module (or dedicated persistence adapter module), injected into services.",
+    "detailedAnswer": "Avoid controllers talking to ORM directly. Keep query details out of HTTP layer.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "orm"
+    ]
+  },
+  {
+    "id": "nest-orm-003",
+    "technology": "nestjs",
+    "category": "ORM Concepts",
+    "categorySlug": "orm",
+    "slug": "how-do-you-handle-transactions-in-nest-services",
+    "question": "How do you handle transactions in Nest services?",
+    "shortAnswer": "ORM transaction APIs / QueryRunner / Prisma $transaction; pass transactional client/unit-of-work through the use-case.",
+    "detailedAnswer": "Don't open transactions in controllers. Watch request-scoped pitfalls. Keep transactions short.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "orm"
+    ]
+  },
+  {
+    "id": "nest-orm-004",
+    "technology": "nestjs",
+    "category": "ORM Concepts",
+    "categorySlug": "orm",
+    "slug": "n-1-queries-in-nest-resolvers-services-prevention",
+    "question": "N+1 queries in Nest resolvers/services — prevention?",
+    "shortAnswer": "Eager/join appropriately, DataLoader for GraphQL, and explicit query planning — never lazy-load in loops blindly.",
+    "detailedAnswer": "Log slow queries in staging. Review list endpoints for join strategies.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "orm"
+    ]
+  },
+  {
+    "id": "nest-orm-005",
+    "technology": "nestjs",
+    "category": "ORM Concepts",
+    "categorySlug": "orm",
+    "slug": "migrations-in-production-nest-apps-best-practices",
+    "question": "Migrations in production Nest apps — best practices?",
+    "shortAnswer": "Expand/contract migrations, backward-compatible deploys, and never rely on synchronize in prod.",
+    "detailedAnswer": "CI runs migrations with locks. Document rollback. Separate schema from data migrations.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "ops"
+    ]
+  },
+  {
+    "id": "nest-orm-006",
+    "technology": "nestjs",
+    "category": "ORM Concepts",
+    "categorySlug": "orm",
+    "slug": "lead-multi-db-or-cqrs-read-models-with-nest",
+    "question": "Lead: multi-DB or CQRS read models with Nest?",
+    "shortAnswer": "Separate modules/connections for write vs read, async projections, and clear consistency expectations.",
+    "detailedAnswer": "Don't pretend every screen needs strong consistency. Own failure modes of projection lag.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "orm"
+    ]
+  }
+]

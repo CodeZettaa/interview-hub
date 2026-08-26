@@ -1,0 +1,154 @@
+[
+  {
+    "id": "vue-props-emits-001",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "how-do-props-work-in-vue-3",
+    "question": "How do props work in Vue 3?",
+    "shortAnswer": "Declared via defineProps; one-way down from parent to child; validated/typed optionally.",
+    "detailedAnswer": "Mutating props is an anti-pattern—emit events or use v-model. Defaults via withDefaults.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "props",
+      "emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-002",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "how-do-emits-work",
+    "question": "How do emits work?",
+    "shortAnswer": "declare via defineEmits; child triggers events; parent listens with @event.",
+    "detailedAnswer": "Prefer explicit emit declarations for documentation and validation. Payload typing matters in TS.",
+    "example": "const emit = defineEmits<{ save: [id: number] }>()\nemit('save', 1)",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "props-emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-003",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "how-does-v-model-work-on-components",
+    "question": "How does v-model work on components?",
+    "shortAnswer": "Default model is modelValue prop + update:modelValue emit; can define multiple v-models.",
+    "detailedAnswer": "Enables two-way binding ergonomics while staying explicit under the hood.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "props-emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-004",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "props-validation-runtime-vs-typescript",
+    "question": "Props validation — runtime vs TypeScript?",
+    "shortAnswer": "Runtime props options validate in dev; TS validates at compile time—use both thoughtfully.",
+    "detailedAnswer": "Runtime validators help JS consumers. Don't rely on runtime alone in TS apps.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "props-emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-005",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "fallthrough-attributes-what-are-they",
+    "question": "Fallthrough attributes — what are they?",
+    "shortAnswer": "Non-prop attributes fall onto the root element unless inheritAttrs: false.",
+    "detailedAnswer": "Important for wrapper components—bind $attrs intentionally to the right element.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "props-emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-006",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "when-to-use-prop-drilling-vs-provide-inject-vs-pinia",
+    "question": "When to use prop drilling vs provide/inject vs Pinia?",
+    "shortAnswer": "Shallow trees: props; sparse deep concerns: provide/inject; broad shared state: Pinia.",
+    "detailedAnswer": "Prefer the simplest that stays clear.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "props-emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-007",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "boolean-props-casting-quirks",
+    "question": "Boolean props casting quirks?",
+    "shortAnswer": "Presence of a boolean prop without value becomes true; be careful with string 'false'.",
+    "detailedAnswer": "Prefer explicit :flag=\"false\". Know attribute fallthrough behavior.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "props-emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-008",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "design-events-for-a-complex-picker-component",
+    "question": "Design events for a complex picker component.",
+    "shortAnswer": "Emit update:modelValue, change with full payload, and blur/focus when a11y needs; document payloads.",
+    "detailedAnswer": "Don't emit redundant events. Keep names consistent with Vue style guide.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "props-emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-009",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "one-way-data-flow-why-does-vue-emphasize-it",
+    "question": "one-way data flow — why does Vue emphasize it?",
+    "shortAnswer": "Predictable updates: parents own state; children request changes via events.",
+    "detailedAnswer": "Two-way binding is sugar over this. Mutating props breaks the model.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "props-emits"
+    ]
+  },
+  {
+    "id": "vue-props-emits-010",
+    "technology": "vue",
+    "category": "Props & Emits",
+    "categorySlug": "props-emits",
+    "slug": "how-do-you-type-v-model-with-typescript",
+    "question": "How do you type v-model with TypeScript?",
+    "shortAnswer": "Type modelValue and update:modelValue emit; or use defineModel in supported Vue versions.",
+    "detailedAnswer": "defineModel simplifies boilerplate—know your Vue version.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "props-emits"
+    ]
+  }
+]

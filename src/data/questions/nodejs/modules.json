@@ -1,0 +1,93 @@
+[
+  {
+    "id": "node-modules-001",
+    "technology": "nodejs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "how-does-node-resolve-require-pkg",
+    "question": "How does Node resolve `require('pkg')`?",
+    "shortAnswer": "Looks at node_modules hierarchy, package.json main/exports, and core modules — algorithm is hierarchical.",
+    "detailedAnswer": "Understanding exports maps and conditional exports prevents dual-package hazards. Core modules take precedence by name.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "node-modules-002",
+    "technology": "nodejs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "what-is-the-dual-package-hazard",
+    "question": "What is the dual package hazard?",
+    "shortAnswer": "Shipping both CJS and ESM that evaluate twice, breaking singleton identity (two copies of a module).",
+    "detailedAnswer": "Careful package.json exports and documentation matter. Consumers importing differently can get two React/Nest instances — subtle bugs.",
+    "commonMistake": "Publishing broken conditional exports.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "node-modules-003",
+    "technology": "nodejs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "esm-top-level-await-implications",
+    "question": "ESM top-level await — implications?",
+    "shortAnswer": "Modules can await at top level, delaying dependents until resolution.",
+    "detailedAnswer": "Useful for dynamic config; can complicate circular deps and startup time. Use deliberately.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "node-modules-004",
+    "technology": "nodejs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "how-do-circular-dependencies-behave-in-cjs-vs-esm",
+    "question": "How do circular dependencies behave in CJS vs ESM?",
+    "shortAnswer": "CJS may get partial exports; ESM live bindings can still be in TDZ — both can surprise.",
+    "detailedAnswer": "Refactor to break cycles: extract shared types/utils, invert dependencies. Cycles are a design smell in large apps.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "node-modules-005",
+    "technology": "nodejs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "when-do-you-use-dynamic-import",
+    "question": "When do you use dynamic `import()`?",
+    "shortAnswer": "Code-splitting, optional/heavy deps, and conditional loading after feature flags.",
+    "detailedAnswer": "Returns a promise. Works in CJS and ESM. Useful for reducing startup cost of CLIs and servers.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "node-modules-006",
+    "technology": "nodejs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "lead-monorepo-package-strategy-for-node-services",
+    "question": "Lead: monorepo package strategy for Node services?",
+    "shortAnswer": "Clear public exports, workspace protocol, shared lint/tsconfig, and versioning policy for published packages.",
+    "detailedAnswer": "Avoid deep relative imports across apps. Enforce dependency direction. CI builds affected packages only.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "modules"
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "next-route-handlers-001",
+    "technology": "nextjs",
+    "category": "Route Handlers",
+    "categorySlug": "route-handlers",
+    "slug": "what-are-route-handlers-in-the-app-router",
+    "question": "What are Route Handlers in the App Router?",
+    "shortAnswer": "`route.ts` files exporting HTTP method functions to build API endpoints.",
+    "detailedAnswer": "They replace many Pages API routes. Can run on Node or Edge runtime. Good for webhooks, auth callbacks, and JSON APIs colocated with the app.",
+    "example": "export async function GET(request: Request) {\n  return Response.json({ ok: true });\n}",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "route-handlers"
+    ]
+  },
+  {
+    "id": "next-route-handlers-002",
+    "technology": "nextjs",
+    "category": "Route Handlers",
+    "categorySlug": "route-handlers",
+    "slug": "when-should-you-use-a-route-handler-vs-a-server-action",
+    "question": "When should you use a Route Handler vs a Server Action?",
+    "shortAnswer": "Route Handlers for public HTTP APIs/webhooks/clients; Server Actions for first-party UI mutations tightly coupled to forms/components.",
+    "detailedAnswer": "External mobile clients usually need REST/RPC endpoints. Browser form posts can use actions. Don't expose actions as a general public API without care.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "route-handlers"
+    ]
+  },
+  {
+    "id": "next-route-handlers-003",
+    "technology": "nextjs",
+    "category": "Route Handlers",
+    "categorySlug": "route-handlers",
+    "slug": "how-do-you-read-json-body-and-query-params-in-a-route-handler",
+    "question": "How do you read JSON body and query params in a Route Handler?",
+    "shortAnswer": "await request.json(); use new URL(request.url).searchParams.",
+    "detailedAnswer": "Validate inputs. Handle empty bodies. Return proper status codes. Prefer shared validation (zod) with the rest of the app.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "route-handlers"
+    ]
+  },
+  {
+    "id": "next-route-handlers-004",
+    "technology": "nextjs",
+    "category": "Route Handlers",
+    "categorySlug": "route-handlers",
+    "slug": "what-are-edge-vs-node-runtimes-for-route-handlers",
+    "question": "What are Edge vs Node runtimes for route handlers?",
+    "shortAnswer": "Edge is lighter/faster cold start with API limits; Node supports full Node APIs and heavier libraries.",
+    "detailedAnswer": "Choose Edge for simple auth/redirects/geo. Use Node for ORMs, file system, or native deps. Know compatibility constraints.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "route-handlers"
+    ]
+  },
+  {
+    "id": "next-route-handlers-005",
+    "technology": "nextjs",
+    "category": "Route Handlers",
+    "categorySlug": "route-handlers",
+    "slug": "how-do-you-secure-a-webhook-route-handler",
+    "question": "How do you secure a webhook route handler?",
+    "shortAnswer": "Verify signatures, use secrets, reject replays, and keep handlers idempotent.",
+    "detailedAnswer": "Never trust raw body without verification. Log carefully without leaking PII. Return quickly and process async if needed.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "next-route-handlers-006",
+    "technology": "nextjs",
+    "category": "Route Handlers",
+    "categorySlug": "route-handlers",
+    "slug": "can-route-handlers-set-cookies-for-auth",
+    "question": "Can Route Handlers set cookies for auth?",
+    "shortAnswer": "Yes — use NextResponse and cookie APIs carefully with Secure/HttpOnly/SameSite.",
+    "detailedAnswer": "Coordinate with middleware and server components reading cookies. Be explicit about cookie paths and domains in multi-subdomain setups.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "route-handlers"
+    ]
+  }
+]

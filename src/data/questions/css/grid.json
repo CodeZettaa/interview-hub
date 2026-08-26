@@ -1,0 +1,198 @@
+[
+  {
+    "id": "css-grid-001",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "what-grid-solves",
+    "question": "What problem does CSS Grid solve?",
+    "shortAnswer": "Two-dimensional layout with rows and columns, including overlapping and precise placement.",
+    "detailedAnswer": "Ideal for page shells and complex component layouts. Complements flex for 1D.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-002",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "fr-vs-percent-vs-auto",
+    "question": "fr units vs % vs auto in tracks?",
+    "shortAnswer": "fr shares free space; % is definite percentage; auto is content-based sizing.",
+    "detailedAnswer": "minmax(0, 1fr) often needed to allow shrinking below content. repeat(auto-fit, minmax()) for responsive grids.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-003",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "grid-template-areas",
+    "question": "Explain grid-template-areas.",
+    "shortAnswer": "Name cells and place items with grid-area for readable layouts.",
+    "detailedAnswer": "Ascii-art templates help maintain page regions. Quotes per row must align cell counts.",
+    "example": "grid-template-areas:\n  'header header'\n  'nav main'\n  'footer footer';",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-004",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "auto-fit-vs-auto-fill",
+    "question": "auto-fit vs auto-fill?",
+    "shortAnswer": "Both create as many tracks as fit; auto-fit collapses empty tracks, auto-fill keeps them.",
+    "detailedAnswer": "Affects how items expand into leftover space with minmax.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-005",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "implicit-vs-explicit-grid",
+    "question": "How do implicit vs explicit grids differ?",
+    "shortAnswer": "Explicit tracks defined by templates; implicit tracks created by placement overflow.",
+    "detailedAnswer": "grid-auto-rows/columns style implicit tracks. Unexpected rows often mean placement bugs.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-006",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "grid-alignment",
+    "question": "alignment: justify-items vs justify-content in grid?",
+    "shortAnswer": "items aligns content inside cells; content aligns the grid when smaller than container.",
+    "detailedAnswer": "Also place-items/place-content shorthands. stretch is default for items.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-007",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "grid-overlap",
+    "question": "How do you overlap items intentionally?",
+    "shortAnswer": "Place multiple items into same cells or use line-based spans/z-index.",
+    "detailedAnswer": "Useful for badges on cards, decorative layers. Manage stacking contexts.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-008",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "subgrid",
+    "question": "subgrid — what is it for?",
+    "shortAnswer": "Lets child grids inherit parent track sizing for aligned nested columns/rows.",
+    "detailedAnswer": "Powerful for card internals aligning across a list. Support considerations.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-009",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "minmax-responsive-cards",
+    "question": "minmax and responsive card grids pattern?",
+    "shortAnswer": "repeat(auto-fit, minmax(min(100%, 16rem), 1fr)) creates fluid columns.",
+    "detailedAnswer": "Avoid fixed column counts when content should reflow naturally.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-010",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "grid-vs-absolute-dashboard",
+    "question": "Grid vs absolute positioning for dashboards?",
+    "shortAnswer": "Grid keeps flow/accessibility and responsive reflow; absolute is brittle for content size changes.",
+    "detailedAnswer": "Absolute for decorative overlays inside a grid cell can still be fine.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-011",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "fr-minmax-overflow",
+    "question": "Why does 1fr behave like minmax(auto, 1fr) and overflow?",
+    "shortAnswer": "Tracks won't shrink below content min by default; use minmax(0,1fr) to allow.",
+    "detailedAnswer": "Same family of bugs as flex min-size. Truncation needs overflow hidden + min 0.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-012",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "named-grid-lines",
+    "question": "Named lines — when useful?",
+    "shortAnswer": "Readable placement like grid-column: main-start / main-end in complex templates.",
+    "detailedAnswer": "Helps large layout systems. Document line names in the design system.",
+    "difficulty": "lead",
+    "type": "concept",
+    "tags": [
+      "grid"
+    ]
+  },
+  {
+    "id": "css-grid-013",
+    "technology": "css",
+    "category": "Grid",
+    "categorySlug": "grid",
+    "slug": "page-layout-grid-system",
+    "question": "Define a page layout system with grid areas.",
+    "shortAnswer": "Shell template areas for header/nav/main/aside/footer; components use nested grids/flex.",
+    "detailedAnswer": "Collapse areas responsively by redefining templates. Keep landmarks in HTML, not only CSS.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "grid"
+    ]
+  }
+]

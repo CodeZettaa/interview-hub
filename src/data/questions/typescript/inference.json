@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ts-inference-001",
+    "technology": "typescript",
+    "category": "Type Inference",
+    "categorySlug": "inference",
+    "slug": "contextual-typing",
+    "question": "How does contextual typing work?",
+    "shortAnswer": "TS infers types from location — e.g. callback args from parameter types of a function.",
+    "detailedAnswer": "Lets you omit annotations safely. Breaks when context is lost (extracted functions).",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "inference"
+    ]
+  },
+  {
+    "id": "ts-inference-002",
+    "technology": "typescript",
+    "category": "Type Inference",
+    "categorySlug": "inference",
+    "slug": "annotate-vs-infer",
+    "question": "When should you annotate vs rely on inference?",
+    "shortAnswer": "Annotate exported APIs and boundaries; infer locals when obvious.",
+    "detailedAnswer": "Explicit return types document contracts and catch impl drift.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "inference"
+    ]
+  },
+  {
+    "id": "ts-inference-003",
+    "technology": "typescript",
+    "category": "Type Inference",
+    "categorySlug": "inference",
+    "slug": "empty-array-inference",
+    "question": "Why does let x = [] become any[]?",
+    "shortAnswer": "Insufficient elements to infer; widens unsafely without context.",
+    "detailedAnswer": "Annotate as string[] or use as const / satisfies. noImplicitAny helps catch.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "inference"
+    ]
+  },
+  {
+    "id": "ts-inference-004",
+    "technology": "typescript",
+    "category": "Type Inference",
+    "categorySlug": "inference",
+    "slug": "as-const",
+    "question": "as const assertion effects?",
+    "shortAnswer": "Narrows to literal types and makes tuples/readonly deeply for literals.",
+    "detailedAnswer": "Unlocks discriminated unions and template literal precision.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "inference"
+    ]
+  },
+  {
+    "id": "ts-inference-005",
+    "technology": "typescript",
+    "category": "Type Inference",
+    "categorySlug": "inference",
+    "slug": "complex-return-inference",
+    "question": "Return type inference with complex conditionals?",
+    "shortAnswer": "May widen or become hard to read — annotate exports.",
+    "detailedAnswer": "Hover to verify. Split functions to guide inference.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "inference"
+    ]
+  },
+  {
+    "id": "ts-inference-006",
+    "technology": "typescript",
+    "category": "Type Inference",
+    "categorySlug": "inference",
+    "slug": "generic-chain-inference",
+    "question": "Inference across generic call chains?",
+    "shortAnswer": "Each step should propagate type args; broken if intermediate typed as any/unknown poorly.",
+    "detailedAnswer": "Helper identity functions and careful generics preserve types.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "inference"
+    ]
+  },
+  {
+    "id": "ts-inference-007",
+    "technology": "typescript",
+    "category": "Type Inference",
+    "categorySlug": "inference",
+    "slug": "api-design-for-inference",
+    "question": "Design APIs for good inference.",
+    "shortAnswer": "Prefer arguments that carry literals, overloads ordered well, avoid early widening.",
+    "detailedAnswer": "Test inference with type-level unit tests.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "inference"
+    ]
+  }
+]

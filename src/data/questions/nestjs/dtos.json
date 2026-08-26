@@ -1,0 +1,77 @@
+[
+  {
+    "id": "nest-dtos-001",
+    "technology": "nestjs",
+    "category": "DTOs",
+    "categorySlug": "dtos",
+    "slug": "what-is-a-dto-in-nest-and-why-separate-from-entities",
+    "question": "What is a DTO in Nest and why separate from entities?",
+    "shortAnswer": "Data Transfer Objects define API shapes; entities model persistence — decoupling prevents leaking DB schema.",
+    "detailedAnswer": "Request and response DTOs can differ. Validation decorators live on DTOs. Never expose entities blindly.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "dtos"
+    ]
+  },
+  {
+    "id": "nest-dtos-002",
+    "technology": "nestjs",
+    "category": "DTOs",
+    "categorySlug": "dtos",
+    "slug": "class-validator-decorators-on-dtos-essentials",
+    "question": "class-validator decorators on DTOs — essentials?",
+    "shortAnswer": "IsString/IsEmail/IsUUID/IsOptional/ValidateNested, plus whitelist via ValidationPipe.",
+    "detailedAnswer": "Keep messages clear. Share base DTO classes carefully. Prefer composition over deep inheritance.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "dtos"
+    ]
+  },
+  {
+    "id": "nest-dtos-003",
+    "technology": "nestjs",
+    "category": "DTOs",
+    "categorySlug": "dtos",
+    "slug": "partialtype-picktype-omittype-intersectiontype-when",
+    "question": "PartialType, PickType, OmitType, IntersectionType — when?",
+    "shortAnswer": "Mapped types to derive update/create DTOs without duplication while staying explicit.",
+    "detailedAnswer": "Update often uses PartialType(CreateDto). Don't invent one mega DTO for all operations.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "dtos"
+    ]
+  },
+  {
+    "id": "nest-dtos-004",
+    "technology": "nestjs",
+    "category": "DTOs",
+    "categorySlug": "dtos",
+    "slug": "scenario-client-sends-extra-fields-that-overwrite-isadmin",
+    "question": "Scenario: client sends extra fields that overwrite isAdmin.",
+    "shortAnswer": "Mass assignment — whitelist DTOs and never bind directly to entities with privileged fields.",
+    "detailedAnswer": "forbidNonWhitelisted helps. Separate admin-only DTOs/routes.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "nest-dtos-005",
+    "technology": "nestjs",
+    "category": "DTOs",
+    "categorySlug": "dtos",
+    "slug": "lead-dto-versioning-and-openapi-discipline",
+    "question": "Lead: DTO versioning and OpenAPI discipline?",
+    "shortAnswer": "Version DTOs with API versions, generate Swagger from decorators, and break changes via new versions.",
+    "detailedAnswer": "Contract tests against OpenAPI. Review DTO changes like public API.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "dtos"
+    ]
+  }
+]

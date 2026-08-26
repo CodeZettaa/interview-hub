@@ -1,0 +1,94 @@
+[
+  {
+    "id": "next-metadata-001",
+    "technology": "nextjs",
+    "category": "Metadata",
+    "categorySlug": "metadata",
+    "slug": "how-do-you-define-metadata-in-app-router",
+    "question": "How do you define metadata in App Router?",
+    "shortAnswer": "Export a `metadata` object or `generateMetadata` function from layout/page.",
+    "detailedAnswer": "Supports title, description, openGraph, robots, alternates, etc. Nested segments merge metadata. Use generateMetadata for dynamic data.",
+    "example": "export const metadata = { title: 'Docs', description: '...' };",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "metadata"
+    ]
+  },
+  {
+    "id": "next-metadata-002",
+    "technology": "nextjs",
+    "category": "Metadata",
+    "categorySlug": "metadata",
+    "slug": "when-do-you-use-generatemetadata-vs-static-metadata",
+    "question": "When do you use generateMetadata vs static metadata?",
+    "shortAnswer": "Static for fixed pages; generateMetadata when title/OG depends on fetched content.",
+    "detailedAnswer": "Await data carefully; avoid slowing TTFB with unnecessary waterfalls. Cache underlying fetches.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "metadata"
+    ]
+  },
+  {
+    "id": "next-metadata-003",
+    "technology": "nextjs",
+    "category": "Metadata",
+    "categorySlug": "metadata",
+    "slug": "how-do-title-templates-work",
+    "question": "How do title templates work?",
+    "shortAnswer": "Layouts can set `title.template` like `%s | Brand` so child titles compose.",
+    "detailedAnswer": "Keeps branding consistent. Child pages pass segment titles only.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "metadata"
+    ]
+  },
+  {
+    "id": "next-metadata-004",
+    "technology": "nextjs",
+    "category": "Metadata",
+    "categorySlug": "metadata",
+    "slug": "how-do-you-set-open-graph-images-dynamically",
+    "question": "How do you set Open Graph images dynamically?",
+    "shortAnswer": "Return openGraph.images from generateMetadata, optionally using `opengraph-image.tsx` file conventions.",
+    "detailedAnswer": "Generate per-article cards for social sharing. Watch compute costs for on-the-fly image generation.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "metadata"
+    ]
+  },
+  {
+    "id": "next-metadata-005",
+    "technology": "nextjs",
+    "category": "Metadata",
+    "categorySlug": "metadata",
+    "slug": "what-metadata-helps-control-indexing",
+    "question": "What metadata helps control indexing?",
+    "shortAnswer": "robots meta, and route-level robots fields; plus sitemap/robots.txt.",
+    "detailedAnswer": "Noindex staging with env-based metadata. Don't noindex production accidentally via shared layouts.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "next-metadata-006",
+    "technology": "nextjs",
+    "category": "Metadata",
+    "categorySlug": "metadata",
+    "slug": "can-client-components-export-metadata",
+    "question": "Can Client Components export metadata?",
+    "shortAnswer": "No — metadata exports are from Server Components/route files.",
+    "detailedAnswer": "Keep page files as server components that render client children. A common mistake is converting page to client and losing metadata.",
+    "commonMistake": "Adding 'use client' to page.tsx and breaking metadata export.",
+    "difficulty": "lead",
+    "type": "debugging",
+    "tags": [
+      "metadata"
+    ]
+  }
+]

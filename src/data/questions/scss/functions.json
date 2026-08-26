@@ -1,0 +1,214 @@
+[
+  {
+    "id": "scss-functions-001",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "what-can-scss-functions-do-vs-mixins",
+    "question": "What can SCSS functions do vs mixins?",
+    "shortAnswer": "Functions return values (colors, numbers, lists) used in properties; they should not emit CSS side effects.",
+    "detailedAnswer": "Keep functions pure. Built-ins live under sass:math, sass:color, sass:map, etc. modules.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-002",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "why-math-div-instead-of-for-division",
+    "question": "Why math.div instead of / for division?",
+    "shortAnswer": "Slash became ambiguous (also separator); sass:math.div is explicit and future-proof.",
+    "detailedAnswer": "Migrate legacy / division. Enable warnings during upgrades.",
+    "example": "@use 'sass:math';\n$half: math.div($w, 2);",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-003",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "how-do-map-get-map-merge-support-token-systems",
+    "question": "How do map.get / map.merge support token systems?",
+    "shortAnswer": "Read and compose token maps without hard-coding keys everywhere; merge themes.",
+    "detailedAnswer": "Fail loudly on missing keys via custom getters that @error. Prevents silent nulls.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-004",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "color-functions-in-modern-sass-guidance",
+    "question": "Color functions in modern Sass — guidance?",
+    "shortAnswer": "Prefer sass:color APIs; many legacy darken/lighten are deprecated in favor of clearer color-space aware functions.",
+    "detailedAnswer": "Design systems often compute on OKLCH/CSS color and limit Sass color math. Know deprecations for interviews.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-005",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "write-a-function-that-returns-a-spacing-token-by-name",
+    "question": "Write a function that returns a spacing token by name.",
+    "shortAnswer": "Accept key, look up in $spacers map, @error if missing, return value.",
+    "detailedAnswer": "Centralizes failures at compile time — better than emitting invalid CSS.",
+    "example": "@function space($k) {\n  @if not map.has-key($spacers, $k) { @error 'Unknown #{$k}'; }\n  @return map.get($spacers, $k);\n}",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-006",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "when-to-error-vs-warn-in-functions",
+    "question": "When to @error vs @warn in functions?",
+    "shortAnswer": "@error fails the build for invalid API use; @warn for deprecations/migrations.",
+    "detailedAnswer": "Libraries should @error on bad keys. Don't warn-spam on every include.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-007",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "list-map-iteration-functions-practical-use",
+    "question": "List/map iteration functions — practical use?",
+    "shortAnswer": "Generate utility classes, CSS variables, or variant selectors from data structures.",
+    "detailedAnswer": "Data-driven CSS beats copy-paste. Keep generators readable and documented.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-008",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "debugging-function-returns-unexpected-null",
+    "question": "Debugging: function returns unexpected null.",
+    "shortAnswer": "Missing map key, wrong namespace, or using deprecated color ops that behave differently.",
+    "detailedAnswer": "Add guards. Unit-test Sass with True/sass-true if critical.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-009",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "can-functions-replace-design-token-packages",
+    "question": "Can functions replace design-token packages?",
+    "shortAnswer": "They can encapsulate access, but source tokens should still be data (maps/JSON) owned centrally.",
+    "detailedAnswer": "Functions are API; maps are data. Don't bury tokens only inside opaque functions without export.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-010",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "interpolation-inside-functions-care",
+    "question": "Interpolation inside functions — care?",
+    "shortAnswer": "Functions primarily return values; building selectors usually belongs in mixins/loops.",
+    "detailedAnswer": "Keep responsibilities clear to avoid unreadable meta-CSS.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-011",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "compare-scss-functions-to-css-calc-min-max-clamp",
+    "question": "Compare SCSS functions to CSS calc/min/max/clamp.",
+    "shortAnswer": "SCSS resolves at build time with known tokens; CSS computes at runtime with relative units/layout.",
+    "detailedAnswer": "Use clamp for fluid type in CSS; use Sass for token algebra known at build.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-012",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "scenario-theme-function-must-support-dark-light",
+    "question": "Scenario: theme function must support dark/light.",
+    "shortAnswer": "Pass theme map or use CSS variables for runtime; Sass function can select compile-time theme builds.",
+    "detailedAnswer": "Multiple theme CSS files vs one file with CSS vars — choose per product needs.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-013",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "lead-standardize-sass-function-libraries-across-brands",
+    "question": "Lead: standardize Sass function libraries across brands.",
+    "shortAnswer": "Shared sass toolkit package, documented function contracts, deprecation policy, and CI compiling sample consumers.",
+    "detailedAnswer": "Breakages ripple widely — semantic versioning required.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "scss-functions-014",
+    "technology": "scss",
+    "category": "Functions",
+    "categorySlug": "functions",
+    "slug": "what-is-meta-type-of-inspection-used-for",
+    "question": "What is meta.type-of / inspection used for?",
+    "shortAnswer": "Guard arguments in public functions (ensure map/number) before computing.",
+    "detailedAnswer": "Defensive library APIs. Pair with clear @error messages.",
+    "difficulty": "lead",
+    "type": "concept",
+    "tags": [
+      "functions"
+    ]
+  }
+]

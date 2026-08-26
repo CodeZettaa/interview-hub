@@ -1,0 +1,92 @@
+[
+  {
+    "id": "nest-architecture-001",
+    "technology": "nestjs",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "is-nest-only-for-microservices-what-default-architecture-fits-most-teams",
+    "question": "Is Nest only for microservices? What default architecture fits most teams?",
+    "shortAnswer": "A modular monolith with clear Nest modules is often best until boundaries demand distribution.",
+    "detailedAnswer": "Nest's DI/modules shine in monoliths. Microservices add ops cost — earn them.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "nest-architecture-002",
+    "technology": "nestjs",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "clean-hexagonal-architecture-mapping-onto-nest",
+    "question": "Clean/hexagonal architecture mapping onto Nest?",
+    "shortAnswer": "Controllers as adapters; services as application/domain; ORM repos as infrastructure providers behind ports.",
+    "detailedAnswer": "Don't over-abstract early, but keep domain pure enough to test. Tokens for ports.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "nest-architecture-003",
+    "technology": "nestjs",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "config-management-best-practices-in-nest",
+    "question": "Config management best practices in Nest?",
+    "shortAnswer": "ConfigModule/validation with Joi/Zod at boot, no raw process.env sprinkled, secrets from vault/env.",
+    "detailedAnswer": "Fail fast on missing config. Separate config per environment. Never commit secrets.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "nest-architecture-004",
+    "technology": "nestjs",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "scenario-circular-dependency-between-ordersmodule-and-usersmodule",
+    "question": "Scenario: circular dependency between OrdersModule and UsersModule.",
+    "shortAnswer": "Extract shared kernel or interactions via events/application service in a higher module; avoid bidirectional imports.",
+    "detailedAnswer": "forwardRef is a bandage. Redesign ownership of the relationship.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "nest-architecture-005",
+    "technology": "nestjs",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "how-do-you-approach-background-jobs-in-nest-apps",
+    "question": "How do you approach background jobs in Nest apps?",
+    "shortAnswer": "Queues (Bull/BullMQ) with dedicated processors, retries, and separate scaling from HTTP pods.",
+    "detailedAnswer": "Keep job handlers idempotent. Observe lag. Don't run heavy jobs on web processes without isolation.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "nest-architecture-006",
+    "technology": "nestjs",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "lead-evolve-a-nest-monolith-toward-service-extraction",
+    "question": "Lead: evolve a Nest monolith toward service extraction.",
+    "shortAnswer": "Identify bounded contexts with separate DBs need, extract module to package to service, introduce anti-corruption layers.",
+    "detailedAnswer": "Strangler pattern via gateway. Measure independently scalable parts. Resist premature split of every module.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  }
+]

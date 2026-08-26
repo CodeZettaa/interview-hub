@@ -1,0 +1,94 @@
+[
+  {
+    "id": "nest-modules-001",
+    "technology": "nestjs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "what-is-a-nestjs-module-and-why-does-it-exist",
+    "question": "What is a NestJS module and why does it exist?",
+    "shortAnswer": "A class annotated with @Module that groups providers, controllers, and imports/exports — the DI boundary.",
+    "detailedAnswer": "Modules organize features and control which providers are visible. Root AppModule imports feature modules. Without modular boundaries, the DI graph becomes unmaintainable.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "nest-modules-002",
+    "technology": "nestjs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "imports-vs-exports-vs-providers-in-module-differences",
+    "question": "imports vs exports vs providers in @Module — differences?",
+    "shortAnswer": "providers: created in this module; exports: make providers available to importers; imports: bring in other modules' exports.",
+    "detailedAnswer": "Forgetting to export a shared service is a classic DI error. Controllers are not exported — only providers are.",
+    "commonMistake": "Importing a module but not exporting the service you need from it.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "nest-modules-003",
+    "technology": "nestjs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "what-are-global-modules-and-when-are-they-appropriate",
+    "question": "What are global modules and when are they appropriate?",
+    "shortAnswer": "Modules marked @Global() export providers everywhere without re-importing — use sparingly for cross-cutting infra.",
+    "detailedAnswer": "Config, logging, and database modules are common. Overusing globals hides dependencies and hurts testability.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "nest-modules-004",
+    "technology": "nestjs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "dynamic-modules-forroot-forrootasync-why",
+    "question": "Dynamic modules (forRoot/forRootAsync) — why?",
+    "shortAnswer": "Configure providers at runtime (e.g., connection options) while keeping a clean static API for consumers.",
+    "detailedAnswer": "forRootAsync injects ConfigService. Return DynamicModule with module/providers/exports. Essential for libraries.",
+    "example": "TypeOrmModule.forRootAsync({ useFactory: (cfg) => ({...}), inject: [ConfigService] })",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "nest-modules-005",
+    "technology": "nestjs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "feature-module-vs-shared-module-vs-core-module-how-do-you-split",
+    "question": "Feature module vs shared module vs core module — how do you split?",
+    "shortAnswer": "Feature: domain verticals; shared: reusable helpers used by many features; core: singleton infra imported once.",
+    "detailedAnswer": "Avoid circular feature imports — extract shared kernels. Align modules with bounded contexts when possible.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "modules"
+    ]
+  },
+  {
+    "id": "nest-modules-006",
+    "technology": "nestjs",
+    "category": "Modules",
+    "categorySlug": "modules",
+    "slug": "lead-structure-nest-modules-for-a-multi-team-monorepo-api",
+    "question": "Lead: structure Nest modules for a multi-team monorepo API.",
+    "shortAnswer": "App shell + domain libraries as Nest packages, clear public module APIs, no deep cross-feature imports.",
+    "detailedAnswer": "Enforce dependency rules in lint. Version shared libs. Keep Auth/Config as platform modules. Document module ownership.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "modules"
+    ]
+  }
+]

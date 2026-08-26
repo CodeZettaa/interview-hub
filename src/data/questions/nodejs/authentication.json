@@ -1,0 +1,92 @@
+[
+  {
+    "id": "node-authentication-001",
+    "technology": "nodejs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "session-cookies-vs-jwt-in-node-apis-trade-offs",
+    "question": "Session cookies vs JWT in Node APIs — trade-offs?",
+    "shortAnswer": "Sessions: server-side revocation easy, sticky/store needed; JWT: stateless verification, harder revocation, size/claims care.",
+    "detailedAnswer": "Prefer httpOnly Secure SameSite cookies for browsers. Don't store sensitive data in JWT payloads. Rotate secrets/keys.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "auth"
+    ]
+  },
+  {
+    "id": "node-authentication-002",
+    "technology": "nodejs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "how-do-you-store-passwords-correctly",
+    "question": "How do you store passwords correctly?",
+    "shortAnswer": "Use strong KDFs (argon2id/bcrypt/scrypt) with per-password salts; never reversible encryption for passwords.",
+    "detailedAnswer": "Tune work factors. Migrate hashes on login when upgrading algorithms. Never log passwords.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-authentication-003",
+    "technology": "nodejs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "implementing-refresh-token-rotation-key-points",
+    "question": "Implementing refresh token rotation — key points?",
+    "shortAnswer": "Short-lived access tokens, rotating refresh tokens, detect reuse (theft), store hashed refresh tokens server-side.",
+    "detailedAnswer": "Reuse detection should revoke the family. Transmit securely. Prefer opaque refresh tokens over fat JWTs for refresh.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "node-authentication-004",
+    "technology": "nodejs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "oauth2-authorization-code-pkce-why-for-spas-mobile",
+    "question": "OAuth2 authorization code + PKCE — why for SPAs/mobile?",
+    "shortAnswer": "Prevents auth code interception without a secure client secret; PKCE binds the code to the client instance.",
+    "detailedAnswer": "Confidential server apps still use secrets. Understand redirect URI exact matching. Don't invent OAuth.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "node-authentication-005",
+    "technology": "nodejs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "where-should-auth-middleware-run-relative-to-rate-limiting",
+    "question": "Where should auth middleware run relative to rate limiting?",
+    "shortAnswer": "Rate-limit early (including unauthenticated), then authenticate, then authorize — but protect login endpoints specially.",
+    "detailedAnswer": "Credential stuffing needs strict limits on /login. Authenticated rate limits may be per-user. Order is an interview favorite.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "node-authentication-006",
+    "technology": "nodejs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "lead-multi-service-auth-for-a-node-platform",
+    "question": "Lead: multi-service auth for a Node platform?",
+    "shortAnswer": "Central IdP/OIDC, gateway validation or sidecar JWKS cache, service-to-service mTLS or signed tokens, and consistent claim schemas.",
+    "detailedAnswer": "Avoid each service inventing auth. Propagate correlation IDs. Plan revocation and key rotation. Document threat model.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "authentication"
+    ]
+  }
+]

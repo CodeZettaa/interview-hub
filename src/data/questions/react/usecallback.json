@@ -1,0 +1,77 @@
+[
+  {
+    "id": "react-usecallback-001",
+    "technology": "react",
+    "category": "useCallback",
+    "categorySlug": "usecallback",
+    "slug": "what-does-usecallback-do",
+    "question": "What does useCallback do?",
+    "shortAnswer": "Returns a memoized callback that changes only when deps change.",
+    "detailedAnswer": "Useful when passing functions to memoized children or as effect deps. Not free—has its own cost.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "usecallback"
+    ]
+  },
+  {
+    "id": "react-usecallback-002",
+    "technology": "react",
+    "category": "useCallback",
+    "categorySlug": "usecallback",
+    "slug": "usecallback-vs-usememo-for-functions",
+    "question": "useCallback vs useMemo for functions?",
+    "shortAnswer": "useCallback(fn, deps) ≡ useMemo(() => fn, deps); prefer useCallback for readability.",
+    "detailedAnswer": "Same underlying idea: stable function identity.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "usecallback"
+    ]
+  },
+  {
+    "id": "react-usecallback-003",
+    "technology": "react",
+    "category": "useCallback",
+    "categorySlug": "usecallback",
+    "slug": "when-does-usecallback-actually-help",
+    "question": "When does useCallback actually help?",
+    "shortAnswer": "When a child is React.memo and would re-render from new function props, or when used in dependency arrays.",
+    "detailedAnswer": "Without memoized consumers, useCallback often does nothing useful.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "usecallback"
+    ]
+  },
+  {
+    "id": "react-usecallback-004",
+    "technology": "react",
+    "category": "useCallback",
+    "categorySlug": "usecallback",
+    "slug": "stale-closure-bugs-with-usecallback",
+    "question": "Stale closure bugs with useCallback?",
+    "shortAnswer": "Missing deps capture old state; over-empty deps are a common trap.",
+    "detailedAnswer": "Use functional setState or refs for latest values when intentionally stabilizing callbacks.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "usecallback"
+    ]
+  },
+  {
+    "id": "react-usecallback-005",
+    "technology": "react",
+    "category": "useCallback",
+    "categorySlug": "usecallback",
+    "slug": "refactor-child-re-renders-every-parent-keystroke-due-to-inline-handlers-options",
+    "question": "Refactor: child re-renders every parent keystroke due to inline handlers. Options?",
+    "shortAnswer": "Memoize child + useCallback, lift less state, or split components so inputs don't rerender heavy trees.",
+    "detailedAnswer": "Often component split beats memo theater.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "usecallback"
+    ]
+  }
+]

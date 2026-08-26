@@ -1,0 +1,183 @@
+[
+  {
+    "id": "css-responsive-001",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "responsive-vs-adaptive",
+    "question": "What is responsive design vs adaptive design?",
+    "shortAnswer": "Responsive fluidly reflows; adaptive often switches discrete layouts/breakpoints.",
+    "detailedAnswer": "Modern sites mix both: fluid type/grids plus breakpoint redesigns.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-002",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "mobile-first-media-queries",
+    "question": "Explain mobile-first media queries.",
+    "shortAnswer": "Base styles for small screens; min-width queries enhance upward.",
+    "detailedAnswer": "Avoid fighting desktop-first overrides. Test real devices, not only narrow desktop windows.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-003",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "viewport-meta",
+    "question": "Viewport meta tag — what does it do?",
+    "shortAnswer": "Controls layout viewport on mobile so CSS pixels match device appropriately.",
+    "detailedAnswer": "width=device-width, initial-scale=1 is standard. Accessibility: avoid disabling zoom.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-004",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "container-vs-media-queries",
+    "question": "Container queries vs media queries?",
+    "shortAnswer": "Container queries respond to parent size; media queries to viewport/device features.",
+    "detailedAnswer": "@container enables component-level responsiveness in different layout contexts.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-005",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "fluid-typography",
+    "question": "Fluid typography approaches?",
+    "shortAnswer": "clamp() with viewport units, or container-based type; modular scales.",
+    "detailedAnswer": "Avoid tiny/huge extremes. Prefer rem roots. Test zoom and localization length.",
+    "example": "font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-006",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "choosing-breakpoints",
+    "question": "How do you choose breakpoints?",
+    "shortAnswer": "Content-driven when layout breaks, not device pantheon lists.",
+    "detailedAnswer": "Start from design comps but validate with real content. Prefer fewer breakpoints.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-007",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "responsive-images-css",
+    "question": "Responsive images in CSS context?",
+    "shortAnswer": "Use max-width:100%; height:auto; object-fit; optionally image-set.",
+    "detailedAnswer": "Still need HTML srcset/picture for art direction and bandwidth.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-008",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "responsive-nav-patterns",
+    "question": "Common responsive nav patterns?",
+    "shortAnswer": "Priority+ overflow, hamburger disclosure, multi-level with focus traps.",
+    "detailedAnswer": "Ensure keyboard access and visible labels. Don't rely on hover alone.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-009",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "svh-lvh-dvh",
+    "question": "What are svh, lvh, dvh?",
+    "shortAnswer": "Small/large/dynamic viewport height units addressing mobile browser chrome.",
+    "detailedAnswer": "100vh bugs on mobile; prefer dvh/svh thoughtfully for full-screen sections.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-010",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "preference-media-queries",
+    "question": "How do prefers-reduced-motion and prefers-color-scheme fit responsive thinking?",
+    "shortAnswer": "Respond to user preferences like other environmental features.",
+    "detailedAnswer": "Media queries aren't only width. Build inclusive defaults.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-011",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "debug-mid-breakpoint-breakage",
+    "question": "Debug a layout that breaks only between two widths.",
+    "shortAnswer": "Find the conflicting query, inflexible widths, overflow ancestors, or grid track mins.",
+    "detailedAnswer": "Use DevTools responsive mode and show media query ranges.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "responsive"
+    ]
+  },
+  {
+    "id": "css-responsive-012",
+    "technology": "css",
+    "category": "Responsive",
+    "categorySlug": "responsive",
+    "slug": "responsive-tokens-architecture",
+    "question": "Architect responsive tokens and breakpoints for a DS.",
+    "shortAnswer": "Shared breakpoint aliases, container query names, fluid type/spacing tokens, documented usage.",
+    "detailedAnswer": "Avoid per-feature one-off breakpoints proliferating.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "responsive"
+    ]
+  }
+]

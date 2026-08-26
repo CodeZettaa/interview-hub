@@ -1,0 +1,198 @@
+[
+  {
+    "id": "html-forms-001",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "every-input-needs-label",
+    "question": "Why should every input have a <label>?",
+    "shortAnswer": "Labels give accessible names and enlarge click/tap targets.",
+    "detailedAnswer": "Associate with for/id or wrap the control. Placeholder is not a label. Visible labels survive autofill and translation better.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-002",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "required-vs-js-validation",
+    "question": "What does the required attribute do vs JavaScript validation?",
+    "shortAnswer": "required participates in native constraint validation; JS can add custom rules and UX.",
+    "detailedAnswer": "Native validation is progressive and works without JS, but messaging/styling is limited. Combine both carefully; don't disable native without replacement.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-003",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "name-vs-id-form-controls",
+    "question": "Explain name vs id on form controls.",
+    "shortAnswer": "id is unique for labels/anchors; name is the key submitted in form data.",
+    "detailedAnswer": "Multiple radios share a name. id must be unique in the document. Missing name means the field won't submit.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-004",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "fieldset-and-legend",
+    "question": "How do fieldset and legend improve forms?",
+    "shortAnswer": "They group related controls and name the group for AT.",
+    "detailedAnswer": "Ideal for radio sets and address blocks. Don't nest fieldsets excessively. Legend should be concise.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-005",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "autocomplete-attribute",
+    "question": "What is autocomplete and why does it matter?",
+    "shortAnswer": "Hints browsers/password managers how to fill fields (email, current-password, etc.).",
+    "detailedAnswer": "Correct tokens improve conversion and security (password managers). Wrong tokens frustrate users and cause autofill bugs.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-006",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "constraint-validation-api",
+    "question": "How does constraint validation API work?",
+    "shortAnswer": "checkValidity/reportValidity and setCustomValidity integrate with :valid/:invalid.",
+    "detailedAnswer": "Listen to invalid events. Custom messages must be cleared when fixed. Useful for cross-field rules.",
+    "example": "input.setCustomValidity(ok ? '' : 'Passwords must match');",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-007",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "form-get-vs-post",
+    "question": "When do you choose GET vs POST for forms?",
+    "shortAnswer": "GET for idempotent safe queries; POST for mutations or sensitive/large payloads.",
+    "detailedAnswer": "GET puts data in the URL (history, logs, length limits). POST for login, checkout, uploads.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-008",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "accessible-multi-step-form",
+    "question": "How do you build an accessible multi-step form?",
+    "shortAnswer": "One logical form or wizard with clear step status, preserved data, and focus management per step.",
+    "detailedAnswer": "Announce step changes. Don't lose entered data. Validate per step and summarize errors before submit.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-009",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "disabling-native-form-submit",
+    "question": "What are the risks of disabling native form submit?",
+    "shortAnswer": "You may break Enter-to-submit, progressive enhancement, and password manager flows.",
+    "detailedAnswer": "If using preventDefault, reimplement keyboard submit and validation thoroughly.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-010",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "input-types-benefits-pitfalls",
+    "question": "Explain input types email, tel, url, number — benefits and pitfalls.",
+    "shortAnswer": "They change mobile keyboards and enable native validation, but number has quirks for IDs/Zips.",
+    "detailedAnswer": "Use text + inputmode when spin buttons or scientific notation hurt UX. Pattern can refine validation.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-011",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "file-input-labeling",
+    "question": "How should file inputs be labeled and constrained?",
+    "shortAnswer": "Visible label, accept for hints, server-side validation always; multiple when needed.",
+    "detailedAnswer": "accept is not security. Show selected filenames. Consider drag-drop as enhancement only.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-012",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "enctype-multipart",
+    "question": "What is enctype multipart/form-data and when is it required?",
+    "shortAnswer": "Required for file uploads so binary parts are encoded correctly.",
+    "detailedAnswer": "Default urlencoded is fine for text fields. JSON APIs often bypass classic enctypes via fetch.",
+    "difficulty": "lead",
+    "type": "concept",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "html-forms-013",
+    "technology": "html",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "form-system-design-api",
+    "question": "Design a form system API for a design system team.",
+    "shortAnswer": "Composable Field, Label, Hint, Error with consistent ids, describedby wiring, and tokens.",
+    "detailedAnswer": "Centralize a11y contracts so product teams can't ship unlabeled inputs. Document validation patterns.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "forms"
+    ]
+  }
+]

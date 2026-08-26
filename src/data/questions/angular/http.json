@@ -1,0 +1,78 @@
+[
+  {
+    "id": "ng-http-001",
+    "technology": "angular",
+    "category": "HTTP",
+    "categorySlug": "http",
+    "slug": "how-do-you-make-http-calls-in-angular",
+    "question": "How do you make HTTP calls in Angular?",
+    "shortAnswer": "Inject HttpClient and call get/post/put/delete which return Observables.",
+    "detailedAnswer": "Provide HttpClient via provideHttpClient(). Prefer typed responses. Handle errors with catchError. Unsubscribe or use firstValueFrom carefully.",
+    "example": "this.http.get<User[]>('/api/users')",
+    "difficulty": "mid",
+    "type": "output",
+    "tags": [
+      "http"
+    ]
+  },
+  {
+    "id": "ng-http-002",
+    "technology": "angular",
+    "category": "HTTP",
+    "categorySlug": "http",
+    "slug": "why-should-you-not-subscribe-in-services-just-to-store-data",
+    "question": "Why should you not subscribe in services just to store data?",
+    "shortAnswer": "Prefer returning Observables/signals to callers; services that subscribe hide cancellation and create leaks.",
+    "detailedAnswer": "Expose cold Observables or signal stores updated intentionally. Let components/async pipe manage subscription lifetime.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "http"
+    ]
+  },
+  {
+    "id": "ng-http-003",
+    "technology": "angular",
+    "category": "HTTP",
+    "categorySlug": "http",
+    "slug": "how-do-you-handle-http-errors-consistently",
+    "question": "How do you handle HTTP errors consistently?",
+    "shortAnswer": "Use interceptors for cross-cutting error mapping and catchError in feature pipelines for local recovery.",
+    "detailedAnswer": "Normalize error shapes. Don't swallow errors silently. Retry only idempotent GETs with backoff.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "http"
+    ]
+  },
+  {
+    "id": "ng-http-004",
+    "technology": "angular",
+    "category": "HTTP",
+    "categorySlug": "http",
+    "slug": "what-does-httpclient-observe-response-vs-events-give-you",
+    "question": "What does HttpClient observe: 'response' vs 'events' give you?",
+    "shortAnswer": "Full HttpResponse including headers/status, or upload/download progress events.",
+    "detailedAnswer": "Default observe body only. Use events for progress bars. Type the generic for body.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "http"
+    ]
+  },
+  {
+    "id": "ng-http-005",
+    "technology": "angular",
+    "category": "HTTP",
+    "categorySlug": "http",
+    "slug": "how-do-you-cancel-an-in-flight-http-request-when-navigating-away",
+    "question": "How do you cancel an in-flight HTTP request when navigating away?",
+    "shortAnswer": "Unsubscribe (async pipe / takeUntilDestroyed) or switchMap in a stream that completes on destroy.",
+    "detailedAnswer": "HttpClient aborts when unsubscribed. switchMap cancels previous searches. Don't leave orphan subscriptions.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "http"
+    ]
+  }
+]

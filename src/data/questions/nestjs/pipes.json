@@ -1,0 +1,93 @@
+[
+  {
+    "id": "nest-pipes-001",
+    "technology": "nestjs",
+    "category": "Pipes",
+    "categorySlug": "pipes",
+    "slug": "what-are-nest-pipes-used-for",
+    "question": "What are Nest pipes used for?",
+    "shortAnswer": "Transform and/or validate input before it reaches the handler — often with class-transformer/validator.",
+    "detailedAnswer": "Built-ins: ValidationPipe, ParseIntPipe, etc. Can be param-scoped or global.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "pipes"
+    ]
+  },
+  {
+    "id": "nest-pipes-002",
+    "technology": "nestjs",
+    "category": "Pipes",
+    "categorySlug": "pipes",
+    "slug": "validationpipe-with-whitelist-forbidnonwhitelisted-why",
+    "question": "ValidationPipe with whitelist/forbidNonWhitelisted — why?",
+    "shortAnswer": "Strips or rejects unknown properties to prevent mass assignment and unexpected fields.",
+    "detailedAnswer": "Always enable in APIs accepting bodies. Pair with DTO classes. This is a security best practice interview staple.",
+    "example": "new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true, transform: true })",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "nest-pipes-003",
+    "technology": "nestjs",
+    "category": "Pipes",
+    "categorySlug": "pipes",
+    "slug": "transform-pipes-vs-validate-only-examples",
+    "question": "Transform pipes vs validate-only — examples?",
+    "shortAnswer": "ParseUUIDPipe transforms/validates path ids; custom pipes can normalize phone numbers then validate.",
+    "detailedAnswer": "Keep pipes focused. Heavy business validation may belong in domain services.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "pipes"
+    ]
+  },
+  {
+    "id": "nest-pipes-004",
+    "technology": "nestjs",
+    "category": "Pipes",
+    "categorySlug": "pipes",
+    "slug": "where-should-pipes-be-registered-global-vs-param",
+    "question": "Where should pipes be registered: global vs param?",
+    "shortAnswer": "Global for consistent DTO validation; param-level for specific parsers; avoid duplicate conflicting pipes.",
+    "detailedAnswer": "Global ValidationPipe is common. Param pipes for IDs keep handlers clean.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "pipes"
+    ]
+  },
+  {
+    "id": "nest-pipes-005",
+    "technology": "nestjs",
+    "category": "Pipes",
+    "categorySlug": "pipes",
+    "slug": "debugging-validationpipe-not-running-on-a-nested-dto",
+    "question": "Debugging: ValidationPipe not running on a nested DTO.",
+    "shortAnswer": "Missing @ValidateNested/@Type(() => NestedDto) or transform:false.",
+    "detailedAnswer": "class-transformer needs type metadata for nested objects. Add tests for nested payloads.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "pipes"
+    ]
+  },
+  {
+    "id": "nest-pipes-006",
+    "technology": "nestjs",
+    "category": "Pipes",
+    "categorySlug": "pipes",
+    "slug": "lead-standardize-input-validation-across-many-nest-services",
+    "question": "Lead: standardize input validation across many Nest services?",
+    "shortAnswer": "Shared ValidationPipe config, DTO lint rules, OpenAPI from DTOs, and reject unknown fields org-wide.",
+    "detailedAnswer": "Document error response shape. Version DTOs carefully. Prefer shared lib for common constraints.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "pipes"
+    ]
+  }
+]

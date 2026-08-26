@@ -1,0 +1,93 @@
+[
+  {
+    "id": "node-security-001",
+    "technology": "nodejs",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "what-is-prototype-pollution-and-how-does-it-show-up-in-node",
+    "question": "What is prototype pollution and how does it show up in Node?",
+    "shortAnswer": "Merging untrusted objects into `{}` can alter Object.prototype if __proto__ is honored.",
+    "detailedAnswer": "Use safe merge libs, Object.create(null), and freeze critical objects. Validate JSON. Patch outdated deps.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-security-002",
+    "technology": "nodejs",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "how-do-you-prevent-ssrf-in-a-node-url-fetching-feature",
+    "question": "How do you prevent SSRF in a Node URL-fetching feature?",
+    "shortAnswer": "Allowlist schemes/hosts, block link-local/metadata IPs, resolve DNS carefully, and don't follow redirects blindly.",
+    "detailedAnswer": "Cloud metadata endpoints (169.254.169.254) are classic targets. Parse URLs correctly — don't blacklist naively.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-security-003",
+    "technology": "nodejs",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "child-process-with-user-input-safe-patterns",
+    "question": "child_process with user input — safe patterns?",
+    "shortAnswer": "Avoid shell; use execFile/spawn with arg arrays; allowlist commands; never concatenate untrusted strings into shells.",
+    "detailedAnswer": "Shell injection is still common. Prefer no user-controlled commands at all.",
+    "commonMistake": "exec(`ls ${userDir}`) with shell:true.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-security-004",
+    "technology": "nodejs",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "dependency-supply-chain-hardening-for-node",
+    "question": "Dependency supply-chain hardening for Node?",
+    "shortAnswer": "Lockfiles, npm audit/OSV in CI, pinned versions, ignore scripts when possible, and review install hooks.",
+    "detailedAnswer": "Use private registries for critical orgs. Monitor for typosquatting. Reproducible builds matter.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-security-005",
+    "technology": "nodejs",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "helmet-and-security-headers-enough",
+    "question": "Helmet and security headers — enough?",
+    "shortAnswer": "Necessary baseline (CSP, HSTS, etc.) but not sufficient alone — authz, validation, and XSS sinks still matter.",
+    "detailedAnswer": "CSP design is hard with third-party scripts. Headers complement secure coding, not replace it.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-security-006",
+    "technology": "nodejs",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "lead-threat-model-a-public-node-api-gateway",
+    "question": "Lead: threat model a public Node API gateway.",
+    "shortAnswer": "Enumerate STRIDE, trust boundaries, abuse cases (bots, SSRF, auth bypass), logging/PII, and WAF/rate-limit layers.",
+    "detailedAnswer": "Prioritize fixes by risk. Red-team auth and tenancy. Make security reviews part of architecture gates.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "security"
+    ]
+  }
+]

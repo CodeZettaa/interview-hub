@@ -1,0 +1,93 @@
+[
+  {
+    "id": "next-deployment-001",
+    "technology": "nextjs",
+    "category": "Deployment",
+    "categorySlug": "deployment",
+    "slug": "what-is-required-to-deploy-a-next-js-app-router-app",
+    "question": "What is required to deploy a Next.js App Router app?",
+    "shortAnswer": "A platform supporting Node (and optionally Edge), env vars, build (`next build`), and correct output mode.",
+    "detailedAnswer": "Vercel is turnkey; Node hosts need `next start` or adapters. Configure image optimization and caching headers.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "deployment"
+    ]
+  },
+  {
+    "id": "next-deployment-002",
+    "technology": "nextjs",
+    "category": "Deployment",
+    "categorySlug": "deployment",
+    "slug": "what-is-output-standalone-useful-for",
+    "question": "What is `output: 'standalone'` useful for?",
+    "shortAnswer": "Creates a minimal Node deployment folder for Docker/self-hosting.",
+    "detailedAnswer": "Copy static assets correctly. Smaller images than shipping full node_modules naively. Pair with multi-stage Docker builds.",
+    "example": "// next.config.js\nmodule.exports = { output: 'standalone' };",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "deployment"
+    ]
+  },
+  {
+    "id": "next-deployment-003",
+    "technology": "nextjs",
+    "category": "Deployment",
+    "categorySlug": "deployment",
+    "slug": "how-do-env-vars-work-between-build-and-runtime-in-next",
+    "question": "How do env vars work between build and runtime in Next?",
+    "shortAnswer": "NEXT_PUBLIC_* inlined at build; server env read at runtime; secrets must not use NEXT_PUBLIC_.",
+    "detailedAnswer": "Misusing public prefix leaks secrets. Rebuild when public env changes. Use platform secret stores.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "next-deployment-004",
+    "technology": "nextjs",
+    "category": "Deployment",
+    "categorySlug": "deployment",
+    "slug": "how-do-you-run-next-js-behind-a-reverse-proxy",
+    "question": "How do you run Next.js behind a reverse proxy?",
+    "shortAnswer": "Set trust/host configuration as needed, forward proto/host headers, and ensure asset prefixes if under subpath.",
+    "detailedAnswer": "Terminate TLS at proxy. Align cookie Secure flags. Test redirects don't break hosts.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "deployment"
+    ]
+  },
+  {
+    "id": "next-deployment-005",
+    "technology": "nextjs",
+    "category": "Deployment",
+    "categorySlug": "deployment",
+    "slug": "preview-deployments-what-should-differ-from-production",
+    "question": "Preview deployments: what should differ from production?",
+    "shortAnswer": "Separate env, noindex, isolated data/secrets, and auth gates for private previews.",
+    "detailedAnswer": "Never point previews at prod writable DBs without safeguards. Use branch-specific env.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "deployment"
+    ]
+  },
+  {
+    "id": "next-deployment-006",
+    "technology": "nextjs",
+    "category": "Deployment",
+    "categorySlug": "deployment",
+    "slug": "lead-choose-vercel-vs-self-hosted-kubernetes-for-next",
+    "question": "Lead: choose Vercel vs self-hosted Kubernetes for Next.",
+    "shortAnswer": "Vercel for speed/DX/edge; K8s for control/compliance/custom networking — weigh ops cost, caching, and image optimization needs.",
+    "detailedAnswer": "Hybrid exists (app on K8s, assets on CDN). Decide based on team skills, regions, and regulatory constraints — not hype.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "deployment"
+    ]
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "next-app-router-001",
+    "technology": "nextjs",
+    "category": "App Router",
+    "categorySlug": "app-router",
+    "slug": "what-is-the-app-router-in-next-js-and-how-does-it-differ-from-the-pages-router",
+    "question": "What is the App Router in Next.js, and how does it differ from the Pages Router?",
+    "shortAnswer": "App Router uses the `app/` directory with React Server Components by default; Pages Router uses `pages/` with client-centric page components.",
+    "detailedAnswer": "App Router introduces nested layouts, loading/error UI, parallel/intercepting routes, and first-class server components. Routing is filesystem-based under `app`. Data fetching moved toward async server components and server actions rather than getServerSideProps/getStaticProps. Migration can be incremental, but mental models for caching and boundaries differ substantially.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "app-router",
+      "pages-router"
+    ]
+  },
+  {
+    "id": "next-app-router-002",
+    "technology": "nextjs",
+    "category": "App Router",
+    "categorySlug": "app-router",
+    "slug": "how-do-nested-layouts-work-in-the-app-router",
+    "question": "How do nested layouts work in the App Router?",
+    "shortAnswer": "Layouts wrap child segments and preserve state across navigations within that subtree.",
+    "detailedAnswer": "`layout.tsx` wraps `page.tsx` and nested routes. Root layout is required and typically holds `<html>`/`<body>`. Shared UI (nav, shell) lives in layouts so it does not remount on soft navigation. Soft navigation preserves client state in layouts above the changing segment.",
+    "example": "app/dashboard/layout.tsx wraps app/dashboard/page.tsx and app/dashboard/settings/page.tsx",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "app-router"
+    ]
+  },
+  {
+    "id": "next-app-router-003",
+    "technology": "nextjs",
+    "category": "App Router",
+    "categorySlug": "app-router",
+    "slug": "what-are-route-groups-and-when-would-you-use-them",
+    "question": "What are route groups and when would you use them?",
+    "shortAnswer": "Folders in parentheses like `(marketing)` organize routes without affecting the URL path.",
+    "detailedAnswer": "Use route groups to apply different layouts (marketing vs app shell) or to co-locate related routes without URL segments. They help structure large apps. Avoid overusing them when a real path segment is clearer for SEO and mental models.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "next-app-router-004",
+    "technology": "nextjs",
+    "category": "App Router",
+    "categorySlug": "app-router",
+    "slug": "explain-loading-tsx-and-error-tsx-in-a-route-segment",
+    "question": "Explain loading.tsx and error.tsx in a route segment.",
+    "shortAnswer": "`loading.tsx` shows an instant loading UI via Suspense; `error.tsx` is an error boundary for that segment.",
+    "detailedAnswer": "Next wraps the segment in Suspense so navigations can show fallbacks. `error.tsx` must be a Client Component and can reset. Errors bubble to the nearest error boundary. Use them to keep shells interactive while content streams.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "app-router"
+    ]
+  },
+  {
+    "id": "next-app-router-005",
+    "technology": "nextjs",
+    "category": "App Router",
+    "categorySlug": "app-router",
+    "slug": "what-are-parallel-routes-and-intercepting-routes-used-for",
+    "question": "What are parallel routes and intercepting routes used for?",
+    "shortAnswer": "Parallel routes render multiple pages in one layout (slots); intercepting routes show another route in the current context (e.g. modal).",
+    "detailedAnswer": "Slots like `@modal` enable dashboards with independent loading states. Intercepting `(.)photo` opens a modal while keeping the underlying page, with deep links still working to the full page. These patterns power polished UX without losing URL semantics.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "app-router"
+    ]
+  },
+  {
+    "id": "next-app-router-006",
+    "technology": "nextjs",
+    "category": "App Router",
+    "categorySlug": "app-router",
+    "slug": "as-a-tech-lead-how-do-you-structure-a-large-app-router-codebase",
+    "question": "As a tech lead, how do you structure a large App Router codebase?",
+    "shortAnswer": "Domain-oriented route segments, shared UI in layouts, clear server/client boundaries, and co-located feature modules.",
+    "detailedAnswer": "Prefer feature folders with colocated components/actions/tests. Keep route files thin. Establish conventions for when to use route groups, parallel slots, and shared libraries. Document caching defaults and auth boundaries early — they dominate production incidents. Use `notFound()` plus `not-found.tsx` for expected misses.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "app-router"
+    ]
+  }
+]

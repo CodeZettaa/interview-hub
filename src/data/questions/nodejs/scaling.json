@@ -1,0 +1,92 @@
+[
+  {
+    "id": "node-scaling-001",
+    "technology": "nodejs",
+    "category": "Scaling",
+    "categorySlug": "scaling",
+    "slug": "vertical-vs-horizontal-scaling-for-node-apps",
+    "question": "Vertical vs horizontal scaling for Node apps?",
+    "shortAnswer": "Vertical: bigger machine; horizontal: more processes/instances behind a load balancer — Node usually scales out.",
+    "detailedAnswer": "Single process limited by one event loop. Combine with clustering/K8s replicas. Statelessness enables horizontal scale.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "scaling"
+    ]
+  },
+  {
+    "id": "node-scaling-002",
+    "technology": "nodejs",
+    "category": "Scaling",
+    "categorySlug": "scaling",
+    "slug": "what-must-be-externalized-to-scale-node-horizontally",
+    "question": "What must be externalized to scale Node horizontally?",
+    "shortAnswer": "Sessions, uploads, job queues, rate-limit counters, and any in-memory singleton state.",
+    "detailedAnswer": "Sticky sessions are a crutch. Use Redis/DB/object storage. Design for multi-instance from day one.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "scaling"
+    ]
+  },
+  {
+    "id": "node-scaling-003",
+    "technology": "nodejs",
+    "category": "Scaling",
+    "categorySlug": "scaling",
+    "slug": "how-do-queues-help-scale-node-workloads",
+    "question": "How do queues help scale Node workloads?",
+    "shortAnswer": "Absorb spikes, retry failures, and move slow work off HTTP request threads.",
+    "detailedAnswer": "Choose at-least-once semantics consciously. Idempotent consumers. Observe lag as a first-class metric.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "scaling"
+    ]
+  },
+  {
+    "id": "node-scaling-004",
+    "technology": "nodejs",
+    "category": "Scaling",
+    "categorySlug": "scaling",
+    "slug": "caching-strategies-in-node-services",
+    "question": "Caching strategies in Node services?",
+    "shortAnswer": "HTTP cache headers, CDN, Redis for hot keys, and in-process LRU cautiously (per instance).",
+    "detailedAnswer": "Cache invalidation and stampedes matter. Don't cache personalized data publicly. Set TTLs and jitter.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "scaling"
+    ]
+  },
+  {
+    "id": "node-scaling-005",
+    "technology": "nodejs",
+    "category": "Scaling",
+    "categorySlug": "scaling",
+    "slug": "scenario-one-noisy-neighbor-tenant-saturates-a-shared-node-api",
+    "question": "Scenario: one noisy neighbor tenant saturates a shared Node API.",
+    "shortAnswer": "Per-tenant rate limits, isolation pools, fair scheduling, and possibly dedicated cells for large tenants.",
+    "detailedAnswer": "Quotas at gateway. Backpressure. Multi-tenant isolation is a senior/lead topic.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "scaling"
+    ]
+  },
+  {
+    "id": "node-scaling-006",
+    "technology": "nodejs",
+    "category": "Scaling",
+    "categorySlug": "scaling",
+    "slug": "lead-capacity-plan-a-node-fleet-for-black-friday",
+    "question": "Lead: capacity plan a Node fleet for Black Friday.",
+    "shortAnswer": "Load test with production-like data, autoscale policies, DB headroom, cache warmups, and degradations (feature flags).",
+    "detailedAnswer": "Practice failovers. Pre-scale. Define brownout modes (disable noncritical). Communicate SLOs.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "scaling"
+    ]
+  }
+]

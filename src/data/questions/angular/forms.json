@@ -1,0 +1,93 @@
+[
+  {
+    "id": "ng-forms-001",
+    "technology": "angular",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "template-driven-vs-reactive-forms-in-angular",
+    "question": "Template-driven vs reactive forms in Angular?",
+    "shortAnswer": "Template-driven uses ngModel in templates; reactive builds FormControl/FormGroup in the class.",
+    "detailedAnswer": "Reactive forms scale better for complex validation and dynamic controls. Template-driven is fine for simple forms. Prefer reactive for enterprise apps.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "ng-forms-002",
+    "technology": "angular",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "how-do-formcontrol-formgroup-and-formarray-relate",
+    "question": "How do FormControl, FormGroup, and FormArray relate?",
+    "shortAnswer": "Controls are leaves; groups nest controls; arrays hold variable-length control lists.",
+    "detailedAnswer": "Compose nested structures for complex models. value/statusChanges observe updates. disable() excludes from values by default.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "ng-forms-003",
+    "technology": "angular",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "how-do-you-create-a-custom-validator",
+    "question": "How do you create a custom validator?",
+    "shortAnswer": "Return a function (AbstractControl) => ValidationErrors | null; async validators return Observable/Promise.",
+    "detailedAnswer": "Register on controls via validators array. Cross-field validators belong on the group. Keep validators pure.",
+    "example": "const forbidden = (c: AbstractControl) =>\n  c.value === 'admin' ? { forbidden: true } : null;",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "ng-forms-004",
+    "technology": "angular",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "how-do-you-show-validation-errors-accessibly",
+    "question": "How do you show validation errors accessibly?",
+    "shortAnswer": "Bind error messages when control touched/dirty, use aria-describedby, and set aria-invalid.",
+    "detailedAnswer": "Don't show errors before interaction unless after submit. Focus first invalid control on submit.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "ng-forms-005",
+    "technology": "angular",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "what-is-the-difference-between-value-and-getrawvalue",
+    "question": "What is the difference between value and getRawValue()?",
+    "shortAnswer": "value omits disabled controls; getRawValue includes them.",
+    "detailedAnswer": "Important when disabling fields for UX but still needing their data on submit.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "forms"
+    ]
+  },
+  {
+    "id": "ng-forms-006",
+    "technology": "angular",
+    "category": "Forms",
+    "categorySlug": "forms",
+    "slug": "design-a-dynamic-form-where-fields-come-from-a-json-schema",
+    "question": "Design a dynamic form where fields come from a JSON schema.",
+    "shortAnswer": "Build FormGroup/FormArray from schema at runtime; render controls with @for; attach validators from metadata.",
+    "detailedAnswer": "Centralize schema→control mapping. Consider performance for large schemas. Validate server-side too.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "forms"
+    ]
+  }
+]

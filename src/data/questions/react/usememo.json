@@ -1,0 +1,78 @@
+[
+  {
+    "id": "react-usememo-001",
+    "technology": "react",
+    "category": "useMemo",
+    "categorySlug": "usememo",
+    "slug": "what-does-usememo-do",
+    "question": "What does useMemo do?",
+    "shortAnswer": "Memoizes a calculated value until dependencies change.",
+    "detailedAnswer": "Use for expensive pure calculations or referential stability for children. Don't memoize everything by default.",
+    "example": "const sorted = useMemo(() => [...items].sort(cmp), [items]);",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "usememo"
+    ]
+  },
+  {
+    "id": "react-usememo-002",
+    "technology": "react",
+    "category": "useMemo",
+    "categorySlug": "usememo",
+    "slug": "when-is-usememo-unnecessary",
+    "question": "When is useMemo unnecessary?",
+    "shortAnswer": "Cheap calculations; premature optimization without measured cost.",
+    "detailedAnswer": "React Compiler may memoize automatically in supporting setups—follow team guidance.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "usememo"
+    ]
+  },
+  {
+    "id": "react-usememo-003",
+    "technology": "react",
+    "category": "useMemo",
+    "categorySlug": "usememo",
+    "slug": "usememo-for-object-identity-why",
+    "question": "useMemo for object identity — why?",
+    "shortAnswer": "Keep the same reference so memoized children skip re-renders when contents unchanged.",
+    "detailedAnswer": "Alternative: move object creation higher or split state. Measure before sprinkling memos.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "usememo"
+    ]
+  },
+  {
+    "id": "react-usememo-004",
+    "technology": "react",
+    "category": "useMemo",
+    "categorySlug": "usememo",
+    "slug": "dependency-mistakes-with-usememo",
+    "question": "Dependency mistakes with useMemo?",
+    "shortAnswer": "Omitting deps yields stale values; unstable deps (new object each render) defeat memoization.",
+    "detailedAnswer": "Stabilize inputs. Prefer primitive deps when possible.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "usememo"
+    ]
+  },
+  {
+    "id": "react-usememo-005",
+    "technology": "react",
+    "category": "useMemo",
+    "categorySlug": "usememo",
+    "slug": "usememo-vs-computing-during-render",
+    "question": "useMemo vs computing during render?",
+    "shortAnswer": "Always prefer simple render computation first; memoize when profiling shows cost or identity needs.",
+    "detailedAnswer": "Clarity beats micro-optimization. Expensive filters on large lists are a good candidate.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "usememo"
+    ]
+  }
+]

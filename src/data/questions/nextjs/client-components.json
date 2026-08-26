@@ -1,0 +1,94 @@
+[
+  {
+    "id": "next-client-components-001",
+    "technology": "nextjs",
+    "category": "Client Components",
+    "categorySlug": "client-components",
+    "slug": "what-does-the-use-client-directive-mean",
+    "question": "What does the `'use client'` directive mean?",
+    "shortAnswer": "It marks a module and its transitive imports as part of the client bundle boundary.",
+    "detailedAnswer": "The file becomes a Client Component entry. Children imported into it are also client-side unless they are server-imported separately above the boundary. It does not mean 'only runs on client' — Client Components still SSR/hydrate.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "client-components"
+    ]
+  },
+  {
+    "id": "next-client-components-002",
+    "technology": "nextjs",
+    "category": "Client Components",
+    "categorySlug": "client-components",
+    "slug": "do-client-components-still-render-on-the-server",
+    "question": "Do Client Components still render on the server?",
+    "shortAnswer": "Yes — they SSR for HTML, then hydrate on the client.",
+    "detailedAnswer": "Initial HTML can include client component output. Hydration attaches listeners. Avoid browser-only APIs during render; use effects or dynamic import with `ssr: false` when necessary.",
+    "commonMistake": "Assuming 'use client' skips SSR entirely.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "client-components"
+    ]
+  },
+  {
+    "id": "next-client-components-003",
+    "technology": "nextjs",
+    "category": "Client Components",
+    "categorySlug": "client-components",
+    "slug": "when-should-a-component-be-a-client-component",
+    "question": "When should a component be a Client Component?",
+    "shortAnswer": "When it needs hooks, browser APIs, event handlers, or client-only libraries.",
+    "detailedAnswer": "Forms with controlled inputs, charts with window size, and auth UI with local state are common. Prefer small islands. If only a button is interactive, extract that button as client.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "client-components"
+    ]
+  },
+  {
+    "id": "next-client-components-004",
+    "technology": "nextjs",
+    "category": "Client Components",
+    "categorySlug": "client-components",
+    "slug": "how-do-you-pass-data-from-a-server-component-to-a-client-component",
+    "question": "How do you pass data from a Server Component to a Client Component?",
+    "shortAnswer": "Pass serializable props (JSON-like). No functions, classes, or non-serializable values.",
+    "detailedAnswer": "Dates become strings unless handled carefully. Don't pass DB handles. For callbacks, define them inside the Client Component or use server actions as form actions.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "client-components"
+    ]
+  },
+  {
+    "id": "next-client-components-005",
+    "technology": "nextjs",
+    "category": "Client Components",
+    "categorySlug": "client-components",
+    "slug": "what-hydration-mismatch-issues-are-common-in-client-components",
+    "question": "What hydration mismatch issues are common in Client Components?",
+    "shortAnswer": "Rendering different content on server vs client (Date.now, random, locale, window checks).",
+    "detailedAnswer": "Use effects for client-only values, suppress sparingly, or render placeholders until mounted. Ensure deterministic SSR output.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "client-components"
+    ]
+  },
+  {
+    "id": "next-client-components-006",
+    "technology": "nextjs",
+    "category": "Client Components",
+    "categorySlug": "client-components",
+    "slug": "how-does-dynamic-import-with-next-dynamic-help-client-components",
+    "question": "How does dynamic import with `next/dynamic` help Client Components?",
+    "shortAnswer": "Code-split heavy client UI and optionally disable SSR for browser-only widgets.",
+    "detailedAnswer": "Useful for maps/editors. Trade-offs: loading states and SEO for non-SSR content. Prefer RSC + small client islands before blanket dynamic imports.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "performance",
+      "client-components"
+    ]
+  }
+]

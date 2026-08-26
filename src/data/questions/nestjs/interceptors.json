@@ -1,0 +1,92 @@
+[
+  {
+    "id": "nest-interceptors-001",
+    "technology": "nestjs",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "what-are-nest-interceptors",
+    "question": "What are Nest interceptors?",
+    "shortAnswer": "AOP wrappers around handler execution using RxJS Observables — logging, mapping, caching, timeouts.",
+    "detailedAnswer": "Implement NestInterceptor with intercept(context, next). Can alter request/response streams.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "interceptors"
+    ]
+  },
+  {
+    "id": "nest-interceptors-002",
+    "technology": "nestjs",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "interceptor-vs-middleware-vs-filter-response-mapping",
+    "question": "Interceptor vs middleware vs filter — response mapping?",
+    "shortAnswer": "Interceptors map successful responses; exception filters map errors; middleware is lower-level and less Nest-context rich.",
+    "detailedAnswer": "Use ClassSerializerInterceptor for entity shaping. Keep mapping explicit when possible.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "interceptors"
+    ]
+  },
+  {
+    "id": "nest-interceptors-003",
+    "technology": "nestjs",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "how-do-you-implement-a-timeout-interceptor",
+    "question": "How do you implement a timeout interceptor?",
+    "shortAnswer": "Race the handler stream with a timeout operator and throw RequestTimeoutException.",
+    "detailedAnswer": "RxJS timeout on next.handle(). Document limits. Don't timeout long uploads without care.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "interceptors"
+    ]
+  },
+  {
+    "id": "nest-interceptors-004",
+    "technology": "nestjs",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "caching-interceptor-pitfalls",
+    "question": "Caching interceptor pitfalls?",
+    "shortAnswer": "Caching personalized or authz-sensitive responses; weak keys; memory growth; stale data.",
+    "detailedAnswer": "Key by user/tenant when needed. Prefer HTTP/Redis caches with TTLs. Bypass on mutations.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "nest-interceptors-005",
+    "technology": "nestjs",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "scenario-need-to-measure-handler-duration-and-status",
+    "question": "Scenario: need to measure handler duration and status.",
+    "shortAnswer": "Logging interceptor recording start time and tap/finalize on the observable stream.",
+    "detailedAnswer": "Include correlation IDs. Avoid logging huge bodies. Export metrics histograms.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "interceptors"
+    ]
+  },
+  {
+    "id": "nest-interceptors-006",
+    "technology": "nestjs",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "lead-when-interceptors-become-a-dumping-ground-redesign",
+    "question": "Lead: when interceptors become a dumping ground — redesign?",
+    "shortAnswer": "Extract clear cross-cutting modules, limit interceptor count, prefer domain events for business side-effects.",
+    "detailedAnswer": "Too many nested interceptors obscure control flow. Enforce review for new global interceptors.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "interceptors"
+    ]
+  }
+]

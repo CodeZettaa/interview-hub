@@ -1,0 +1,92 @@
+[
+  {
+    "id": "next-seo-001",
+    "technology": "nextjs",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "what-next-js-features-support-seo",
+    "question": "What Next.js features support SEO?",
+    "shortAnswer": "SSR/SSG HTML, Metadata API, sitemaps, robots.txt, semantic structure, and performance (CWV).",
+    "detailedAnswer": "Crawlable content beats pure CSR. Use stable URLs, canonical tags, and structured data where appropriate.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "next-seo-002",
+    "technology": "nextjs",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "how-do-you-add-a-sitemap-in-app-router",
+    "question": "How do you add a sitemap in App Router?",
+    "shortAnswer": "Use `app/sitemap.ts` (or xml) to generate Sitemap standards output.",
+    "detailedAnswer": "Include only canonical URLs. Update as content changes. For huge sites, multiple sitemaps/index files.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "next-seo-003",
+    "technology": "nextjs",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "how-do-you-handle-canonical-urls-with-trailing-slash-and-utm-params",
+    "question": "How do you handle canonical URLs with trailing slash and UTM params?",
+    "shortAnswer": "Define trailingSlash config consistently and set canonical to clean URLs without tracking params.",
+    "detailedAnswer": "Duplicate content from params hurts SEO. Middleware redirects can normalize hosts and slashes.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "next-seo-004",
+    "technology": "nextjs",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "is-client-only-rendering-bad-for-seo",
+    "question": "Is client-only rendering bad for SEO?",
+    "shortAnswer": "Often yes for primary content — crawlers may get empty shells or delayed content.",
+    "detailedAnswer": "Critical content should be in server-rendered HTML. Client enhancements are fine for widgets.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "next-seo-005",
+    "technology": "nextjs",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "how-do-you-implement-json-ld-in-next-js",
+    "question": "How do you implement JSON-LD in Next.js?",
+    "shortAnswer": "Render a `<script type=\"application/ld+json\">` in a Server Component with safe JSON serialization.",
+    "detailedAnswer": "Keep structured data accurate. Validate with rich results tools. Don't inject user content unsafely.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "next-seo-006",
+    "technology": "nextjs",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "lead-seo-regression-after-migrating-to-app-router-approach",
+    "question": "Lead: SEO regression after migrating to App Router — approach?",
+    "shortAnswer": "Compare HTML snapshots, metadata merge bugs, indexing of soft-navigated content, CWV, and canonical rules; fix with golden URL tests in CI.",
+    "detailedAnswer": "Monitor Search Console. Ensure loading states aren't indexed as primary content. Revisit streaming + bot behavior assumptions.",
+    "difficulty": "lead",
+    "type": "debugging",
+    "tags": [
+      "seo"
+    ]
+  }
+]

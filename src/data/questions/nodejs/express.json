@@ -1,0 +1,94 @@
+[
+  {
+    "id": "node-express-001",
+    "technology": "nodejs",
+    "category": "Express Concepts",
+    "categorySlug": "express",
+    "slug": "what-is-express-middleware-and-how-does-the-chain-work",
+    "question": "What is Express middleware and how does the chain work?",
+    "shortAnswer": "Functions (req, res, next) that run in order; next() continues, next(err) jumps to error handlers.",
+    "detailedAnswer": "Order matters: parsers before routes, auth before protected routes, error handlers last. Forgetting next() hangs requests.",
+    "commonMistake": "Async middleware without catching rejections / calling next(err).",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "express"
+    ]
+  },
+  {
+    "id": "node-express-002",
+    "technology": "nodejs",
+    "category": "Express Concepts",
+    "categorySlug": "express",
+    "slug": "how-do-you-structure-a-large-express-app",
+    "question": "How do you structure a large Express app?",
+    "shortAnswer": "Routers per domain, thin controllers, services for logic, centralized error middleware, and config modules.",
+    "detailedAnswer": "Avoid god app.js. Mount routers at paths. Keep middleware declarative. Consider TypeScript + validation layer.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "express"
+    ]
+  },
+  {
+    "id": "node-express-003",
+    "technology": "nodejs",
+    "category": "Express Concepts",
+    "categorySlug": "express",
+    "slug": "app-use-express-json-pitfalls",
+    "question": "app.use(express.json()) pitfalls?",
+    "shortAnswer": "Default limits may be too high/low; applies to all routes if mounted globally; prototype pollution historically mattered.",
+    "detailedAnswer": "Scope parsers. Set explicit limit. Validate with schemas after parse. Don't parse bodies you don't need.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-express-004",
+    "technology": "nodejs",
+    "category": "Express Concepts",
+    "categorySlug": "express",
+    "slug": "error-handling-middleware-signature",
+    "question": "Error-handling middleware signature?",
+    "shortAnswer": "Four args: (err, req, res, next) — Express detects by arity.",
+    "detailedAnswer": "Must be registered after routes. Map domain errors to HTTP statuses. Avoid leaking stack traces in production.",
+    "example": "app.use((err, req, res, next) => {\n  res.status(err.status || 500).json({ error: err.message });\n});",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "express"
+    ]
+  },
+  {
+    "id": "node-express-005",
+    "technology": "nodejs",
+    "category": "Express Concepts",
+    "categorySlug": "express",
+    "slug": "express-vs-fastify-vs-bare-http-trade-offs",
+    "question": "Express vs Fastify vs bare http — trade-offs?",
+    "shortAnswer": "Express: ubiquity/middleware ecosystem; Fastify: schema/perf; bare: control/minimalism.",
+    "detailedAnswer": "Choose based on team, plugins, and validation needs. Perf differences matter at high RPS with profiling evidence.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "express"
+    ]
+  },
+  {
+    "id": "node-express-006",
+    "technology": "nodejs",
+    "category": "Express Concepts",
+    "categorySlug": "express",
+    "slug": "scenario-memory-leak-in-express-after-adding-session-middleware",
+    "question": "Scenario: memory leak in Express after adding session middleware.",
+    "shortAnswer": "In-memory session store grows unbounded in multi-instance or long-lived processes.",
+    "detailedAnswer": "Use Redis/external store. Set TTLs. Sticky sessions alone don't fix memory. Profile heap.",
+    "difficulty": "lead",
+    "type": "debugging",
+    "tags": [
+      "express"
+    ]
+  }
+]

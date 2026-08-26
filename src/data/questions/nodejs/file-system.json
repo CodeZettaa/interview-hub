@@ -1,0 +1,92 @@
+[
+  {
+    "id": "node-file-system-001",
+    "technology": "nodejs",
+    "category": "File System",
+    "categorySlug": "file-system",
+    "slug": "fs-promises-vs-fs-callbacks-vs-sync-apis-which-in-servers",
+    "question": "fs.promises vs fs callbacks vs sync APIs — which in servers?",
+    "shortAnswer": "Prefer promises/async in request paths; avoid sync fs (*Sync) on the event loop in production servers.",
+    "detailedAnswer": "Sync APIs block the loop. Callbacks still work but promises compose better. For CLIs/scripts, sync is sometimes acceptable.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "file-system"
+    ]
+  },
+  {
+    "id": "node-file-system-002",
+    "technology": "nodejs",
+    "category": "File System",
+    "categorySlug": "file-system",
+    "slug": "how-do-you-safely-write-a-file-atomically",
+    "question": "How do you safely write a file atomically?",
+    "shortAnswer": "Write to a temp file in the same directory, then rename (fs.rename) over the target.",
+    "detailedAnswer": "Rename is atomic on same filesystem. Avoid partial reads of half-written configs. fsync when durability requires it.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "file-system"
+    ]
+  },
+  {
+    "id": "node-file-system-003",
+    "technology": "nodejs",
+    "category": "File System",
+    "categorySlug": "file-system",
+    "slug": "what-path-traversal-risks-exist-with-user-provided-filenames",
+    "question": "What path traversal risks exist with user-provided filenames?",
+    "shortAnswer": "Users can pass `../` to escape intended directories if you naively join paths.",
+    "detailedAnswer": "Resolve and ensure the final path stays under an allowlisted root. Prefer generated IDs over raw names. Never trust Content-Disposition filenames blindly.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-file-system-004",
+    "technology": "nodejs",
+    "category": "File System",
+    "categorySlug": "file-system",
+    "slug": "createreadstream-vs-readfile-for-large-files",
+    "question": "createReadStream vs readFile for large files?",
+    "shortAnswer": "Streaming for large/unknown size; readFile loads entire content into memory.",
+    "detailedAnswer": "HTTP file serving should stream with proper headers. readFile is fine for small configs. Memory limits make this a production decision.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "file-system"
+    ]
+  },
+  {
+    "id": "node-file-system-005",
+    "technology": "nodejs",
+    "category": "File System",
+    "categorySlug": "file-system",
+    "slug": "how-does-the-libuv-thread-pool-affect-heavy-fs-workloads",
+    "question": "How does the libuv thread pool affect heavy fs workloads?",
+    "shortAnswer": "Many fs ops share the default pool (UV_THREADPOOL_SIZE, often 4) — saturation increases latency.",
+    "detailedAnswer": "Tune pool size carefully, or use dedicated workers/queues. Don't assume unlimited parallel disk I/O. Measure under load.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "node-file-system-006",
+    "technology": "nodejs",
+    "category": "File System",
+    "categorySlug": "file-system",
+    "slug": "lead-design-a-multi-tenant-file-storage-layer-on-local-disk-s3",
+    "question": "Lead: design a multi-tenant file storage layer on local disk + S3.",
+    "shortAnswer": "Abstract storage interface, quarantine uploads, virus scan async, signed URLs for S3, path isolation per tenant.",
+    "detailedAnswer": "Local disk for temp; durable in object storage. Encrypt at rest. Audit access. Never serve files via unconstrained path joins.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "file-system"
+    ]
+  }
+]

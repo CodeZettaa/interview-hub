@@ -1,0 +1,92 @@
+[
+  {
+    "id": "nest-authorization-001",
+    "technology": "nestjs",
+    "category": "Authorization",
+    "categorySlug": "authorization",
+    "slug": "authentication-vs-authorization-in-nest",
+    "question": "Authentication vs authorization in Nest?",
+    "shortAnswer": "Authn: who is the user; authz: what they may do — guards/policies after identity is known.",
+    "detailedAnswer": "Never equate logged-in with allowed. Check resource ownership server-side.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "authz"
+    ]
+  },
+  {
+    "id": "nest-authorization-002",
+    "technology": "nestjs",
+    "category": "Authorization",
+    "categorySlug": "authorization",
+    "slug": "rbac-with-roles-metadata-limitations",
+    "question": "RBAC with roles metadata — limitations?",
+    "shortAnswer": "Roles are coarse; resource ownership and attributes need more than @Roles('admin').",
+    "detailedAnswer": "Combine roles with resource checks in services/policies. Multi-tenant apps need tenant-scoped authz.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "authorization"
+    ]
+  },
+  {
+    "id": "nest-authorization-003",
+    "technology": "nestjs",
+    "category": "Authorization",
+    "categorySlug": "authorization",
+    "slug": "how-do-you-authorize-user-can-edit-own-post",
+    "question": "How do you authorize user can edit own post?",
+    "shortAnswer": "Load resource, compare ownerId to user.id (or policy check), throw Forbidden if mismatch.",
+    "detailedAnswer": "Don't trust client-provided ownerId. Prefer ID from route plus server lookup. Guards can pre-check with Param.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "authorization"
+    ]
+  },
+  {
+    "id": "nest-authorization-004",
+    "technology": "nestjs",
+    "category": "Authorization",
+    "categorySlug": "authorization",
+    "slug": "casl-or-policy-based-auth-in-nest-why",
+    "question": "CASL or policy-based auth in Nest — why?",
+    "shortAnswer": "Express abilities as rules tested in one place; UI and API can share vocabulary.",
+    "detailedAnswer": "Guards invoke abilities. Keep rule definitions versioned. Test policies thoroughly.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "authorization"
+    ]
+  },
+  {
+    "id": "nest-authorization-005",
+    "technology": "nestjs",
+    "category": "Authorization",
+    "categorySlug": "authorization",
+    "slug": "debugging-authorized-in-ui-but-403-from-api",
+    "question": "Debugging: authorized in UI but 403 from API.",
+    "shortAnswer": "Divergent rule implementations, stale claims, or missing tenant context on server.",
+    "detailedAnswer": "Single source of truth for policies. Log deny reasons centrally (carefully).",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "authorization"
+    ]
+  },
+  {
+    "id": "nest-authorization-006",
+    "technology": "nestjs",
+    "category": "Authorization",
+    "categorySlug": "authorization",
+    "slug": "lead-multi-tenant-authorization-architecture-for-nest",
+    "question": "Lead: multi-tenant authorization architecture for Nest?",
+    "shortAnswer": "Tenant context in ALS/JWT claims, row-level filters enforced in repos, and automated tests for cross-tenant access.",
+    "detailedAnswer": "Assume IDOR attempts. Pentest tenancy. Deny by default.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "authorization"
+    ]
+  }
+]

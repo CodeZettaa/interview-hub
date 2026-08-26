@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ts-advanced-types-001",
+    "technology": "typescript",
+    "category": "Advanced Types",
+    "categorySlug": "advanced-types",
+    "slug": "branded-types",
+    "question": "What is a branded/nominal type pattern?",
+    "shortAnswer": "Intersect with unique brand to prevent mixing compatible primitives (UserId vs OrderId).",
+    "detailedAnswer": "Zero-runtime cost with casting at boundaries. Improves domain safety.",
+    "example": "type UserId = string & { readonly __brand: 'UserId' };",
+    "difficulty": "fresh",
+    "type": "coding",
+    "tags": [
+      "advanced-types"
+    ]
+  },
+  {
+    "id": "ts-advanced-types-002",
+    "technology": "typescript",
+    "category": "Advanced Types",
+    "categorySlug": "advanced-types",
+    "slug": "template-literal-types",
+    "question": "Template literal types — uses?",
+    "shortAnswer": "Compose string unions like `on${Capitalize<Event>}` for typed event names.",
+    "detailedAnswer": "Powerful for routing paths and CSS-in-TS. Keep complexity bounded.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "advanced-types"
+    ]
+  },
+  {
+    "id": "ts-advanced-types-003",
+    "technology": "typescript",
+    "category": "Advanced Types",
+    "categorySlug": "advanced-types",
+    "slug": "recursive-types",
+    "question": "What are recursive types good for?",
+    "shortAnswer": "JSON, trees, linked structures — types referencing themselves.",
+    "detailedAnswer": "Need base cases. Compiler depth limits exist — simplify when errors obscure.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "advanced-types"
+    ]
+  },
+  {
+    "id": "ts-advanced-types-004",
+    "technology": "typescript",
+    "category": "Advanced Types",
+    "categorySlug": "advanced-types",
+    "slug": "satisfies-operator",
+    "question": "Satisfies operator — why use it?",
+    "shortAnswer": "Checks a value matches a type without widening to that type.",
+    "detailedAnswer": "Preserves literal inference while validating shape — great for config objects.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "advanced-types"
+    ]
+  },
+  {
+    "id": "ts-advanced-types-005",
+    "technology": "typescript",
+    "category": "Advanced Types",
+    "categorySlug": "advanced-types",
+    "slug": "const-type-parameters",
+    "question": "const type parameters?",
+    "shortAnswer": "generic const T preserves literal types from arguments.",
+    "detailedAnswer": "Helps APIs that want narrow inference from object/array literals.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "advanced-types"
+    ]
+  },
+  {
+    "id": "ts-advanced-types-006",
+    "technology": "typescript",
+    "category": "Advanced Types",
+    "categorySlug": "advanced-types",
+    "slug": "polymorphic-this",
+    "question": "Polymorphic this types?",
+    "shortAnswer": "Methods return this for fluent subclass-preserving builders.",
+    "detailedAnswer": "Useful in base classes with fluent APIs.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "advanced-types"
+    ]
+  },
+  {
+    "id": "ts-advanced-types-007",
+    "technology": "typescript",
+    "category": "Advanced Types",
+    "categorySlug": "advanced-types",
+    "slug": "type-level-overuse",
+    "question": "When is type-level programming too much?",
+    "shortAnswer": "When errors become unreadable and juniors can't contribute — prefer simpler models.",
+    "detailedAnswer": "Balance cleverness with DX. Document complex types heavily.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "advanced-types"
+    ]
+  }
+]

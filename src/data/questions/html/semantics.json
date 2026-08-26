@@ -1,0 +1,201 @@
+[
+  {
+    "id": "html-semantics-001",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "what-is-semantic-html",
+    "question": "What does semantic HTML mean, and why do interviewers care?",
+    "shortAnswer": "Using elements for meaning (header, nav, main, article) rather than only divs for layout.",
+    "detailedAnswer": "Semantic tags communicate document structure to browsers, assistive tech, and crawlers. They improve accessibility tree quality, default keyboard behavior, and SEO signals. Layout still uses CSS; semantics describe role. Prefer button over clickable divs, and lists for list content.",
+    "interviewTip": "Tie semantics to a11y + SEO, not just clean code.",
+    "commonMistake": "Thinking semantic HTML replaces ARIA entirely.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "semantics",
+      "a11y"
+    ]
+  },
+  {
+    "id": "html-semantics-002",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "section-vs-article-vs-div",
+    "question": "When should you use <section> vs <article> vs <div>?",
+    "shortAnswer": "<article> is self-contained content; <section> is a thematic grouping; <div> is a meaningless styling/scripting hook.",
+    "detailedAnswer": "Use article for posts, cards, or widgets that make sense alone. Use section when a heading groups related content. Use div when you need a box with no semantic meaning. Overusing section without headings is an anti-pattern.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-003",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "header-vs-head-vs-headings",
+    "question": "What is the difference between <header>, <head>, and heading elements?",
+    "shortAnswer": "<head> is metadata; <header> is introductory page/section chrome; h1–h6 define outline hierarchy.",
+    "detailedAnswer": "head lives in the document head and holds title, meta, links. header can appear in body for branding/nav or section intros. Heading levels should form a logical outline — don't skip levels for styling.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-004",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "single-main-landmark",
+    "question": "Why is a single <main> landmark important?",
+    "shortAnswer": "It marks the primary content once per page so AT users can skip chrome.",
+    "detailedAnswer": "Screen readers expose landmarks. Multiple mains confuse navigation. Hide repeated chrome outside main. Pair with skip links for keyboard users.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "a11y",
+      "landmarks"
+    ]
+  },
+  {
+    "id": "html-semantics-005",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "blog-post-semantic-structure",
+    "question": "How do you structure a blog post with semantic HTML?",
+    "shortAnswer": "article containing header (title/meta), optional nav for TOC, sections with headings, footer for author/related.",
+    "detailedAnswer": "Keep one h1 for the page title. Nest sections under article. Use time with datetime for publish dates. Avoid wrapping the entire site in article.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-006",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "html-outline-heading-levels",
+    "question": "What is the HTML outline and how do browsers treat heading levels?",
+    "shortAnswer": "Authors should use heading levels for hierarchy; the historic outline algorithm is not reliably used by browsers/AT.",
+    "detailedAnswer": "In practice, use visual and accessibility-friendly heading order. Don't rely on sectioning roots to reset heading ranks. Tools and AT mostly follow explicit h1–h6.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-007",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "when-to-use-aside",
+    "question": "When is <aside> appropriate?",
+    "shortAnswer": "For tangentially related content — sidebars, pull quotes, related links — not primary flow.",
+    "detailedAnswer": "If removing aside breaks the main story, it probably shouldn't be aside. Site-global sidebars may be better as complementary landmarks with care.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-008",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "nav-usage-one-or-many",
+    "question": "Explain <nav> usage — one or many?",
+    "shortAnswer": "Use nav for major navigation blocks; multiple navs are fine if labeled.",
+    "detailedAnswer": "Primary site nav, TOC, and pagination can each be nav. Distinguish with aria-label. Don't wrap every link list in nav.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-009",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "phrasing-vs-flow-content",
+    "question": "What are phrasing vs flow content, and why does it matter?",
+    "shortAnswer": "Content categories constrain valid nesting — e.g. p cannot contain block-level flow like div.",
+    "detailedAnswer": "Invalid nesting causes browsers to fix the DOM unexpectedly. Knowing categories prevents mysterious layout bugs and hydration mismatches.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-010",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "faq-markup-a11y-seo",
+    "question": "How would you mark up a FAQ for accessibility and SEO?",
+    "shortAnswer": "Use headings + content, or details/summary; consider FAQ schema in JSON-LD carefully.",
+    "detailedAnswer": "Ensure keyboard access and visible focus. Don't fake accordions with non-button controls. Prefer progressive enhancement.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-011",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "figure-and-figcaption",
+    "question": "What is the role of <figure> and <figcaption>?",
+    "shortAnswer": "Associate media with a caption as a single unit.",
+    "detailedAnswer": "Useful for images, diagrams, code samples. Caption can be before/after media. Improves semantics vs orphaned text under an image.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-012",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "when-to-use-address",
+    "question": "When should you use <address>?",
+    "shortAnswer": "For contact information for the nearest article or body author — not every postal address on the page.",
+    "detailedAnswer": "Misusing address for arbitrary locations is common. It's specifically contact info for the document/section author.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "semantics"
+    ]
+  },
+  {
+    "id": "html-semantics-013",
+    "technology": "html",
+    "category": "Semantics",
+    "categorySlug": "semantics",
+    "slug": "semantic-dashboard-layout",
+    "question": "Design a semantic layout for a dashboard with app chrome and widgets.",
+    "shortAnswer": "banner/header + nav + main containing complementary widgets as sections/articles; avoid landmark spam.",
+    "detailedAnswer": "Name regions. Keep one main. Self-contained widgets can be articles. Prefer headings inside widgets for AT navigation.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "semantics"
+    ]
+  }
+]

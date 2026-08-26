@@ -1,0 +1,152 @@
+[
+  {
+    "id": "vue-pinia-001",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "what-is-pinia",
+    "question": "What is Pinia?",
+    "shortAnswer": "The official Vue store library: modular stores with state, getters, actions.",
+    "detailedAnswer": "Replaces Vuex patterns with simpler APIs and great TS support. Works with Options or Setup stores.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-002",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "options-store-vs-setup-store",
+    "question": "Options store vs setup store?",
+    "shortAnswer": "Options uses state/getters/actions objects; setup uses Composition API inside defineStore.",
+    "detailedAnswer": "Setup stores compose naturally with composables. Pick one style per codebase.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-003",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "how-do-you-persist-pinia-state",
+    "question": "How do you persist Pinia state?",
+    "shortAnswer": "Plugins or manual watch + localStorage; beware sensitive data.",
+    "detailedAnswer": "Rehydrate carefully on SSR. Version your persisted schema.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-004",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "why-prefer-multiple-stores-over-one-mega-store",
+    "question": "Why prefer multiple stores over one mega-store?",
+    "shortAnswer": "Clear domains, code-splitting, smaller reactivity surfaces.",
+    "detailedAnswer": "Cross-store calls via actions. Avoid circular dependencies.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-005",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "getters-in-pinia-best-practices",
+    "question": "Getters in Pinia — best practices?",
+    "shortAnswer": "Pure derived state from store state; avoid side effects.",
+    "detailedAnswer": "Similar to Vue computed. Compose getters thoughtfully.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-006",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "actions-async-patterns",
+    "question": "Actions async patterns?",
+    "shortAnswer": "async actions for API calls; update state after await; handle errors explicitly.",
+    "detailedAnswer": "Don't duplicate React Query-like caching unless needed—or integrate a query lib.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-007",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "using-stores-outside-components",
+    "question": "Using stores outside components?",
+    "shortAnswer": "Call useXStore() inside active pinia (setup, actions); pass pinia instance outside.",
+    "detailedAnswer": "Common footgun in router guards—ensure app.use(pinia) ran.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-008",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "pinia-vs-provide-inject-for-shared-state",
+    "question": "Pinia vs provide/inject for shared state?",
+    "shortAnswer": "Pinia for app-wide stateful domains with DevTools; provide/inject for localized trees.",
+    "detailedAnswer": "Don't invent a second global store system.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-009",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "how-do-store-plugins-help",
+    "question": "How do store plugins help?",
+    "shortAnswer": "Extend stores for logging, persistence, API injection.",
+    "detailedAnswer": "Keep plugins focused. Document side effects.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "pinia"
+    ]
+  },
+  {
+    "id": "vue-pinia-010",
+    "technology": "vue",
+    "category": "Pinia",
+    "categorySlug": "pinia",
+    "slug": "lead-state-management-guidelines-with-pinia",
+    "question": "Lead: state management guidelines with Pinia?",
+    "shortAnswer": "Store boundaries by domain, naming conventions, no UI concerns in stores, test actions, SSR rules.",
+    "detailedAnswer": "Review PRs for prop drilling vs premature store usage.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "pinia"
+    ]
+  }
+]

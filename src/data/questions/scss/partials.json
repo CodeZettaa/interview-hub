@@ -1,0 +1,214 @@
+[
+  {
+    "id": "scss-partials-001",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "what-is-an-scss-partial",
+    "question": "What is an SCSS partial?",
+    "shortAnswer": "A file named _name.scss intended to be loaded by other files, not compiled standalone.",
+    "detailedAnswer": "Partials organize code. With modern toolchains, entrypoints @use partials explicitly.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-002",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "use-vs-import-for-partials-why-migrate",
+    "question": "@use vs @import for partials — why migrate?",
+    "shortAnswer": "@use loads once, namespaces members, and enables configured modules; @import is deprecated and global.",
+    "detailedAnswer": "Migration is a senior practical topic. Plan namespaces and @forward facades.",
+    "interviewTip": "Mention load-once and namespacing as the key wins.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-003",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "what-does-forward-do",
+    "question": "What does @forward do?",
+    "shortAnswer": "Re-exports members from a module as part of your package's public API.",
+    "detailedAnswer": "Build index facades: @forward 'tokens'; @forward 'mixins'. Hide internals with show/hide.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-004",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "how-do-you-configure-a-module-with-use-with",
+    "question": "How do you configure a module with @use ... with?",
+    "shortAnswer": "Pass overrides to !default variables when loading: @use 'theme' with ($brand: #123).",
+    "detailedAnswer": "Enables per-app theming without globals. Order matters — configure at first load.",
+    "example": "@use 'buttons' with ($radius: 4px);",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-005",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "circular-dependency-between-partials-symptoms",
+    "question": "Circular dependency between partials — symptoms?",
+    "shortAnswer": "Load errors or surprising incomplete members; often tokens ↔ mixins cycles.",
+    "detailedAnswer": "Extract a lower-level tokens module. Dependency direction: tokens → tools → components.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-006",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "folder-structure-for-scalable-scss-partials",
+    "question": "Folder structure for scalable SCSS partials?",
+    "shortAnswer": "tokens/, tools/ (mixins/functions), base/, components/, pages/ — with a single entry main.scss.",
+    "detailedAnswer": "Align with ITCSS or similar. Keep component partials isolated. Avoid pages importing each other.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-007",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "scenario-css-duplication-after-splitting-partials",
+    "question": "Scenario: CSS duplication after splitting partials.",
+    "shortAnswer": "Same mixin included via multiple component paths is OK (declarations duplicate) vs accidental double load of side-effect files.",
+    "detailedAnswer": "Prefer side-effect-free modules. Put global resets only in base entry once.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-008",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "should-partials-emit-css-when-loaded",
+    "question": "Should partials emit CSS when loaded?",
+    "shortAnswer": "Prefer silent modules (only variables/mixins/functions) vs components that emit; control emission from entrypoints.",
+    "detailedAnswer": "Silent modules compose better. Component partials emit once when used.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-009",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "debugging-styles-missing-because-partial-not-used",
+    "question": "Debugging: styles missing because partial not used.",
+    "shortAnswer": "Entrypoint forgot @use/@forward; or wrong path; or build includes only main.",
+    "detailedAnswer": "Treat main.scss as the manifest. CI compile check helps.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-010",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "how-do-sass-load-paths-help-monorepos",
+    "question": "How do Sass load paths help monorepos?",
+    "shortAnswer": "Include shared package paths so @use 'design-system/tokens' resolves without brittle relatives.",
+    "detailedAnswer": "Configure in bundler/sass options. Version the design system package.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-011",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "partials-vs-css-modules-co-existence",
+    "question": "Partials vs CSS modules co-existence?",
+    "shortAnswer": "SCSS partials for global tokens/tools; CSS modules for component-scoped class hashes.",
+    "detailedAnswer": "Define boundaries clearly. Don't @use heavy globals into every CSS module carelessly.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-012",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "naming-conventions-for-partials",
+    "question": "Naming conventions for partials?",
+    "shortAnswer": "_tokens.scss, _mixins.scss, component names matching UI; avoid vague _helpers2.",
+    "detailedAnswer": "Consistency beats cleverness. Index files for folders via @forward.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-013",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "lead-migrate-a-10-year-import-codebase-to-use-forward",
+    "question": "Lead: migrate a 10-year @import codebase to @use/@forward.",
+    "shortAnswer": "Incremental facades, compatibility layers, namespace as you go, and ban new @import in lint.",
+    "detailedAnswer": "Track compile warnings. Don't big-bang without visual regression tests.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "partials"
+    ]
+  },
+  {
+    "id": "scss-partials-014",
+    "technology": "scss",
+    "category": "Partials",
+    "categorySlug": "partials",
+    "slug": "what-belongs-in-a-public-scss-package-entrypoint",
+    "question": "What belongs in a public SCSS package entrypoint?",
+    "shortAnswer": "Forwarded tokens, mixins, functions — not private experimental partials.",
+    "detailedAnswer": "Semantic versioning for removed forwards. Document peer Sass version.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "partials"
+    ]
+  }
+]

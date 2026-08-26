@@ -1,0 +1,92 @@
+[
+  {
+    "id": "node-processes-001",
+    "technology": "nodejs",
+    "category": "Processes",
+    "categorySlug": "processes",
+    "slug": "child-process-spawn-vs-exec-vs-fork-differences",
+    "question": "child_process.spawn vs exec vs fork — differences?",
+    "shortAnswer": "spawn streams stdio; exec buffers output (shell); fork is spawn specialized for Node modules with IPC.",
+    "detailedAnswer": "Prefer spawn/execFile without shell for safety. fork for CPU workers talking via messages.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "processes"
+    ]
+  },
+  {
+    "id": "node-processes-002",
+    "technology": "nodejs",
+    "category": "Processes",
+    "categorySlug": "processes",
+    "slug": "how-do-you-gracefully-shut-down-a-node-http-server",
+    "question": "How do you gracefully shut down a Node HTTP server?",
+    "shortAnswer": "On SIGTERM: stop accepting, drain in-flight requests with a timeout, close DB pools, then exit.",
+    "detailedAnswer": "K8s sends SIGTERM before kill. readinessProbe should fail first. Force-exit after grace period.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "ops"
+    ]
+  },
+  {
+    "id": "node-processes-003",
+    "technology": "nodejs",
+    "category": "Processes",
+    "categorySlug": "processes",
+    "slug": "what-is-ipc-between-node-processes-used-for",
+    "question": "What is IPC between Node processes used for?",
+    "shortAnswer": "Message passing for work distribution, health, and shared coordination without shared memory races.",
+    "detailedAnswer": "Serialize messages. Handle disconnects. Prefer Redis/queues across hosts.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "processes"
+    ]
+  },
+  {
+    "id": "node-processes-004",
+    "technology": "nodejs",
+    "category": "Processes",
+    "categorySlug": "processes",
+    "slug": "debugging-zombie-orphan-child-processes-after-deploys",
+    "question": "Debugging: zombie/orphan child processes after deploys.",
+    "shortAnswer": "Parent exits without killing children; missing 'exit' handlers; detached processes.",
+    "detailedAnswer": "Track PIDs, use process groups, and ensure supervisors manage trees. In containers, PID 1 responsibilities matter (use tini).",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "processes"
+    ]
+  },
+  {
+    "id": "node-processes-005",
+    "technology": "nodejs",
+    "category": "Processes",
+    "categorySlug": "processes",
+    "slug": "when-to-use-worker-threads-vs-child-process",
+    "question": "When to use worker_threads vs child_process?",
+    "shortAnswer": "Threads share memory optionally with less process overhead; child_process stronger isolation and crash containment.",
+    "detailedAnswer": "Native addons and CPU tasks often use threads; separate memory space or different runtimes use processes.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "processes"
+    ]
+  },
+  {
+    "id": "node-processes-006",
+    "technology": "nodejs",
+    "category": "Processes",
+    "categorySlug": "processes",
+    "slug": "lead-multi-process-architecture-for-a-node-pdf-rendering-service",
+    "question": "Lead: multi-process architecture for a Node PDF rendering service.",
+    "shortAnswer": "Pool of isolated workers with timeouts, memory limits, job queue, and circuit breakers for poison docs.",
+    "detailedAnswer": "Crash of one render must not kill API. Sandbox untrusted input. Scale workers independently.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "processes"
+    ]
+  }
+]

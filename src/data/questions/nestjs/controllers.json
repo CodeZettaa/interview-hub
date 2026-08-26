@@ -1,0 +1,92 @@
+[
+  {
+    "id": "nest-controllers-001",
+    "technology": "nestjs",
+    "category": "Controllers",
+    "categorySlug": "controllers",
+    "slug": "what-is-a-nest-controller-responsible-for",
+    "question": "What is a Nest controller responsible for?",
+    "shortAnswer": "HTTP/transport mapping: routes, DTO binding, status codes — not business rules.",
+    "detailedAnswer": "Keep controllers thin; delegate to providers/services. Decorators declare method, path, pipes, and guards.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "controllers"
+    ]
+  },
+  {
+    "id": "nest-controllers-002",
+    "technology": "nestjs",
+    "category": "Controllers",
+    "categorySlug": "controllers",
+    "slug": "how-do-param-query-body-and-headers-work-together",
+    "question": "How do @Param, @Query, @Body, and @Headers work together?",
+    "shortAnswer": "They extract typed pieces of the request into handler arguments, often with pipes for validation/transform.",
+    "detailedAnswer": "Prefer explicit DTOs over raw any. Combine with ValidationPipe. Avoid over-binding huge objects you don't need.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "controllers"
+    ]
+  },
+  {
+    "id": "nest-controllers-003",
+    "technology": "nestjs",
+    "category": "Controllers",
+    "categorySlug": "controllers",
+    "slug": "versioning-apis-in-nest-approaches",
+    "question": "Versioning APIs in Nest — approaches?",
+    "shortAnswer": "URI, header, or media-type versioning via built-in versioning options on the app and controllers.",
+    "detailedAnswer": "Pick one org standard. Don't mix casually. Plan deprecation windows for old versions.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "controllers"
+    ]
+  },
+  {
+    "id": "nest-controllers-004",
+    "technology": "nestjs",
+    "category": "Controllers",
+    "categorySlug": "controllers",
+    "slug": "when-should-logic-leave-the-controller",
+    "question": "When should logic leave the controller?",
+    "shortAnswer": "As soon as there are rules, transactions, multi-step orchestration, or non-trivial mapping.",
+    "detailedAnswer": "Controllers that call three services and implement policy become untestable. Use application services/use-cases.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "controllers"
+    ]
+  },
+  {
+    "id": "nest-controllers-005",
+    "technology": "nestjs",
+    "category": "Controllers",
+    "categorySlug": "controllers",
+    "slug": "scenario-controller-returns-entities-with-password-hashes-fix",
+    "question": "Scenario: controller returns entities with password hashes. Fix?",
+    "shortAnswer": "Never return ORM entities directly — map to response DTOs/serializers and exclude sensitive fields.",
+    "detailedAnswer": "class-serializer interceptors help but explicit mappers are clearer. Add tests that fail on sensitive keys.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "nest-controllers-006",
+    "technology": "nestjs",
+    "category": "Controllers",
+    "categorySlug": "controllers",
+    "slug": "lead-conventions-for-public-vs-internal-nest-controllers",
+    "question": "Lead: conventions for public vs internal Nest controllers?",
+    "shortAnswer": "Separate modules/prefixes, stricter authz, OpenAPI tagging, and different rate limits/SLOs.",
+    "detailedAnswer": "Internal admin routes must not share casual guards. Document breaking-change policy. Generate clients from OpenAPI.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "controllers"
+    ]
+  }
+]

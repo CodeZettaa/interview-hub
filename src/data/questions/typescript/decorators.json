@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ts-decorators-001",
+    "technology": "typescript",
+    "category": "Decorators",
+    "categorySlug": "decorators",
+    "slug": "what-are-decorators",
+    "question": "What are decorators in TypeScript?",
+    "shortAnswer": "Functions that wrap/annotate classes and members for metaprogramming.",
+    "detailedAnswer": "Used heavily by Angular/Nest. Syntax evolved (legacy experimental vs Stage 3).",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "decorators"
+    ]
+  },
+  {
+    "id": "ts-decorators-002",
+    "technology": "typescript",
+    "category": "Decorators",
+    "categorySlug": "decorators",
+    "slug": "legacy-vs-new-decorators",
+    "question": "legacy experimentalDecorators vs new decorators?",
+    "shortAnswer": "Old TS emit differs from TC39 decorators; frameworks may depend on legacy.",
+    "detailedAnswer": "Know which your toolchain expects. Don't mix casually.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "decorators"
+    ]
+  },
+  {
+    "id": "ts-decorators-003",
+    "technology": "typescript",
+    "category": "Decorators",
+    "categorySlug": "decorators",
+    "slug": "decorator-use-cases",
+    "question": "Common decorator use cases?",
+    "shortAnswer": "Dependency injection tokens, route metadata, validation, logging, ORM columns.",
+    "detailedAnswer": "Prefer explicit config when magic hurts readability/testability.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "decorators"
+    ]
+  },
+  {
+    "id": "ts-decorators-004",
+    "technology": "typescript",
+    "category": "Decorators",
+    "categorySlug": "decorators",
+    "slug": "class-decorator-runtime",
+    "question": "How do class decorators run conceptually?",
+    "shortAnswer": "Receive the class (or replace it) at definition time — not per instance.",
+    "detailedAnswer": "Order matters with multiple decorators. Understand compose bottom-up/top-down rules.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "decorators"
+    ]
+  },
+  {
+    "id": "ts-decorators-005",
+    "technology": "typescript",
+    "category": "Decorators",
+    "categorySlug": "decorators",
+    "slug": "decorator-metadata-caveats",
+    "question": "Decorator metadata reflection caveats?",
+    "shortAnswer": "reflect-metadata + emitDecoratorMetadata can expose design:type but is limited/imperfect.",
+    "detailedAnswer": "Don't treat metadata as fully sound typing. Prefer explicit schemas.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "decorators"
+    ]
+  },
+  {
+    "id": "ts-decorators-006",
+    "technology": "typescript",
+    "category": "Decorators",
+    "categorySlug": "decorators",
+    "slug": "testing-decorated-code",
+    "question": "Testing code that relies on decorators?",
+    "shortAnswer": "May need framework testing utilities or to test behavior not decorator wiring.",
+    "detailedAnswer": "Prefer injecting deps over reading decorator metadata in unit tests.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "decorators"
+    ]
+  },
+  {
+    "id": "ts-decorators-007",
+    "technology": "typescript",
+    "category": "Decorators",
+    "categorySlug": "decorators",
+    "slug": "when-to-avoid-decorators",
+    "question": "When should a team avoid decorators?",
+    "shortAnswer": "If they obscure control flow, hurt onboarding, or lock you to compiler flags.",
+    "detailedAnswer": "Use for established DI frameworks; avoid novel DIY decorator DSLs without need.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "decorators"
+    ]
+  }
+]

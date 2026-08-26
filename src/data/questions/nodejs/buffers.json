@@ -1,0 +1,78 @@
+[
+  {
+    "id": "node-buffers-001",
+    "technology": "nodejs",
+    "category": "Buffers",
+    "categorySlug": "buffers",
+    "slug": "what-is-a-buffer-in-node-js",
+    "question": "What is a Buffer in Node.js?",
+    "shortAnswer": "A fixed-length sequence of bytes for binary data, backed by outside-V8 memory (historically) / ArrayBuffer views.",
+    "detailedAnswer": "Used for file, network, and crypto data. Encoding matters when converting to/from strings. Never treat untrusted Buffers as UTF-8 blindly without validation.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "buffers"
+    ]
+  },
+  {
+    "id": "node-buffers-002",
+    "technology": "nodejs",
+    "category": "Buffers",
+    "categorySlug": "buffers",
+    "slug": "buffer-alloc-vs-buffer-allocunsafe-vs-buffer-from-security-angle",
+    "question": "Buffer.alloc vs Buffer.allocUnsafe vs Buffer.from — security angle?",
+    "shortAnswer": "alloc zero-fills; allocUnsafe may contain old memory (leak risk); from copies/interprets input.",
+    "detailedAnswer": "Never use allocUnsafe for buffers that might be returned to users. Prefer alloc/from. This is a classic security interview question.",
+    "commonMistake": "Using allocUnsafe for response bodies 'for speed'.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-buffers-003",
+    "technology": "nodejs",
+    "category": "Buffers",
+    "categorySlug": "buffers",
+    "slug": "how-do-encodings-interact-with-buffer-tostring",
+    "question": "How do encodings interact with Buffer.toString?",
+    "shortAnswer": "toString(encoding) decodes bytes; wrong encoding corrupts data (e.g., binary as utf8).",
+    "detailedAnswer": "For binary protocols prefer Buffers/Uint8Array end-to-end. Be explicit about utf8 vs base64 vs hex at boundaries.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "buffers"
+    ]
+  },
+  {
+    "id": "node-buffers-004",
+    "technology": "nodejs",
+    "category": "Buffers",
+    "categorySlug": "buffers",
+    "slug": "when-should-you-prefer-uint8array-typedarrays-over-buffer",
+    "question": "When should you prefer Uint8Array / TypedArrays over Buffer?",
+    "shortAnswer": "When writing portable web-compatible code or sharing with Web APIs; Buffer is a Uint8Array subclass in modern Node.",
+    "detailedAnswer": "Interoperability with fetch, WebCrypto, and isomorphic libs favors typed arrays. Still use Buffer APIs when Node-specific helpers help.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "buffers"
+    ]
+  },
+  {
+    "id": "node-buffers-005",
+    "technology": "nodejs",
+    "category": "Buffers",
+    "categorySlug": "buffers",
+    "slug": "scenario-concatenating-many-small-buffers-in-a-hot-path-is-slow-fix",
+    "question": "Scenario: concatenating many small Buffers in a hot path is slow. Fix?",
+    "shortAnswer": "Use Buffer.concat with known length, or a streaming approach / list of chunks with final concat once.",
+    "detailedAnswer": "Repeated concat allocates repeatedly. Pre-size or stream. Profile before micro-optimizing.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "buffers"
+    ]
+  }
+]

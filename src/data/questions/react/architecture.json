@@ -1,0 +1,77 @@
+[
+  {
+    "id": "react-architecture-001",
+    "technology": "react",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "feature-based-folder-structure-vs-type-based-components-hooks",
+    "question": "Feature-based folder structure vs type-based (components/hooks)?",
+    "shortAnswer": "Feature folders scale better by colocating related UI, hooks, and tests.",
+    "detailedAnswer": "Type-based folders become dumping grounds. Shared UI stays in a design-system package.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "react-architecture-002",
+    "technology": "react",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "how-do-you-design-a-design-system-with-react",
+    "question": "How do you design a design system with React?",
+    "shortAnswer": "Primitives with a11y, tokens, composition APIs, documented variants, and strict versioning.",
+    "detailedAnswer": "Avoid business logic in DS components. Provide headless + styled layers if needed.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "react-architecture-003",
+    "technology": "react",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "handling-cross-cutting-concerns-auth-analytics-errors",
+    "question": "Handling cross-cutting concerns (auth, analytics, errors)?",
+    "shortAnswer": "Providers at the app shell, route guards/loaders in the framework, centralized error boundaries.",
+    "detailedAnswer": "Keep feature code free of SDK spaghetti via thin adapters.",
+    "difficulty": "lead",
+    "type": "scenario",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "react-architecture-004",
+    "technology": "react",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "when-to-introduce-microfrontends-with-react",
+    "question": "When to introduce microfrontends with React?",
+    "shortAnswer": "Independent deployability across teams outweighs complexity—rare for small orgs.",
+    "detailedAnswer": "Prefer modular monolith with clear package boundaries first.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "react-architecture-005",
+    "technology": "react",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "lead-code-review-standards-for-react-prs",
+    "question": "Lead: code review standards for React PRs?",
+    "shortAnswer": "Purity of render, effect necessity, a11y, perf hotspots, test coverage for logic, API boundaries.",
+    "detailedAnswer": "Reject prop-drilling explosions and untyped any. Prefer incremental refactors.",
+    "difficulty": "lead",
+    "type": "best-practice",
+    "tags": [
+      "architecture"
+    ]
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ts-mapped-types-001",
+    "technology": "typescript",
+    "category": "Mapped Types",
+    "categorySlug": "mapped-types",
+    "slug": "what-is-mapped-type",
+    "question": "What is a mapped type?",
+    "shortAnswer": "{ [K in keyof T]: ... } transforms each property systematically.",
+    "detailedAnswer": "Powers Partial/Readonly/Pick. Can remap keys with as clauses.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "mapped-types"
+    ]
+  },
+  {
+    "id": "ts-mapped-types-002",
+    "technology": "typescript",
+    "category": "Mapped Types",
+    "categorySlug": "mapped-types",
+    "slug": "key-remapping",
+    "question": "Key remapping with as — example use?",
+    "shortAnswer": "Filter/rename keys: { [K in keyof T as Exclude<K, 'x'>]: T[K] }.",
+    "detailedAnswer": "Template literals can prefix keys (getX style). Extremely expressive.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "mapped-types"
+    ]
+  },
+  {
+    "id": "ts-mapped-types-003",
+    "technology": "typescript",
+    "category": "Mapped Types",
+    "categorySlug": "mapped-types",
+    "slug": "mapped-modifiers",
+    "question": "How do modifiers +, - work in mapped types?",
+    "shortAnswer": "Add/remove readonly or ? optionality on generated props.",
+    "detailedAnswer": "Example: { -readonly [K in keyof T]-?: T[K] } makes required mutable.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "mapped-types"
+    ]
+  },
+  {
+    "id": "ts-mapped-types-004",
+    "technology": "typescript",
+    "category": "Mapped Types",
+    "categorySlug": "mapped-types",
+    "slug": "homomorphic-mapped-types",
+    "question": "Homomorphic mapped types — why special?",
+    "shortAnswer": "Preserve optional/readonly modifiers from the original when mapping keyof T.",
+    "detailedAnswer": "Important when wrapping existing object types.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "mapped-types"
+    ]
+  },
+  {
+    "id": "ts-mapped-types-005",
+    "technology": "typescript",
+    "category": "Mapped Types",
+    "categorySlug": "mapped-types",
+    "slug": "deep-readonly",
+    "question": "Build a DeepReadonly<T>?",
+    "shortAnswer": "Recursive mapped type making properties readonly including nested objects.",
+    "detailedAnswer": "Handle arrays/functions carefully. Watch recursion limits.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "mapped-types"
+    ]
+  },
+  {
+    "id": "ts-mapped-types-006",
+    "technology": "typescript",
+    "category": "Mapped Types",
+    "categorySlug": "mapped-types",
+    "slug": "mapped-types-vs-runtime",
+    "question": "Mapped types vs runtime mapping?",
+    "shortAnswer": "Mapped types erase at compile time — still need runtime loops for values.",
+    "detailedAnswer": "Don't confuse type transforms with JS Object.map.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "mapped-types"
+    ]
+  },
+  {
+    "id": "ts-mapped-types-007",
+    "technology": "typescript",
+    "category": "Mapped Types",
+    "categorySlug": "mapped-types",
+    "slug": "mapped-types-dx",
+    "question": "When mapped types hurt DX?",
+    "shortAnswer": "Excessive nesting yields opaque errors; provide named aliases and examples.",
+    "detailedAnswer": "Export intermediate types for consumers.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "mapped-types"
+    ]
+  }
+]

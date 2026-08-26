@@ -1,0 +1,124 @@
+[
+  {
+    "id": "ts-generics-001",
+    "technology": "typescript",
+    "category": "Generics",
+    "categorySlug": "generics",
+    "slug": "what-generics-solve",
+    "question": "What problem do generics solve?",
+    "shortAnswer": "Parametrize types for reusable, type-safe APIs without losing specificity.",
+    "detailedAnswer": "identity<T>(x: T): T preserves input type vs any. Constraints limit T.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "generics"
+    ]
+  },
+  {
+    "id": "ts-generics-002",
+    "technology": "typescript",
+    "category": "Generics",
+    "categorySlug": "generics",
+    "slug": "generic-constraints",
+    "question": "Explain generic constraints (extends).",
+    "shortAnswer": "Restrict type parameters so you can access known members safely.",
+    "detailedAnswer": "T extends { id: string } enables x.id. Constraints compose carefully with defaults.",
+    "example": "function pluck<T, K extends keyof T>(obj: T, key: K): T[K] {\n  return obj[key];\n}",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "generics"
+    ]
+  },
+  {
+    "id": "ts-generics-003",
+    "technology": "typescript",
+    "category": "Generics",
+    "categorySlug": "generics",
+    "slug": "default-type-parameters",
+    "question": "Default type parameters — when useful?",
+    "shortAnswer": "Provide sensible defaults so callers needn't always specify args.",
+    "detailedAnswer": "Common in component props and builder APIs. Defaults still constrained.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "generics"
+    ]
+  },
+  {
+    "id": "ts-generics-004",
+    "technology": "typescript",
+    "category": "Generics",
+    "categorySlug": "generics",
+    "slug": "keyof-indexed-access",
+    "question": "keyof and indexed access with generics?",
+    "shortAnswer": "keyof T gets keys; T[K] gets value types — foundation of type-safe pickers.",
+    "detailedAnswer": "K extends keyof T is the classic pattern. Remapping in mapped types builds on this.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "generics"
+    ]
+  },
+  {
+    "id": "ts-generics-005",
+    "technology": "typescript",
+    "category": "Generics",
+    "categorySlug": "generics",
+    "slug": "generic-variance",
+    "question": "Generic variance intuition (in/out)?",
+    "shortAnswer": "TypeScript uses bivariant hacks historically for methods; explicit in/out variance annotations exist for type params.",
+    "detailedAnswer": "Important for complex library APIs. Prefer immutable patterns to avoid pitfalls.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "generics"
+    ]
+  },
+  {
+    "id": "ts-generics-006",
+    "technology": "typescript",
+    "category": "Generics",
+    "categorySlug": "generics",
+    "slug": "generic-inference-failures",
+    "question": "Why inference sometimes fails with generics?",
+    "shortAnswer": "Too few contextual clues, multiple candidates, or unconstrained excess.",
+    "detailedAnswer": "Add contextual types, defaults, or helper functions. Avoid over-complex signatures.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "generics"
+    ]
+  },
+  {
+    "id": "ts-generics-007",
+    "technology": "typescript",
+    "category": "Generics",
+    "categorySlug": "generics",
+    "slug": "generics-vs-overloads",
+    "question": "Generics vs overloads — how to choose?",
+    "shortAnswer": "Generics for parametric polymorphism; overloads for discrete input/output pairings.",
+    "detailedAnswer": "Overloads can be clearer for heterogeneous cases; keep list ordered from specific to general.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "generics"
+    ]
+  },
+  {
+    "id": "ts-generics-008",
+    "technology": "typescript",
+    "category": "Generics",
+    "categorySlug": "generics",
+    "slug": "generic-event-emitter",
+    "question": "Design a type-safe event emitter with generics.",
+    "shortAnswer": "Map event names to payload types; on/emit constrained by keyof map.",
+    "detailedAnswer": "Prevents wrong payload types. Consider once/off and async handlers.",
+    "example": "type Events = { login: { userId: string }; logout: void };\n// emit('login', { userId }) ok; emit('login', 1) error",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "generics"
+    ]
+  }
+]

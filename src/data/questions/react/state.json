@@ -1,0 +1,109 @@
+[
+  {
+    "id": "react-state-001",
+    "technology": "react",
+    "category": "State",
+    "categorySlug": "state",
+    "slug": "what-is-usestate-and-when-do-you-use-it",
+    "question": "What is useState and when do you use it?",
+    "shortAnswer": "Hook that adds local reactive state to a function component.",
+    "detailedAnswer": "Returns [value, setState]. Updates queue a re-render. Prefer multiple state variables when unrelated.",
+    "example": "const [count, setCount] = useState(0);",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "state"
+    ]
+  },
+  {
+    "id": "react-state-002",
+    "technology": "react",
+    "category": "State",
+    "categorySlug": "state",
+    "slug": "why-can-setstate-appear-async-batched",
+    "question": "Why can setState appear async / batched?",
+    "shortAnswer": "React batches updates for performance; reading state right after setState shows the old value.",
+    "detailedAnswer": "Use functional updates setCount(c => c + 1) when next value depends on previous. In React 18+, more updates batch automatically.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "state"
+    ]
+  },
+  {
+    "id": "react-state-003",
+    "technology": "react",
+    "category": "State",
+    "categorySlug": "state",
+    "slug": "when-do-you-lift-state-up",
+    "question": "When do you lift state up?",
+    "shortAnswer": "When multiple siblings need the same data or a parent must orchestrate them.",
+    "detailedAnswer": "Single source of truth prevents desync. Don't lift everything to the app root prematurely.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "state"
+    ]
+  },
+  {
+    "id": "react-state-004",
+    "technology": "react",
+    "category": "State",
+    "categorySlug": "state",
+    "slug": "usestate-vs-usereducer",
+    "question": "useState vs useReducer?",
+    "shortAnswer": "useState for simple values; useReducer for complex transitions or related multi-field updates.",
+    "detailedAnswer": "Reducers make event→state transitions explicit and testable. Prefer when next state logic is intricate.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "state"
+    ]
+  },
+  {
+    "id": "react-state-005",
+    "technology": "react",
+    "category": "State",
+    "categorySlug": "state",
+    "slug": "storing-derived-data-in-state-why-is-it-a-smell",
+    "question": "Storing derived data in state — why is it a smell?",
+    "shortAnswer": "Duplicated state drifts out of sync; derive during render or with useMemo instead.",
+    "detailedAnswer": "Keep minimal state; compute filtered lists from source + filter query.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "state"
+    ]
+  },
+  {
+    "id": "react-state-006",
+    "technology": "react",
+    "category": "State",
+    "categorySlug": "state",
+    "slug": "how-do-you-update-objects-arrays-in-state-immutably",
+    "question": "How do you update objects/arrays in state immutably?",
+    "shortAnswer": "Create new references via spread/map/filter; never mutate nested fields in place.",
+    "detailedAnswer": "Immutability enables correct change detection and time-travel debugging. Libraries like Immer help.",
+    "example": "setItems(items => items.map(i => i.id === id ? { ...i, done: true } : i));",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "state"
+    ]
+  },
+  {
+    "id": "react-state-007",
+    "technology": "react",
+    "category": "State",
+    "categorySlug": "state",
+    "slug": "design-state-for-a-multi-step-wizard-form",
+    "question": "Design state for a multi-step wizard form.",
+    "shortAnswer": "Hold step index + form draft in parent or reducer; persist optionally; validate per step.",
+    "detailedAnswer": "Avoid losing draft on step change. Consider URL step sync for deep links.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "state"
+    ]
+  }
+]

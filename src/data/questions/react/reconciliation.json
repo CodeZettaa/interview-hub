@@ -1,0 +1,92 @@
+[
+  {
+    "id": "react-reconciliation-001",
+    "technology": "react",
+    "category": "Reconciliation",
+    "categorySlug": "reconciliation",
+    "slug": "what-is-reconciliation",
+    "question": "What is reconciliation?",
+    "shortAnswer": "React's diffing algorithm that compares element trees and updates the DOM minimally.",
+    "detailedAnswer": "Same type → update; different type → remount. Keys guide list diffing.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "react-reconciliation-002",
+    "technology": "react",
+    "category": "Reconciliation",
+    "categorySlug": "reconciliation",
+    "slug": "why-do-keys-matter-for-list-reconciliation",
+    "question": "Why do keys matter for list reconciliation?",
+    "shortAnswer": "Keys identify item identity across renders so React can move/reuse nodes and state.",
+    "detailedAnswer": "Index keys break on insert/reorder. Unstable keys remount and lose focus/state.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "react-reconciliation-003",
+    "technology": "react",
+    "category": "Reconciliation",
+    "categorySlug": "reconciliation",
+    "slug": "what-happens-when-a-component-type-changes-at-the-same-position",
+    "question": "What happens when a component type changes at the same position?",
+    "shortAnswer": "React tears down the old tree and mounts a new one—state resets.",
+    "detailedAnswer": "Conditional swapping of component types remounts. Use keys intentionally to force reset when needed.",
+    "difficulty": "senior",
+    "type": "output",
+    "tags": [
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "react-reconciliation-004",
+    "technology": "react",
+    "category": "Reconciliation",
+    "categorySlug": "reconciliation",
+    "slug": "how-does-react-treat-dom-attributes-during-updates",
+    "question": "How does React treat DOM attributes during updates?",
+    "shortAnswer": "It updates changed attributes/properties; ignores unchanged ones.",
+    "detailedAnswer": "Understanding host config helps when wrapping non-DOM targets (React Native).",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "react-reconciliation-005",
+    "technology": "react",
+    "category": "Reconciliation",
+    "categorySlug": "reconciliation",
+    "slug": "explain-bailing-out-of-rendering-with-memo",
+    "question": "Explain bailing out of rendering with memo.",
+    "shortAnswer": "React.memo shallow-compares props and skips render if equal.",
+    "detailedAnswer": "Custom compare functions possible but easy to get wrong. Children/function props often break memo.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "reconciliation"
+    ]
+  },
+  {
+    "id": "react-reconciliation-006",
+    "technology": "react",
+    "category": "Reconciliation",
+    "categorySlug": "reconciliation",
+    "slug": "debug-input-loses-focus-when-typing-in-a-list-item",
+    "question": "Debug: input loses focus when typing in a list item.",
+    "shortAnswer": "Likely remount from bad keys or recreating component types inside render.",
+    "detailedAnswer": "Stable keys and don't define components inside parents.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "reconciliation"
+    ]
+  }
+]

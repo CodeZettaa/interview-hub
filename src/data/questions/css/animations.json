@@ -1,0 +1,182 @@
+[
+  {
+    "id": "css-animations-001",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "transition-vs-animation",
+    "question": "transition vs animation — when each?",
+    "shortAnswer": "transitions interpolate property changes; animations use keyframes for sequenced/looping motion.",
+    "detailedAnswer": "Transitions for UI state; keyframes for loader/entrance choreography.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-002",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "cheap-animation-properties",
+    "question": "Which properties are 'cheap' to animate?",
+    "shortAnswer": "Prefer transform and opacity (compositor-friendly); avoid layout-thrashing top/left/width.",
+    "detailedAnswer": "will-change sparingly. Measure jank on low-end devices.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-003",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "animation-fill-mode",
+    "question": "Explain animation-fill-mode.",
+    "shortAnswer": "Controls values before/after execution (none, forwards, backwards, both).",
+    "detailedAnswer": "forwards keeps final keyframe styles. Without it, elements may snap back.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-004",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "prefers-reduced-motion",
+    "question": "How do you respect prefers-reduced-motion?",
+    "shortAnswer": "Wrap motion in @media (prefers-reduced-motion: no-preference) or reduce to instant opacity.",
+    "detailedAnswer": "Essential info must not rely on motion alone. Provide pause for long animations.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-005",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "easing-functions",
+    "question": "easing functions — why not always linear?",
+    "shortAnswer": "Perceived realism and UI polish; ease-out for exits, ease-in-out for moves.",
+    "detailedAnswer": "Custom cubic-bezier for brand motion. Overshoot carefully for restraint.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-006",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "debug-transition-not-running",
+    "question": "How do you debug a transition that doesn't run?",
+    "shortAnswer": "Check if property is animatable, values comparable, specificity, display:none toggles, reduced motion.",
+    "detailedAnswer": "display can't interpolate; use opacity/visibility patterns or @starting-style.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-007",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "multiple-animations",
+    "question": "What is @keyframes composition with multiple animations?",
+    "shortAnswer": "Multiple animations on one element via comma-separated lists; watch conflicting properties.",
+    "detailedAnswer": "animation shorthand order matters. Name collisions across bundles.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-008",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "scroll-driven-animations",
+    "question": "Scroll-driven animations — concept?",
+    "shortAnswer": "Tie animation progress to scroll timelines instead of time.",
+    "detailedAnswer": "Powerful for storytelling; still honor reduced motion and performance budgets.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-009",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "will-change-pitfalls",
+    "question": "GPU layers and will-change pitfalls?",
+    "shortAnswer": "will-change can promote layers but wastes memory if overused.",
+    "detailedAnswer": "Add only around interaction, remove after. Don't will-change: everything.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-010",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "motion-guidelines",
+    "question": "Design motion guidelines for a product.",
+    "shortAnswer": "Durations scale, easing tokens, reduced-motion policy, when motion is allowed.",
+    "detailedAnswer": "Codify in DS. Avoid novelty animations that delay task completion.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-011",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "enter-exit-display-none",
+    "question": "How do enter/exit animations work with display:none?",
+    "shortAnswer": "Historically hard; modern approaches include @starting-style, WAAPI, or keep in DOM briefly.",
+    "detailedAnswer": "Libraries often manage mount/unmount timing. Accessibility: don't delay focus too long.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "animations"
+    ]
+  },
+  {
+    "id": "css-animations-012",
+    "technology": "css",
+    "category": "Animations",
+    "categorySlug": "animations",
+    "slug": "flip-technique",
+    "question": "FLIP technique at a high level?",
+    "shortAnswer": "First/Last/Invert/Play — animate transforms to simulate layout changes cheaply.",
+    "detailedAnswer": "Useful for shared-element-like rearrangements without animating layout props.",
+    "difficulty": "lead",
+    "type": "concept",
+    "tags": [
+      "animations"
+    ]
+  }
+]

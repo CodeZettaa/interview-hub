@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ng-rxjs-001",
+    "technology": "angular",
+    "category": "RxJS",
+    "categorySlug": "rxjs",
+    "slug": "why-is-rxjs-central-to-angular",
+    "question": "Why is RxJS central to Angular?",
+    "shortAnswer": "HTTP, forms valueChanges, router events, and many APIs expose Observables for async streams.",
+    "detailedAnswer": "RxJS models push-based async data with operators for transform/cancel/combine. You must manage subscriptions. Signals increasingly coexist for local state.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "rxjs"
+    ]
+  },
+  {
+    "id": "ng-rxjs-002",
+    "technology": "angular",
+    "category": "RxJS",
+    "categorySlug": "rxjs",
+    "slug": "what-is-the-difference-between-switchmap-mergemap-concatmap-and-exhaustmap",
+    "question": "What is the difference between switchMap, mergeMap, concatMap, and exhaustMap?",
+    "shortAnswer": "They flatten inner Observables differently: switch cancels, merge concurrent, concat queues, exhaust ignores new until done.",
+    "detailedAnswer": "Use switchMap for typeahead/HTTP that should cancel. concatMap for ordered writes. mergeMap for independent parallel work. exhaustMap for ignoring double-submits.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "rxjs"
+    ]
+  },
+  {
+    "id": "ng-rxjs-003",
+    "technology": "angular",
+    "category": "RxJS",
+    "categorySlug": "rxjs",
+    "slug": "how-do-you-avoid-memory-leaks-with-observables-in-components",
+    "question": "How do you avoid memory leaks with Observables in components?",
+    "shortAnswer": "Unsubscribe via takeUntilDestroyed, async pipe, or firstValueFrom for one-shots.",
+    "detailedAnswer": "Manual subscribe without teardown leaks. async pipe auto-unsubscribes. Prefer declarative pipelines in services.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "rxjs"
+    ]
+  },
+  {
+    "id": "ng-rxjs-004",
+    "technology": "angular",
+    "category": "RxJS",
+    "categorySlug": "rxjs",
+    "slug": "what-does-sharereplay-do-and-when-is-it-risky",
+    "question": "What does shareReplay do and when is it risky?",
+    "shortAnswer": "Multicasts and replays last N values to late subscribers; can retain memory and keep sources alive.",
+    "detailedAnswer": "Use for caching HTTP among subscribers. Configure refCount carefully. Don't shareReplay(1) forever on huge payloads without strategy.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "rxjs"
+    ]
+  },
+  {
+    "id": "ng-rxjs-005",
+    "technology": "angular",
+    "category": "RxJS",
+    "categorySlug": "rxjs",
+    "slug": "debug-a-valuechanges-subscription-fires-too-often-what-do-you-check",
+    "question": "Debug: a valueChanges subscription fires too often. What do you check?",
+    "shortAnswer": "Look for distinctUntilChanged, debounceTime, and whether patchValue emits; also OnPush/parent CD loops.",
+    "detailedAnswer": "Filter empty emissions, compare with distinctUntilChanged, debounce user input. Avoid writing back into the form inside the same stream without care.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "rxjs"
+    ]
+  },
+  {
+    "id": "ng-rxjs-006",
+    "technology": "angular",
+    "category": "RxJS",
+    "categorySlug": "rxjs",
+    "slug": "how-would-you-implement-a-cancellable-search-as-you-type-with-rxjs",
+    "question": "How would you implement a cancellable search-as-you-type with RxJS?",
+    "shortAnswer": "Listen to input events, debounceTime, distinctUntilChanged, switchMap to HTTP.",
+    "detailedAnswer": "switchMap cancels in-flight requests when the query changes. Handle errors with catchError per inner observable so the outer stream survives.",
+    "example": "query$.pipe(\n  debounceTime(300),\n  distinctUntilChanged(),\n  switchMap(q => this.api.search(q).pipe(catchError(() => of([]))))\n)",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "rxjs"
+    ]
+  },
+  {
+    "id": "ng-rxjs-007",
+    "technology": "angular",
+    "category": "RxJS",
+    "categorySlug": "rxjs",
+    "slug": "when-should-a-service-expose-observable-vs-signal",
+    "question": "When should a service expose Observable vs signal?",
+    "shortAnswer": "Observables for streams/events over time; signals for current synchronous state in the view model.",
+    "detailedAnswer": "You can bridge with toSignal/toObservable. Don't force everything into one model—use the right abstraction.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "rxjs"
+    ]
+  }
+]

@@ -1,0 +1,63 @@
+[
+  {
+    "id": "ng-interceptors-001",
+    "technology": "angular",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "what-is-an-httpinterceptor",
+    "question": "What is an HttpInterceptor?",
+    "shortAnswer": "Middleware that transforms requests/responses globally (auth headers, logging, errors).",
+    "detailedAnswer": "Functional interceptors with provideHttpClient(withInterceptors([...])) are modern. Order matters. Always clone requests when modifying.",
+    "example": "export const authInterceptor: HttpInterceptorFn = (req, next) => {\n  const token = inject(Auth).token;\n  return next(req.clone({ setHeaders: { Authorization: `Bearer ${token}` } }));\n};",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "interceptors"
+    ]
+  },
+  {
+    "id": "ng-interceptors-002",
+    "technology": "angular",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "how-do-you-attach-an-auth-token-with-an-interceptor",
+    "question": "How do you attach an auth token with an interceptor?",
+    "shortAnswer": "Clone the request, set Authorization header from an auth service, then call next.",
+    "detailedAnswer": "Skip public endpoints. Handle 401 by refreshing tokens carefully to avoid infinite loops.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "interceptors"
+    ]
+  },
+  {
+    "id": "ng-interceptors-003",
+    "technology": "angular",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "how-can-interceptors-cause-infinite-retry-loops",
+    "question": "How can interceptors cause infinite retry loops?",
+    "shortAnswer": "Refreshing tokens on 401 and retrying without guarding refresh failures, or re-entering the same interceptor path.",
+    "detailedAnswer": "Use a single-flight refresh, fail-fast on refresh error, and whitelist the refresh URL.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "interceptors"
+    ]
+  },
+  {
+    "id": "ng-interceptors-004",
+    "technology": "angular",
+    "category": "Interceptors",
+    "categorySlug": "interceptors",
+    "slug": "when-should-logic-be-an-interceptor-vs-a-service-method",
+    "question": "When should logic be an interceptor vs a service method?",
+    "shortAnswer": "Cross-cutting concerns for all HTTP → interceptor; feature-specific shaping → service.",
+    "detailedAnswer": "Don't hide business rules in interceptors. Keep them thin and testable.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "interceptors"
+    ]
+  }
+]

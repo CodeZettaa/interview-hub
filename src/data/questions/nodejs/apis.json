@@ -1,0 +1,92 @@
+[
+  {
+    "id": "node-apis-001",
+    "technology": "nodejs",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "http-createserver-vs-frameworks-when-is-bare-http-enough",
+    "question": "http.createServer vs frameworks — when is bare http enough?",
+    "shortAnswer": "Bare http for tiny services/learning; frameworks for routing, middleware, validation at scale.",
+    "detailedAnswer": "Know the core API anyway — frameworks wrap it. For ultra-low overhead proxies, raw http/http2 may win.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "node-apis-002",
+    "technology": "nodejs",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "how-do-you-handle-request-body-parsing-safely",
+    "question": "How do you handle request body parsing safely?",
+    "shortAnswer": "Use size limits, content-type checks, and streaming parsers; reject unexpected types.",
+    "detailedAnswer": "Unbounded JSON parsing enables DoS. Prefer established middleware with limits. Don't eval bodies.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "node-apis-003",
+    "technology": "nodejs",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "what-headers-matter-for-reverse-proxy-deployments",
+    "question": "What headers matter for reverse-proxy deployments?",
+    "shortAnswer": "X-Forwarded-For/Proto/Host — but only trust them from known proxies.",
+    "detailedAnswer": "Misconfigured trust causes IP spoofing and insecure cookie flags. Use framework 'trust proxy' carefully.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "node-apis-004",
+    "technology": "nodejs",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "http-2-or-http-3-in-node-services-practical-take",
+    "question": "HTTP/2 or HTTP/3 in Node services — practical take?",
+    "shortAnswer": "Often terminated at the load balancer; Node may speak HTTP/1.1 upstream. Know where TLS and multiplexing happen.",
+    "detailedAnswer": "Enabling http2 in Node has trade-offs (compatibility, push rarely useful). Focus on correct proxy headers and keep-alives.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "node-apis-005",
+    "technology": "nodejs",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "how-do-you-design-idempotent-apis-in-node",
+    "question": "How do you design idempotent APIs in Node?",
+    "shortAnswer": "Idempotency keys for POSTs, safe retries, and dedupe stores with TTLs.",
+    "detailedAnswer": "Critical for payments and webhooks. Combine with exactly-once-ish processing patterns at the consumer.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "node-apis-006",
+    "technology": "nodejs",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "debugging-intermittent-502s-from-node-behind-nginx",
+    "question": "Debugging: intermittent 502s from Node behind nginx.",
+    "shortAnswer": "Check upstream timeouts, keep-alive mismatches, unhandled crashes, and slow event loop.",
+    "detailedAnswer": "Align proxy_read_timeout with app. Ensure health checks hit a lightweight route. Inspect crash logs and OOM kills.",
+    "difficulty": "lead",
+    "type": "debugging",
+    "tags": [
+      "apis"
+    ]
+  }
+]

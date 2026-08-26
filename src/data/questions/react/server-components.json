@@ -1,0 +1,92 @@
+[
+  {
+    "id": "react-server-components-001",
+    "technology": "react",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "what-are-react-server-components-rsc",
+    "question": "What are React Server Components (RSC)?",
+    "shortAnswer": "Components that render on the server and send UI payload to the client without shipping their code.",
+    "detailedAnswer": "They can access backend resources directly. They cannot use state/effects or browser APIs.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "rsc"
+    ]
+  },
+  {
+    "id": "react-server-components-002",
+    "technology": "react",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "server-vs-client-components-boundaries",
+    "question": "Server vs Client Components — boundaries?",
+    "shortAnswer": "Add 'use client' to modules that need interactivity; server components can import client children.",
+    "detailedAnswer": "Keep client islands small. Pass serializable props across the boundary.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "react-server-components-003",
+    "technology": "react",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "why-can-t-rscs-use-usestate",
+    "question": "Why can't RSCs use useState?",
+    "shortAnswer": "They don't run on the client as interactive instances; state/effects require client runtime.",
+    "detailedAnswer": "Push interactivity into client children. Fetch on server instead of effects.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "react-server-components-004",
+    "technology": "react",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "how-do-you-share-data-from-a-server-parent-to-client-children",
+    "question": "How do you share data from a server parent to client children?",
+    "shortAnswer": "Fetch in the server component and pass props; or use endorsed framework patterns.",
+    "detailedAnswer": "Avoid duplicate fetches when possible. Mind serialization limits.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "react-server-components-005",
+    "technology": "react",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "security-implication-of-rscs",
+    "question": "Security implication of RSCs?",
+    "shortAnswer": "Don't leak secrets into props sent to the client; server-only modules must stay server-only.",
+    "detailedAnswer": "Treat the client boundary as public. Validate auth on the server.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "server-components"
+    ]
+  },
+  {
+    "id": "react-server-components-006",
+    "technology": "react",
+    "category": "Server Components",
+    "categorySlug": "server-components",
+    "slug": "how-do-rscs-interact-with-suspense",
+    "question": "How do RSCs interact with Suspense?",
+    "shortAnswer": "Wrap slow server fetches in Suspense to stream fallbacks then content.",
+    "detailedAnswer": "Enables progressive rendering. Design boundaries intentionally to avoid waterfalls.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "server-components"
+    ]
+  }
+]

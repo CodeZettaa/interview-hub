@@ -1,0 +1,214 @@
+[
+  {
+    "id": "scss-nesting-001",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "what-is-scss-nesting-and-what-problem-does-it-solve",
+    "question": "What is SCSS nesting and what problem does it solve?",
+    "shortAnswer": "Nesting mirrors HTML structure in CSS selectors, reducing repetition of parent selectors.",
+    "detailedAnswer": "Compiled output flattens to descendant/compound selectors. Over-nesting creates overly specific CSS — a classic maintainability issue.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-002",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "what-is-the-parent-selector-used-for",
+    "question": "What is the parent selector & used for?",
+    "shortAnswer": "References the parent selector — for BEM modifiers, pseudo-classes, and state (.btn { &:hover {} }).",
+    "detailedAnswer": "Also &--modifier or .is-active & patterns. Misplaced & creates surprising selectors.",
+    "example": ".card { &:hover { } &__title { } }",
+    "difficulty": "fresh",
+    "type": "coding",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-003",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "why-is-deep-nesting-considered-harmful",
+    "question": "Why is deep nesting considered harmful?",
+    "shortAnswer": "High specificity, brittle coupling to DOM depth, larger selectors, and harder overrides.",
+    "detailedAnswer": "Limit to 2–3 levels. Prefer BEM/flat utility compositions. Nesting is not permission to mirror entire DOM.",
+    "commonMistake": "Nesting five levels deep because the HTML is five levels deep.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-004",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "how-does-nesting-interact-with-media-queries",
+    "question": "How does nesting interact with media queries?",
+    "shortAnswer": "You can nest @media inside a selector so queries stay co-located with component styles.",
+    "detailedAnswer": "Compiled CSS repeats the selector inside each media query. Prefer mobile-first breakpoints. Don't scatter conflicting breakpoints.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-005",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "nesting-media-vs-separate-breakpoint-files-trade-offs",
+    "question": "Nesting @media vs separate breakpoint files — trade-offs?",
+    "shortAnswer": "Co-located media keeps component cohesion; separate files ease global breakpoint audits.",
+    "detailedAnswer": "Teams often nest media for components and keep tokenized breakpoints in one module.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-006",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "output-nav-li-a-color-red-compiles-to",
+    "question": "Output: .nav { li { a { color: red } } } compiles to?",
+    "shortAnswer": ".nav li a { color: red; } — descendant selectors, not child combinators unless > is written.",
+    "detailedAnswer": "Candidates sometimes think nesting implies >. Be explicit with combinators when needed.",
+    "difficulty": "junior",
+    "type": "output",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-007",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "how-do-you-nest-pseudo-elements-cleanly",
+    "question": "How do you nest pseudo-elements cleanly?",
+    "shortAnswer": "Use &:before / &::before inside the parent rule rather than repeating the parent selector.",
+    "detailedAnswer": "Prefer :: modern syntax. Keep content property accessible (don't convey critical info only in pseudo-elements).",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-008",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "scenario-nested-styles-broke-after-html-refactor-moved-a-wrapper",
+    "question": "Scenario: nested styles broke after HTML refactor moved a wrapper.",
+    "shortAnswer": "Over-coupled nested selectors depended on DOM shape — flatten with BEM classes.",
+    "detailedAnswer": "Component class hooks survive structure changes better than .a .b .c chains.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-009",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "native-css-nesting-vs-scss-nesting-awareness",
+    "question": "Native CSS nesting vs SCSS nesting — awareness?",
+    "shortAnswer": "Browsers now support CSS nesting; SCSS still helps with mixins/maps and older toolchain needs.",
+    "detailedAnswer": "Know when you can ship native nesting and when Sass features still justify the preprocessor.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-010",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "how-can-create-a-suffix-modifier-pattern",
+    "question": "How can & create a suffix modifier pattern?",
+    "shortAnswer": ".block { &--active { } } → .block--active; useful for BEM.",
+    "detailedAnswer": "Ensure naming conventions are consistent. Avoid inventing conflicting conventions mid-codebase.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-011",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "debugging-unexpectedly-high-specificity-from-nesting-ids",
+    "question": "Debugging: unexpectedly high specificity from nesting + IDs.",
+    "shortAnswer": "Nested #id compounds specificity; prefer classes and reduce depth.",
+    "detailedAnswer": "Specificity wars lead to !important. Audit with coverage tools.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-012",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "nesting-at-rules-like-supports-inside-selectors-useful",
+    "question": "Nesting at-rules like @supports inside selectors — useful?",
+    "shortAnswer": "Yes for progressive enhancement co-located with the component rule.",
+    "detailedAnswer": "Keep fallbacks clear. Don't hide critical layout behind poorly supported features without fallbacks.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-013",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "architecture-nesting-guidelines-for-a-large-design-system",
+    "question": "Architecture: nesting guidelines for a large design system.",
+    "shortAnswer": "Max depth rule, BEM-ish selectors, nest only states/elements/media, lint with stylelint.",
+    "detailedAnswer": "Document examples. Reject PRs that nest for tidiness alone.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "nesting"
+    ]
+  },
+  {
+    "id": "scss-nesting-014",
+    "technology": "scss",
+    "category": "Nesting",
+    "categorySlug": "nesting",
+    "slug": "lead-migrate-deeply-nested-legacy-scss-to-flatter-structure",
+    "question": "Lead: migrate deeply nested legacy SCSS to flatter structure.",
+    "shortAnswer": "Codemod gradual unwrap, introduce component classes, stylelint specificity budgets, and snapshot visual diffs.",
+    "detailedAnswer": "Prioritize hot paths/UI breakage risk. Don't rewrite everything at once.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "nesting"
+    ]
+  }
+]

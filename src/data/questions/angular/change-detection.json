@@ -1,0 +1,92 @@
+[
+  {
+    "id": "ng-change-detection-001",
+    "technology": "angular",
+    "category": "Change Detection",
+    "categorySlug": "change-detection",
+    "slug": "what-is-angular-change-detection",
+    "question": "What is Angular change detection?",
+    "shortAnswer": "The process that syncs component state to the DOM by checking bindings when the app may have changed.",
+    "detailedAnswer": "Traditionally Zone.js patches async APIs and triggers CD. Default strategy checks the whole tree; OnPush checks when inputs/events/signals mark the view dirty.",
+    "difficulty": "junior",
+    "type": "output",
+    "tags": [
+      "change-detection"
+    ]
+  },
+  {
+    "id": "ng-change-detection-002",
+    "technology": "angular",
+    "category": "Change Detection",
+    "categorySlug": "change-detection",
+    "slug": "how-does-changedetectionstrategy-onpush-improve-performance",
+    "question": "How does ChangeDetectionStrategy.OnPush improve performance?",
+    "shortAnswer": "OnPush skips checking a subtree unless inputs change by reference, events fire, or the view is marked dirty.",
+    "detailedAnswer": "Combine with immutable inputs and async pipe/signals. Mutating objects in place without marking dirty won't update the view.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "change-detection"
+    ]
+  },
+  {
+    "id": "ng-change-detection-003",
+    "technology": "angular",
+    "category": "Change Detection",
+    "categorySlug": "change-detection",
+    "slug": "what-does-markforcheck-vs-detectchanges-do",
+    "question": "What does markForCheck vs detectChanges do?",
+    "shortAnswer": "markForCheck marks the path to root dirty for the next CD; detectChanges runs CD immediately on that view.",
+    "detailedAnswer": "Use markForCheck inside OnPush when updating state outside Angular's knowledge. detectChanges is sharper and can be used carefully in tests/directives.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "change-detection"
+    ]
+  },
+  {
+    "id": "ng-change-detection-004",
+    "technology": "angular",
+    "category": "Change Detection",
+    "categorySlug": "change-detection",
+    "slug": "why-can-mutating-an-input-object-fail-to-update-an-onpush-child",
+    "question": "Why can mutating an @Input object fail to update an OnPush child?",
+    "shortAnswer": "OnPush compares input references; in-place mutation keeps the same reference.",
+    "detailedAnswer": "Clone/update immutably or call markForCheck. Prefer signals which notify dependents on set.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "change-detection"
+    ]
+  },
+  {
+    "id": "ng-change-detection-005",
+    "technology": "angular",
+    "category": "Change Detection",
+    "categorySlug": "change-detection",
+    "slug": "how-do-signals-interact-with-change-detection",
+    "question": "How do signals interact with change detection?",
+    "shortAnswer": "Updating a signal marks dependent views dirty so Angular can refresh only what needs updating.",
+    "detailedAnswer": "Signal-based CD reduces reliance on Zone.js. computed/effect form a reactive graph. Templates reading signals establish dependencies.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "change-detection"
+    ]
+  },
+  {
+    "id": "ng-change-detection-006",
+    "technology": "angular",
+    "category": "Change Detection",
+    "categorySlug": "change-detection",
+    "slug": "when-would-you-detach-a-change-detector",
+    "question": "When would you detach a change detector?",
+    "shortAnswer": "Rare cases like high-frequency updates where you manually control when to reattach/detect.",
+    "detailedAnswer": "Detaching skips automatic checks. Easy to forget reattach—prefer OnPush/signals first. Useful for virtual scroll internals sometimes.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "change-detection"
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "nest-dependency-injection-001",
+    "technology": "nestjs",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "how-does-nest-s-di-container-resolve-dependencies",
+    "question": "How does Nest's DI container resolve dependencies?",
+    "shortAnswer": "Reflects constructor param types/tokens, recursively constructs the provider graph within module visibility rules.",
+    "detailedAnswer": "emitDecoratorMetadata + @Injectable matter. Ambiguous types need @Inject(token).",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "nest-dependency-injection-002",
+    "technology": "nestjs",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "why-forwardref-exists-and-when-it-s-a-smell",
+    "question": "Why forwardRef exists and when it's a smell?",
+    "shortAnswer": "Breaks circular constructor deps between providers/modules — often indicates tangled design.",
+    "detailedAnswer": "Prefer extracting a third module/service or inverting the dependency. forwardRef is a last resort.",
+    "commonMistake": "Sprinkling forwardRef instead of fixing module boundaries.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "nest-dependency-injection-003",
+    "technology": "nestjs",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "optional-dependencies-with-optional-use-cases",
+    "question": "Optional dependencies with @Optional() — use cases?",
+    "shortAnswer": "Soft dependencies like metrics/cache that may be absent in some environments.",
+    "detailedAnswer": "Handle undefined carefully. Don't overuse — missing required deps should fail fast at boot.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "nest-dependency-injection-004",
+    "technology": "nestjs",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "constructor-injection-vs-inject-property-injection",
+    "question": "Constructor injection vs @Inject() property injection?",
+    "shortAnswer": "Prefer constructor injection for required deps and testability; property injection is rarer.",
+    "detailedAnswer": "Constructor makes dependencies explicit and immutable-friendly. Property injection complicates reasoning.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "nest-dependency-injection-005",
+    "technology": "nestjs",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "scenario-two-implementations-of-the-same-interface-for-a-b-payments",
+    "question": "Scenario: two implementations of the same interface for A/B payments.",
+    "shortAnswer": "Bind different tokens or use a factory that selects strategy from config/feature flag.",
+    "detailedAnswer": "Avoid conditional logic scattered in domain services — strategy pattern via DI keeps it clean.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "dependency-injection"
+    ]
+  },
+  {
+    "id": "nest-dependency-injection-006",
+    "technology": "nestjs",
+    "category": "Dependency Injection",
+    "categorySlug": "dependency-injection",
+    "slug": "lead-how-do-you-keep-di-graphs-understandable-at-200-providers",
+    "question": "Lead: how do you keep DI graphs understandable at 200+ providers?",
+    "shortAnswer": "Module boundaries by domain, public tokens documented, forbid random cross-imports, and architecture tests.",
+    "detailedAnswer": "Visualize critical subgraphs. Reject god modules. Prefer fewer, clearer providers over micro-classes everywhere.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "dependency-injection"
+    ]
+  }
+]

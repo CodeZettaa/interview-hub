@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ng-hydration-001",
+    "technology": "angular",
+    "category": "Hydration",
+    "categorySlug": "hydration",
+    "slug": "what-is-hydration-in-angular",
+    "question": "What is hydration in Angular?",
+    "shortAnswer": "Client Angular attaches listeners and state to server-rendered DOM instead of recreating it.",
+    "detailedAnswer": "Non-destructive hydration reuses DOM nodes. Mismatches cause errors or re-renders. Keep server/client markup consistent.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "hydration"
+    ]
+  },
+  {
+    "id": "ng-hydration-002",
+    "technology": "angular",
+    "category": "Hydration",
+    "categorySlug": "hydration",
+    "slug": "what-causes-hydration-mismatches",
+    "question": "What causes hydration mismatches?",
+    "shortAnswer": "Different content on server vs client: random IDs, time-dependent text, browser-only branches, invalid HTML nesting.",
+    "detailedAnswer": "Use afterNextRender for client-only bits. Stabilize IDs. Validate HTML structure.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "hydration"
+    ]
+  },
+  {
+    "id": "ng-hydration-003",
+    "technology": "angular",
+    "category": "Hydration",
+    "categorySlug": "hydration",
+    "slug": "what-is-incremental-partial-hydration-conceptually",
+    "question": "What is incremental/partial hydration conceptually?",
+    "shortAnswer": "Hydrating parts of the page on demand rather than the entire app at once.",
+    "detailedAnswer": "Improves TTI for large pages. Combine with @defer. Still evolving—know the current Angular APIs you use.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "hydration"
+    ]
+  },
+  {
+    "id": "ng-hydration-004",
+    "technology": "angular",
+    "category": "Hydration",
+    "categorySlug": "hydration",
+    "slug": "how-do-you-verify-hydration-is-working-in-production",
+    "question": "How do you verify hydration is working in production?",
+    "shortAnswer": "Check for hydration errors in console, confirm no full DOM wipe, and measure interaction readiness.",
+    "detailedAnswer": "Monitor RUM metrics. Fix mismatches before relying on SSR SEO wins.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "hydration"
+    ]
+  }
+]

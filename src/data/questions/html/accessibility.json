@@ -1,0 +1,197 @@
+[
+  {
+    "id": "html-accessibility-001",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "accessible-name-for-control",
+    "question": "What makes an accessible name for a control?",
+    "shortAnswer": "Visible label, aria-label, aria-labelledby, or native labeling associations.",
+    "detailedAnswer": "Prefer visible label for. aria-label overrides and can hurt i18n if not translated. Decorative icons need careful naming so buttons aren't silent.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "a11y"
+    ]
+  },
+  {
+    "id": "html-accessibility-002",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "clickable-div-a11y-problem",
+    "question": "Why are clickable <div>s an accessibility problem?",
+    "shortAnswer": "They lack button semantics, keyboard activation, and often focus styles.",
+    "detailedAnswer": "Use button or a href. If unavoidable, add role, tabindex, key handlers, and focus styles — still inferior to native.",
+    "difficulty": "fresh",
+    "type": "debugging",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-003",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "alt-text-strategy",
+    "question": "Explain alt text strategy for images.",
+    "shortAnswer": "Describe purpose: informative alt, empty alt for decorative, avoid 'image of'.",
+    "detailedAnswer": "Linked images need alt that describes destination/purpose. Complex charts need long descriptions nearby. CSS background images are invisible to AT.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-004",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "modal-focus-management",
+    "question": "How does focus management work for modals?",
+    "shortAnswer": "Move focus into the dialog on open, trap tab within, restore focus on close.",
+    "detailedAnswer": "Use dialog element or a vetted pattern. aria-modal and labels required. Background should be inert. Escape closes.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-005",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "aria-hidden-vs-hidden",
+    "question": "What is the difference between aria-hidden and the hidden attribute?",
+    "shortAnswer": "hidden removes from presentation and usually the a11y tree; aria-hidden hides from AT but may remain focusable if misused.",
+    "detailedAnswer": "Never aria-hide focusable elements without removing them from tab order. Prefer hidden/inert for closed UI.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-006",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "custom-checkbox-accessible",
+    "question": "How do you make a custom checkbox accessible?",
+    "shortAnswer": "Prefer native input type=checkbox; if custom, sync aria-checked, roles, keyboard Space.",
+    "detailedAnswer": "Visible label, focus ring, and form participation matter. Custom controls often break with forms and AT.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-007",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "skip-links",
+    "question": "What are skip links and why do they matter?",
+    "shortAnswer": "First focusable link to jump to main content, reducing repetitive tabbing.",
+    "detailedAnswer": "Must be visible on focus. Target should be focusable (tabindex=-1 on main).",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-008",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "accessible-form-errors",
+    "question": "How do you handle accessible error messages in forms?",
+    "shortAnswer": "Associate errors via aria-describedby; use aria-invalid; move focus to first error on submit.",
+    "detailedAnswer": "Don't rely on color alone. Announce via live regions carefully for async validation.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-009",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "contrast-and-focus-visibility",
+    "question": "Contrast and focus visibility — what do you check?",
+    "shortAnswer": "Text contrast ratios and a clearly visible :focus-visible style that isn't outline:none without replacement.",
+    "detailedAnswer": "WCAG targets depend on size. Dark themes still need contrast. Keyboard users must see focus.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-010",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "live-regions",
+    "question": "What is a live region and when is it dangerous?",
+    "shortAnswer": "aria-live announces dynamic updates; overuse causes noisy interruptions.",
+    "detailedAnswer": "Use polite for non-critical updates, assertive sparingly. Don't put entire pages in live regions.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-011",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "spa-route-change-a11y",
+    "question": "How would you accessibility-test a SPA route change?",
+    "shortAnswer": "Update document title, manage focus to a heading, ensure landmarks refresh, avoid focus loss.",
+    "detailedAnswer": "Screen reader users need confirmation of navigation. Routers often forget focus management.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-012",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "tabs-keyboard-interaction",
+    "question": "Describe keyboard interaction for a tabs widget.",
+    "shortAnswer": "Arrow keys move among tabs; Tab moves into tabpanel; aria-selected and roles required.",
+    "detailedAnswer": "Prefer established patterns. Ensure panels are labeled by tabs. Don't only support click.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "accessibility"
+    ]
+  },
+  {
+    "id": "html-accessibility-013",
+    "technology": "html",
+    "category": "Accessibility",
+    "categorySlug": "accessibility",
+    "slug": "building-a11y-culture",
+    "question": "How do you build an a11y culture on a frontend team?",
+    "shortAnswer": "Design system primitives with a11y baked in, linting, CI axe checks, manual AT passes, acceptance criteria.",
+    "detailedAnswer": "Component libraries prevent rework. Train designers on focus order and labels. Budget time for audits on critical flows.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "accessibility"
+    ]
+  }
+]

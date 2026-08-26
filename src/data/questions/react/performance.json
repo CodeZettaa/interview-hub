@@ -1,0 +1,107 @@
+[
+  {
+    "id": "react-performance-001",
+    "technology": "react",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-do-you-approach-react-performance-work",
+    "question": "How do you approach React performance work?",
+    "shortAnswer": "Measure first (Profiler), then fix state location, reduce work, memoize hotspots, virtualize.",
+    "detailedAnswer": "Don't sprinkle memo/useMemo blindly. Network and bundle size matter too.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "react-performance-002",
+    "technology": "react",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "what-does-react-lazy-suspense-do-for-bundles",
+    "question": "What does React.lazy + Suspense do for bundles?",
+    "shortAnswer": "Code-splits components into separate chunks loaded on demand.",
+    "detailedAnswer": "Great for routes/modals. Provide meaningful fallbacks. Prefetch when likely needed.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "react-performance-003",
+    "technology": "react",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "windowing-virtualization-when",
+    "question": "Windowing/virtualization — when?",
+    "shortAnswer": "Long lists where DOM node count dominates cost.",
+    "detailedAnswer": "Libraries like react-window. Combine with stable keys and measured row heights.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "react-performance-004",
+    "technology": "react",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-can-context-hurt-performance-and-how-to-fix",
+    "question": "How can Context hurt performance and how to fix?",
+    "shortAnswer": "Broad value changes re-render all consumers—split context or use external store subscriptions.",
+    "detailedAnswer": "useSyncExternalStore powers many modern stores efficiently.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "react-performance-005",
+    "technology": "react",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "starttransition-for-expensive-filtered-lists",
+    "question": "startTransition for expensive filtered lists?",
+    "shortAnswer": "Keep input state urgent; mark filtered list updates as transition for smoother typing.",
+    "detailedAnswer": "Show isPending UI. Don't transition every tiny update.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "react-performance-006",
+    "technology": "react",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "images-and-react-perf",
+    "question": "Images and React perf?",
+    "shortAnswer": "Use modern formats, sizing, lazy loading; avoid layout shift; consider CDN.",
+    "detailedAnswer": "UI jank isn't always JS—assets matter. Next/Image-like patterns help.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "react-performance-007",
+    "technology": "react",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "lead-set-performance-budgets-for-a-react-spa",
+    "question": "Lead: set performance budgets for a React SPA.",
+    "shortAnswer": "Define CWV targets, bundle size limits, CI checks, and profiling rituals for major features.",
+    "detailedAnswer": "Own regressions. Educate on state architecture as the main lever.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  }
+]

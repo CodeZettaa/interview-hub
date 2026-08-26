@@ -1,0 +1,94 @@
+[
+  {
+    "id": "node-event-loop-001",
+    "technology": "nodejs",
+    "category": "Event Loop",
+    "categorySlug": "event-loop",
+    "slug": "describe-the-node-js-event-loop-phases-at-a-high-level",
+    "question": "Describe the Node.js event loop phases at a high level.",
+    "shortAnswer": "Timers â†’ pending callbacks â†’ idle/prepare â†’ poll â†’ check â†’ close callbacks, with process.nextTick and microtasks between.",
+    "detailedAnswer": "I/O callbacks mostly run in poll; `setImmediate` in check; `setTimeout` in timers. Microtasks (promises) and nextTick queues drain between phases and can starve I/O if abused. Interview depth often hinges on ordering, not memorizing every internal name.",
+    "interviewTip": "Sketch phases and place setTimeout, setImmediate, Promise.then, and nextTick.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "event-loop"
+    ]
+  },
+  {
+    "id": "node-event-loop-002",
+    "technology": "nodejs",
+    "category": "Event Loop",
+    "categorySlug": "event-loop",
+    "slug": "what-is-the-difference-between-process-nexttick-and-promise-then-queuemicrotask",
+    "question": "What is the difference between `process.nextTick` and `Promise.then` / queueMicrotask?",
+    "shortAnswer": "nextTick runs before other microtasks and can starve the event loop if recursively scheduled; Promise microtasks are the standard ES queue.",
+    "detailedAnswer": "Prefer promises/queueMicrotask for app logic. nextTick is for ensuring callbacks run before I/O continues — use sparingly. Recursive nextTick is a classic hang.",
+    "commonMistake": "Using nextTick as a general async deferral tool.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "event-loop"
+    ]
+  },
+  {
+    "id": "node-event-loop-003",
+    "technology": "nodejs",
+    "category": "Event Loop",
+    "categorySlug": "event-loop",
+    "slug": "settimeout-fn-0-vs-setimmediate-fn-which-runs-first",
+    "question": "setTimeout(fn, 0) vs setImmediate(fn) — which runs first?",
+    "shortAnswer": "It depends on context: inside an I/O callback, setImmediate usually runs first; in main module, ordering can vary.",
+    "detailedAnswer": "Don't rely on either for precise sequencing — use explicit control flow. This question tests whether candidates know 'it depends' rather than a false absolute.",
+    "difficulty": "junior",
+    "type": "output",
+    "tags": [
+      "event-loop"
+    ]
+  },
+  {
+    "id": "node-event-loop-004",
+    "technology": "nodejs",
+    "category": "Event Loop",
+    "categorySlug": "event-loop",
+    "slug": "how-can-heavy-synchronous-work-break-the-event-loop",
+    "question": "How can heavy synchronous work break the event loop?",
+    "shortAnswer": "Long CPU loops block the single JS thread, delaying timers, I/O, and health checks — appearing as latency spikes.",
+    "detailedAnswer": "Offload to worker_threads, child processes, or external services. Profile with clinic/0x or CPU profiles. Keep handlers short; batch and yield with setImmediate for cooperative multitasking when needed.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "event-loop"
+    ]
+  },
+  {
+    "id": "node-event-loop-005",
+    "technology": "nodejs",
+    "category": "Event Loop",
+    "categorySlug": "event-loop",
+    "slug": "scenario-api-p99-latency-jumps-but-cpu-is-low-event-loop-related",
+    "question": "Scenario: API p99 latency jumps but CPU is low. Event loop related?",
+    "shortAnswer": "Possibly event-loop delay from sync code bursts, UV thread-pool saturation, or lock contention — measure event loop lag.",
+    "detailedAnswer": "Instrument `monitorEventLoopDelay` / async hooks carefully. Check DNS, fs, and crypto pool sizes. Correlate with GC pauses. Low CPU with high latency often means waiting, not compute.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "event-loop"
+    ]
+  },
+  {
+    "id": "node-event-loop-006",
+    "technology": "nodejs",
+    "category": "Event Loop",
+    "categorySlug": "event-loop",
+    "slug": "lead-how-do-you-teach-teams-to-reason-about-event-loop-safety",
+    "question": "Lead: how do you teach teams to reason about event-loop safety?",
+    "shortAnswer": "Ban sync fs in request paths, lint for known blockers, SLOs on event-loop delay, and design reviews for CPU-heavy features.",
+    "detailedAnswer": "Provide worker patterns and circuit breakers. Make 'don't block the loop' a shared language in postmortems. Automate detection in staging load tests.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "event-loop"
+    ]
+  }
+]

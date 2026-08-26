@@ -1,0 +1,92 @@
+[
+  {
+    "id": "react-context-001",
+    "technology": "react",
+    "category": "Context",
+    "categorySlug": "context",
+    "slug": "what-is-react-context",
+    "question": "What is React Context?",
+    "shortAnswer": "A way to pass data through the tree without prop drilling via Provider + useContext.",
+    "detailedAnswer": "Good for theme, locale, auth session. Not a full replacement for complex server cache.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "context"
+    ]
+  },
+  {
+    "id": "react-context-002",
+    "technology": "react",
+    "category": "Context",
+    "categorySlug": "context",
+    "slug": "why-can-context-cause-wide-re-renders",
+    "question": "Why can context cause wide re-renders?",
+    "shortAnswer": "All consumers re-render when the Provider value changes by reference.",
+    "detailedAnswer": "Split contexts, memoize value, or use selectors/external stores for fine-grained subscriptions.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "context"
+    ]
+  },
+  {
+    "id": "react-context-003",
+    "technology": "react",
+    "category": "Context",
+    "categorySlug": "context",
+    "slug": "how-do-you-memoize-a-context-value-correctly",
+    "question": "How do you memoize a context value correctly?",
+    "shortAnswer": "useMemo the object/functions provided, with correct deps.",
+    "detailedAnswer": "Recreating {user, setUser } each render defeats consumers' memoization.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "context"
+    ]
+  },
+  {
+    "id": "react-context-004",
+    "technology": "react",
+    "category": "Context",
+    "categorySlug": "context",
+    "slug": "context-vs-redux-zustand",
+    "question": "Context vs Redux/Zustand?",
+    "shortAnswer": "Context is built-in DI for relatively stable values; dedicated stores handle high-frequency updates better.",
+    "detailedAnswer": "Many apps mix: context for DI, Zustand/Query for state/cache.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "context"
+    ]
+  },
+  {
+    "id": "react-context-005",
+    "technology": "react",
+    "category": "Context",
+    "categorySlug": "context",
+    "slug": "pattern-separate-statecontext-and-dispatchcontext-why",
+    "question": "Pattern: separate StateContext and DispatchContext — why?",
+    "shortAnswer": "Consumers that only dispatch don't re-render when state changes.",
+    "detailedAnswer": "Classic performance pattern with useReducer + dual providers.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "context"
+    ]
+  },
+  {
+    "id": "react-context-006",
+    "technology": "react",
+    "category": "Context",
+    "categorySlug": "context",
+    "slug": "pitfall-providing-a-new-context-default-object",
+    "question": "Pitfall: providing a new context default object.",
+    "shortAnswer": "Default values are only used without a Provider; mutating defaults is bad; usually require a Provider.",
+    "detailedAnswer": "Throw in useX() if missing provider for clearer DX.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "context"
+    ]
+  }
+]

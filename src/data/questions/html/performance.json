@@ -1,0 +1,182 @@
+[
+  {
+    "id": "html-performance-001",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "html-choices-affecting-lcp",
+    "question": "Which HTML choices most affect LCP?",
+    "shortAnswer": "Hero image/video prioritization, preload hints, avoid lazy on LCP element, server TTFB.",
+    "detailedAnswer": "fetchpriority=high on LCP image, correct sizes, modern formats. Reduce render-blocking resources in head.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-002",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "link-rel-preload",
+    "question": "What does <link rel=preload> do?",
+    "shortAnswer": "Early fetch of critical resources with as type before the browser discovers them.",
+    "detailedAnswer": "Over-preloading competes for bandwidth. Use for fonts/LCP images/critical CSS carefully.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-003",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "script-defer-vs-async",
+    "question": "Explain defer vs async on script tags.",
+    "shortAnswer": "async executes when ready (order not guaranteed); defer waits for parse and runs in order before DOMContentLoaded.",
+    "detailedAnswer": "module scripts defer by default. Put non-critical scripts deferred; avoid blocking parser without reason.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-004",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "resource-hints",
+    "question": "How do resource hints dns-prefetch, preconnect, prefetch differ?",
+    "shortAnswer": "dns-prefetch resolves DNS; preconnect warmer connection; prefetch fetches likely next navigation resources.",
+    "detailedAnswer": "preconnect is costlier — limit origins. prefetch is speculative and low priority.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-005",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "image-width-height-cls",
+    "question": "Why do width/height on images matter for performance UX?",
+    "shortAnswer": "They reserve layout space reducing CLS; help browser pick dimensions with sizes.",
+    "detailedAnswer": "Modern alternative: CSS aspect-ratio. Missing dimensions cause jank as images load.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-006",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "critical-css-and-html",
+    "question": "How does critical CSS relate to HTML?",
+    "shortAnswer": "Inline or prioritize CSS needed for first paint; defer the rest.",
+    "detailedAnswer": "Don't inline megabytes. Extract above-the-fold carefully. Measure FCP/LCP.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-007",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "third-party-scripts-cost",
+    "question": "What is the cost of too many third-party scripts in head?",
+    "shortAnswer": "Main-thread contention, delayed hydration/LCP, privacy risk, unpredictable failures.",
+    "detailedAnswer": "Load async, delay until interaction, self-host when possible, tag managers carefully.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-008",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "lazy-iframes",
+    "question": "When should you use loading=lazy on iframes?",
+    "shortAnswer": "For below-the-fold embeds (maps, videos) to reduce initial network/CPU.",
+    "detailedAnswer": "Don't lazy the primary above-the-fold embed. Still sandbox/third-party risk remains.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-009",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "font-prioritization-html",
+    "question": "How do you prioritize fonts in HTML?",
+    "shortAnswer": "preconnect to font origin, preload critical woff2, use font-display strategy in CSS.",
+    "detailedAnswer": "Too many family/weights hurt. Subset when possible.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-010",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "html-streaming-ssr-perf",
+    "question": "What HTML streaming/SSR concerns affect performance?",
+    "shortAnswer": "Time to first byte, progressive HTML, avoiding request waterfalls for data.",
+    "detailedAnswer": "Flush early shells. Don't block entire HTML on slow secondary data.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-011",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "modulepreload",
+    "question": "How can <link rel=modulepreload> help?",
+    "shortAnswer": "Preloads ES modules and their dependency graph earlier.",
+    "detailedAnswer": "Useful for critical app entry. Wrong usage wastes bandwidth.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "html-performance-012",
+    "technology": "html",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "html-performance-budget",
+    "question": "Define a performance budget for HTML assets on a content site.",
+    "shortAnswer": "Limits for document size, image weight, third parties, LCP element rules, CI checks.",
+    "detailedAnswer": "Encode budgets into CMS constraints and monitoring alerts.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  }
+]

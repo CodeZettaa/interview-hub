@@ -1,0 +1,183 @@
+[
+  {
+    "id": "css-box-model-001",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "content-box-vs-border-box",
+    "question": "Explain content-box vs border-box.",
+    "shortAnswer": "content-box sizes content only; border-box includes padding+border in width/height.",
+    "detailedAnswer": "border-box is the common reset for predictable layouts. box-sizing inherits with * tricks carefully.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-002",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "margin-padding-border",
+    "question": "How do margin, padding, and border differ?",
+    "shortAnswer": "margin is outside border (collapsible vertically); padding inside; border between.",
+    "detailedAnswer": "Backgrounds clip differently. Negative margins pull layout. padding doesn't collapse.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-003",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "margin-collapse",
+    "question": "What is margin collapse?",
+    "shortAnswer": "Adjacent vertical margins can combine into one; common with parent/child and siblings.",
+    "detailedAnswer": "BFC, padding, borders, flex/grid items prevent collapse. Horizontal margins don't collapse.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-004",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "block-formatting-context",
+    "question": "What is a Block Formatting Context (BFC)?",
+    "shortAnswer": "A layout region that contains floats and prevents margin collapse across its boundary.",
+    "detailedAnswer": "Created by overflow not visible, flex/grid items, flow-root, etc. Useful float containment.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-005",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "percentage-padding-quirks",
+    "question": "How do width percentage and padding interact?",
+    "shortAnswer": "Percent padding is relative to containing block width (including vertical padding historically).",
+    "detailedAnswer": "Can surprise in height calculations. Prefer modern layout and gap when possible.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-006",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "min-max-width",
+    "question": "min-width/max-width vs width — when?",
+    "shortAnswer": "Constraints allow intrinsic/content sizing with clamps; width is preferred size.",
+    "detailedAnswer": "Useful responsive patterns: width 100%; max-width 40rem. min-width:0 critical in flex.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-007",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "box-sizing-reset",
+    "question": "What does box-sizing inherit reset look like and trade-offs?",
+    "shortAnswer": "html { box-sizing: border-box } * { box-sizing: inherit } — predictable sizing globally.",
+    "detailedAnswer": "Third-party widgets may assume content-box. Document the reset.",
+    "example": "html { box-sizing: border-box; }\n*, *::before, *::after { box-sizing: inherit; }",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-008",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "outline-vs-border",
+    "question": "How do outlines differ from borders?",
+    "shortAnswer": "Outlines don't take space in the box model; often used for focus.",
+    "detailedAnswer": "outline-offset helps. Don't remove without accessible replacement.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-009",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "overflow-sticky-pitfalls",
+    "question": "Explain overflow, scroll containers, and sticky pitfalls.",
+    "shortAnswer": "Overflow creates scrollports; sticky needs non-hidden ancestors and room to travel.",
+    "detailedAnswer": "overflow: hidden can kill sticky and create BFCs. Know which ancestor clips.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-010",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "visual-vs-layout-viewport",
+    "question": "What is the visual viewport vs layout viewport conceptually?",
+    "shortAnswer": "Mobile zoom/keyboards can change visual viewport; layout viewport drives CSS layout.",
+    "detailedAnswer": "position fixed and vh units historically quirky on mobile — svh/lvh/dvh help.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-011",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "centering-box-model",
+    "question": "How do you center a box horizontally and vertically (classic)?",
+    "shortAnswer": "Many ways: flex/grid place-items, absolute + inset/auto margins, margin auto for block widths.",
+    "detailedAnswer": "Prefer flex/grid for modern UI. Absolute centering needs positioned ancestor.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "box-model"
+    ]
+  },
+  {
+    "id": "css-box-model-012",
+    "technology": "css",
+    "category": "Box Model",
+    "categorySlug": "box-model",
+    "slug": "spacing-tokens-box-model",
+    "question": "Architect spacing tokens with the box model in mind.",
+    "shortAnswer": "Use consistent spacing scale via custom properties; prefer gap in flex/grid over margin hacks.",
+    "detailedAnswer": "Collapse and double-spacing issues shrink when gap is primary.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "box-model"
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ng-zoneless-001",
+    "technology": "angular",
+    "category": "Zoneless Angular",
+    "categorySlug": "zoneless",
+    "slug": "what-is-zoneless-angular",
+    "question": "What is zoneless Angular?",
+    "shortAnswer": "Running Angular without Zone.js patching, relying on signals and explicit notifications for updates.",
+    "detailedAnswer": "provideExperimentalZonelessChangeDetection (or current zoneless APIs) removes Zone overhead. Async work must update signals/mark views dirty.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "zoneless"
+    ]
+  },
+  {
+    "id": "ng-zoneless-002",
+    "technology": "angular",
+    "category": "Zoneless Angular",
+    "categorySlug": "zoneless",
+    "slug": "why-move-to-zoneless",
+    "question": "Why move to zoneless?",
+    "shortAnswer": "Less monkey-patching, clearer reactivity, better performance predictability, smaller bundle.",
+    "detailedAnswer": "Requires discipline: third-party libs that expect Zone may break. Signals become the primary update path.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "zoneless"
+    ]
+  },
+  {
+    "id": "ng-zoneless-003",
+    "technology": "angular",
+    "category": "Zoneless Angular",
+    "categorySlug": "zoneless",
+    "slug": "how-do-you-trigger-ui-updates-without-zone-js-after-settimeout",
+    "question": "How do you trigger UI updates without Zone.js after setTimeout?",
+    "shortAnswer": "Update a signal or call ChangeDetectorRef.markForCheck/detectChanges inside the callback.",
+    "detailedAnswer": "Wrapping in NgZone.run is the Zone-era approach; zoneless prefers signals. Test carefully.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "zoneless"
+    ]
+  },
+  {
+    "id": "ng-zoneless-004",
+    "technology": "angular",
+    "category": "Zoneless Angular",
+    "categorySlug": "zoneless",
+    "slug": "what-library-risks-appear-when-going-zoneless",
+    "question": "What library risks appear when going zoneless?",
+    "shortAnswer": "Libs that rely on Zone to refresh UI after async work may not update until you bridge updates.",
+    "detailedAnswer": "Prefer signal-friendly patterns. Audit charting/auth SDKs. Add thin adapters that set signals on callbacks.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "zoneless"
+    ]
+  }
+]

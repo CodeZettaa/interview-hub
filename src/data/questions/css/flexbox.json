@@ -1,0 +1,198 @@
+[
+  {
+    "id": "css-flexbox-001",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "what-flexbox-solves",
+    "question": "What problem does flexbox solve?",
+    "shortAnswer": "One-dimensional distribution of space and alignment among items in a row or column.",
+    "detailedAnswer": "Great for toolbars, navs, card footers. Use grid for two-dimensional layout.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-002",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-main-vs-cross-axis",
+    "question": "main axis vs cross axis?",
+    "shortAnswer": "main follows flex-direction; cross is perpendicular. justify-* vs align-* map accordingly.",
+    "detailedAnswer": "row → main horizontal; column → main vertical. Wrapping adds multi-line cross behavior.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-003",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-grow-shrink-basis",
+    "question": "Explain flex-grow, flex-shrink, and flex-basis.",
+    "shortAnswer": "grow distributes free space; shrink reduces when overflowing; basis is starting size before free space.",
+    "detailedAnswer": "flex: 1 is commonly 1 1 0% or 1 1 0 depending on browser defaults of the shorthand — know your shorthand.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-004",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-min-width-auto",
+    "question": "Why does min-width: auto cause flex overflow?",
+    "shortAnswer": "Default min-size is content-based, preventing shrinking below content; set min-width:0 to allow.",
+    "detailedAnswer": "Classic truncation bug with text in flex children. Also min-height:0 in column flex.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-005",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "align-items-content-self",
+    "question": "align-items vs align-content vs align-self?",
+    "shortAnswer": "items aligns each item on cross axis; content packs flex lines when wrapped; self overrides per item.",
+    "detailedAnswer": "align-content only matters with multi-line flex containers.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-006",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-wrap",
+    "question": "How does flex-wrap change layout?",
+    "shortAnswer": "Allows items onto new lines when they don't fit; enables align-content.",
+    "detailedAnswer": "Wrapped flex is still 1D per line, not a full 2D grid.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-007",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-gap",
+    "question": "gap in flexbox — why prefer it over margins?",
+    "shortAnswer": "gap spaces items without end margins collapsing/doubling hacks.",
+    "detailedAnswer": "Cleaner responsive stacks. Watch older browser support if relevant.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-008",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-sticky-footer",
+    "question": "How do you build a sticky footer with flex?",
+    "shortAnswer": "Column flex on min-height 100%; main { flex: 1 } pushes footer down.",
+    "detailedAnswer": "Also achievable with grid. Avoid body margin collapse issues.",
+    "example": "body { min-height: 100%; display: flex; flex-direction: column; }\nmain { flex: 1; }",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-009",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-order-a11y",
+    "question": "order property — uses and a11y concerns?",
+    "shortAnswer": "Visual reorder without changing DOM; can break keyboard/AT reading order.",
+    "detailedAnswer": "Prefer DOM order matching visual order. Use order sparingly.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-010",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-shorthand-pitfalls",
+    "question": "flex shorthand pitfalls?",
+    "shortAnswer": "flex: auto vs none vs 1 change basis/grow/shrink dramatically.",
+    "detailedAnswer": "Read the expanded values. Debugging: look at computed flex-* in DevTools.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-011",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-vs-floats",
+    "question": "When is flex better than float-based layouts?",
+    "shortAnswer": "Almost always for modern 1D alignment — fewer clearfix hacks, better distribution.",
+    "detailedAnswer": "Floats remain for text wrapping around images, not page layout.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-012",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "responsive-nav-flex",
+    "question": "Responsive nav with flex — approach?",
+    "shortAnswer": "Space-between for logo/links; wrap or collapse to menu; align-items center.",
+    "detailedAnswer": "Use media queries or container queries for hamburger switch. Keep focus order sensible.",
+    "difficulty": "lead",
+    "type": "scenario",
+    "tags": [
+      "flexbox"
+    ]
+  },
+  {
+    "id": "css-flexbox-013",
+    "technology": "css",
+    "category": "Flexbox",
+    "categorySlug": "flexbox",
+    "slug": "flex-utilities-design-system",
+    "question": "Design flex utilities for a design system.",
+    "shortAnswer": "Document direction, wrap, justify, align, grow, gap tokens; warn about min-width:0.",
+    "detailedAnswer": "Provide recipes for common patterns to avoid one-off CSS.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "flexbox"
+    ]
+  }
+]

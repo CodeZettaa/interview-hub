@@ -1,0 +1,122 @@
+[
+  {
+    "id": "vue-testing-001",
+    "technology": "vue",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-test-vue-components-with-vue-test-utils",
+    "question": "How do you test Vue components with Vue Test Utils?",
+    "shortAnswer": "mount/shallowMount, set props, trigger events, assert emitted events and text.",
+    "detailedAnswer": "Prefer testing behavior. Use Testing Library Vue for a11y-oriented queries when possible.",
+    "difficulty": "lead",
+    "type": "coding",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "vue-testing-002",
+    "technology": "vue",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "testing-pinia-stores",
+    "question": "Testing Pinia stores?",
+    "shortAnswer": "createPinia + setActivePinia in beforeEach; call actions; assert state/getters.",
+    "detailedAnswer": "Mock API modules. Reset state between tests.",
+    "difficulty": "lead",
+    "type": "coding",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "vue-testing-003",
+    "technology": "vue",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-test-composables-that-use-lifecycle-hooks",
+    "question": "How do you test composables that use lifecycle hooks?",
+    "shortAnswer": "wrap in a component harness or use dedicated helpers so onMounted runs.",
+    "detailedAnswer": "Assert cleanup on unmount. Mock timers for intervals.",
+    "difficulty": "lead",
+    "type": "scenario",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "vue-testing-004",
+    "technology": "vue",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "snapshot-tests-useful-or-harmful",
+    "question": "Snapshot tests — useful or harmful?",
+    "shortAnswer": "Useful for small pure presentational output; brittle for large templates.",
+    "detailedAnswer": "Prefer explicit assertions for critical behavior.",
+    "difficulty": "lead",
+    "type": "comparison",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "vue-testing-005",
+    "technology": "vue",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "e2e-testing-vue-apps",
+    "question": "E2E testing Vue apps?",
+    "shortAnswer": "Playwright/Cypress against real flows; seed data; avoid coupling to CSS class churn.",
+    "detailedAnswer": "Cover login, critical CRUD, routing. Run in CI.",
+    "difficulty": "lead",
+    "type": "best-practice",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "vue-testing-006",
+    "technology": "vue",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "mocking-vue-router-in-unit-tests",
+    "question": "Mocking Vue Router in unit tests?",
+    "shortAnswer": "createRouter with memory history or stub useRouter/useRoute.",
+    "detailedAnswer": "Test navigation emits/guards separately from UI when needed.",
+    "difficulty": "lead",
+    "type": "coding",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "vue-testing-007",
+    "technology": "vue",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-test-async-components-suspense",
+    "question": "How do you test async components / Suspense?",
+    "shortAnswer": "Await flushPromises; stub async children when focusing parent; assert fallbacks.",
+    "detailedAnswer": "Don't leave dangling timers. Control resolved data.",
+    "difficulty": "lead",
+    "type": "debugging",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "vue-testing-008",
+    "technology": "vue",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "lead-testing-strategy-for-a-vue-product-team",
+    "question": "Lead: testing strategy for a Vue product team?",
+    "shortAnswer": "Unit for composables/stores, component tests for UI contracts, e2e for journeys; coverage on critical paths not vanity %.",
+    "detailedAnswer": "Share fixtures. Fail CI on flakes with quarantine process.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "testing"
+    ]
+  }
+]

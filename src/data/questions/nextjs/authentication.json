@@ -1,0 +1,93 @@
+[
+  {
+    "id": "next-authentication-001",
+    "technology": "nextjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "where-should-session-checks-happen-in-a-next-js-app",
+    "question": "Where should session checks happen in a Next.js app?",
+    "shortAnswer": "Server Components, Server Actions, Route Handlers, and Middleware — defense in depth, not middleware alone.",
+    "detailedAnswer": "Middleware is a coarse gate; still authorize in data layer. Never trust client-only checks. Prefer httpOnly cookies for session tokens.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "auth"
+    ]
+  },
+  {
+    "id": "next-authentication-002",
+    "technology": "nextjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "auth-js-nextauth-vs-custom-jwt-cookies-trade-offs",
+    "question": "Auth.js (NextAuth) vs custom JWT cookies — trade-offs?",
+    "shortAnswer": "Auth.js speeds providers/session patterns; custom gives control but you own security details.",
+    "detailedAnswer": "Consider session strategy (JWT vs DB), rotation, CSRF, and multi-tenant needs. Prefer battle-tested libraries unless requirements demand custom.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "next-authentication-003",
+    "technology": "nextjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "how-do-you-protect-server-actions-that-mutate-user-data",
+    "question": "How do you protect Server Actions that mutate user data?",
+    "shortAnswer": "Verify session, check resource ownership, validate input, and revalidate carefully.",
+    "detailedAnswer": "Pass IDs from the client but authorize against the session user. Rate-limit sensitive actions.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "next-authentication-004",
+    "technology": "nextjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "what-is-the-risk-of-caching-authenticated-rsc-payloads",
+    "question": "What is the risk of caching authenticated RSC payloads?",
+    "shortAnswer": "User A could receive User B's data if personalized responses are stored in shared caches.",
+    "detailedAnswer": "Mark dynamic, use private cache, vary by cookie carefully, and test with two sessions. This is a critical security interview topic.",
+    "interviewTip": "Mention cache poisoning / cross-user leaks.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "next-authentication-005",
+    "technology": "nextjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "how-do-oauth-callback-routes-fit-app-router",
+    "question": "How do OAuth callback routes fit App Router?",
+    "shortAnswer": "Usually Route Handlers under `app/api/auth/...` handling redirects and cookie sets.",
+    "detailedAnswer": "Ensure correct redirect URIs per environment. Handle error query params. Keep secrets in env only.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "authentication"
+    ]
+  },
+  {
+    "id": "next-authentication-006",
+    "technology": "nextjs",
+    "category": "Authentication",
+    "categorySlug": "authentication",
+    "slug": "lead-design-auth-for-a-multi-tenant-next-js-saas",
+    "question": "Lead: design auth for a multi-tenant Next.js SaaS.",
+    "shortAnswer": "Org-aware sessions, middleware tenant resolution, server-side enforcement, audit logs, and SSO options.",
+    "detailedAnswer": "Isolate data by tenant at the query layer. Support invite flows and role claims. Plan for session revocation and SCIM later.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "authentication"
+    ]
+  }
+]

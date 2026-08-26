@@ -1,0 +1,111 @@
+[
+  {
+    "id": "next-caching-001",
+    "technology": "nextjs",
+    "category": "Caching",
+    "categorySlug": "caching",
+    "slug": "what-caching-layers-exist-in-next-js-app-router",
+    "question": "What caching layers exist in Next.js App Router?",
+    "shortAnswer": "Request memoization, Data Cache, Full Route Cache, and Router Cache (client).",
+    "detailedAnswer": "Each layer has different lifetimes and invalidation. Interviews often probe whether you can name and distinguish them. Misconfiguring one causes 'why is this stale?' bugs.",
+    "interviewTip": "Name the four caches clearly.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "caching"
+    ]
+  },
+  {
+    "id": "next-caching-002",
+    "technology": "nextjs",
+    "category": "Caching",
+    "categorySlug": "caching",
+    "slug": "how-does-fetch-caching-work-by-default-in-next-js",
+    "question": "How does fetch caching work by default in Next.js?",
+    "shortAnswer": "fetch responses can be cached in the Data Cache unless opted into no-store/dynamic behavior (defaults evolved by version — know your version).",
+    "detailedAnswer": "Use `cache: 'no-store'` for dynamic, `next.revalidate` for ISR-like data, and tags for invalidation. Always verify against current Next docs for default changes.",
+    "commonMistake": "Assuming browser Cache-Control alone explains Next server caching.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "caching"
+    ]
+  },
+  {
+    "id": "next-caching-003",
+    "technology": "nextjs",
+    "category": "Caching",
+    "categorySlug": "caching",
+    "slug": "what-is-react-cache-used-for",
+    "question": "What is React cache() used for?",
+    "shortAnswer": "Deduplicate pure data calls within a single server request/render tree.",
+    "detailedAnswer": "It is not a cross-request cache. Use it to avoid repeat DB hits when multiple components need the same user/session.",
+    "example": "const getUser = cache(async (id) => db.user.find(id));",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "caching"
+    ]
+  },
+  {
+    "id": "next-caching-004",
+    "technology": "nextjs",
+    "category": "Caching",
+    "categorySlug": "caching",
+    "slug": "how-do-you-prevent-caching-of-personalized-pages",
+    "question": "How do you prevent caching of personalized pages?",
+    "shortAnswer": "Use dynamic APIs (cookies/headers), `no-store`, and private cache headers; never put user HTML in shared full-route cache.",
+    "detailedAnswer": "Audit CDN behavior. Segment personalized islands. Prefer caching shared public fragments only.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "security",
+      "caching"
+    ]
+  },
+  {
+    "id": "next-caching-005",
+    "technology": "nextjs",
+    "category": "Caching",
+    "categorySlug": "caching",
+    "slug": "client-router-cache-vs-full-route-cache-difference",
+    "question": "Client Router Cache vs Full Route Cache — difference?",
+    "shortAnswer": "Router Cache is client-side soft-navigation cache; Full Route Cache is server/CDN stored RSC payload/HTML for static routes.",
+    "detailedAnswer": "Stale client navigations often come from Router Cache. Understand refresh/revalidate behaviors when debugging 'UI didn't update after mutation'.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "caching"
+    ]
+  },
+  {
+    "id": "next-caching-006",
+    "technology": "nextjs",
+    "category": "Caching",
+    "categorySlug": "caching",
+    "slug": "how-do-cache-tags-design-for-a-commerce-site",
+    "question": "How do cache tags design for a commerce site?",
+    "shortAnswer": "Tag by entity and relationships: product, category, collection; invalidate the minimal set on publish.",
+    "detailedAnswer": "Avoid one mega-tag that busts everything. Document tag ownership. Combine with path revalidation for critical URLs.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "caching"
+    ]
+  },
+  {
+    "id": "next-caching-007",
+    "technology": "nextjs",
+    "category": "Caching",
+    "categorySlug": "caching",
+    "slug": "lead-production-shows-intermittent-stale-dashboards-how-do-you-diagnose",
+    "question": "Lead: production shows intermittent stale dashboards. How do you diagnose?",
+    "shortAnswer": "Map which cache layer, check personalization leakage, verify revalidation hooks, add cache telemetry, and fix defaults with tests.",
+    "detailedAnswer": "Reproduce with cache keys and cookies. Confirm CDN vs app cache. Establish runbooks for purge. Treat cache bugs as P0 when auth data leaks.",
+    "difficulty": "lead",
+    "type": "debugging",
+    "tags": [
+      "caching"
+    ]
+  }
+]

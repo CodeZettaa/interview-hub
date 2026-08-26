@@ -1,0 +1,62 @@
+[
+  {
+    "id": "react-testing-001",
+    "technology": "react",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "what-does-react-testing-library-encourage",
+    "question": "What does React Testing Library encourage?",
+    "shortAnswer": "Testing user-visible behavior via accessible queries rather than internals.",
+    "detailedAnswer": "Prefer getByRole/text. Avoid testing implementation details like state values.",
+    "difficulty": "lead",
+    "type": "best-practice",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "react-testing-002",
+    "technology": "react",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-test-asynchronous-ui-updates",
+    "question": "How do you test asynchronous UI updates?",
+    "shortAnswer": "use findBy*, waitFor, and ensure promises flush; mock network.",
+    "detailedAnswer": "Avoid arbitrary setTimeout. Assert loading and success states.",
+    "difficulty": "lead",
+    "type": "coding",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "react-testing-003",
+    "technology": "react",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "unit-vs-integration-vs-e2e-for-react",
+    "question": "Unit vs integration vs e2e for React?",
+    "shortAnswer": "Unit for hooks/utils; integration for components with providers; e2e for critical flows.",
+    "detailedAnswer": "Balance cost. Mock at boundaries thoughtfully.",
+    "difficulty": "lead",
+    "type": "comparison",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "react-testing-004",
+    "technology": "react",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-mock-userouter-navigation-in-tests",
+    "question": "How do you mock useRouter / navigation in tests?",
+    "shortAnswer": "Mock the framework module or wrap with a memory router provider.",
+    "detailedAnswer": "Keep tests resilient to minor API changes by abstracting navigation helpers.",
+    "difficulty": "lead",
+    "type": "scenario",
+    "tags": [
+      "testing"
+    ]
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "react-rendering-001",
+    "technology": "react",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "what-triggers-a-react-re-render",
+    "question": "What triggers a React re-render?",
+    "shortAnswer": "State/context updates in that component (or parents re-rendering children), and hooks that schedule updates.",
+    "detailedAnswer": "Re-render ≠ DOM update. Reconciliation decides DOM mutations. Children re-render by default when parents do.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "react-rendering-002",
+    "technology": "react",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "render-vs-commit-phase",
+    "question": "Render vs commit phase?",
+    "shortAnswer": "Render calculates the next element tree; commit applies DOM changes and runs layout/effects.",
+    "detailedAnswer": "Understanding phases helps reason about Suspense and concurrent features.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "react-rendering-003",
+    "technology": "react",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "what-is-concurrent-rendering-in-react-18",
+    "question": "What is concurrent rendering in React 18+?",
+    "shortAnswer": "React can interrupt, prioritize, and reuse work so urgent updates stay responsive.",
+    "detailedAnswer": "Features: startTransition, Suspense, selective hydration. Write pure renders.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "react-rendering-004",
+    "technology": "react",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "how-does-suspense-change-loading-ux",
+    "question": "How does Suspense change loading UX?",
+    "shortAnswer": "Declaratively show fallbacks while lazy components or data resolve.",
+    "detailedAnswer": "Coordinate boundaries. Avoid waterfalls. Frameworks integrate data fetching with Suspense differently.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "react-rendering-005",
+    "technology": "react",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "why-did-my-child-re-render-when-props-look-the-same",
+    "question": "Why did my child re-render when props look the same?",
+    "shortAnswer": "Parent re-rendered and child isn't memoized; or props are new references each time.",
+    "detailedAnswer": "Use React DevTools highlight updates. Stabilize props or memoize carefully.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "react-rendering-006",
+    "technology": "react",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "automatic-batching-what-changed-in-react-18",
+    "question": "Automatic batching — what changed in React 18?",
+    "shortAnswer": "Updates inside timeouts/promises batch too, not only React event handlers.",
+    "detailedAnswer": "Fewer intermediate renders. Use flushSync sparingly when you must read DOM immediately.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "react-rendering-007",
+    "technology": "react",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "architecture-tip-for-render-performance",
+    "question": "Architecture tip for render performance?",
+    "shortAnswer": "State down, components up: keep state close; split contexts; virtualize lists; profile before memo everywhere.",
+    "detailedAnswer": "Structure beats micro-memoization.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "rendering"
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "node-performance-001",
+    "technology": "nodejs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-do-you-profile-a-slow-node-service",
+    "question": "How do you profile a slow Node service?",
+    "shortAnswer": "CPU profiles, flamegraphs, heap snapshots, event-loop delay metrics, and APM traces — hypothesize then measure.",
+    "detailedAnswer": "Avoid premature optimization. Reproduce with load tests. Distinguish JS CPU, GC, I/O wait, and lock time.",
+    "difficulty": "fresh",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "node-performance-002",
+    "technology": "nodejs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "when-do-worker-threads-help-vs-hurt",
+    "question": "When do worker_threads help vs hurt?",
+    "shortAnswer": "Help CPU-bound parallel work; hurt when serialization/copy overhead dominates or work is tiny.",
+    "detailedAnswer": "Share ArrayBuffers carefully. Prefer pooling workers. Don't expect magic for I/O-bound tasks.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "node-performance-003",
+    "technology": "nodejs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "json-stringify-on-huge-objects-in-the-request-path-issue",
+    "question": "JSON.stringify on huge objects in the request path — issue?",
+    "shortAnswer": "CPU cost and event-loop blocking; also memory spikes.",
+    "detailedAnswer": "Stream responses, paginate, or move heavy serialization off hot paths. Consider faster serializers when measured.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "node-performance-004",
+    "technology": "nodejs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "connection-pooling-best-practices-for-node-db-clients",
+    "question": "Connection pooling best practices for Node DB clients?",
+    "shortAnswer": "Size pools to DB limits Ã— instances, set timeouts, and monitor wait queue latency.",
+    "detailedAnswer": "Too large pools stampede the DB. Too small increases queue time. Align with horizontal pod counts.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "node-performance-005",
+    "technology": "nodejs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "what-node-flags-metrics-help-gc-tuning-conversations",
+    "question": "What Node flags/metrics help GC tuning conversations?",
+    "shortAnswer": "heapUsed/heapTotal, gc events (perf_hooks), and understanding young/old space — tune only with evidence.",
+    "detailedAnswer": "Usually fix allocations first. Increasing heap can mask leaks and raise pause times.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "node-performance-006",
+    "technology": "nodejs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "lead-define-performance-budgets-for-node-microservices",
+    "question": "Lead: define performance budgets for Node microservices.",
+    "shortAnswer": "p50/p99 latency, error rate, event-loop delay, heap growth SLO, and CI load-test gates on critical paths.",
+    "detailedAnswer": "Assign owners per service. Budget regressions block merges. Pair with capacity planning.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  }
+]

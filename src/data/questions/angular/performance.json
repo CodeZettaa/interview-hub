@@ -1,0 +1,92 @@
+[
+  {
+    "id": "ng-performance-001",
+    "technology": "angular",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "list-key-angular-performance-techniques",
+    "question": "List key Angular performance techniques.",
+    "shortAnswer": "OnPush/signals, lazy routes, track in @for, defer blocks, virtual scroll, and avoiding heavy template methods.",
+    "detailedAnswer": "Measure with Angular DevTools profiler. Optimize network and bundle size too—perf is not only CD.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "ng-performance-002",
+    "technology": "angular",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "what-is-defer-and-when-do-you-use-it",
+    "question": "What is @defer and when do you use it?",
+    "shortAnswer": "Defers loading a template block until a trigger (idle, viewport, interaction), reducing initial work.",
+    "detailedAnswer": "Great for below-the-fold widgets. Provide @placeholder/@loading/@error. Don't defer critical above-the-fold UI.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "ng-performance-003",
+    "technology": "angular",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-does-cdk-virtual-scrolling-help",
+    "question": "How does CDK virtual scrolling help?",
+    "shortAnswer": "Renders only visible list items, keeping DOM small for large datasets.",
+    "detailedAnswer": "Requires item size strategy. Combine with trackBy/track. Not a substitute for pagination on huge server lists.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "ng-performance-004",
+    "technology": "angular",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-do-you-diagnose-unnecessary-change-detection-cycles",
+    "question": "How do you diagnose unnecessary change detection cycles?",
+    "shortAnswer": "Use profiler to see frequent checks; look for impure pipes, template methods, and noisy Zone events.",
+    "detailedAnswer": "Switch to OnPush/signals, debounce high-frequency events, run outside Angular when appropriate.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "ng-performance-005",
+    "technology": "angular",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "what-bundle-strategies-help-angular-apps-load-faster",
+    "question": "What bundle strategies help Angular apps load faster?",
+    "shortAnswer": "Lazy routes, deferrable views, treeshakeable providers, and analyzing with source-map-explorer.",
+    "detailedAnswer": "Avoid importing large libraries in root. Prefer standalone imports of only needed pieces.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "ng-performance-006",
+    "technology": "angular",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "is-pure-pipe-caching-enough-for-expensive-list-transforms",
+    "question": "Is pure pipe caching enough for expensive list transforms?",
+    "shortAnswer": "Helps when inputs are referentially stable; still prefer precomputing in computed signals for complex views.",
+    "detailedAnswer": "Impure pipes run every CD—avoid. For filtered lists, compute in the class with signals.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "performance"
+    ]
+  }
+]

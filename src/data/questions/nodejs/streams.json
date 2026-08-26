@@ -1,0 +1,93 @@
+[
+  {
+    "id": "node-streams-001",
+    "technology": "nodejs",
+    "category": "Streams",
+    "categorySlug": "streams",
+    "slug": "what-are-node-streams-and-why-use-them",
+    "question": "What are Node streams and why use them?",
+    "shortAnswer": "Streams process data in chunks with backpressure, avoiding loading entire payloads into memory.",
+    "detailedAnswer": "Readable/Writable/Duplex/Transform cover pipelines for HTTP, files, and transforms. Essential for large uploads, proxies, and ETL. Misusing streams (buffering everything) defeats the purpose.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "streams"
+    ]
+  },
+  {
+    "id": "node-streams-002",
+    "technology": "nodejs",
+    "category": "Streams",
+    "categorySlug": "streams",
+    "slug": "explain-backpressure-in-node-streams",
+    "question": "Explain backpressure in Node streams.",
+    "shortAnswer": "When a writable cannot keep up, it signals the readable to pause — `write` returns false and 'drain' resumes.",
+    "detailedAnswer": "Ignoring backpressure causes unbounded memory growth. Prefer `pipeline`/`pipelinePromise` over manual pipe for error propagation. Interviewers love 'what happens if producer is faster than consumer?'",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "backpressure"
+    ]
+  },
+  {
+    "id": "node-streams-003",
+    "technology": "nodejs",
+    "category": "Streams",
+    "categorySlug": "streams",
+    "slug": "pipe-vs-pipeline-which-should-you-use",
+    "question": "pipe vs pipeline — which should you use?",
+    "shortAnswer": "`stream.pipeline` (or pipelinePromise) handles errors and cleanup; classic `pipe` does not auto-destroy on error.",
+    "detailedAnswer": "Always prefer pipeline in new code. Unhandled stream errors are a common crash source. Attach error handlers if you must use pipe.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "streams"
+    ]
+  },
+  {
+    "id": "node-streams-004",
+    "technology": "nodejs",
+    "category": "Streams",
+    "categorySlug": "streams",
+    "slug": "how-do-you-implement-a-transform-stream",
+    "question": "How do you implement a Transform stream?",
+    "shortAnswer": "Extend Transform and implement `_transform(chunk, enc, cb)` (and optionally `_flush`).",
+    "detailedAnswer": "Push transformed chunks, handle errors via callback, respect objectMode when needed. Keep transforms pure and fast; heavy work belongs off-thread.",
+    "example": "const { Transform } = require('stream');\nnew Transform({ transform(chunk, enc, cb) { cb(null, chunk.toString().toUpperCase()); } });",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "streams"
+    ]
+  },
+  {
+    "id": "node-streams-005",
+    "technology": "nodejs",
+    "category": "Streams",
+    "categorySlug": "streams",
+    "slug": "debugging-memory-grows-while-streaming-a-large-file-upload-likely-causes",
+    "question": "Debugging: memory grows while streaming a large file upload. Likely causes?",
+    "shortAnswer": "Buffering entire body, missing backpressure, collecting chunks into an array, or not consuming the stream.",
+    "detailedAnswer": "Ensure upstream pauses correctly. Avoid `await req.arrayBuffer()` for huge bodies. Stream to disk/object storage. Watch for multiple consumers.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "streams"
+    ]
+  },
+  {
+    "id": "node-streams-006",
+    "technology": "nodejs",
+    "category": "Streams",
+    "categorySlug": "streams",
+    "slug": "architecture-design-a-high-throughput-log-shipping-agent-in-node",
+    "question": "Architecture: design a high-throughput log shipping agent in Node.",
+    "shortAnswer": "Readable from sources â†’ transform (parse/enrich) â†’ writable to sinks with pipeline, bounded queues, and retry/backoff.",
+    "detailedAnswer": "Use objectMode carefully. Separate CPU-heavy parse to workers. Expose metrics for lag, drop rates, and backpressure events. Prefer proven agents if ops maturity is low.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "streams"
+    ]
+  }
+]

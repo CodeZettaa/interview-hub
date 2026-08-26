@@ -1,0 +1,152 @@
+[
+  {
+    "id": "vue-directives-001",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "what-are-vue-directives",
+    "question": "What are Vue directives?",
+    "shortAnswer": "Template annotations that apply reactive behavior to DOM (v-if, v-for, v-model, v-show, etc.).",
+    "detailedAnswer": "Built-ins cover common cases; custom directives handle low-level DOM integrations.",
+    "difficulty": "mid",
+    "type": "output",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-002",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "v-if-vs-v-show",
+    "question": "v-if vs v-show?",
+    "shortAnswer": "v-if conditionally creates/destroys; v-show toggles display CSS.",
+    "detailedAnswer": "Use v-if for rarely shown costly trees; v-show for frequent toggles.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-003",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "v-for-key-best-practices",
+    "question": "v-for key best practices?",
+    "shortAnswer": "Always provide a stable unique key; avoid index when list reorders/filters.",
+    "detailedAnswer": "Keys preserve component state correctly across patches.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-004",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "v-model-modifiers-lazy-number-trim",
+    "question": "v-model modifiers — .lazy .number .trim?",
+    "shortAnswer": "Alter when/how the model updates from inputs.",
+    "detailedAnswer": "Built-in modifiers cover common form needs; components can support custom modifiers.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-005",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "what-does-v-bind-v-on-shorthand-look-like",
+    "question": "What does v-bind / v-on shorthand look like?",
+    "shortAnswer": ":attr for bind, @event for on; can bind objects of attributes/listeners.",
+    "detailedAnswer": "Object bind is powerful for forwarding. Prefer clarity in complex templates.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-006",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "custom-directives-when-preferred-over-components",
+    "question": "Custom directives — when preferred over components?",
+    "shortAnswer": "When you need direct DOM access that isn't worth a wrapper component (focus, analytics hook).",
+    "detailedAnswer": "Prefer components/composables for most UI. Directives are escape hatches.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-007",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "directive-hooks-in-vue-3-created-mounted-updated",
+    "question": "Directive hooks in Vue 3 (created/mounted/updated/...)?",
+    "shortAnswer": "Lifecycle for the element the directive is bound to.",
+    "detailedAnswer": "Clean up in beforeUnmount/unmounted. Avoid assuming component instance internals.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-008",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "v-html-security-concerns",
+    "question": "v-html security concerns?",
+    "shortAnswer": "Renders raw HTML—XSS risk if content is user-controlled.",
+    "detailedAnswer": "Sanitize thoroughly or avoid. Prefer text interpolation.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-009",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "v-memo-what-does-it-do",
+    "question": "v-memo — what does it do?",
+    "shortAnswer": "Memoizes a sub-tree until dependency values change—perf optimization for heavy lists.",
+    "detailedAnswer": "Use selectively after measuring. Wrong deps serve stale UI.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "directives"
+    ]
+  },
+  {
+    "id": "vue-directives-010",
+    "technology": "vue",
+    "category": "Directives",
+    "categorySlug": "directives",
+    "slug": "common-v-for-v-if-pitfall",
+    "question": "Common v-for + v-if pitfall?",
+    "shortAnswer": "Don't use them on the same element; filter computed lists then v-for.",
+    "detailedAnswer": "Vue 3 treats them differently than Vue 2—still prefer computed filtering.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "directives"
+    ]
+  }
+]

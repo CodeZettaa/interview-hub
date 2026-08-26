@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ts-architecture-001",
+    "technology": "typescript",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "monorepo-type-structure",
+    "question": "How do you structure types in a large TS monorepo?",
+    "shortAnswer": "Shared packages for domain types, app-local UI types, avoid circular type imports.",
+    "detailedAnswer": "Generate API types from OpenAPI. Keep runtime validators next to types.",
+    "difficulty": "fresh",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ts-architecture-002",
+    "technology": "typescript",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "dto-vs-domain-types",
+    "question": "DTO vs domain model typing?",
+    "shortAnswer": "Separate transport shapes from rich domain types; map at boundaries.",
+    "detailedAnswer": "Prevents leaking persistence/API details into core logic.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ts-architecture-003",
+    "technology": "typescript",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "di-typing-approaches",
+    "question": "Dependency injection typing approaches?",
+    "shortAnswer": "Constructor typing, tokens with interfaces, frameworks (Nest) with decorators.",
+    "detailedAnswer": "Prefer interface-based ports for testability. Avoid concrete-only graphs.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ts-architecture-004",
+    "technology": "typescript",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "path-aliases-architecture",
+    "question": "How do path aliases affect architecture?",
+    "shortAnswer": "Clean imports but can hide circular deps; configure consistently in TS + bundler.",
+    "detailedAnswer": "Prefer package boundaries over deep alias spaghetti.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ts-architecture-005",
+    "technology": "typescript",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "library-public-api",
+    "question": "Public API surface for a TS library?",
+    "shortAnswer": "Export minimal types/functions; use package.json exports; avoid leaking internals.",
+    "detailedAnswer": "Version types carefully — they are breaking changes too.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ts-architecture-006",
+    "technology": "typescript",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "error-typing-strategies",
+    "question": "Error typing strategies?",
+    "shortAnswer": "Result types, neverthrow, typed error subclasses, or unknown + narrow at edges.",
+    "detailedAnswer": "Avoid throwing any. Document error contracts across services.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ts-architecture-007",
+    "technology": "typescript",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "ts-engineering-standards",
+    "question": "Lead: set TypeScript engineering standards for a team.",
+    "shortAnswer": "strict defaults, eslint rules, type-test CI, boundary validation policy, review guidelines for any/assertions.",
+    "detailedAnswer": "Teach via examples. Measure any count over time. Align tsconfig across packages.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  }
+]

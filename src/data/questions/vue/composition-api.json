@@ -1,0 +1,183 @@
+[
+  {
+    "id": "vue-composition-api-001",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "what-is-a-composable-in-vue",
+    "question": "What is a composable in Vue?",
+    "shortAnswer": "A function starting with use that encapsulates reusable stateful logic via Composition API.",
+    "detailedAnswer": "Similar spirit to React hooks but different rules. Return refs/functions. Document side effects.",
+    "example": "export function useCounter() {\n  const n = ref(0)\n  const inc = () => n.value++\n  return { n, inc }\n}",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-002",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "lifecycle-hooks-in-setup-script-setup",
+    "question": "Lifecycle hooks in setup / script setup?",
+    "shortAnswer": "onMounted, onUpdated, onUnmounted, etc., register when called synchronously during setup.",
+    "detailedAnswer": "Don't register hooks async after await without care—call before await or use other patterns.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-003",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "how-do-provide-inject-work-with-composition-api",
+    "question": "How do provide/inject work with Composition API?",
+    "shortAnswer": "provide(key, value) in ancestor; inject(key) in descendants; can be reactive if value is.",
+    "detailedAnswer": "Prefer explicit props for public component APIs; provide/inject for app-level concerns.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-004",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "top-level-await-in-script-setup-implications",
+    "question": "Top-level await in <script setup> — implications?",
+    "shortAnswer": "Makes the component async; use with Suspense; be mindful of SSR and error handling.",
+    "detailedAnswer": "Great for gated data loading. Provide fallbacks.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-005",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "sharing-state-with-a-module-level-ref-composable",
+    "question": "Sharing state with a module-level ref composable?",
+    "shortAnswer": "A singleton ref outside the function creates shared state across callers.",
+    "detailedAnswer": "Intentional for global stores; accidental for per-component state—create refs inside the function.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-006",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "composable-design-best-practices",
+    "question": "Composable design best practices?",
+    "shortAnswer": "Accept refs/getters for inputs, return consistent APIs, clean up side effects, avoid hidden globals.",
+    "detailedAnswer": "Keep composables focused. Name clearly. Test independently.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-007",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "how-do-you-migrate-an-options-api-component-to-composition",
+    "question": "How do you migrate an Options API component to Composition?",
+    "shortAnswer": "Move data→ref/reactive, methods→functions, computed/watch similarly; use script setup gradually.",
+    "detailedAnswer": "Don't big-bang rewrite. Extract composables as you go.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-008",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "defineexpose-when-do-you-need-it",
+    "question": "defineExpose — when do you need it?",
+    "shortAnswer": "With script setup, bindings are closed by default; expose selectively for parent template refs.",
+    "detailedAnswer": "Prefer props/emits over imperative parent calls when possible.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-009",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "typescript-with-defineprops-defineemits",
+    "question": "TypeScript with defineProps/defineEmits?",
+    "shortAnswer": "Use generic type params or runtime declaration with types; prefer type-based for clarity.",
+    "detailedAnswer": "defineProps<{ title: string }>(). Avoid duplicating runtime + types inconsistently.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-010",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "composables-vs-pinia-stores",
+    "question": "Composables vs Pinia stores?",
+    "shortAnswer": "Composables for local/reusable logic; Pinia for shared app state with tooling.",
+    "detailedAnswer": "Don't put every bit of state in Pinia. Use composables inside stores too.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-011",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "how-do-you-unit-test-a-composable",
+    "question": "How do you unit test a composable?",
+    "shortAnswer": "Call it inside a setup wrapper or @vue/test-utils; assert returned refs after actions.",
+    "detailedAnswer": "Mock dependencies. Test cleanup on unmount.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "composition-api"
+    ]
+  },
+  {
+    "id": "vue-composition-api-012",
+    "technology": "vue",
+    "category": "Composition API",
+    "categorySlug": "composition-api",
+    "slug": "lead-standards-for-composables-in-a-large-vue-codebase",
+    "question": "Lead: standards for composables in a large Vue codebase?",
+    "shortAnswer": "Lint naming, folder conventions (composables/), review for singleton leaks, docs with examples.",
+    "detailedAnswer": "Encourage composition over mixins. Ban new mixins for greenfield.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "composition-api"
+    ]
+  }
+]

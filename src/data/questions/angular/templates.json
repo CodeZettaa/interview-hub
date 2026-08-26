@@ -1,0 +1,110 @@
+[
+  {
+    "id": "ng-templates-001",
+    "technology": "angular",
+    "category": "Templates",
+    "categorySlug": "templates",
+    "slug": "what-template-syntax-does-angular-use-for-binding",
+    "question": "What template syntax does Angular use for binding?",
+    "shortAnswer": "Interpolation {{ }}, property [prop], event (event), and two-way [(ngModel)] or [()] for bananas-in-a-box.",
+    "detailedAnswer": "Prefer one-way data flow. Use attribute binding [attr.x] when needed. Event bindings pass $event. Avoid complex expressions in templates—move logic to the class or pipes/computed signals.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "templates",
+      "binding"
+    ]
+  },
+  {
+    "id": "ng-templates-002",
+    "technology": "angular",
+    "category": "Templates",
+    "categorySlug": "templates",
+    "slug": "what-is-the-difference-between-ngif-and-if-in-angular-templates",
+    "question": "What is the difference between *ngIf and @if in Angular templates?",
+    "shortAnswer": "@if is the built-in control flow; *ngIf is the structural directive from CommonModule.",
+    "detailedAnswer": "Built-in @if/@for/@switch are preferred in modern Angular: better type narrowing, no NgIf import, and clearer syntax. *ngIf still works for older codebases.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "templates"
+    ]
+  },
+  {
+    "id": "ng-templates-003",
+    "technology": "angular",
+    "category": "Templates",
+    "categorySlug": "templates",
+    "slug": "how-does-for-track-items-and-why-does-track-matter",
+    "question": "How does @for track items and why does track matter?",
+    "shortAnswer": "@for requires a track expression to identify items across updates for efficient DOM reuse.",
+    "detailedAnswer": "Tracking by identity (id) prevents destroying/recreating DOM when the list reorders. track $index is a last resort. Wrong track keys cause state bugs in inputs inside lists.",
+    "example": "@for (item of items(); track item.id) {\n  <li>{{ item.name }}</li>\n}",
+    "difficulty": "fresh",
+    "type": "scenario",
+    "tags": [
+      "templates"
+    ]
+  },
+  {
+    "id": "ng-templates-004",
+    "technology": "angular",
+    "category": "Templates",
+    "categorySlug": "templates",
+    "slug": "what-are-template-reference-variables",
+    "question": "What are template reference variables?",
+    "shortAnswer": "Local names (#ref) that point to a DOM element or directive/component instance in the template.",
+    "detailedAnswer": "Useful for focusing inputs or reading child APIs. Prefer ViewChild for class access. Don't overuse refs for state that belongs in the component model.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "templates"
+    ]
+  },
+  {
+    "id": "ng-templates-005",
+    "technology": "angular",
+    "category": "Templates",
+    "categorySlug": "templates",
+    "slug": "when-should-you-use-a-pipe-vs-a-method-in-a-template",
+    "question": "When should you use a pipe vs a method in a template?",
+    "shortAnswer": "Pipes (especially pure) are for transform display; avoid calling heavy methods every CD cycle.",
+    "detailedAnswer": "Pure pipes cache by reference/args. Methods in templates re-run on every change detection. Prefer computed signals for derived view state in modern apps.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "templates"
+    ]
+  },
+  {
+    "id": "ng-templates-006",
+    "technology": "angular",
+    "category": "Templates",
+    "categorySlug": "templates",
+    "slug": "how-do-you-safely-bind-html-in-angular-templates",
+    "question": "How do you safely bind HTML in Angular templates?",
+    "shortAnswer": "Use [innerHTML] only with DomSanitizer after trusting content, or prefer text interpolation.",
+    "detailedAnswer": "Angular sanitizes by default against XSS. bypassSecurityTrustHtml is dangerous—only for trusted CMS content. Prefer markdown renderers with sanitization.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "templates",
+      "security"
+    ]
+  },
+  {
+    "id": "ng-templates-007",
+    "technology": "angular",
+    "category": "Templates",
+    "categorySlug": "templates",
+    "slug": "what-is-ng-template-and-how-does-it-differ-from-ng-container",
+    "question": "What is ng-template and how does it differ from ng-container?",
+    "shortAnswer": "ng-template is an inert template definition; ng-container groups without a DOM element.",
+    "detailedAnswer": "ng-template content renders only when stamped (ngIf else, ngTemplateOutlet). ng-container is for structural directives without extra wrappers. Don't confuse with <template> HTML element semantics alone.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "templates"
+    ]
+  }
+]

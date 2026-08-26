@@ -1,0 +1,78 @@
+[
+  {
+    "id": "ng-testing-001",
+    "technology": "angular",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-unit-test-an-angular-component-with-testbed",
+    "question": "How do you unit test an Angular component with TestBed?",
+    "shortAnswer": "Configure TestBed with the component and stubs, create fixture, detectChanges, assert DOM/state.",
+    "detailedAnswer": "Prefer shallow tests with mocked services. Use harnesses for CDK. Prefer testing library queries for a11y-friendly asserts.",
+    "difficulty": "lead",
+    "type": "coding",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "ng-testing-002",
+    "technology": "angular",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-test-a-service-that-uses-httpclient",
+    "question": "How do you test a service that uses HttpClient?",
+    "shortAnswer": "Use HttpClientTestingModule / provideHttpClientTesting and HttpTestingController to flush responses.",
+    "detailedAnswer": "Assert method, URL, and body. Verify no outstanding requests. Don't hit real network in unit tests.",
+    "example": "const req = httpMock.expectOne('/api/users');\nreq.flush([{ id: 1 }]);",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "ng-testing-003",
+    "technology": "angular",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "what-is-the-difference-between-isolated-unit-tests-and-integration-component-tes",
+    "question": "What is the difference between isolated unit tests and integration component tests?",
+    "shortAnswer": "Unit tests mock collaborators heavily; integration tests wire more of Angular and child components.",
+    "detailedAnswer": "Balance speed vs confidence. Use e2e (Playwright/Cypress) for critical user journeys.",
+    "difficulty": "lead",
+    "type": "comparison",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "ng-testing-004",
+    "technology": "angular",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-test-route-guards",
+    "question": "How do you test route guards?",
+    "shortAnswer": "Call the guard function with mock routers/auth state and assert boolean/UrlTree results.",
+    "detailedAnswer": "With functional guards, inject deps via TestBed.runInInjectionContext. Cover authorized and unauthorized paths.",
+    "difficulty": "lead",
+    "type": "coding",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "ng-testing-005",
+    "technology": "angular",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "lead-approach-what-testing-strategy-do-you-set-for-an-angular-team",
+    "question": "Lead approach: what testing strategy do you set for an Angular team?",
+    "shortAnswer": "Pyramid: many fast unit tests, fewer component integration tests, selective e2e; CI required; shared testing utilities.",
+    "detailedAnswer": "Ban flaky e2e as merge blockers without quarantine. Contract-test APIs. Budget time for a11y checks.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "testing"
+    ]
+  }
+]

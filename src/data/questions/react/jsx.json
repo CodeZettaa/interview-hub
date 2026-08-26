@@ -1,0 +1,92 @@
+[
+  {
+    "id": "react-jsx-001",
+    "technology": "react",
+    "category": "JSX",
+    "categorySlug": "jsx",
+    "slug": "what-is-jsx",
+    "question": "What is JSX?",
+    "shortAnswer": "Syntactic sugar that compiles to React.createElement / jsx() calls describing the element tree.",
+    "detailedAnswer": "JSX is not HTML—attribute names differ (className), and expressions wrap in {}. Must return a single root or fragment.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "jsx"
+    ]
+  },
+  {
+    "id": "react-jsx-002",
+    "technology": "react",
+    "category": "JSX",
+    "categorySlug": "jsx",
+    "slug": "why-use-classname-instead-of-class-in-jsx",
+    "question": "Why use className instead of class in JSX?",
+    "shortAnswer": "class is a reserved word in JS; DOM property is className.",
+    "detailedAnswer": "Similarly htmlFor instead of for. React normalizes these to DOM attributes.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "jsx"
+    ]
+  },
+  {
+    "id": "react-jsx-003",
+    "technology": "react",
+    "category": "JSX",
+    "categorySlug": "jsx",
+    "slug": "how-do-you-conditionally-render-in-jsx",
+    "question": "How do you conditionally render in JSX?",
+    "shortAnswer": "&&, ternary, or early return null; avoid leaving 0/NaN accidentally rendered.",
+    "detailedAnswer": "Prefer clear ternaries for if/else UI. Extract variables for readability. Don't put hooks inside conditions.",
+    "difficulty": "fresh",
+    "type": "coding",
+    "tags": [
+      "jsx"
+    ]
+  },
+  {
+    "id": "react-jsx-004",
+    "technology": "react",
+    "category": "JSX",
+    "categorySlug": "jsx",
+    "slug": "what-are-the-rules-for-the-key-prop-in-lists",
+    "question": "What are the rules for the key prop in lists?",
+    "shortAnswer": "Keys should be stable unique IDs among siblings—not random, preferably not index if list reorders.",
+    "detailedAnswer": "Keys help reconciliation. Wrong keys remount components and reset state.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "jsx"
+    ]
+  },
+  {
+    "id": "react-jsx-005",
+    "technology": "react",
+    "category": "JSX",
+    "categorySlug": "jsx",
+    "slug": "what-does-spreading-props-props-risk",
+    "question": "What does spreading props {...props} risk?",
+    "shortAnswer": "Forwarding unexpected DOM attrs, overriding important props, or leaking sensitive data.",
+    "detailedAnswer": "Be explicit. Destructure known props and pass the rest carefully to DOM elements.",
+    "difficulty": "fresh",
+    "type": "debugging",
+    "tags": [
+      "jsx"
+    ]
+  },
+  {
+    "id": "react-jsx-006",
+    "technology": "react",
+    "category": "JSX",
+    "categorySlug": "jsx",
+    "slug": "jsx-vs-react-createelement-when-does-it-matter",
+    "question": "JSX vs React.createElement — when does it matter?",
+    "shortAnswer": "Same runtime result; JSX needs a transform. Understanding createElement helps debug compiled output.",
+    "detailedAnswer": "In modern React 17+ automatic runtime, import React for JSX is often unnecessary.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "jsx"
+    ]
+  }
+]

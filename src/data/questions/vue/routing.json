@@ -1,0 +1,153 @@
+[
+  {
+    "id": "vue-routing-001",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "how-does-vue-router-map-paths-to-views",
+    "question": "How does Vue Router map paths to views?",
+    "shortAnswer": "Create a router with route records (path, component, children) and install it on the app.",
+    "detailedAnswer": "router-view renders matched components; router-link navigates. History vs hash modes.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-002",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "params-vs-query-in-vue-router",
+    "question": "Params vs query in Vue Router?",
+    "shortAnswer": "Params are path segments; query is search string. Both available on route object.",
+    "detailedAnswer": "Use params for identity; query for filters. Watch route for changes.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-003",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "navigation-guards-beforeeach-vs-beforeenter-vs-in-component",
+    "question": "Navigation guards — beforeEach vs beforeEnter vs in-component?",
+    "shortAnswer": "Global, per-route, and per-component hooks to control navigation.",
+    "detailedAnswer": "Use for auth. Prefer returning false/new path carefully. Don't over-fetch in guards.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-004",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "how-do-you-lazy-load-routes",
+    "question": "How do you lazy load routes?",
+    "shortAnswer": "() => import('./Page.vue') as component—webpack/vite code splitting.",
+    "detailedAnswer": "Speeds initial load. Group related routes thoughtfully.",
+    "example": "{ path: '/admin', component: () => import('./Admin.vue') }",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-005",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "nested-routes-and-named-views",
+    "question": "Nested routes and named views?",
+    "shortAnswer": "Children render in nested router-view; named views fill multiple outlets.",
+    "detailedAnswer": "Useful for complex layouts with sidebars. Keep structures understandable.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-006",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "how-do-you-scroll-restore-scroll-behavior",
+    "question": "How do you scroll restore / scroll behavior?",
+    "shortAnswer": "Configure scrollBehavior on the router for back/forward and anchors.",
+    "detailedAnswer": "Important for UX on long pages. Coordinate with keep-alive.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-007",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "passing-props-to-route-components",
+    "question": "Passing props to route components?",
+    "shortAnswer": "props: true maps params to props; or a function mapping route to props.",
+    "detailedAnswer": "Keeps components decoupled from $route. Prefer props for testability.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-008",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "dynamic-route-matching-and-catch-all",
+    "question": "Dynamic route matching and catch-all?",
+    "shortAnswer": "Param patterns and pathMatch for 404s.",
+    "detailedAnswer": "Order matters—specific routes before catch-alls.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-009",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "composition-api-userouter-and-useroute",
+    "question": "Composition API: useRouter and useRoute?",
+    "shortAnswer": "Composable accessors for navigation and current route inside setup.",
+    "detailedAnswer": "Watch () => route.params.id for param changes when reusing components.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "vue-routing-010",
+    "technology": "vue",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "architecture-for-large-vue-apps-routing",
+    "question": "Architecture for large Vue apps' routing?",
+    "shortAnswer": "Route modules per feature, typed route names, centralized auth guards, layout routes.",
+    "detailedAnswer": "Avoid a single giant routes file. Align folders with route segments.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "routing"
+    ]
+  }
+]

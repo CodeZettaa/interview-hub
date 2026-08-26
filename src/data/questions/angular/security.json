@@ -1,0 +1,63 @@
+[
+  {
+    "id": "ng-security-001",
+    "technology": "angular",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "how-does-angular-help-prevent-xss",
+    "question": "How does Angular help prevent XSS?",
+    "shortAnswer": "Template binding sanitizes untrusted values; avoid bypassing DomSanitizer except for trusted content.",
+    "detailedAnswer": "Never build HTML with string concat from user input. Prefer text binding. Audit innerHTML usage.",
+    "difficulty": "lead",
+    "type": "concept",
+    "tags": [
+      "security",
+      "xss"
+    ]
+  },
+  {
+    "id": "ng-security-002",
+    "technology": "angular",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "what-is-csrf-and-how-do-angular-apps-mitigate-it",
+    "question": "What is CSRF and how do Angular apps mitigate it?",
+    "shortAnswer": "Cross-site request forgery tricks the browser into sending auth cookies; use tokens/SameSite and careful cookie design.",
+    "detailedAnswer": "HttpClientXsrfModule reads cookie tokens for mutating requests. Prefer token auth in headers for SPAs when appropriate.",
+    "difficulty": "lead",
+    "type": "concept",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "ng-security-003",
+    "technology": "angular",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "why-is-bypasssecuritytrusthtml-dangerous",
+    "question": "Why is bypassSecurityTrustHtml dangerous?",
+    "shortAnswer": "It disables sanitization—malicious HTML/JS can execute if content isn't fully trusted.",
+    "detailedAnswer": "Only use for content you control end-to-end. Prefer sanitizing markdown pipelines.",
+    "difficulty": "lead",
+    "type": "debugging",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "ng-security-004",
+    "technology": "angular",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "security-checklist-for-an-angular-enterprise-app",
+    "question": "Security checklist for an Angular enterprise app?",
+    "shortAnswer": "Sanitize HTML, secure tokens/storage, HTTPS, CSP, dependency audits, least-privilege API scopes, no secrets in bundles.",
+    "detailedAnswer": "Treat XSS/CSRF/open redirects seriously. Review interceptors handling auth. Train team on DomSanitizer misuse.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "security"
+    ]
+  }
+]

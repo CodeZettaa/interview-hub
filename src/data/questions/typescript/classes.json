@@ -1,0 +1,107 @@
+[
+  {
+    "id": "ts-classes-001",
+    "technology": "typescript",
+    "category": "Classes",
+    "categorySlug": "classes",
+    "slug": "parameter-properties",
+    "question": "How do parameter properties work?",
+    "shortAnswer": "Constructor parameter shortcuts like public readonly id: string auto-create fields.",
+    "detailedAnswer": "Concise for DTOs/services. Don't overuse for fat constructors.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "classes"
+    ]
+  },
+  {
+    "id": "ts-classes-002",
+    "technology": "typescript",
+    "category": "Classes",
+    "categorySlug": "classes",
+    "slug": "ts-private-vs-hash-private",
+    "question": "public/private/protected vs #private?",
+    "shortAnswer": "TS visibility is compile-time; # is runtime private hard privacy.",
+    "detailedAnswer": "private can be bypassed via brackets; # cannot. Choose based on encapsulation needs.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "classes"
+    ]
+  },
+  {
+    "id": "ts-classes-003",
+    "technology": "typescript",
+    "category": "Classes",
+    "categorySlug": "classes",
+    "slug": "abstract-class-vs-interface",
+    "question": "abstract classes vs interfaces?",
+    "shortAnswer": "Abstract classes can provide implementation + template methods; interfaces are pure contracts.",
+    "detailedAnswer": "Use abstract when sharing code; interfaces when multiple unrelated implementers.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "classes"
+    ]
+  },
+  {
+    "id": "ts-classes-004",
+    "technology": "typescript",
+    "category": "Classes",
+    "categorySlug": "classes",
+    "slug": "implements-keyword",
+    "question": "What does implements do?",
+    "shortAnswer": "Requires a class to satisfy an interface's members structurally.",
+    "detailedAnswer": "Doesn't add runtime. Excess property nuances differ from object literals.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "classes"
+    ]
+  },
+  {
+    "id": "ts-classes-005",
+    "technology": "typescript",
+    "category": "Classes",
+    "categorySlug": "classes",
+    "slug": "class-field-init-order",
+    "question": "Class field initialization order pitfalls?",
+    "shortAnswer": "Base fields/constructors vs derived; use definite assignment and careful supers.",
+    "detailedAnswer": "TS definite assignment assertions (!) can hide bugs — prefer proper init.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "classes"
+    ]
+  },
+  {
+    "id": "ts-classes-006",
+    "technology": "typescript",
+    "category": "Classes",
+    "categorySlug": "classes",
+    "slug": "classes-vs-factories",
+    "question": "When are classes preferable to closures/factories?",
+    "shortAnswer": "When you need instanceof, inheritance hierarchies, or DI frameworks expecting classes.",
+    "detailedAnswer": "Otherwise functions + modules often simpler. Prefer composition.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "classes"
+    ]
+  },
+  {
+    "id": "ts-classes-007",
+    "technology": "typescript",
+    "category": "Classes",
+    "categorySlug": "classes",
+    "slug": "typing-this-in-classes",
+    "question": "Typing this in class methods/callbacks?",
+    "shortAnswer": "Arrow properties capture this; bind; or specify this parameters.",
+    "detailedAnswer": "Passing raw methods as callbacks loses this — classic bug.",
+    "difficulty": "lead",
+    "type": "scenario",
+    "tags": [
+      "classes"
+    ]
+  }
+]

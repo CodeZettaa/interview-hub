@@ -1,0 +1,93 @@
+[
+  {
+    "id": "nest-guards-001",
+    "technology": "nestjs",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "what-does-a-nest-guard-do",
+    "question": "What does a Nest Guard do?",
+    "shortAnswer": "Implements canActivate to allow/deny access before the route handler runs — typically authn/authz.",
+    "detailedAnswer": "Return boolean/Promise/Observable. Throw Unauthorized/Forbidden for clear HTTP semantics. Read metadata via Reflector.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "guards"
+    ]
+  },
+  {
+    "id": "nest-guards-002",
+    "technology": "nestjs",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "how-do-you-build-role-based-guards-with-custom-decorators",
+    "question": "How do you build role-based guards with custom decorators?",
+    "shortAnswer": "Set metadata with SetMetadata; Reflector reads roles in the guard; compare to user claims.",
+    "detailedAnswer": "Compose @Roles('admin') on handlers. Keep role checks out of controllers. Prefer central policy when complexity grows.",
+    "example": "export const Roles = (...roles: string[]) => SetMetadata('roles', roles);",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "guards"
+    ]
+  },
+  {
+    "id": "nest-guards-003",
+    "technology": "nestjs",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "guard-order-and-multiple-guards-behavior",
+    "question": "Guard order and multiple guards — behavior?",
+    "shortAnswer": "All must allow (AND). Execution order follows registration (global → controller → method).",
+    "detailedAnswer": "Design fail-fast cheap checks first. Don't put heavy DB in every guard without caching.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "guards"
+    ]
+  },
+  {
+    "id": "nest-guards-004",
+    "technology": "nestjs",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "guards-vs-middleware-for-api-keys",
+    "question": "Guards vs middleware for API keys?",
+    "shortAnswer": "Either works; guards better access to ExecutionContext and route metadata; middleware earlier for very coarse rejection.",
+    "detailedAnswer": "For Nest purity and OpenAPI/metadata, guards win. Document the choice.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "guards"
+    ]
+  },
+  {
+    "id": "nest-guards-005",
+    "technology": "nestjs",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "scenario-public-health-route-blocked-by-global-authguard",
+    "question": "Scenario: public health route blocked by global AuthGuard.",
+    "shortAnswer": "Use @Public() metadata and guard short-circuit when public; or exclude routes carefully.",
+    "detailedAnswer": "Global guards need escape hatches. Test public routes in e2e.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "guards"
+    ]
+  },
+  {
+    "id": "nest-guards-006",
+    "technology": "nestjs",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "lead-authorization-model-beyond-role-strings-in-nest",
+    "question": "Lead: authorization model beyond role strings in Nest?",
+    "shortAnswer": "Move to policy/ability engines (CASL), resource-based checks in domain services, and thin guards that invoke policies.",
+    "detailedAnswer": "Roles don't scale for multi-tenant resource ownership. Keep decision logic testable outside HTTP.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "guards"
+    ]
+  }
+]

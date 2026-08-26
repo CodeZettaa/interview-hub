@@ -1,0 +1,108 @@
+[
+  {
+    "id": "next-server-actions-001",
+    "technology": "nextjs",
+    "category": "Server Actions",
+    "categorySlug": "server-actions",
+    "slug": "what-are-server-actions",
+    "question": "What are Server Actions?",
+    "shortAnswer": "Async server functions that can be invoked from Client Components/forms, marked with `'use server'`.",
+    "detailedAnswer": "They simplify mutations without hand-written API routes for first-party UI. Can be progressive-enhancement friendly with forms. Still require authz and validation.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "server-actions"
+    ]
+  },
+  {
+    "id": "next-server-actions-002",
+    "technology": "nextjs",
+    "category": "Server Actions",
+    "categorySlug": "server-actions",
+    "slug": "how-do-you-bind-a-server-action-to-a-form",
+    "question": "How do you bind a Server Action to a form?",
+    "shortAnswer": "Pass the action to `<form action={serverAction}>` or use `useActionState`/`useFormStatus` patterns.",
+    "detailedAnswer": "Works without client JS for basic progressive enhancement. Prefer validated FormData parsing. Revalidate caches after mutation.",
+    "example": "async function create(formData: FormData) {\n  'use server';\n  // mutate + revalidatePath('/items')\n}",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "server-actions"
+    ]
+  },
+  {
+    "id": "next-server-actions-003",
+    "technology": "nextjs",
+    "category": "Server Actions",
+    "categorySlug": "server-actions",
+    "slug": "what-security-issues-exist-with-server-actions",
+    "question": "What security issues exist with Server Actions?",
+    "shortAnswer": "They are callable endpoints — must authenticate, authorize, validate inputs, and protect against CSRF/origin issues as designed by the framework version.",
+    "detailedAnswer": "Never trust client-sent IDs for ownership. Apply same rules as API routes. Avoid exporting overly broad server functions.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "next-server-actions-004",
+    "technology": "nextjs",
+    "category": "Server Actions",
+    "categorySlug": "server-actions",
+    "slug": "how-do-server-actions-integrate-with-caching",
+    "question": "How do Server Actions integrate with caching?",
+    "shortAnswer": "After mutations call revalidatePath/revalidateTag or update tags so UI reflects new data.",
+    "detailedAnswer": "Forgetting revalidation is a common bug ('submit worked but list stale'). Also consider optimistic UI on the client.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "server-actions"
+    ]
+  },
+  {
+    "id": "next-server-actions-005",
+    "technology": "nextjs",
+    "category": "Server Actions",
+    "categorySlug": "server-actions",
+    "slug": "server-action-vs-route-handler-for-file-uploads",
+    "question": "Server Action vs Route Handler for file uploads?",
+    "shortAnswer": "Either can work; actions integrate with forms, handlers may fit external clients and streaming uploads better.",
+    "detailedAnswer": "Watch body size limits and runtime constraints. Validate MIME/size server-side. Store in object storage, not disk on ephemeral hosts.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "server-actions"
+    ]
+  },
+  {
+    "id": "next-server-actions-006",
+    "technology": "nextjs",
+    "category": "Server Actions",
+    "categorySlug": "server-actions",
+    "slug": "how-do-you-handle-validation-errors-in-server-actions",
+    "question": "How do you handle validation errors in Server Actions?",
+    "shortAnswer": "Return structured error objects / useActionState; don't only throw opaque errors.",
+    "detailedAnswer": "Map field errors for UX. Log unexpected exceptions. Keep messages safe for end users.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "server-actions"
+    ]
+  },
+  {
+    "id": "next-server-actions-007",
+    "technology": "nextjs",
+    "category": "Server Actions",
+    "categorySlug": "server-actions",
+    "slug": "lead-standardize-server-action-usage-across-teams",
+    "question": "Lead: standardize Server Action usage across teams.",
+    "shortAnswer": "Conventions for 'use server' file placement, zod schemas, auth guards, revalidation helpers, and observability.",
+    "detailedAnswer": "Create shared `action` wrappers that enforce authz + logging. Ban ad-hoc DB calls from random client components without review.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "server-actions"
+    ]
+  }
+]

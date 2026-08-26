@@ -1,0 +1,93 @@
+[
+  {
+    "id": "next-ssg-001",
+    "technology": "nextjs",
+    "category": "SSG",
+    "categorySlug": "ssg",
+    "slug": "what-is-static-site-generation-ssg-in-next-js",
+    "question": "What is Static Site Generation (SSG) in Next.js?",
+    "shortAnswer": "Pages are prerendered at build time into HTML/JSON that can be served from a CDN.",
+    "detailedAnswer": "Great for marketing, docs, and content that changes infrequently. Fast TTFB and low origin load. Updates require rebuild or revalidation strategies.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "ssg"
+    ]
+  },
+  {
+    "id": "next-ssg-002",
+    "technology": "nextjs",
+    "category": "SSG",
+    "categorySlug": "ssg",
+    "slug": "how-do-you-statically-generate-dynamic-routes",
+    "question": "How do you statically generate dynamic routes?",
+    "shortAnswer": "Provide a set of paths at build (generateStaticParams) and render those pages ahead of time.",
+    "detailedAnswer": "In App Router, `generateStaticParams` replaces getStaticPaths. Decide fallback behavior for unknown paths (404 vs on-demand generation).",
+    "example": "export async function generateStaticParams() {\n  return [{ slug: 'a' }, { slug: 'b' }];\n}",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "ssg"
+    ]
+  },
+  {
+    "id": "next-ssg-003",
+    "technology": "nextjs",
+    "category": "SSG",
+    "categorySlug": "ssg",
+    "slug": "what-content-is-a-poor-fit-for-pure-ssg",
+    "question": "What content is a poor fit for pure SSG?",
+    "shortAnswer": "Per-user dashboards, rapidly changing prices without ISR, and pages needing request-time headers.",
+    "detailedAnswer": "You can still statically shell and stream dynamic parts. Pure SSG for personalized pages risks stale/wrong content and cache leaks.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "ssg"
+    ]
+  },
+  {
+    "id": "next-ssg-004",
+    "technology": "nextjs",
+    "category": "SSG",
+    "categorySlug": "ssg",
+    "slug": "how-does-ssg-affect-seo",
+    "question": "How does SSG affect SEO?",
+    "shortAnswer": "Prerendered HTML is immediately crawlable with stable URLs and fast LCP potential.",
+    "detailedAnswer": "Ensure metadata is correct at build. For large sites, build times and path generation strategy matter. Pair with sitemap generation.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "next-ssg-005",
+    "technology": "nextjs",
+    "category": "SSG",
+    "categorySlug": "ssg",
+    "slug": "build-time-exploded-after-adding-50k-product-pages-what-do-you-do",
+    "question": "Build time exploded after adding 50k product pages. What do you do?",
+    "shortAnswer": "Don't SSG everything at build — use ISR/on-demand, incremental path generation, or hybrid rendering.",
+    "detailedAnswer": "Prioritize top pages at build. Generate long-tail on first request with revalidation. Watch CDN and origin costs.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "ssg"
+    ]
+  },
+  {
+    "id": "next-ssg-006",
+    "technology": "nextjs",
+    "category": "SSG",
+    "categorySlug": "ssg",
+    "slug": "lead-define-a-static-content-pipeline-for-a-docs-site",
+    "question": "Lead: define a static content pipeline for a docs site.",
+    "shortAnswer": "MDX/contentlayer at build, generateStaticParams, preview mode for editors, atomic deploys, and CDN caching.",
+    "detailedAnswer": "CI builds content; previews per PR. Keep search index generation in pipeline. Measure build duration as a SLO.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "ssg"
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "nest-exception-filters-001",
+    "technology": "nestjs",
+    "category": "Exception Filters",
+    "categorySlug": "exception-filters",
+    "slug": "what-does-an-exception-filter-do",
+    "question": "What does an exception filter do?",
+    "shortAnswer": "Catches thrown errors and turns them into HTTP (or RPC) responses with consistent shape.",
+    "detailedAnswer": "Implements ExceptionFilter / @Catch. Global filters standardize API errors.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "exception-filters"
+    ]
+  },
+  {
+    "id": "nest-exception-filters-002",
+    "technology": "nestjs",
+    "category": "Exception Filters",
+    "categorySlug": "exception-filters",
+    "slug": "httpexception-vs-domain-errors-mapping-strategy",
+    "question": "HttpException vs domain errors — mapping strategy?",
+    "shortAnswer": "Throw domain errors in services; filter maps to HttpException/status codes at the edge.",
+    "detailedAnswer": "Avoid leaking ORM errors. Preserve cause for logs. Don't catch in every controller.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "exception-filters"
+    ]
+  },
+  {
+    "id": "nest-exception-filters-003",
+    "technology": "nestjs",
+    "category": "Exception Filters",
+    "categorySlug": "exception-filters",
+    "slug": "built-in-vs-custom-filters-when-custom",
+    "question": "Built-in vs custom filters — when custom?",
+    "shortAnswer": "Custom when you need stable error codes, i18n messages, or special logging/metrics on failures.",
+    "detailedAnswer": "Keep BaseExceptionFilter behaviors in mind. Test filter output contracts.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "exception-filters"
+    ]
+  },
+  {
+    "id": "nest-exception-filters-004",
+    "technology": "nestjs",
+    "category": "Exception Filters",
+    "categorySlug": "exception-filters",
+    "slug": "order-of-filters-and-catch-specificity",
+    "question": "Order of filters and @Catch specificity?",
+    "shortAnswer": "More specific @Catch(Type) preferred over broad @Catch(); registration order matters for globals.",
+    "detailedAnswer": "Don't register overlapping filters that fight. Document the hierarchy.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "exception-filters"
+    ]
+  },
+  {
+    "id": "nest-exception-filters-005",
+    "technology": "nestjs",
+    "category": "Exception Filters",
+    "categorySlug": "exception-filters",
+    "slug": "debugging-errors-return-nest-s-default-json-in-production-unexpectedly",
+    "question": "Debugging: errors return Nest's default JSON in production unexpectedly.",
+    "shortAnswer": "Filter not registered globally, or exception type not caught; adapter differences.",
+    "detailedAnswer": "Ensure app.useGlobalFilters. Verify thrown types. Add e2e asserting error schema.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "exception-filters"
+    ]
+  },
+  {
+    "id": "nest-exception-filters-006",
+    "technology": "nestjs",
+    "category": "Exception Filters",
+    "categorySlug": "exception-filters",
+    "slug": "lead-unify-error-contracts-across-nest-and-non-nest-services",
+    "question": "Lead: unify error contracts across Nest and non-Nest services?",
+    "shortAnswer": "Shared error code catalog, problem+json or org schema, and gateway normalization.",
+    "detailedAnswer": "Correlate with trace IDs. Train clients on stable codes. Version the error schema.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "exception-filters"
+    ]
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "node-clustering-001",
+    "technology": "nodejs",
+    "category": "Clustering",
+    "categorySlug": "clustering",
+    "slug": "what-does-the-node-cluster-module-do",
+    "question": "What does the Node `cluster` module do?",
+    "shortAnswer": "Forks worker processes sharing server ports via the master, utilizing multi-core CPUs.",
+    "detailedAnswer": "Each worker has its own event loop/memory. Not a substitute for proper multi-host deployment, but useful on one machine.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "clustering"
+    ]
+  },
+  {
+    "id": "node-clustering-002",
+    "technology": "nodejs",
+    "category": "Clustering",
+    "categorySlug": "clustering",
+    "slug": "cluster-vs-pm2-vs-kubernetes-replicas-how-do-you-choose",
+    "question": "cluster vs PM2 vs Kubernetes replicas — how do you choose?",
+    "shortAnswer": "cluster/PM2 for process management on a VM; K8s for orchestration across nodes — prefer platform primitives in cloud-native setups.",
+    "detailedAnswer": "Don't double-cluster mindlessly (PM2 cluster inside K8s pods). One process per container is a common best practice.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "clustering"
+    ]
+  },
+  {
+    "id": "node-clustering-003",
+    "technology": "nodejs",
+    "category": "Clustering",
+    "categorySlug": "clustering",
+    "slug": "how-does-sticky-session-need-interact-with-clustering",
+    "question": "How does sticky session need interact with clustering?",
+    "shortAnswer": "In-memory sessions require stickiness or external session store; prefer external store.",
+    "detailedAnswer": "Load balancers and cluster round-robin complicate affinity. Design stateless workers.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "clustering"
+    ]
+  },
+  {
+    "id": "node-clustering-004",
+    "technology": "nodejs",
+    "category": "Clustering",
+    "categorySlug": "clustering",
+    "slug": "worker-died-in-cluster-how-should-the-master-react",
+    "question": "Worker died in cluster — how should the master react?",
+    "shortAnswer": "Log, alert, restart with backoff, and investigate crash loops (OOM, uncaught exceptions).",
+    "detailedAnswer": "Infinite rapid restarts can worsen outages. Capture exit codes and last logs.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "clustering"
+    ]
+  },
+  {
+    "id": "node-clustering-005",
+    "technology": "nodejs",
+    "category": "Clustering",
+    "categorySlug": "clustering",
+    "slug": "lead-is-node-cluster-still-relevant-on-kubernetes",
+    "question": "Lead: is Node cluster still relevant on Kubernetes?",
+    "shortAnswer": "Often less so — use multiple pods; keep one Node process per container unless profiling proves otherwise.",
+    "detailedAnswer": "Exceptions exist for specialized high-throughput hosts. Document the rationale. Prefer horizontal pod autoscaling.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "clustering"
+    ]
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "react-state-management-001",
+    "technology": "react",
+    "category": "State Management",
+    "categorySlug": "state-management",
+    "slug": "local-state-vs-global-state-how-do-you-choose",
+    "question": "Local state vs global state — how do you choose?",
+    "shortAnswer": "Keep state local unless many distant consumers need it or it represents app-wide session/cache.",
+    "detailedAnswer": "Over-globalizing creates coupling. Server cache ≠ UI state.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "state-management"
+    ]
+  },
+  {
+    "id": "react-state-management-002",
+    "technology": "react",
+    "category": "State Management",
+    "categorySlug": "state-management",
+    "slug": "what-problem-do-redux-zustand-jotai-solve",
+    "question": "What problem do Redux/Zustand/Jotai solve?",
+    "shortAnswer": "Predictable shared client state beyond what Context handles comfortably.",
+    "detailedAnswer": "Redux Toolkit for structured enterprise flows; Zustand for minimal stores; Jotai for atomic models. Pick team conventions.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "state-management"
+    ]
+  },
+  {
+    "id": "react-state-management-003",
+    "technology": "react",
+    "category": "State Management",
+    "categorySlug": "state-management",
+    "slug": "server-state-vs-client-state",
+    "question": "Server state vs client state?",
+    "shortAnswer": "Server state is persisted remotely and cached (React Query); client state is ephemeral UI.",
+    "detailedAnswer": "Don't duplicate server lists in Redux without a strategy. Use query libraries for fetching/caching.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "state-management"
+    ]
+  },
+  {
+    "id": "react-state-management-004",
+    "technology": "react",
+    "category": "State Management",
+    "categorySlug": "state-management",
+    "slug": "how-does-react-query-change-architecture",
+    "question": "How does React Query change architecture?",
+    "shortAnswer": "Components declare queries/mutations; cache handles staleness, retries, deduping.",
+    "detailedAnswer": "Less custom fetch glue. Align mutations with cache updates. Still need local UI state.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "state-management"
+    ]
+  },
+  {
+    "id": "react-state-management-005",
+    "technology": "react",
+    "category": "State Management",
+    "categorySlug": "state-management",
+    "slug": "immutable-updates-in-stores-why",
+    "question": "Immutable updates in stores — why?",
+    "shortAnswer": "Predictable changes, efficient equality checks, easier debugging.",
+    "detailedAnswer": "Immer often used under the hood. Avoid silent mutations.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "state-management"
+    ]
+  },
+  {
+    "id": "react-state-management-006",
+    "technology": "react",
+    "category": "State Management",
+    "categorySlug": "state-management",
+    "slug": "normalize-relational-data-in-the-client",
+    "question": "Normalize relational data in the client?",
+    "shortAnswer": "Store entities by id and reference by ids to avoid duplication.",
+    "detailedAnswer": "Helps updates stay consistent. Can be overkill for simple trees.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "state-management"
+    ]
+  },
+  {
+    "id": "react-state-management-007",
+    "technology": "react",
+    "category": "State Management",
+    "categorySlug": "state-management",
+    "slug": "when-is-context-enough-without-a-store-library",
+    "question": "When is Context enough without a store library?",
+    "shortAnswer": "Low-frequency updates (theme/auth) with few consumers.",
+    "detailedAnswer": "If many high-frequency updates, prefer a store with selectors.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "state-management"
+    ]
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ts-narrowing-001",
+    "technology": "typescript",
+    "category": "Type Narrowing",
+    "categorySlug": "narrowing",
+    "slug": "control-flow-narrowing",
+    "question": "What is control-flow narrowing?",
+    "shortAnswer": "TS refining types based on checks like typeof, equality, and returns.",
+    "detailedAnswer": "Enables safe property access after guards. Understand what resets narrowing.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "narrowing"
+    ]
+  },
+  {
+    "id": "ts-narrowing-002",
+    "technology": "typescript",
+    "category": "Type Narrowing",
+    "categorySlug": "narrowing",
+    "slug": "typeof-narrowing",
+    "question": "How does typeof narrowing work and its limits?",
+    "shortAnswer": "Distinguishes primitives; typeof null is object historically — handle null separately.",
+    "detailedAnswer": "Doesn't narrow custom class instances well — use instanceof.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "narrowing"
+    ]
+  },
+  {
+    "id": "ts-narrowing-003",
+    "technology": "typescript",
+    "category": "Type Narrowing",
+    "categorySlug": "narrowing",
+    "slug": "discriminated-unions",
+    "question": "Discriminated unions — pattern?",
+    "shortAnswer": "Shared literal tag field to distinguish variants for exhaustive switches.",
+    "detailedAnswer": "Preferred over boolean flags soup. Enables never checks for exhaustiveness.",
+    "example": "type Shape =\n  | { kind: 'circle'; r: number }\n  | { kind: 'square'; size: number };",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "narrowing"
+    ]
+  },
+  {
+    "id": "ts-narrowing-004",
+    "technology": "typescript",
+    "category": "Type Narrowing",
+    "categorySlug": "narrowing",
+    "slug": "truthy-narrowing-pitfalls",
+    "question": "Truthy narrowing pitfalls?",
+    "shortAnswer": "Empty string/0/NaN are falsy — may incorrectly narrow away valid values.",
+    "detailedAnswer": "Prefer explicit null checks for those domains. == null catches null and undefined.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "narrowing"
+    ]
+  },
+  {
+    "id": "ts-narrowing-005",
+    "technology": "typescript",
+    "category": "Type Narrowing",
+    "categorySlug": "narrowing",
+    "slug": "in-operator-narrowing",
+    "question": "in operator narrowing?",
+    "shortAnswer": "Checks property existence to narrow unions of objects.",
+    "detailedAnswer": "Careful with optional properties and prototypes. Prefer discriminants when possible.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "narrowing"
+    ]
+  },
+  {
+    "id": "ts-narrowing-006",
+    "technology": "typescript",
+    "category": "Type Narrowing",
+    "categorySlug": "narrowing",
+    "slug": "assertion-functions",
+    "question": "Assertion functions (asserts)?",
+    "shortAnswer": "Functions that throw and tell TS a condition is true afterward.",
+    "detailedAnswer": "Useful for shared assertDefined helpers. Must actually throw on failure.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "narrowing"
+    ]
+  },
+  {
+    "id": "ts-narrowing-007",
+    "technology": "typescript",
+    "category": "Type Narrowing",
+    "categorySlug": "narrowing",
+    "slug": "narrowing-alias-footgun",
+    "question": "Why does narrowing fail after assigning to a variable?",
+    "shortAnswer": "Aliasing can invalidate narrowing if TS can't prove the alias is unchanged.",
+    "detailedAnswer": "Inline checks or use const + careful patterns. Known footgun with property stores.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "narrowing"
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "node-error-handling-001",
+    "technology": "nodejs",
+    "category": "Error Handling",
+    "categorySlug": "error-handling",
+    "slug": "operational-vs-programmer-errors-in-node-why-distinguish",
+    "question": "operational vs programmer errors in Node — why distinguish?",
+    "shortAnswer": "Operational: expected runtime failures (network); programmer: bugs — crash and fix vs retry/handle.",
+    "detailedAnswer": "Joyent's guidance still influences interviews. Don't catch-all and continue after corrupted state.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "error-handling"
+    ]
+  },
+  {
+    "id": "node-error-handling-002",
+    "technology": "nodejs",
+    "category": "Error Handling",
+    "categorySlug": "error-handling",
+    "slug": "why-is-try-catch-around-an-async-function-call-without-await-ineffective",
+    "question": "Why is try/catch around an async function call without await ineffective?",
+    "shortAnswer": "The function returns a promise; synchronous try/catch won't see async rejection.",
+    "detailedAnswer": "Await inside try/catch or attach .catch. This is a classic junior/mid footgun.",
+    "commonMistake": "try { doAsync(); } catch — missing await.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "error-handling"
+    ]
+  },
+  {
+    "id": "node-error-handling-003",
+    "technology": "nodejs",
+    "category": "Error Handling",
+    "categorySlug": "error-handling",
+    "slug": "should-you-catch-uncaughtexception-and-keep-running",
+    "question": "Should you catch uncaughtException and keep running?",
+    "shortAnswer": "Generally no — state may be corrupt; log, alert, and exit for process supervisor restart.",
+    "detailedAnswer": "Domain is deprecated. Use proper rejection handling. Crash-only for unknown errors is safer.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "reliability"
+    ]
+  },
+  {
+    "id": "node-error-handling-004",
+    "technology": "nodejs",
+    "category": "Error Handling",
+    "categorySlug": "error-handling",
+    "slug": "how-do-you-model-errors-for-apis",
+    "question": "How do you model errors for APIs?",
+    "shortAnswer": "Typed/error codes, HttpError hierarchy, cause chaining, and consistent client payloads without leaks.",
+    "detailedAnswer": "Include correlation IDs. Map validation vs auth vs internal. Don't expose stacks to clients.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "error-handling"
+    ]
+  },
+  {
+    "id": "node-error-handling-005",
+    "technology": "nodejs",
+    "category": "Error Handling",
+    "categorySlug": "error-handling",
+    "slug": "express-async-errors-patterns",
+    "question": "Express async errors — patterns?",
+    "shortAnswer": "Wrap async route handlers or use Express 5 / utilities that forward rejections to error middleware.",
+    "detailedAnswer": "Unhandled rejections in middleware hang or crash. Centralize mapping to status codes.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "error-handling"
+    ]
+  },
+  {
+    "id": "node-error-handling-006",
+    "technology": "nodejs",
+    "category": "Error Handling",
+    "categorySlug": "error-handling",
+    "slug": "lead-error-budget-and-incident-taxonomy-for-node-platforms",
+    "question": "Lead: error budget and incident taxonomy for Node platforms.",
+    "shortAnswer": "Classify errors (user/client/server/dependency), burn rates, and playbooks for crash loops vs dependency outages.",
+    "detailedAnswer": "Standardize logging fields. Make on-call actionable. Prefer graceful degradation over silent catch.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "error-handling"
+    ]
+  }
+]

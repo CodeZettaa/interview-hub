@@ -1,0 +1,228 @@
+[
+  {
+    "id": "scss-mixins-001",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "what-is-an-scss-mixin",
+    "question": "What is an SCSS mixin?",
+    "shortAnswer": "Reusable block of styles included with @include, optionally parameterized — expands at compile time.",
+    "detailedAnswer": "Unlike functions, mixins can emit CSS declarations/selectors. Great for repeated patterns with hooks.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-002",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "mixin-vs-function-vs-placeholder-extend-differences",
+    "question": "Mixin vs function vs placeholder (%extend) — differences?",
+    "shortAnswer": "Functions return values; mixins emit CSS; placeholders share declarations via @extend with selector merging trade-offs.",
+    "detailedAnswer": "Prefer mixins for parametric CSS. @extend can create odd selector groups — use carefully.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-003",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "how-do-you-pass-content-blocks-into-mixins",
+    "question": "How do you pass content blocks into mixins?",
+    "shortAnswer": "@content directive lets callers pass nested CSS into the mixin wrapper (e.g., media query mixins).",
+    "detailedAnswer": "Powerful for breakpoint mixins. Document whether content is wrapped or merged.",
+    "example": "@mixin mq($bp) { @media (min-width: $bp) { @content; } }",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-004",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "argument-defaults-and-keyword-args-in-mixins",
+    "question": "Argument defaults and keyword args in mixins?",
+    "shortAnswer": "Parameters can have defaults; call with named args for clarity on multi-arg mixins.",
+    "detailedAnswer": "Avoid long positional lists. Prefer maps for option bags when many flags exist.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-005",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "when-is-a-mixin-better-than-a-duplicated-class-in-html",
+    "question": "When is a mixin better than a duplicated class in HTML?",
+    "shortAnswer": "When the pattern is stylistic sugar without semantic meaning, or needs parameters per use.",
+    "detailedAnswer": "If it is a real UI component, prefer a component class over include soup. Mixins should not replace design-system components.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-006",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "scenario-mixin-outputs-vendor-prefixes-still-problem",
+    "question": "Scenario: mixin outputs vendor prefixes still — problem?",
+    "shortAnswer": "Autoprefixer/Browserslist should own prefixes; mixins become stale and noisy.",
+    "detailedAnswer": "Remove prefix mixins from modern stacks. Keep mixins for design patterns not browser archaeology.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-007",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "how-can-mixins-hurt-css-bundle-size",
+    "question": "How can mixins hurt CSS bundle size?",
+    "shortAnswer": "Each @include duplicates declarations; heavy parametric mixins can bloat output.",
+    "detailedAnswer": "Prefer shared classes or CSS variables for repeated values. Measure compiled CSS size.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-008",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "write-a-clear-api-for-a-typography-mixin",
+    "question": "Write a clear API for a typography mixin.",
+    "shortAnswer": "Accept size/weight/line-height with defaults; map to tokens; avoid magic numbers inside.",
+    "detailedAnswer": "Centralize type ramp in tokens; mixin applies consistently. Expose responsive variants carefully.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-009",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "mixin-that-optionally-emits-a-modifier-class-pattern",
+    "question": "Mixin that optionally emits a modifier class — pattern?",
+    "shortAnswer": "Use parameters/flags or @content; or generate with @each over a map of variants.",
+    "detailedAnswer": "Generation from maps scales better than hand-maintained includes.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-010",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "debugging-mixin-undefined-after-use-migration",
+    "question": "Debugging: mixin undefined after @use migration.",
+    "shortAnswer": "Mixins are namespaced — @include forms.card or @use 'forms' as *.",
+    "detailedAnswer": "Forward public mixins via @forward with show/hide. Don't re-expose everything.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-011",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "should-mixins-contain-extend",
+    "question": "Should mixins contain @extend?",
+    "shortAnswer": "Usually avoid — combining both increases complexity and surprising selector output.",
+    "detailedAnswer": "Keep mixins straightforward. Prefer composition of smaller mixins over clever extend chains.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-012",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "compare-mixins-to-css-apply-tailwind-philosophically",
+    "question": "Compare mixins to CSS @apply (Tailwind) philosophically.",
+    "shortAnswer": "Both reuse chunks of declarations; Sass mixins are build-time and more programmable; @apply ties to utility frameworks.",
+    "detailedAnswer": "Choose based on stack. Don't mix three reuse systems without rules.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-013",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "architecture-public-mixin-api-for-an-scss-library",
+    "question": "Architecture: public mixin API for an SCSS library.",
+    "shortAnswer": "@forward selected mixins, document args, provide examples, and version breaking changes.",
+    "detailedAnswer": "Stability of mixin signatures matters like JS public API. Deprecate with comments/changelogs.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-014",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "lead-reduce-mixin-sprawl-across-50-repos",
+    "question": "Lead: reduce mixin sprawl across 50 repos.",
+    "shortAnswer": "Publish a versioned SCSS kit, codemod common includes, ban local copies of core mixins, and review new mixins centrally.",
+    "detailedAnswer": "Metric: duplicate mixin definitions. Prefer tokens plus fewer powerful mixins.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "mixins"
+    ]
+  },
+  {
+    "id": "scss-mixins-015",
+    "technology": "scss",
+    "category": "Mixins",
+    "categorySlug": "mixins",
+    "slug": "output-thinking-mixin-center-display-flex-justify-content-center-align-items-cen",
+    "question": "Output thinking: @mixin center { display:flex; justify-content:center; align-items:center; } then .hero { @include center; } ?",
+    "shortAnswer": ".hero { display:flex; justify-content:center; align-items:center; } — declarations inlined.",
+    "detailedAnswer": "Simple includes are readable; still consider a utility class if reused everywhere.",
+    "difficulty": "lead",
+    "type": "output",
+    "tags": [
+      "mixins"
+    ]
+  }
+]

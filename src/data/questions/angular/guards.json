@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ng-guards-001",
+    "technology": "angular",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "what-are-angular-route-guards",
+    "question": "What are Angular route guards?",
+    "shortAnswer": "Hooks that decide whether navigation can activate, deactivate, match, or load.",
+    "detailedAnswer": "Functional guards are preferred: canActivate, canMatch, canDeactivate returning boolean/UrlTree/Observable/Promise. Use for auth and unsaved changes.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "guards"
+    ]
+  },
+  {
+    "id": "ng-guards-002",
+    "technology": "angular",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "canactivate-vs-canmatch-when-do-you-use-each",
+    "question": "canActivate vs canMatch — when do you use each?",
+    "shortAnswer": "canActivate runs after a route is chosen; canMatch can exclude a route from matching (useful for role-based configs).",
+    "detailedAnswer": "canMatch helps pick between alternate route configs. canActivate redirects unauthorized users. Prefer UrlTree redirects over boolean false alone.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "guards"
+    ]
+  },
+  {
+    "id": "ng-guards-003",
+    "technology": "angular",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "how-do-you-implement-an-unsaved-changes-guard",
+    "question": "How do you implement an unsaved-changes guard?",
+    "shortAnswer": "canDeactivate checks a component interface like hasUnsavedChanges() and confirms before leaving.",
+    "detailedAnswer": "Keep the check in the component; guard stays thin. Handle browser refresh separately with beforeunload if needed.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "guards"
+    ]
+  },
+  {
+    "id": "ng-guards-004",
+    "technology": "angular",
+    "category": "Guards",
+    "categorySlug": "guards",
+    "slug": "what-are-risks-of-doing-heavy-async-work-in-guards",
+    "question": "What are risks of doing heavy async work in guards?",
+    "shortAnswer": "Slow navigations, race conditions, and duplicated fetches with resolvers/components.",
+    "detailedAnswer": "Keep guards fast—auth token check, not full data load. Prefetch in resolvers or components with loading UI.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "guards"
+    ]
+  }
+]

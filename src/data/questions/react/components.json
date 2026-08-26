@@ -1,0 +1,122 @@
+[
+  {
+    "id": "react-components-001",
+    "technology": "react",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-is-a-react-component",
+    "question": "What is a React component?",
+    "shortAnswer": "A function (or class) that returns React elements describing UI for given props/state.",
+    "detailedAnswer": "Function components are the modern standard. They should be pure with respect to props/state during render. Side effects belong in effects or event handlers.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "react-components-002",
+    "technology": "react",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "function-vs-class-components-today",
+    "question": "Function vs class components today?",
+    "shortAnswer": "Prefer functions + hooks; classes are legacy for most new code.",
+    "detailedAnswer": "Hooks cover state, lifecycle, and context. Class knowledge still helps reading older codebases.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "react-components-003",
+    "technology": "react",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-does-it-mean-for-a-render-to-be-pure",
+    "question": "What does it mean for a render to be pure?",
+    "shortAnswer": "Same props/state → same output; no side effects during render.",
+    "detailedAnswer": "Don't fetch, mutate external variables, or call random APIs while rendering. Impure renders cause subtle bugs and break concurrent features.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "react-components-004",
+    "technology": "react",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "controlled-vs-uncontrolled-components",
+    "question": "Controlled vs uncontrolled components?",
+    "shortAnswer": "Controlled: form values driven by React state; uncontrolled: DOM holds state via refs.",
+    "detailedAnswer": "Controlled enables validation and instant UI reactions. Uncontrolled can be simpler for basic forms or non-React integrations.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "react-components-005",
+    "technology": "react",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "when-should-you-split-a-component",
+    "question": "When should you split a component?",
+    "shortAnswer": "When it mixes concerns, is hard to test, or causes avoidable re-renders of large subtrees.",
+    "detailedAnswer": "Extract presentational pieces and custom hooks. Avoid premature micro-components that hurt readability.",
+    "difficulty": "fresh",
+    "type": "architecture",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "react-components-006",
+    "technology": "react",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-are-fragments-and-why-use-them",
+    "question": "What are fragments and why use them?",
+    "shortAnswer": "<>...</> groups children without an extra DOM node.",
+    "detailedAnswer": "Useful when a component must return multiple siblings. Keys still needed on lists of fragments when mapping.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "react-components-007",
+    "technology": "react",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "how-do-error-boundaries-work",
+    "question": "How do error boundaries work?",
+    "shortAnswer": "Class components implementing getDerivedStateFromError/componentDidCatch catch render errors in subtrees.",
+    "detailedAnswer": "They don't catch event handler or async errors. Use for resilient section fallbacks. Libraries exist for function-style wrappers.",
+    "difficulty": "fresh",
+    "type": "scenario",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "react-components-008",
+    "technology": "react",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "design-a-reusable-modal-component-api",
+    "question": "Design a reusable Modal component API.",
+    "shortAnswer": "Compose with portal, focus trap, labelledby, onClose; avoid baking business logic into the shell.",
+    "detailedAnswer": "Support controlled open state. Ensure a11y (Escape, focus restore). Keep styling flexible via slots/children.",
+    "difficulty": "fresh",
+    "type": "architecture",
+    "tags": [
+      "components"
+    ]
+  }
+]

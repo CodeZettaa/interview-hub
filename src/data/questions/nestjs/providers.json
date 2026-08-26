@@ -1,0 +1,93 @@
+[
+  {
+    "id": "nest-providers-001",
+    "technology": "nestjs",
+    "category": "Providers",
+    "categorySlug": "providers",
+    "slug": "what-counts-as-a-provider-in-nest",
+    "question": "What counts as a provider in Nest?",
+    "shortAnswer": "Injectable classes (services/repos), custom provider objects (useClass/useValue/useFactory/useExisting), and more.",
+    "detailedAnswer": "Anything that can be injected. Register in module providers (or export from imported modules).",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "providers"
+    ]
+  },
+  {
+    "id": "nest-providers-002",
+    "technology": "nestjs",
+    "category": "Providers",
+    "categorySlug": "providers",
+    "slug": "usefactory-vs-useclass-vs-usevalue-when",
+    "question": "useFactory vs useClass vs useValue — when?",
+    "shortAnswer": "useValue for constants/mocks; useClass for swappable implementations; useFactory for async/config-dependent construction.",
+    "detailedAnswer": "Factories enable ConfigService-driven setup. Prefer explicit tokens for interfaces.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "providers"
+    ]
+  },
+  {
+    "id": "nest-providers-003",
+    "technology": "nestjs",
+    "category": "Providers",
+    "categorySlug": "providers",
+    "slug": "what-is-a-custom-injection-token-and-why-use-string-symbol-tokens",
+    "question": "What is a custom injection token and why use string/symbol tokens?",
+    "shortAnswer": "Tokens identify providers when you inject interfaces or multiple alike dependencies.",
+    "detailedAnswer": "TypeScript interfaces disappear at runtime — tokens preserve DI identity. Use symbols/consts to avoid collisions.",
+    "example": "export const PAYMENTS = Symbol('PAYMENTS');\n@Inject(PAYMENTS) private payments: PaymentsPort",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "providers"
+    ]
+  },
+  {
+    "id": "nest-providers-004",
+    "technology": "nestjs",
+    "category": "Providers",
+    "categorySlug": "providers",
+    "slug": "transient-vs-request-vs-singleton-scope-trade-offs",
+    "question": "Transient vs request vs singleton scope — trade-offs?",
+    "shortAnswer": "Default singleton is shared; request scope per HTTP request; transient new per injection — scopes affect memory and graph.",
+    "detailedAnswer": "Request-scoped providers force dependents request-scoped (bubble). Use sparingly for tenancy needs; prefer ALS or explicit params when possible.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "providers"
+    ]
+  },
+  {
+    "id": "nest-providers-005",
+    "technology": "nestjs",
+    "category": "Providers",
+    "categorySlug": "providers",
+    "slug": "debugging-nest-says-provider-not-found-at-runtime",
+    "question": "Debugging: Nest says provider not found at runtime.",
+    "shortAnswer": "Module didn't register/export/import correctly, or wrong token, or circular dependency needing forwardRef.",
+    "detailedAnswer": "Read the exact token in the error. Check testing module overrides. Circular DI often needs redesign, not only forwardRef.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "providers"
+    ]
+  },
+  {
+    "id": "nest-providers-006",
+    "technology": "nestjs",
+    "category": "Providers",
+    "categorySlug": "providers",
+    "slug": "lead-provider-design-for-ports-and-adapters-in-nest",
+    "question": "Lead: provider design for ports-and-adapters in Nest?",
+    "shortAnswer": "Define port interfaces + tokens; adapters as providers; domain services depend on ports only.",
+    "detailedAnswer": "Swap infra in tests with useValue mocks. Keep ORM details in adapters. Enforce in code review.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "providers"
+    ]
+  }
+]

@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ts-interfaces-001",
+    "technology": "typescript",
+    "category": "Interfaces",
+    "categorySlug": "interfaces",
+    "slug": "declaration-merging",
+    "question": "What is declaration merging for interfaces?",
+    "shortAnswer": "Same-name interfaces combine members — useful for extending lib types.",
+    "detailedAnswer": "Unexpected merges can widen APIs. Prefer module augmentation intentionally.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "interfaces"
+    ]
+  },
+  {
+    "id": "ts-interfaces-002",
+    "technology": "typescript",
+    "category": "Interfaces",
+    "categorySlug": "interfaces",
+    "slug": "extending-interfaces",
+    "question": "How do you extend interfaces?",
+    "shortAnswer": "extends clause for one or more bases; resulting type must be assignable consistently.",
+    "detailedAnswer": "Conflicts must be compatible. Classes can implement interfaces.",
+    "example": "interface A { x: number }\ninterface B extends A { y: string }",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "interfaces"
+    ]
+  },
+  {
+    "id": "ts-interfaces-003",
+    "technology": "typescript",
+    "category": "Interfaces",
+    "categorySlug": "interfaces",
+    "slug": "optional-vs-readonly",
+    "question": "Optional vs readonly properties?",
+    "shortAnswer": "?: may be absent; readonly prevents reassignment of the property.",
+    "detailedAnswer": "readonly is shallow. Optional undefined vs missing differs under exactOptionalPropertyTypes.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "interfaces"
+    ]
+  },
+  {
+    "id": "ts-interfaces-004",
+    "technology": "typescript",
+    "category": "Interfaces",
+    "categorySlug": "interfaces",
+    "slug": "index-signatures",
+    "question": "Index signatures — uses and pitfalls?",
+    "shortAnswer": "Allow dynamic keys with a value type; can force all properties to be assignable to that type.",
+    "detailedAnswer": "Prefer maps/Records for dictionaries. String indexes interact with declared fields carefully.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "interfaces"
+    ]
+  },
+  {
+    "id": "ts-interfaces-005",
+    "technology": "typescript",
+    "category": "Interfaces",
+    "categorySlug": "interfaces",
+    "slug": "function-types-in-interfaces",
+    "question": "How do function types appear in interfaces?",
+    "shortAnswer": "Call signatures or property-function members; prefer method vs property for bivariance nuances.",
+    "detailedAnswer": "this typing in methods matters. Overload call signatures possible.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "interfaces"
+    ]
+  },
+  {
+    "id": "ts-interfaces-006",
+    "technology": "typescript",
+    "category": "Interfaces",
+    "categorySlug": "interfaces",
+    "slug": "api-response-interfaces",
+    "question": "Interface for API response modeling tips?",
+    "shortAnswer": "Model only what you use; validate at runtime; don't trust backend blindly.",
+    "detailedAnswer": "Separate DTO types from domain types when shapes diverge.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "interfaces"
+    ]
+  },
+  {
+    "id": "ts-interfaces-007",
+    "technology": "typescript",
+    "category": "Interfaces",
+    "categorySlug": "interfaces",
+    "slug": "interface-antipatterns",
+    "question": "When do interfaces become an anti-pattern?",
+    "shortAnswer": "God interfaces, premature abstraction, and over-modeling JSON 1:1 without validation.",
+    "detailedAnswer": "Prefer smaller contracts and composition. Codegen OpenAPI carefully.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "interfaces"
+    ]
+  }
+]

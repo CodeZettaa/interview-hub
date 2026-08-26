@@ -1,0 +1,92 @@
+[
+  {
+    "id": "ng-architecture-001",
+    "technology": "angular",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "how-do-you-structure-a-large-angular-monorepo-app",
+    "question": "How do you structure a large Angular monorepo app?",
+    "shortAnswer": "Feature folders with routes, shared UI lib, core singleton services, and clear public APIs.",
+    "detailedAnswer": "Use Nx or workspace libs. Avoid deep cross-feature imports. Lazy load features. Keep domain logic out of dumb components.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ng-architecture-002",
+    "technology": "angular",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "smart-vs-presentational-components-in-angular",
+    "question": "Smart vs presentational components in Angular?",
+    "shortAnswer": "Smart containers fetch/orchestrate; presentational receive inputs and emit outputs.",
+    "detailedAnswer": "Presentational components are easier to test and reuse. Don't put HttpClient in every leaf component.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ng-architecture-003",
+    "technology": "angular",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "when-do-you-introduce-a-state-library-ngrx-signalstore-vs-services",
+    "question": "When do you introduce a state library (NgRx, SignalStore) vs services?",
+    "shortAnswer": "Complex shared workflows, time-travel/debug needs, or many writers → store; simple feature state → signal services.",
+    "detailedAnswer": "Avoid premature NgRx. Signal-based stores often suffice. Consistency matters more than brand of store.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ng-architecture-004",
+    "technology": "angular",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "how-should-api-models-differ-from-view-models",
+    "question": "How should API models differ from view models?",
+    "shortAnswer": "Map DTOs to UI-friendly models in an anti-corruption layer; don't bind raw API shapes everywhere.",
+    "detailedAnswer": "Protects UI from backend churn. Centralize adapters. Validate at boundaries.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ng-architecture-005",
+    "technology": "angular",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "design-auth-feature-modules-for-an-enterprise-angular-app",
+    "question": "Design auth + feature modules for an enterprise Angular app.",
+    "shortAnswer": "Core auth service, interceptor, guards; features lazy-loaded; shared UI; environment config tokens.",
+    "detailedAnswer": "Centralize permissions. Prefer canMatch for role routes. Keep secrets off the client.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "ng-architecture-006",
+    "technology": "angular",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "what-is-the-facade-pattern-in-angular-feature-design",
+    "question": "What is the facade pattern in Angular feature design?",
+    "shortAnswer": "A facade service exposes a narrow API over multiple stores/APIs so components stay simple.",
+    "detailedAnswer": "Helps hide NgRx complexity. Don't create facades that become god objects—keep per feature.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  }
+]

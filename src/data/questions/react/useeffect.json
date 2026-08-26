@@ -1,0 +1,107 @@
+[
+  {
+    "id": "react-useeffect-001",
+    "technology": "react",
+    "category": "useEffect",
+    "categorySlug": "useeffect",
+    "slug": "what-is-useeffect-for",
+    "question": "What is useEffect for?",
+    "shortAnswer": "Synchronize with external systems after render: subscriptions, timers, non-React widgets.",
+    "detailedAnswer": "Not for computing derived state. Specify dependencies. Return a cleanup function.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "useeffect"
+    ]
+  },
+  {
+    "id": "react-useeffect-002",
+    "technology": "react",
+    "category": "useEffect",
+    "categorySlug": "useeffect",
+    "slug": "why-does-an-effect-run-twice-in-react-strict-mode-dev",
+    "question": "Why does an effect run twice in React Strict Mode (dev)??",
+    "shortAnswer": "React mounts, unmounts, remounts to surface missing cleanup bugs.",
+    "detailedAnswer": "Write resilient effects with proper cleanup. Don't disable Strict Mode to 'fix' double fetch without understanding.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "useeffect"
+    ]
+  },
+  {
+    "id": "react-useeffect-003",
+    "technology": "react",
+    "category": "useEffect",
+    "categorySlug": "useeffect",
+    "slug": "how-do-you-correctly-depend-on-props-state-in-effects",
+    "question": "How do you correctly depend on props/state in effects?",
+    "shortAnswer": "List every reactive value used; use functional updates; extract stable callbacks or use refs for latest values intentionally.",
+    "detailedAnswer": "Exhaustive-deps warnings matter. Avoid empty deps when you read changing values.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "useeffect"
+    ]
+  },
+  {
+    "id": "react-useeffect-004",
+    "technology": "react",
+    "category": "useEffect",
+    "categorySlug": "useeffect",
+    "slug": "fetching-in-useeffect-modern-guidance",
+    "question": "Fetching in useEffect — modern guidance?",
+    "shortAnswer": "Works but race-prone; prefer frameworks/data libraries (React Query) or server components where appropriate.",
+    "detailedAnswer": "AbortController on cleanup. Don't ignore race conditions when query changes quickly.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "useeffect"
+    ]
+  },
+  {
+    "id": "react-useeffect-005",
+    "technology": "react",
+    "category": "useEffect",
+    "categorySlug": "useeffect",
+    "slug": "when-is-uselayouteffect-preferred",
+    "question": "When is useLayoutEffect preferred?",
+    "shortAnswer": "When you must measure/mutate DOM before paint to avoid flicker.",
+    "detailedAnswer": "Blocks paint—use sparingly. SSR warnings: layout effects don't run on server.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "useeffect"
+    ]
+  },
+  {
+    "id": "react-useeffect-006",
+    "technology": "react",
+    "category": "useEffect",
+    "categorySlug": "useeffect",
+    "slug": "effect-cleanup-examples",
+    "question": "Effect cleanup examples?",
+    "shortAnswer": "Clear timers, abort fetches, unsubscribe events, disconnect observers.",
+    "detailedAnswer": "Missing cleanup causes leaks and duplicate handlers. Always pair subscriptions with teardown.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "useeffect"
+    ]
+  },
+  {
+    "id": "react-useeffect-007",
+    "technology": "react",
+    "category": "useEffect",
+    "categorySlug": "useeffect",
+    "slug": "anti-pattern-chaining-many-effects-to-mirror-state-what-instead",
+    "question": "Anti-pattern: chaining many effects to mirror state. What instead?",
+    "shortAnswer": "Derive during render, use events to update state directly, or reducers for transitions.",
+    "detailedAnswer": "Effect chains are hard to reason about and cause cascading renders.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "useeffect"
+    ]
+  }
+]

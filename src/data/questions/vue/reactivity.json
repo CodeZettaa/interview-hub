@@ -1,0 +1,183 @@
+[
+  {
+    "id": "vue-reactivity-001",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "how-does-vue-3-reactivity-work",
+    "question": "How does Vue 3 reactivity work?",
+    "shortAnswer": "Proxies track property access during render and trigger updates when reactive data changes.",
+    "detailedAnswer": "ref/reactive/computed form the core. Dependency tracking is automatic when values are read in reactive contexts.",
+    "difficulty": "fresh",
+    "type": "architecture",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-002",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "ref-vs-reactive-when-each",
+    "question": "ref vs reactive — when each?",
+    "shortAnswer": "ref wraps any value (.value); reactive wraps objects. Prefer ref for primitives and often for consistency.",
+    "detailedAnswer": "Destructuring reactive breaks reactivity unless toRefs. Templates auto-unwrap refs.",
+    "example": "const count = ref(0)\ncount.value++",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-003",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "what-does-computed-do",
+    "question": "What does computed do?",
+    "shortAnswer": "Creates a cached derived value that recomputes when dependencies change.",
+    "detailedAnswer": "Prefer computed over methods in templates for derived state. Writable computed possible but use carefully.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-004",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "watch-vs-watcheffect",
+    "question": "watch vs watchEffect?",
+    "shortAnswer": "watch is explicit about sources; watchEffect auto-tracks dependencies and runs immediately.",
+    "detailedAnswer": "Use watch when you need old/new values or lazy control. Avoid heavy async without cleanup.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-005",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "why-does-destructuring-props-break-reactivity-and-how-do-you-fix-it",
+    "question": "Why does destructuring props break reactivity and how do you fix it?",
+    "shortAnswer": "Destructuring loses the reactive proxy link; use toRefs/toRef or access props.x.",
+    "detailedAnswer": "Common footgun in setup. ESLint plugins can help.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-006",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "shallowref-shallowreactive-when",
+    "question": "shallowRef / shallowReactive — when?",
+    "shortAnswer": "Track only .value / top-level changes for large immutable replacements.",
+    "detailedAnswer": "Useful for performance with big data structures you replace wholesale.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-007",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "what-is-markraw",
+    "question": "What is markRaw?",
+    "shortAnswer": "Marks an object so Vue never makes it reactive—useful for third-party class instances.",
+    "detailedAnswer": "Prevent Proxy wrapping overhead/bugs with external libs.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-008",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "triggering-updates-with-map-set",
+    "question": "Triggering updates with Map/Set?",
+    "shortAnswer": "Use reactive collections carefully; prefer replacing or Vue-aware mutation patterns.",
+    "detailedAnswer": "Know which mutations are tracked. Prefer arrays of objects for simple lists.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-009",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "effectscope-what-is-it-for",
+    "question": "effectScope — what is it for?",
+    "shortAnswer": "Groups effects so they can be stopped together—useful in advanced composables/libraries.",
+    "detailedAnswer": "Helps avoid leaks when dynamically creating watchers.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-010",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "how-do-you-debug-unexpected-re-renders-updates",
+    "question": "How do you debug unexpected re-renders/updates?",
+    "shortAnswer": "Vue DevTools timeline, check reactive sources, avoid creating new reactive objects each render unnecessarily.",
+    "detailedAnswer": "Watchers logging help. Ensure keys are stable in v-for.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-011",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "readonly-proxies-why-use-readonly",
+    "question": "Readonly proxies — why use readonly()?",
+    "shortAnswer": "Expose reactive state to consumers without allowing mutation.",
+    "detailedAnswer": "Good for store public APIs. Mutations should go through actions.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "reactivity"
+    ]
+  },
+  {
+    "id": "vue-reactivity-012",
+    "technology": "vue",
+    "category": "Reactivity",
+    "categorySlug": "reactivity",
+    "slug": "architecture-model-a-complex-form-with-vue-reactivity",
+    "question": "Architecture: model a complex form with Vue reactivity.",
+    "shortAnswer": "Use reactive form state + computed validity; watchers for autosave; composables per section.",
+    "detailedAnswer": "Avoid deep watchers when computed suffices. Debounce remote sync.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "reactivity"
+    ]
+  }
+]

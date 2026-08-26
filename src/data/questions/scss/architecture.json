@@ -1,0 +1,213 @@
+[
+  {
+    "id": "scss-architecture-001",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "what-is-itcss-and-how-does-it-apply-to-scss",
+    "question": "What is ITCSS and how does it apply to SCSS?",
+    "shortAnswer": "Inverted Triangle CSS layers: settings → tools → generic → elements → objects → components → utilities.",
+    "detailedAnswer": "Controls specificity growth and cascade. Map layers to partial folders. Utilities win when needed.",
+    "difficulty": "fresh",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-002",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "bem-with-scss-recommended-nesting-style",
+    "question": "BEM with SCSS — recommended nesting style?",
+    "shortAnswer": "Nest only &__element and &--modifier under the block; avoid tagging elements by tag name.",
+    "detailedAnswer": "Keeps specificity low and intent clear. Don't nest .block .other-block deeply.",
+    "example": ".card { &__title {} &--featured {} }",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-003",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "how-do-you-structure-theming-for-white-label-products",
+    "question": "How do you structure theming for white-label products?",
+    "shortAnswer": "Primitive tokens + semantic aliases per brand; swap brand maps or CSS variable layers at runtime/build.",
+    "detailedAnswer": "Avoid forking component SCSS per brand. Override tokens, not components.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-004",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "utility-first-vs-component-scss-coexistence-rules",
+    "question": "Utility-first vs component SCSS — coexistence rules?",
+    "shortAnswer": "Utilities for layout spacing; components for recurring UI; forbid one-off utilities that duplicate components.",
+    "detailedAnswer": "Document decision tree. Lint for banned patterns if needed.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-005",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "where-should-global-resets-live",
+    "question": "Where should global resets live?",
+    "shortAnswer": "Once in base/generic layer of the entrypoint — never re-included by components.",
+    "detailedAnswer": "Normalize/reset conflicts are painful. Own a single reset strategy.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-006",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "scenario-marketing-site-and-app-shell-share-scss-kit-but-diverge-visually",
+    "question": "Scenario: marketing site and app shell share SCSS kit but diverge visually.",
+    "shortAnswer": "Shared primitives; separate semantic themes; optional component subsets per surface.",
+    "detailedAnswer": "Don't force identical components if UX differs — share tokens/tools first.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-007",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "how-does-specificity-budgeting-work-in-scss-architecture",
+    "question": "How does specificity budgeting work in SCSS architecture?",
+    "shortAnswer": "Prefer single-class components, limit nesting, ban IDs in styles, and review !important usage.",
+    "detailedAnswer": "Stylelint plugins help. High specificity is a leading indicator of architecture debt.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-008",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "design-system-package-versioning-for-scss",
+    "question": "Design system package versioning for SCSS?",
+    "shortAnswer": "Semver on token/mixin public API; changelogs; codemods for renames; peer dependency on Sass.",
+    "detailedAnswer": "Breaking token renames break apps — treat seriously. Provide migration guides.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-009",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "css-modules-scss-architecture-pitfalls",
+    "question": "CSS Modules + SCSS architecture pitfalls?",
+    "shortAnswer": "Composing globals accidentally, duplicating tokens, and unclear ownership of shared partials.",
+    "detailedAnswer": "Central tokens module; local styles for structure. Agree on :global usage policy.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-010",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "when-to-prefer-plain-css-over-scss-in-modern-apps",
+    "question": "When to prefer plain CSS over SCSS in modern apps?",
+    "shortAnswer": "If you only need variables/nesting now native, and toolchain cost exceeds benefits.",
+    "detailedAnswer": "SCSS still wins for maps/mixins/design-system packages. Choose deliberately.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-011",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "documentation-standards-for-scss-architecture",
+    "question": "Documentation standards for SCSS architecture?",
+    "shortAnswer": "Architecture decision records, folder README, public API of mixins/tokens, and examples in Storybook.",
+    "detailedAnswer": "Undocumented partials become landfill. Link visual examples.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-012",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "lead-consolidate-three-divergent-scss-stacks-post-merger",
+    "question": "Lead: consolidate three divergent SCSS stacks post-merger.",
+    "shortAnswer": "Inventory tokens/components, pick target architecture, bridge themes, migrate high-traffic UI first.",
+    "detailedAnswer": "Freeze new divergence. Measure CSS weight and visual regressions.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-013",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "how-do-critical-css-and-scss-architecture-interact",
+    "question": "How do critical CSS and SCSS architecture interact?",
+    "shortAnswer": "Componentize so critical path CSS can be extracted; avoid huge shared bundles of unused components.",
+    "detailedAnswer": "Purge/content detection and modular imports matter. Architecture enables performance.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "scss-architecture-014",
+    "technology": "scss",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "ownership-model-who-approves-new-global-tokens",
+    "question": "Ownership model: who approves new global tokens?",
+    "shortAnswer": "Design + eng guild; RFC for semantic tokens; automated publish; no ad-hoc hex in apps.",
+    "detailedAnswer": "Prevents token sprawl. Apps consume, don't invent primitives.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  }
+]

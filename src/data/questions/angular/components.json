@@ -1,0 +1,125 @@
+[
+  {
+    "id": "ng-components-001",
+    "technology": "angular",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-is-an-angular-component-and-what-are-its-core-pieces",
+    "question": "What is an Angular component and what are its core pieces?",
+    "shortAnswer": "A component is a class with a template and styles that owns a piece of UI, declared with @Component.",
+    "detailedAnswer": "Angular components encapsulate view + logic. The decorator sets selector, template/templateUrl, styleUrls, and changeDetection. The class holds state and methods; the template binds to them. Standalone components import their own dependencies instead of needing NgModules.",
+    "example": "@Component({\n  selector: 'app-hello',\n  standalone: true,\n  template: `<h1>{{ title() }}</h1>`,\n})\nexport class HelloComponent {\n  title = signal('Hello');\n}",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "components",
+      "standalone"
+    ]
+  },
+  {
+    "id": "ng-components-002",
+    "technology": "angular",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-is-the-difference-between-a-standalone-component-and-an-ngmodule-declared-c",
+    "question": "What is the difference between a standalone component and an NgModule-declared component?",
+    "shortAnswer": "Standalone components declare imports in @Component; classic components are declared in an NgModule.",
+    "detailedAnswer": "Standalone (default in modern Angular) makes components self-contained and simplifies lazy loading. NgModules still exist for legacy apps and some libraries. Prefer standalone for new work; migrate gradually with standalone: true.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "ng-components-003",
+    "technology": "angular",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "explain-input-and-output-on-angular-components",
+    "question": "Explain @Input and @Output on Angular components.",
+    "shortAnswer": "@Input receives data from the parent; @Output emits events via EventEmitter (or output() function).",
+    "detailedAnswer": "Inputs are one-way down; outputs notify parents of events. Prefer the signal-based input()/output() APIs in modern Angular. Avoid two-way binding unless needed; use model() for two-way signal inputs.",
+    "example": "readonly name = input.required<string>();\nreadonly saved = output<void>();",
+    "difficulty": "fresh",
+    "type": "scenario",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "ng-components-004",
+    "technology": "angular",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-is-content-projection-and-when-do-you-use-ng-content",
+    "question": "What is content projection and when do you use ng-content?",
+    "shortAnswer": "Content projection slots parent-provided markup into a child template via ng-content.",
+    "detailedAnswer": "Use select to project into multiple slots. Prefer projection for reusable shells (cards, layouts) instead of hardcoding children. Distinguish projected content from the component's own view for styling and queries.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "ng-components-005",
+    "technology": "angular",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "how-do-viewchild-and-contentchild-differ",
+    "question": "How do ViewChild and ContentChild differ?",
+    "shortAnswer": "ViewChild queries the component's own template; ContentChild queries projected content.",
+    "detailedAnswer": "Timing matters: queries are available after ngAfterViewInit / ngAfterContentInit. Prefer signal queries (viewChild, contentChild) in modern Angular. Avoid querying too early in the constructor.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "ng-components-006",
+    "technology": "angular",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-lifecycle-hooks-matter-most-for-angular-components",
+    "question": "What lifecycle hooks matter most for Angular components?",
+    "shortAnswer": "ngOnInit for setup, ngOnDestroy for cleanup; view/content hooks when querying DOM/projected nodes.",
+    "detailedAnswer": "Constructor is for DI only. Use effects/signals for reactive updates instead of heavy ngOnChanges when possible. Always unsubscribe or destroy resources in ngOnDestroy (or takeUntilDestroyed).",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "ng-components-007",
+    "technology": "angular",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "when-should-you-split-a-large-component-into-smaller-ones",
+    "question": "When should you split a large component into smaller ones?",
+    "shortAnswer": "When the template/logic mixes unrelated concerns, re-renders are expensive, or reuse/testing suffers.",
+    "detailedAnswer": "Extract presentational components, move state to services or parent containers, and keep templates readable. Prefer composition over inheritance for UI.",
+    "difficulty": "fresh",
+    "type": "architecture",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "ng-components-008",
+    "technology": "angular",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "how-do-you-share-state-between-sibling-angular-components",
+    "question": "How do you share state between sibling Angular components?",
+    "shortAnswer": "Lift state to a common parent, use a shared injectable service, or a signal store.",
+    "detailedAnswer": "Avoid prop drilling through deep trees. Services with providedIn or route-level providers scope lifetime. Signals/RxJS subjects expose reactive state.",
+    "difficulty": "fresh",
+    "type": "scenario",
+    "tags": [
+      "components"
+    ]
+  }
+]

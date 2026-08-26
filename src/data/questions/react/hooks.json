@@ -1,0 +1,123 @@
+[
+  {
+    "id": "react-hooks-001",
+    "technology": "react",
+    "category": "Hooks",
+    "categorySlug": "hooks",
+    "slug": "what-are-the-rules-of-hooks",
+    "question": "What are the Rules of Hooks?",
+    "shortAnswer": "Only call hooks at the top level of React functions; only call from React functions or custom hooks.",
+    "detailedAnswer": "No hooks in loops/conditions. Ensures stable hook order between renders. ESLint plugin enforces this.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "hooks"
+    ]
+  },
+  {
+    "id": "react-hooks-002",
+    "technology": "react",
+    "category": "Hooks",
+    "categorySlug": "hooks",
+    "slug": "what-is-a-custom-hook",
+    "question": "What is a custom hook?",
+    "shortAnswer": "A function starting with use that composes built-in hooks to reuse stateful logic.",
+    "detailedAnswer": "Share behavior, not UI. Return stable APIs. Don't hide surprising side effects.",
+    "example": "function useToggle(init = false) {\n  const [on, setOn] = useState(init);\n  return [on, () => setOn(v => !v)] as const;\n}",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "hooks"
+    ]
+  },
+  {
+    "id": "react-hooks-003",
+    "technology": "react",
+    "category": "Hooks",
+    "categorySlug": "hooks",
+    "slug": "useref-vs-usestate-when-each",
+    "question": "useRef vs useState — when each?",
+    "shortAnswer": "useRef holds mutable values without re-render; useState triggers re-render on update.",
+    "detailedAnswer": "Refs for DOM nodes, timers IDs, previous values. Don't use refs to 'avoid' renders when UI must update.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "hooks"
+    ]
+  },
+  {
+    "id": "react-hooks-004",
+    "technology": "react",
+    "category": "Hooks",
+    "categorySlug": "hooks",
+    "slug": "what-does-useid-solve",
+    "question": "What does useId solve?",
+    "shortAnswer": "Stable unique IDs for a11y attributes that match between server and client.",
+    "detailedAnswer": "Prefer over Math.random() for label/input linking under SSR.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "hooks"
+    ]
+  },
+  {
+    "id": "react-hooks-005",
+    "technology": "react",
+    "category": "Hooks",
+    "categorySlug": "hooks",
+    "slug": "usetransition-vs-usedeferredvalue",
+    "question": "useTransition vs useDeferredValue?",
+    "shortAnswer": "useTransition marks state updates as non-urgent; useDeferredValue defers a derived value.",
+    "detailedAnswer": "Keep typing snappy while heavy lists update. Don't wrap every update—profile first.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "hooks"
+    ]
+  },
+  {
+    "id": "react-hooks-006",
+    "technology": "react",
+    "category": "Hooks",
+    "categorySlug": "hooks",
+    "slug": "what-is-useimperativehandle-for",
+    "question": "What is useImperativeHandle for?",
+    "shortAnswer": "Customize the instance value exposed to parent refs via forwardRef.",
+    "detailedAnswer": "Rare—prefer declarative props. Useful for focus() APIs on design-system inputs.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "hooks"
+    ]
+  },
+  {
+    "id": "react-hooks-007",
+    "technology": "react",
+    "category": "Hooks",
+    "categorySlug": "hooks",
+    "slug": "how-do-you-test-a-custom-hook",
+    "question": "How do you test a custom hook?",
+    "shortAnswer": "Use renderHook from Testing Library; assert returned values after act updates.",
+    "detailedAnswer": "Mock dependencies. Cover edge cases and cleanup.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "hooks"
+    ]
+  },
+  {
+    "id": "react-hooks-008",
+    "technology": "react",
+    "category": "Hooks",
+    "categorySlug": "hooks",
+    "slug": "lead-how-do-you-govern-hooks-usage-across-a-large-react-codebase",
+    "question": "Lead: how do you govern hooks usage across a large React codebase?",
+    "shortAnswer": "Lint rules, shared hooks library, code review for effect overuse, docs for data-fetching standards.",
+    "detailedAnswer": "Ban ad-hoc fetch-in-effect if a data library is standard. Measure re-renders in critical flows.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "hooks"
+    ]
+  }
+]

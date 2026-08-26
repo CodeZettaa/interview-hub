@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ts-type-guards-001",
+    "technology": "typescript",
+    "category": "Type Guards",
+    "categorySlug": "type-guards",
+    "slug": "user-defined-type-guard",
+    "question": "What is a user-defined type guard?",
+    "shortAnswer": "Function returning `arg is Type` that narrows when true.",
+    "detailedAnswer": "Implement runtime check correctly — TS trusts the predicate.",
+    "example": "function isString(x: unknown): x is string {\n  return typeof x === 'string';\n}",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "type-guards"
+    ]
+  },
+  {
+    "id": "ts-type-guards-002",
+    "technology": "typescript",
+    "category": "Type Guards",
+    "categorySlug": "type-guards",
+    "slug": "instanceof-vs-custom-guards",
+    "question": "instanceof vs custom guards?",
+    "shortAnswer": "instanceof uses prototype chain; custom guards for interfaces/plain objects.",
+    "detailedAnswer": "Interfaces don't exist at runtime — need discriminants or validators.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "type-guards"
+    ]
+  },
+  {
+    "id": "ts-type-guards-003",
+    "technology": "typescript",
+    "category": "Type Guards",
+    "categorySlug": "type-guards",
+    "slug": "array-type-guards",
+    "question": "How do you type-guard arrays of unknowns?",
+    "shortAnswer": "Array.isArray plus element predicates; consider every() for homogeneous arrays.",
+    "detailedAnswer": "For tuples, length and positional checks. Validate externally sourced JSON carefully.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "type-guards"
+    ]
+  },
+  {
+    "id": "ts-type-guards-004",
+    "technology": "typescript",
+    "category": "Type Guards",
+    "categorySlug": "type-guards",
+    "slug": "schema-libs-vs-hand-guards",
+    "question": "Zod/io-ts vs hand-written guards?",
+    "shortAnswer": "Libraries give parsers + inferred types; hand guards are lighter but error-prone.",
+    "detailedAnswer": "Prefer schema libs at trust boundaries (API, forms).",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "type-guards"
+    ]
+  },
+  {
+    "id": "ts-type-guards-005",
+    "technology": "typescript",
+    "category": "Type Guards",
+    "categorySlug": "type-guards",
+    "slug": "exhaustiveness-never",
+    "question": "Exhaustiveness checks with never?",
+    "shortAnswer": "In default/switch, assign residual to never to force handling new variants.",
+    "detailedAnswer": "Compile-time safety for evolving unions. Pair with discriminants.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "type-guards"
+    ]
+  },
+  {
+    "id": "ts-type-guards-006",
+    "technology": "typescript",
+    "category": "Type Guards",
+    "categorySlug": "type-guards",
+    "slug": "generic-type-predicates",
+    "question": "Type predicates with generics?",
+    "shortAnswer": "Guards can be generic to narrow to T when runtime check confirms.",
+    "detailedAnswer": "Keep predicates honest. Avoid `x is T` without testing T's shape.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "type-guards"
+    ]
+  },
+  {
+    "id": "ts-type-guards-007",
+    "technology": "typescript",
+    "category": "Type Guards",
+    "categorySlug": "type-guards",
+    "slug": "type-guards-security",
+    "question": "Security note on type guards?",
+    "shortAnswer": "Guards are compile-time illusions unless runtime validation is correct.",
+    "detailedAnswer": "Never trust casts. Validate untrusted input at boundaries.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "type-guards"
+    ]
+  }
+]

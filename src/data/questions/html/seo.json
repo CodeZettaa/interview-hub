@@ -1,0 +1,182 @@
+[
+  {
+    "id": "html-seo-001",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "title-element-seo",
+    "question": "What is the role of the <title> element for SEO?",
+    "shortAnswer": "Primary snippet title signal and browser tab label; unique per page.",
+    "detailedAnswer": "Keep concise and descriptive. Don't keyword-stuff. Align with h1 thematically without duplication spam.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-002",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "meta-description",
+    "question": "Explain meta description best practices.",
+    "shortAnswer": "Summarizes the page for SERP snippets; not a direct ranking factor but affects CTR.",
+    "detailedAnswer": "Unique, compelling, within typical display length. Avoid duplicate sitewide descriptions.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-003",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "canonical-urls",
+    "question": "How do canonical URLs help?",
+    "shortAnswer": "They declare the preferred URL when duplicates/near-duplicates exist.",
+    "detailedAnswer": "Use absolute URLs. Self-referential canonicals are common. Wrong canonicals can deindex pages.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-004",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "open-graph-tags",
+    "question": "What Open Graph tags matter for sharing?",
+    "shortAnswer": "og:title, og:description, og:image, og:url (and twitter cards similarly).",
+    "detailedAnswer": "They control link previews on social platforms. Images should meet size guidelines.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-005",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "heading-structure-seo",
+    "question": "How does heading structure affect SEO?",
+    "shortAnswer": "Clear hierarchy helps crawlers and users understand topical structure.",
+    "detailedAnswer": "One clear h1, logical nesting, don't use headings only for styling. Content quality still dominates.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-006",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "robots-meta-vs-robots-txt",
+    "question": "What is robots meta vs robots.txt?",
+    "shortAnswer": "robots.txt governs crawling paths; meta robots governs indexing/snippet behavior per page.",
+    "detailedAnswer": "noindex can still allow crawl depending on setup. Disallow doesn't remove already indexed URLs alone.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-007",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "json-ld-structured-data",
+    "question": "When should you use JSON-LD structured data?",
+    "shortAnswer": "To describe entities (Article, Product, FAQ) for rich results — matching visible content.",
+    "detailedAnswer": "Keep accurate and maintained. Misleading schema risks manual actions.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-008",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "spa-seo-problems",
+    "question": "How do SPAs hurt SEO if misconfigured?",
+    "shortAnswer": "Critical content may be client-only, slow TTFB/LCP, or missing unique titles per route.",
+    "detailedAnswer": "Prefer SSR/SSG or prerender for indexable routes. Ensure crawlable links (a href).",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-009",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "hreflang",
+    "question": "What is hreflang used for?",
+    "shortAnswer": "Signals language/region variants of a page to search engines.",
+    "detailedAnswer": "Must be reciprocal and consistent. Mistakes can cause wrong locale in SERPs.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-010",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "landing-page-seo-audit",
+    "question": "How do you SEO-audit a marketing landing page?",
+    "shortAnswer": "Titles/meta, headings, crawlability, Core Web Vitals, structured data, internal links, indexability.",
+    "detailedAnswer": "Check rendered HTML, not just source templates. Validate with Search Console.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-011",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "crawlable-links",
+    "question": "Why do crawlable links matter more than onclick navigation?",
+    "shortAnswer": "Crawlers discover pages via href; JS-only navigation may hide routes.",
+    "detailedAnswer": "Use real anchors progressive-enhanced with client routers.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "seo"
+    ]
+  },
+  {
+    "id": "html-seo-012",
+    "technology": "html",
+    "category": "SEO",
+    "categorySlug": "seo",
+    "slug": "docs-seo-architecture",
+    "question": "Define an SEO content architecture for a large docs site.",
+    "shortAnswer": "Stable URL taxonomy, canonical rules, sitemap strategy, pagination, unique titles at scale.",
+    "detailedAnswer": "Automate metadata. Prevent soft-404s. Align IA with search intent clusters.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "seo"
+    ]
+  }
+]

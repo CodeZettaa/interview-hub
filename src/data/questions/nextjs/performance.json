@@ -1,0 +1,107 @@
+[
+  {
+    "id": "next-performance-001",
+    "technology": "nextjs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "which-next-js-tools-help-image-performance",
+    "question": "Which Next.js tools help image performance?",
+    "shortAnswer": "`next/image` for responsive sizes, lazy loading, modern formats, and CLS prevention.",
+    "detailedAnswer": "Always set dimensions/aspect. Avoid shipping huge unoptimized images. Configure remotePatterns for external loaders.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "next-performance-002",
+    "technology": "nextjs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-does-next-font-improve-performance",
+    "question": "How does next/font improve performance?",
+    "shortAnswer": "Self-hosts fonts, reduces layout shift, and avoids render-blocking third-party font CSS.",
+    "detailedAnswer": "Subset fonts. Limit weights. Prefer variable fonts when appropriate.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "next-performance-003",
+    "technology": "nextjs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "what-causes-large-client-bundles-in-next-apps",
+    "question": "What causes large client bundles in Next apps?",
+    "shortAnswer": "Root-level 'use client', heavy UI libs in client trees, barrel imports, and unnecessary polyfills.",
+    "detailedAnswer": "Analyze with bundle analyzer. Push boundaries down. Prefer RSC for data display.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "next-performance-004",
+    "technology": "nextjs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-do-you-optimize-data-fetching-waterfalls",
+    "question": "How do you optimize data fetching waterfalls?",
+    "shortAnswer": "Fetch in parallel, compose with Suspense, cache shared lookups, and avoid sequential awaits when independent.",
+    "detailedAnswer": "Lift common fetches or use Promise.all. Watch component trees that await parent-before-child unnecessarily.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "next-performance-005",
+    "technology": "nextjs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "explain-good-loading-ux-with-streaming",
+    "question": "Explain good loading UX with streaming.",
+    "shortAnswer": "Shell + skeletons via loading.tsx/Suspense; prioritize above-the-fold content.",
+    "detailedAnswer": "Don't block chrome on slow widgets. Measure LCP element ownership.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "next-performance-006",
+    "technology": "nextjs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "when-is-edge-rendering-a-performance-win",
+    "question": "When is Edge rendering a performance win?",
+    "shortAnswer": "When work is light and close to users; not when Node-heavy ORMs dominate.",
+    "detailedAnswer": "Geo/auth redirects shine at Edge. Heavy SSR may be better on Node near the DB (regional).",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "next-performance-007",
+    "technology": "nextjs",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "lead-set-performance-budgets-for-a-next-js-org",
+    "question": "Lead: set performance budgets for a Next.js org.",
+    "shortAnswer": "Budgets for JS KB, LCP/INP, TTFB by route class; CI checks; RUM dashboards; ownership per template.",
+    "detailedAnswer": "Classify routes (marketing vs app). Block regressions in PRs. Pair budgets with caching SLOs.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  }
+]

@@ -1,0 +1,183 @@
+[
+  {
+    "id": "vue-components-001",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-is-a-vue-component",
+    "question": "What is a Vue component?",
+    "shortAnswer": "A reusable unit with template, script, and optional style that encapsulates UI and behavior.",
+    "detailedAnswer": "SFCs (.vue) are standard. Composition API with <script setup> is preferred in Vue 3. Components communicate via props/emits and provide/inject.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-002",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "options-api-vs-composition-api",
+    "question": "Options API vs Composition API?",
+    "shortAnswer": "Options groups by option type; Composition groups by feature using functions.",
+    "detailedAnswer": "Composition scales better for complex logic reuse via composables. Options remains valid and readable for simple components.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-003",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-does-script-setup-give-you",
+    "question": "What does <script setup> give you?",
+    "shortAnswer": "Syntactic sugar for Composition API: top-level bindings auto-expose to template, better DX/ perf compile.",
+    "detailedAnswer": "Use defineProps/defineEmits. No explicit return. Preferred default for new Vue 3 code.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-004",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "single-file-component-structure-best-practices",
+    "question": "Single-file component structure best practices?",
+    "shortAnswer": "Keep components focused; extract composables; colocated scoped styles; clear props/emits.",
+    "detailedAnswer": "Avoid giant SFCs. Split presentational vs container when needed.",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-005",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "how-do-async-components-work-in-vue",
+    "question": "How do async components work in Vue?",
+    "shortAnswer": "defineAsyncComponent loads a component on demand with optional loading/error components.",
+    "detailedAnswer": "Code-split heavy widgets. Combine with Suspense for awaiting setup.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-006",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "what-is-vue-suspense-used-for",
+    "question": "What is Vue Suspense used for?",
+    "shortAnswer": "Coordinate async setup/dependencies with fallback content while resolving.",
+    "detailedAnswer": "Useful with async components and top-level await in setup. Nest carefully.",
+    "difficulty": "fresh",
+    "type": "scenario",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-007",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "functional-vs-stateful-components-in-vue-3",
+    "question": "Functional vs stateful components in Vue 3?",
+    "shortAnswer": "Functional components are stateless/perf niche; most UI uses stateful SFCs.",
+    "detailedAnswer": "Prefer normal components unless you have a measured need. Vue 3 optimized differently than Vue 2.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-008",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "how-do-slots-enable-composition",
+    "question": "How do slots enable composition?",
+    "shortAnswer": "Parents pass template content into child slot outlets; named/scoped slots pass data outward.",
+    "detailedAnswer": "Prefer slots over brittle prop render flags for flexible APIs.",
+    "example": "<slot name=\"actions\" :item=\"item\" />",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-009",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "when-do-you-use-keep-alive",
+    "question": "When do you use keep-alive?",
+    "shortAnswer": "Cache dynamic component instances so state/scroll survive toggles.",
+    "detailedAnswer": "Include/exclude names carefully. Watch memory growth with many cached trees.",
+    "difficulty": "fresh",
+    "type": "scenario",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-010",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "teleports-what-problem-do-they-solve",
+    "question": "Teleports — what problem do they solve?",
+    "shortAnswer": "Render UI (modals/toasts) elsewhere in the DOM while keeping logical component ownership.",
+    "detailedAnswer": "Helps stacking contexts and accessibility focus management patterns.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-011",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "recursive-components-when-and-pitfalls",
+    "question": "Recursive components — when and pitfalls?",
+    "shortAnswer": "Components that render themselves for trees; ensure a base case and unique keys.",
+    "detailedAnswer": "Mind performance on deep trees. Prefer iterative virtualization when huge.",
+    "difficulty": "fresh",
+    "type": "debugging",
+    "tags": [
+      "components"
+    ]
+  },
+  {
+    "id": "vue-components-012",
+    "technology": "vue",
+    "category": "Components",
+    "categorySlug": "components",
+    "slug": "design-a-reusable-datatable-component-api-in-vue",
+    "question": "Design a reusable DataTable component API in Vue.",
+    "shortAnswer": "Props for columns/rows; scoped slots for cell rendering; emits for sort/select; avoid over-config props.",
+    "detailedAnswer": "Composition over endless boolean props. Document slot contracts.",
+    "difficulty": "fresh",
+    "type": "architecture",
+    "tags": [
+      "components"
+    ]
+  }
+]

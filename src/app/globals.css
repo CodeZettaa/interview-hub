@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f7f8;
+  --foreground: #0b1220;
+  --card: #ffffff;
+  --card-foreground: #0b1220;
+  --muted: #e8eef2;
+  --muted-foreground: #5b6b7c;
+  --border: #d7e0e7;
+  --accent: #0f766e;
+  --accent-foreground: #ecfeff;
+  --accent-soft: #ccfbf1;
+  --ring: #14b8a6;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --hero-glow: rgba(15, 118, 110, 0.18);
+  --code-bg: #0f172a;
+  --code-fg: #e2e8f0;
+}
+
+.dark {
+  --background: #070b12;
+  --foreground: #e8eef6;
+  --card: #0f1623;
+  --card-foreground: #e8eef6;
+  --muted: #172033;
+  --muted-foreground: #93a4b8;
+  --border: #243147;
+  --accent: #2dd4bf;
+  --accent-foreground: #042f2e;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --ring: #2dd4bf;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --hero-glow: rgba(45, 212, 191, 0.14);
+  --code-bg: #020617;
+  --code-fg: #e2e8f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-sora);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent) 35%, transparent);
+}
+
+.font-display {
+  font-family: var(--font-sora), var(--font-jakarta), system-ui, sans-serif;
+}
+
+.surface-grid {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, var(--hero-glow), transparent),
+    linear-gradient(to right, color-mix(in oklab, var(--border) 55%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--border) 55%, transparent) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px;
+}
+
+.glass-card {
+  background: color-mix(in oklab, var(--card) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.code-block {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.55s ease-out both;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}

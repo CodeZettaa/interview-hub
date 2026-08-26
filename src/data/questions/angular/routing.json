@@ -1,0 +1,93 @@
+[
+  {
+    "id": "ng-routing-001",
+    "technology": "angular",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "how-does-angular-router-map-urls-to-components",
+    "question": "How does Angular Router map URLs to components?",
+    "shortAnswer": "Routes configure path → component (or loadComponent) and optional children, guards, and resolvers.",
+    "detailedAnswer": "Router outlet renders the matched component. Lazy loading uses loadChildren/loadComponent. Params and query params are observables/signals.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "ng-routing-002",
+    "technology": "angular",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "what-is-the-difference-between-parammap-and-queryparammap",
+    "question": "What is the difference between paramMap and queryParamMap?",
+    "shortAnswer": "paramMap is path params (/users/:id); queryParamMap is ?key=value search params.",
+    "detailedAnswer": "Path params identify resources; query params are filters/pagination. Prefer snapshot only when you don't need ongoing updates.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "ng-routing-003",
+    "technology": "angular",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "how-do-you-lazy-load-a-standalone-route",
+    "question": "How do you lazy load a standalone route?",
+    "shortAnswer": "Use loadComponent: () => import(...).then(m => m.FeatureComponent) on the route.",
+    "detailedAnswer": "Code-splits the feature. Combine with canMatch/canActivate for auth. Prefer standalone lazy routes over NgModule lazy loading in new apps.",
+    "example": "{ path: 'admin', loadComponent: () => import('./admin.component').then(m => m.AdminComponent) }",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "ng-routing-004",
+    "technology": "angular",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "what-are-child-routes-and-nested-router-outlets-for",
+    "question": "What are child routes and nested router-outlets for?",
+    "shortAnswer": "Feature sections with their own sub-navigation render in nested outlets.",
+    "detailedAnswer": "Parent route component hosts <router-outlet>. Children inherit URL segments. Useful for dashboards with side nav.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "ng-routing-005",
+    "technology": "angular",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "how-do-you-pass-data-to-a-route-without-putting-it-in-the-url",
+    "question": "How do you pass data to a route without putting it in the URL?",
+    "shortAnswer": "Use the route data property, a resolver, or a shared service/state store.",
+    "detailedAnswer": "Static data goes in route config. Resolvers prefetch. Avoid relying on router state extras alone for refresh-safe data.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "routing"
+    ]
+  },
+  {
+    "id": "ng-routing-006",
+    "technology": "angular",
+    "category": "Routing",
+    "categorySlug": "routing",
+    "slug": "what-is-routerlinkactive-and-common-pitfalls",
+    "question": "What is RouterLinkActive and common pitfalls?",
+    "shortAnswer": "It adds CSS classes when the link's route is active; exact matching options matter.",
+    "detailedAnswer": "Without exact matching, parent links stay active for children. Configure routerLinkActiveOptions carefully.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "routing"
+    ]
+  }
+]

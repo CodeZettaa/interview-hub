@@ -1,0 +1,109 @@
+[
+  {
+    "id": "ng-signals-001",
+    "technology": "angular",
+    "category": "Signals",
+    "categorySlug": "signals",
+    "slug": "what-is-an-angular-signal",
+    "question": "What is an Angular signal?",
+    "shortAnswer": "A reactive wrapper around a value that notifies dependents when set or updated.",
+    "detailedAnswer": "Read with signal(), write with set/update. Templates and computed track reads. Signals are synchronous and fine-grained compared to Zone-driven CD.",
+    "example": "const count = signal(0);\ncount.update(c => c + 1);",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "signals"
+    ]
+  },
+  {
+    "id": "ng-signals-002",
+    "technology": "angular",
+    "category": "Signals",
+    "categorySlug": "signals",
+    "slug": "what-is-the-difference-between-computed-and-effect",
+    "question": "What is the difference between computed and effect?",
+    "shortAnswer": "computed derives a memoized value; effect runs side effects when dependencies change.",
+    "detailedAnswer": "computed is pure and lazy/cached. effects are for logging, syncing imperative APIs—not for deriving state. Avoid writing to signals in ways that create cycles.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "signals"
+    ]
+  },
+  {
+    "id": "ng-signals-003",
+    "technology": "angular",
+    "category": "Signals",
+    "categorySlug": "signals",
+    "slug": "how-do-linkedsignal-and-resource-fit-modern-angular",
+    "question": "How do linkedSignal and resource fit modern Angular?",
+    "shortAnswer": "linkedSignal resets/derives writable state from a source; resource manages async data as signals.",
+    "detailedAnswer": "Use linkedSignal for state that should reset when a parent id changes. resource() standardizes loading/error/value for HTTP. Prefer them over ad-hoc effect patterns.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "signals"
+    ]
+  },
+  {
+    "id": "ng-signals-004",
+    "technology": "angular",
+    "category": "Signals",
+    "categorySlug": "signals",
+    "slug": "how-do-you-convert-an-observable-to-a-signal",
+    "question": "How do you convert an Observable to a signal?",
+    "shortAnswer": "Use toSignal(observable, { initialValue }) in an injection context.",
+    "detailedAnswer": "toSignal subscribes and exposes the latest value. Provide initialValue or requireSync carefully. Unsubscribe is handled when the injection context destroys.",
+    "example": "readonly users = toSignal(this.api.getUsers(), { initialValue: [] });",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "signals"
+    ]
+  },
+  {
+    "id": "ng-signals-005",
+    "technology": "angular",
+    "category": "Signals",
+    "categorySlug": "signals",
+    "slug": "how-do-input-signals-differ-from-classic-input",
+    "question": "How do input() signals differ from classic @Input?",
+    "shortAnswer": "input()/input.required() create signal inputs read as this.name() instead of properties.",
+    "detailedAnswer": "They integrate with computed and are the modern API. model() supports two-way binding. Transform functions can coerce inputs.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "signals"
+    ]
+  },
+  {
+    "id": "ng-signals-006",
+    "technology": "angular",
+    "category": "Signals",
+    "categorySlug": "signals",
+    "slug": "what-are-common-pitfalls-with-effects",
+    "question": "What are common pitfalls with effects?",
+    "shortAnswer": "Using effects to sync derived state, creating write cycles, or running expensive work without untracking.",
+    "detailedAnswer": "Prefer computed for derived values. Use untracked when reading without subscribing. Keep effects small and intentional.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "signals"
+    ]
+  },
+  {
+    "id": "ng-signals-007",
+    "technology": "angular",
+    "category": "Signals",
+    "categorySlug": "signals",
+    "slug": "design-a-feature-store-with-signals-for-a-product-list-page",
+    "question": "Design a feature store with signals for a product list page.",
+    "shortAnswer": "Hold filters/items as signals, expose computed filtered lists, load via resource or service methods updating signals.",
+    "detailedAnswer": "Keep the store injectable and scoped to the route. Avoid duplicating server state in many components. Expose readonly signals to consumers.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "signals"
+    ]
+  }
+]

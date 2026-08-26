@@ -1,0 +1,197 @@
+[
+  {
+    "id": "html-apis-001",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "dialog-element-api",
+    "question": "What is the Dialog API / <dialog> element?",
+    "shortAnswer": "Native modal/non-modal dialogs with showModal, ::backdrop, and focus handling.",
+    "detailedAnswer": "Prefer it over custom div modals when support allows. Still verify a11y labeling and inert background.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-002",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "details-summary",
+    "question": "Explain the Details/Summary disclosure widget.",
+    "shortAnswer": "Native expandable widget without JS; summary is the toggle.",
+    "detailedAnswer": "Good for FAQs. Style carefully; ensure keyboard support remains. Limited animation control.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-003",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "popover-api",
+    "question": "What does the Popover API enable?",
+    "shortAnswer": "Declarative popovers with top-layer rendering, light dismiss, and invoker attributes.",
+    "detailedAnswer": "Simplifies menus/tooltips vs manual absolute positioning + focus traps — still check semantics.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-004",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "clipboard-api-vs-execcommand",
+    "question": "How does the Clipboard API differ from execCommand?",
+    "shortAnswer": "Async navigator.clipboard with permissions; execCommand is legacy/deprecated.",
+    "detailedAnswer": "Requires secure context. Handle permissions and failures. Don't assume paste always works.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-005",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "contenteditable-risks",
+    "question": "What is contenteditable used for, and what are risks?",
+    "shortAnswer": "In-browser rich editing; complex a11y, sanitization, and serialization risks.",
+    "detailedAnswer": "Prefer vetted editors. Sanitize before render to avoid XSS. Keyboard/AT support is hard.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-006",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "intersection-observer-overview",
+    "question": "Explain Intersection Observer at a high level for HTML apps.",
+    "shortAnswer": "Async observation of element visibility — lazy load, infinite scroll, analytics.",
+    "detailedAnswer": "Avoid scroll listeners for visibility. Root margins tune prefetch. Disconnect when done.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-007",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "history-api",
+    "question": "What is the History API used for in HTML apps?",
+    "shortAnswer": "pushState/replaceState + popstate for client routing without full reloads.",
+    "detailedAnswer": "Keep URLs shareable. Sync document title. Don't break back button.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-008",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "drag-and-drop-api",
+    "question": "How does the Drag and Drop API work?",
+    "shortAnswer": "draggable elements fire drag events; drop targets handle dragover/drop and dataTransfer.",
+    "detailedAnswer": "Touch support is uneven. Provide keyboard alternatives. Prefer File drop for uploads carefully.",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-009",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "custom-elements",
+    "question": "What are custom elements in relation to HTML?",
+    "shortAnswer": "Define new HTML tags via Custom Elements API with lifecycle callbacks.",
+    "detailedAnswer": "Need hyphenated names. Shadow DOM optional for encapsulation. Progressive enhancement mindset helps.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-010",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "template-and-slot",
+    "question": "When would you use template and slot?",
+    "shortAnswer": "template holds inert DOM; slots project light DOM into shadow trees.",
+    "detailedAnswer": "Useful for Web Components. Avoid shipping unused large templates.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-011",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "feature-detect-html-apis",
+    "question": "How do you feature-detect HTML APIs safely?",
+    "shortAnswer": "Check property/method existence; provide fallbacks; avoid UA sniffing.",
+    "detailedAnswer": "Example: 'showModal' in HTMLDialogElement.prototype. Progressive enhancement first.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-012",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "fullscreen-api",
+    "question": "Full-screen API considerations?",
+    "shortAnswer": "requestFullscreen on an element; user gesture often required; handle exit and a11y.",
+    "detailedAnswer": "Don't trap users. Escape should exit. Announce state changes.",
+    "difficulty": "lead",
+    "type": "scenario",
+    "tags": [
+      "apis"
+    ]
+  },
+  {
+    "id": "html-apis-013",
+    "technology": "html",
+    "category": "APIs",
+    "categorySlug": "apis",
+    "slug": "native-apis-vs-libraries",
+    "question": "How do you choose native HTML APIs vs JS libraries for UI widgets?",
+    "shortAnswer": "Prefer native when a11y/perf/maintenance win; libraries when cross-browser gaps or complex UX demand.",
+    "detailedAnswer": "Evaluate support matrices, bundle cost, and design-system consistency at org level.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "apis"
+    ]
+  }
+]

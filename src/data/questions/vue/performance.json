@@ -1,0 +1,122 @@
+[
+  {
+    "id": "vue-performance-001",
+    "technology": "vue",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "key-vue-3-performance-techniques",
+    "question": "Key Vue 3 performance techniques?",
+    "shortAnswer": "v-once/v-memo, shallow refs, computed caching, virtualize lists, async components, avoid unnecessary watchers.",
+    "detailedAnswer": "Profile with DevTools. Optimize update scope, not just initial load.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "vue-performance-002",
+    "technology": "vue",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "why-can-huge-reactive-objects-be-costly",
+    "question": "Why can huge reactive objects be costly?",
+    "shortAnswer": "Deep proxies and dependency tracking overhead; prefer shallow + immutable replace for big blobs.",
+    "detailedAnswer": "Normalize data. Don't make everything reactive.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "vue-performance-003",
+    "technology": "vue",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "list-rendering-performance-tips",
+    "question": "List rendering performance tips?",
+    "shortAnswer": "Stable keys, virtual scroll, avoid heavy work in templates, use computed filters.",
+    "detailedAnswer": "Split row components. Memoize expensive cells with v-memo when appropriate.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "vue-performance-004",
+    "technology": "vue",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-does-vite-help-vue-app-performance-in-practice",
+    "question": "How does Vite help Vue app performance in practice?",
+    "shortAnswer": "Fast HMR/dev, efficient bundling/code-split with dynamic import.",
+    "detailedAnswer": "Still own route-level splitting and asset strategy.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "vue-performance-005",
+    "technology": "vue",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "avoiding-unnecessary-component-updates",
+    "question": "Avoiding unnecessary component updates?",
+    "shortAnswer": "Keep props stable, use computed, check parent render churn, consider v-memo.",
+    "detailedAnswer": "Don't overuse functional micro-optimizations without metrics.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "vue-performance-006",
+    "technology": "vue",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "ssr-ssg-performance-considerations-for-vue",
+    "question": "SSR/SSG performance considerations for Vue?",
+    "shortAnswer": "Cache rendered pages, stream when available, hydrate efficiently, avoid blocking setup.",
+    "detailedAnswer": "Frameworks like Nuxt provide patterns—know your stack.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "vue-performance-007",
+    "technology": "vue",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "images-and-fonts-in-vue-spas",
+    "question": "Images and fonts in Vue SPAs?",
+    "shortAnswer": "Lazy-load, correct sizes, modern formats, font-display strategies.",
+    "detailedAnswer": "LCP often dominated by media, not Vue runtime.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "vue-performance-008",
+    "technology": "vue",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "lead-performance-culture-on-a-vue-team",
+    "question": "Lead: performance culture on a Vue team?",
+    "shortAnswer": "Budgets, RUM, PR checklist for lists/reactivity, shared virtualization utilities.",
+    "detailedAnswer": "Teach shallowRef/markRaw patterns for chart libs.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  }
+]

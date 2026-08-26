@@ -1,0 +1,230 @@
+[
+  {
+    "id": "scss-variables-001",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "what-are-scss-variables-and-how-do-they-differ-from-css-custom-properties",
+    "question": "What are SCSS variables and how do they differ from CSS custom properties?",
+    "shortAnswer": "SCSS variables are compile-time ($name); CSS custom properties are runtime (var(--name)) and cascade.",
+    "detailedAnswer": "Use SCSS vars for build-time theming tokens you do not need to change in the browser; use CSS variables for dynamic themes, dark mode toggles, and component-level overrides. Many design systems emit CSS variables from SCSS maps.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-002",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "how-does-variable-scope-work-in-scss",
+    "question": "How does variable scope work in SCSS?",
+    "shortAnswer": "Variables are local to the block where defined unless marked !global; nested rules create local scopes.",
+    "detailedAnswer": "Accidentally shadowing a global $color inside a mixin/nest is a common bug. Prefer module system (@use) with explicit namespaces over globals.",
+    "commonMistake": "Relying on leaky global $variables across files without @use.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-003",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "why-prefer-maps-for-design-tokens-over-dozens-of-loose-variables",
+    "question": "Why prefer maps for design tokens over dozens of loose variables?",
+    "shortAnswer": "Maps group related tokens and enable loops/functions to generate utilities systematically.",
+    "detailedAnswer": "$spacers: (\"sm\": 8px, \"md\": 16px) scales better. Combine with @each to emit CSS custom properties or utility classes.",
+    "example": "$colors: (\"brand\": #0a5, \"danger\": #c00);",
+    "difficulty": "fresh",
+    "type": "best-practice",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-004",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "default-values-with-default-when-useful",
+    "question": "Default values with !default — when useful?",
+    "shortAnswer": "Libraries set $var: value !default so consumers can override before import/@use configure.",
+    "detailedAnswer": "Classic for theming frameworks. With @use, prefer configuration via with (...) instead of legacy !default patterns when possible.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-005",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "how-do-you-share-variables-safely-with-use",
+    "question": "How do you share variables safely with @use?",
+    "shortAnswer": "Put tokens in a _tokens.scss module; @use 'tokens' as t; reference t.$brand.",
+    "detailedAnswer": "Avoid @import (deprecated) which polluted global scope. Forward tokens via @forward for public API packages.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-006",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "scenario-two-teams-redefine-primary-differently-across-partials",
+    "question": "Scenario: two teams redefine $primary differently across partials.",
+    "shortAnswer": "Enforce a single tokens module, ban duplicate token files in lint, and generate tokens from design pipeline.",
+    "detailedAnswer": "Name collisions were easy with @import. Module namespaces make ownership clear.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-007",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "can-scss-variables-interpolate-into-selectors-property-names",
+    "question": "Can SCSS variables interpolate into selectors/property names?",
+    "shortAnswer": "Yes via #{$var} interpolation for selectors, filenames in url(), and some property constructs.",
+    "detailedAnswer": "Overuse harms readability. Prefer maps/loops for systematic generation over clever interpolation.",
+    "example": ".btn-#{$variant} { color: $c; }",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-008",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "null-and-true-false-variables-practical-uses",
+    "question": "Null and true/false variables — practical uses?",
+    "shortAnswer": "Feature flags in SCSS (e.g., $enable-rounded: true) gate mixins/output; null can mean 'omit property'.",
+    "detailedAnswer": "Keep flags few and documented. Prefer CSS-native features when browser support allows.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-009",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "how-should-colors-be-stored-for-theming-systems",
+    "question": "How should colors be stored for theming systems?",
+    "shortAnswer": "Semantic tokens ($color-text-primary) referencing primitive palettes; expose CSS variables for runtime theme switches.",
+    "detailedAnswer": "Avoid hard-coding hex in components. Support contrast checks in CI for token pairs.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-010",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "debugging-variable-undefined-after-migrating-to-use",
+    "question": "Debugging: variable undefined after migrating to @use.",
+    "shortAnswer": "You must namespace members or use as *; load order/@forward differs from @import globals.",
+    "detailedAnswer": "Update all references. Configure modules with with () for overrides. Remove circular loads.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-011",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "units-and-variable-math-pitfalls",
+    "question": "Units and variable math — pitfalls?",
+    "shortAnswer": "Incompatible units error (px + %); division slash ambiguity historically; use math.div.",
+    "detailedAnswer": "Keep tokens unit-consistent. Prefer calc() in output CSS when mixing runtime units.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-012",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "css-variables-generated-from-scss-maps-pattern",
+    "question": "CSS variables generated from SCSS maps — pattern?",
+    "shortAnswer": "Loop map keys to :root { --space-#{$k}: #{$v}; } then use var() in components.",
+    "detailedAnswer": "Gives compile-time validation of token existence and runtime themability. Great interview architecture answer.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-013",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "when-are-scss-variables-the-wrong-tool",
+    "question": "When are SCSS variables the wrong tool?",
+    "shortAnswer": "When values must change per component instance at runtime without rebuilding (user themes, JS-driven).",
+    "detailedAnswer": "Use CSS custom properties or inline styles carefully. SCSS cannot read DOM state.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-014",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "lead-token-pipeline-from-figma-to-scss-css",
+    "question": "Lead: token pipeline from Figma to SCSS/CSS.",
+    "shortAnswer": "Export primitives → transform to SCSS maps + CSS variables → version packages → consume via @use in apps.",
+    "detailedAnswer": "Automate contrast and naming lint. Avoid manual hex copy. Treat tokens as a product API.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "variables"
+    ]
+  },
+  {
+    "id": "scss-variables-015",
+    "technology": "scss",
+    "category": "Variables",
+    "categorySlug": "variables",
+    "slug": "comparison-brand-color-vs-brand-color-in-a-hybrid-codebase",
+    "question": "Comparison: $brand-color vs --brand-color in a hybrid codebase.",
+    "shortAnswer": "$brand-color for Sass tooling/loops at build; --brand-color for cascade/theming; often both, linked.",
+    "detailedAnswer": "Document which layer is source of truth. Don't duplicate conflicting values.",
+    "difficulty": "lead",
+    "type": "comparison",
+    "tags": [
+      "variables"
+    ]
+  }
+]

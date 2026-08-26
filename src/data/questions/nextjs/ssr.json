@@ -1,0 +1,93 @@
+[
+  {
+    "id": "next-ssr-001",
+    "technology": "nextjs",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "what-is-ssr-in-next-js",
+    "question": "What is SSR in Next.js?",
+    "shortAnswer": "HTML is generated on the server per request (or as dynamic render), then hydrated on the client as needed.",
+    "detailedAnswer": "SSR helps SEO and first paint with up-to-date data. Cost is server compute and TTFB. In App Router, dynamic rendering is the SSR analogue.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "ssr"
+    ]
+  },
+  {
+    "id": "next-ssr-002",
+    "technology": "nextjs",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "when-is-ssr-preferable-to-static-generation",
+    "question": "When is SSR preferable to static generation?",
+    "shortAnswer": "When content is personalized, highly request-specific, or must always be fresh without revalidation complexity.",
+    "detailedAnswer": "Authenticated dashboards, A/B gated pages, and frequently changing inventory may need SSR. Still cache fragments where possible.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "ssr"
+    ]
+  },
+  {
+    "id": "next-ssr-003",
+    "technology": "nextjs",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "how-do-you-ssr-with-authentication-cookies",
+    "question": "How do you SSR with authentication cookies?",
+    "shortAnswer": "Read cookies on the server, fetch user-scoped data, and avoid caching personalized responses as public.",
+    "detailedAnswer": "Use `cookies()` which marks the route dynamic. Set Cache-Control carefully. Never store session HTML in a shared CDN cache without Vary/private.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "auth",
+      "ssr"
+    ]
+  },
+  {
+    "id": "next-ssr-004",
+    "technology": "nextjs",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "what-are-ssr-performance-pitfalls",
+    "question": "What are SSR performance pitfalls?",
+    "shortAnswer": "Waterfall fetches, blocking the whole page, large server work on the critical path, and no streaming.",
+    "detailedAnswer": "Parallelize data loading, stream with Suspense, cache shared lookups, and move rare work off the request path.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "ssr"
+    ]
+  },
+  {
+    "id": "next-ssr-005",
+    "technology": "nextjs",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "how-does-ssr-interact-with-third-party-scripts",
+    "question": "How does SSR interact with third-party scripts?",
+    "shortAnswer": "Prefer next/script strategies; don't block HTML on non-critical scripts.",
+    "detailedAnswer": "Server HTML should remain useful without scripts. Hydration cost grows with client JS — keep client islands small even on SSR pages.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "ssr"
+    ]
+  },
+  {
+    "id": "next-ssr-006",
+    "technology": "nextjs",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "compare-classic-getserversideprops-ssr-to-app-router-dynamic-rendering",
+    "question": "Compare classic getServerSideProps SSR to App Router dynamic rendering.",
+    "shortAnswer": "Both render per request; App Router uses async components/caching primitives instead of a single page props function.",
+    "detailedAnswer": "App Router encourages finer-grained data fetching and streaming. Migration requires rethinking cache boundaries rather than 1:1 API mapping.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "ssr"
+    ]
+  }
+]

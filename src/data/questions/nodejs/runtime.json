@@ -1,0 +1,94 @@
+[
+  {
+    "id": "node-runtime-001",
+    "technology": "nodejs",
+    "category": "Runtime",
+    "categorySlug": "runtime",
+    "slug": "what-is-the-node-js-runtime-and-how-does-it-differ-from-browser-javascript",
+    "question": "What is the Node.js runtime, and how does it differ from browser JavaScript?",
+    "shortAnswer": "Node.js is a V8-based JS runtime plus libuv for async I/O, with OS APIs (fs, net, process) instead of DOM/window.",
+    "detailedAnswer": "It shares the language and much of ECMAScript with browsers but exposes different globals and modules. Single-threaded JS drives concurrent I/O via the event loop. Understanding the runtime boundary (JS vs native addons vs OS) is foundational for performance and debugging interviews.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "runtime",
+      "v8"
+    ]
+  },
+  {
+    "id": "node-runtime-002",
+    "technology": "nodejs",
+    "category": "Runtime",
+    "categorySlug": "runtime",
+    "slug": "explain-the-roles-of-v8-and-libuv-in-node",
+    "question": "Explain the roles of V8 and libuv in Node.",
+    "shortAnswer": "V8 executes JavaScript and manages the heap/GC; libuv provides the event loop, thread pool, and cross-platform async I/O.",
+    "detailedAnswer": "CPU-bound JS runs on V8's main thread; many file/DNS/crypto ops offload to libuv's thread pool. Native bindings bridge both. Misattributing slowness to 'Node is slow' vs 'blocked event loop' vs 'saturated UV pool' is a common senior trap.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "runtime"
+    ]
+  },
+  {
+    "id": "node-runtime-003",
+    "technology": "nodejs",
+    "category": "Runtime",
+    "categorySlug": "runtime",
+    "slug": "what-does-process-expose-that-matters-in-production-services",
+    "question": "What does `process` expose that matters in production services?",
+    "shortAnswer": "Env, args, PID, signals, memoryUsage, exit codes, and stdio — the process control surface.",
+    "detailedAnswer": "Use env for config, handle SIGTERM for graceful shutdown, and avoid sync work in signal handlers. `process.exit` abruptly skips cleanup — prefer orderly shutdown. Interviewers often ask how you drain connections on deploy.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "ops"
+    ]
+  },
+  {
+    "id": "node-runtime-004",
+    "technology": "nodejs",
+    "category": "Runtime",
+    "categorySlug": "runtime",
+    "slug": "when-would-you-choose-node-vs-a-threaded-runtime-for-a-backend",
+    "question": "When would you choose Node vs a threaded runtime for a backend?",
+    "shortAnswer": "Node shines at many concurrent I/O-bound connections; CPU-heavy or hard-realtime workloads often favor other runtimes or offload workers.",
+    "detailedAnswer": "Node can still do CPU work via workers/native, but the default concurrency model is cooperative async. Match the runtime to workload shape, team skills, and ecosystem — not hype.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "runtime"
+    ]
+  },
+  {
+    "id": "node-runtime-005",
+    "technology": "nodejs",
+    "category": "Runtime",
+    "categorySlug": "runtime",
+    "slug": "what-are-node-s-module-systems-today",
+    "question": "What are Node's module systems today?",
+    "shortAnswer": "CommonJS (`require`/`module.exports`) and ES modules (`import`/`export`), with dual-package hazards.",
+    "detailedAnswer": "Package.json `type`, `.mjs`/`.cjs`, and conditional exports control resolution. Mixing CJS/ESM incorrectly causes 'ERR_REQUIRE_ESM' and dual instances of singleton modules — a frequent production bug.",
+    "commonMistake": "Assuming require() always works for modern ESM-only packages.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "runtime"
+    ]
+  },
+  {
+    "id": "node-runtime-006",
+    "technology": "nodejs",
+    "category": "Runtime",
+    "categorySlug": "runtime",
+    "slug": "lead-how-do-you-standardize-node-runtime-versions-across-a-large-org",
+    "question": "Lead: how do you standardize Node runtime versions across a large org?",
+    "shortAnswer": "Pin engines, use .nvmrc/Volta, enforce in CI, container base images, and LTS policy with upgrade windows.",
+    "detailedAnswer": "Document ABI/native addon constraints. Stage major upgrades behind canaries. Treat runtime bumps as security work, not optional chore. Align local, CI, and prod deliberately.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "runtime"
+    ]
+  }
+]

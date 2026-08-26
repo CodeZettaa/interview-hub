@@ -1,0 +1,92 @@
+[
+  {
+    "id": "react-props-001",
+    "technology": "react",
+    "category": "Props",
+    "categorySlug": "props",
+    "slug": "what-are-props-in-react",
+    "question": "What are props in React?",
+    "shortAnswer": "Inputs passed from parent to child; read-only from the child's perspective.",
+    "detailedAnswer": "Props enable composition and reuse. Changing props triggers re-render (subject to memo). Don't mutate props.",
+    "difficulty": "fresh",
+    "type": "output",
+    "tags": [
+      "props"
+    ]
+  },
+  {
+    "id": "react-props-002",
+    "technology": "react",
+    "category": "Props",
+    "categorySlug": "props",
+    "slug": "why-shouldn-t-you-mutate-props",
+    "question": "Why shouldn't you mutate props?",
+    "shortAnswer": "Props are owned by the parent; mutation breaks purity and one-way data flow.",
+    "detailedAnswer": "Copy then update in local state, or lift state and pass a setter/callback.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "props"
+    ]
+  },
+  {
+    "id": "react-props-003",
+    "technology": "react",
+    "category": "Props",
+    "categorySlug": "props",
+    "slug": "what-are-children-as-a-prop-pattern",
+    "question": "What are children as a prop pattern?",
+    "shortAnswer": "Using props.children or explicit slots to inject nested UI into a wrapper.",
+    "detailedAnswer": "Enables layout components. Render props / function-as-children pass data downward dynamically.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "props"
+    ]
+  },
+  {
+    "id": "react-props-004",
+    "technology": "react",
+    "category": "Props",
+    "categorySlug": "props",
+    "slug": "how-do-default-props-work-with-function-components",
+    "question": "How do default props work with function components?",
+    "shortAnswer": "Destructure defaults in parameters: ({ size = 'md' }) => ...",
+    "detailedAnswer": "defaultProps on functions is legacy. Prefer parameter defaults and TypeScript optional props.",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "props"
+    ]
+  },
+  {
+    "id": "react-props-005",
+    "technology": "react",
+    "category": "Props",
+    "categorySlug": "props",
+    "slug": "prop-drilling-problems-and-alternatives",
+    "question": "Prop drilling — problems and alternatives?",
+    "shortAnswer": "Passing props through many layers that don't use them; use composition, context, or state libraries.",
+    "detailedAnswer": "Context for sparse global concerns. Composition (children) often beats deep drilling.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "props"
+    ]
+  },
+  {
+    "id": "react-props-006",
+    "technology": "react",
+    "category": "Props",
+    "categorySlug": "props",
+    "slug": "how-do-you-type-props-well-in-typescript",
+    "question": "How do you type props well in TypeScript?",
+    "shortAnswer": "Define a Props type/interface; use React.PropsWithChildren; narrow event types.",
+    "detailedAnswer": "Avoid any. Prefer discriminated unions for variant components. Export props types for reuse.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "props"
+    ]
+  }
+]

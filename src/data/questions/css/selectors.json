@@ -1,0 +1,198 @@
+[
+  {
+    "id": "css-selectors-001",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "descendant-vs-both-classes",
+    "question": "What is the difference between .a .b and .a.b?",
+    "shortAnswer": "Descendant combinator vs AND on the same element.",
+    "detailedAnswer": ".a .b matches .b inside .a. .a.b matches an element with both classes.",
+    "example": "/* .card .title vs .card.featured */",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-002",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "css-combinators",
+    "question": "Explain child, sibling, and adjacent sibling combinators.",
+    "shortAnswer": "> child, ~ general sibling, + adjacent sibling.",
+    "detailedAnswer": "They don't select ancestors. Whitespace descendant is more expensive/broad than >.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-003",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "is-vs-where",
+    "question": "When do you use :is() vs :where()?",
+    "shortAnswer": "Both list selectors; :is() keeps specificity of its most specific arg; :where() is always zero.",
+    "detailedAnswer": ":where() is great for resets. :is() for grouping without repetition.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-004",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "has-selector",
+    "question": "What does :has() enable?",
+    "shortAnswer": "Parent/ancestor selection based on descendants — previously impossible in CSS.",
+    "detailedAnswer": "Powerful but can be style-invalidating costly. Use thoughtfully for UI states.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-005",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "attribute-selectors",
+    "question": "Attribute selectors — equals vs contains vs prefix?",
+    "shortAnswer": "[attr=val], *= contains, ^= prefix, $= suffix, ~= word, |= hyphen code.",
+    "detailedAnswer": "Useful for language, data attributes, partial href matches. Prefer exact when possible.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-006",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "pseudo-class-vs-pseudo-element",
+    "question": "Pseudo-classes vs pseudo-elements?",
+    "shortAnswer": "Pseudo-classes select states (:hover, :focus-visible); pseudo-elements style fragments (::before, ::marker).",
+    "detailedAnswer": "Single vs double colon historically mixed; use :: for modern pseudo-elements.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-007",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "focus-visible",
+    "question": "Why prefer :focus-visible over :focus for outlines?",
+    "shortAnswer": "Shows focus ring mainly for keyboard users, reducing mouse-focus noise.",
+    "detailedAnswer": "Don't remove outlines without :focus-visible replacement. Accessibility requirement.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-008",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "id-specificity-traps",
+    "question": "How do specificity traps happen with IDs in selectors?",
+    "shortAnswer": "IDs outweigh many classes, making overrides painful.",
+    "detailedAnswer": "Avoid IDs in CSS hooks; use classes/data attributes. Prefer layers over escalating specificity.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-009",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "nth-child-usage",
+    "question": "What are structural pseudo-classes like nth-child useful for?",
+    "shortAnswer": "Selecting by position without extra classes — zebra rows, first/last, formulas.",
+    "detailedAnswer": "nth-child counts all children; nth-of-type filters by type. Off-by-one common.",
+    "difficulty": "senior",
+    "type": "coding",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-010",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "selector-performance-myths",
+    "question": "Selector performance myths — what matters today?",
+    "shortAnswer": "Extremely deep selectors rarely dominate; invalidations and layout do. Still keep selectors intentional.",
+    "detailedAnswer": "Avoid universal+expensive patterns in hot paths. Measure before micro-optimizing selectors.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-011",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "user-invalid-styling",
+    "question": "How do you style a form control only when invalid after interaction?",
+    "shortAnswer": ":user-invalid / :user-valid (and older patterns with classes) avoid showing errors too early.",
+    "detailedAnswer": "Pair with a11y messaging. Don't rely on color alone.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-012",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "not-selector",
+    "question": "Explain :not() limitations and nesting.",
+    "shortAnswer": ":not() can take complex selectors in modern CSS; specificity depends on arguments.",
+    "detailedAnswer": "Overuse reduces readability. Combine with :is for grouping.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "selectors"
+    ]
+  },
+  {
+    "id": "css-selectors-013",
+    "technology": "css",
+    "category": "Selectors",
+    "categorySlug": "selectors",
+    "slug": "selector-conventions",
+    "question": "Establish selector conventions for a large codebase.",
+    "shortAnswer": "Forbid IDs, prefer data-testid only for tests, document :has usage, lint complexity, BEM or utilities.",
+    "detailedAnswer": "Consistency beats cleverness. Codemod migrations when conventions change.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "selectors"
+    ]
+  }
+]

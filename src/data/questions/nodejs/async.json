@@ -1,0 +1,94 @@
+[
+  {
+    "id": "node-async-001",
+    "technology": "nodejs",
+    "category": "Async Programming",
+    "categorySlug": "async",
+    "slug": "callbacks-promises-and-async-await-how-do-you-choose",
+    "question": "Callbacks, promises, and async/await — how do you choose?",
+    "shortAnswer": "Prefer async/await on promises for readability; wrap callback APIs with util.promisify; avoid callback hell.",
+    "detailedAnswer": "Keep error handling explicit with try/catch. Don't mix styles inconsistently in one module. Understand that async functions always return promises.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "async"
+    ]
+  },
+  {
+    "id": "node-async-002",
+    "technology": "nodejs",
+    "category": "Async Programming",
+    "categorySlug": "async",
+    "slug": "what-is-the-danger-of-unhandled-promise-rejections",
+    "question": "What is the danger of unhandled promise rejections?",
+    "shortAnswer": "They can crash the process (depending on Node version/flags) or silently leave work incomplete.",
+    "detailedAnswer": "Always attach catch or await in try/catch. Use `--unhandled-rejections=strict` in CI. Log and alert on rejection events during migration.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "reliability"
+    ]
+  },
+  {
+    "id": "node-async-003",
+    "technology": "nodejs",
+    "category": "Async Programming",
+    "categorySlug": "async",
+    "slug": "promise-all-vs-promise-allsettled-vs-promise-race-when",
+    "question": "Promise.all vs Promise.allSettled vs Promise.race — when?",
+    "shortAnswer": "all fails fast; allSettled waits for all outcomes; race settles with the first.",
+    "detailedAnswer": "Use allSettled for fan-out where partial success matters. race for timeouts (careful with leaked work). all for required dependencies.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "async"
+    ]
+  },
+  {
+    "id": "node-async-004",
+    "technology": "nodejs",
+    "category": "Async Programming",
+    "categorySlug": "async",
+    "slug": "how-do-you-implement-a-timeout-around-an-async-operation",
+    "question": "How do you implement a timeout around an async operation?",
+    "shortAnswer": "AbortController + fetch signal, or Promise.race with a timer that aborts/cancels underlying work.",
+    "detailedAnswer": "Racing alone without cancelation leaves work running. Prefer abortable APIs. Clear timers to avoid leaks.",
+    "example": "const ac = new AbortController();\nsetTimeout(() => ac.abort(), 5000);\nawait fetch(url, { signal: ac.signal });",
+    "difficulty": "mid",
+    "type": "coding",
+    "tags": [
+      "async"
+    ]
+  },
+  {
+    "id": "node-async-005",
+    "technology": "nodejs",
+    "category": "Async Programming",
+    "categorySlug": "async",
+    "slug": "scenario-sequential-awaits-in-a-loop-make-an-api-slow-fix",
+    "question": "Scenario: sequential awaits in a loop make an API slow. Fix?",
+    "shortAnswer": "Parallelize independent awaits with Promise.all / limited concurrency pools.",
+    "detailedAnswer": "Watch rate limits and DB connection pools. Use p-limit style concurrency. Preserve ordering only when required.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "async"
+    ]
+  },
+  {
+    "id": "node-async-006",
+    "technology": "nodejs",
+    "category": "Async Programming",
+    "categorySlug": "async",
+    "slug": "explain-async-context-asynclocalstorage-use-cases",
+    "question": "Explain async context / AsyncLocalStorage use cases.",
+    "shortAnswer": "Propagate request IDs, tenants, and tracing context across async boundaries without explicit params.",
+    "detailedAnswer": "Powerful for logging/observability. Beware overhead and incorrect nesting. Don't store huge objects in ALS.",
+    "interviewTip": "Tie to OpenTelemetry / request-scoped context.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "async"
+    ]
+  }
+]

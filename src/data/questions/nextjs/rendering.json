@@ -1,0 +1,93 @@
+[
+  {
+    "id": "next-rendering-001",
+    "technology": "nextjs",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "what-rendering-strategies-does-next-js-support",
+    "question": "What rendering strategies does Next.js support?",
+    "shortAnswer": "Static, server-rendered, incremental revalidation, and client rendering — often combined per route.",
+    "detailedAnswer": "App Router blurs classic SSR/SSG lines via caching and dynamic APIs. A route can statically shell while streaming dynamic parts. Choose based on freshness, personalization, and TTFB needs.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "next-rendering-002",
+    "technology": "nextjs",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "what-makes-a-route-static-vs-dynamic-in-the-app-router",
+    "question": "What makes a route static vs dynamic in the App Router?",
+    "shortAnswer": "Using dynamic functions/APIs (cookies, headers, uncached fetches, searchParams in certain ways) opts into dynamic rendering.",
+    "detailedAnswer": "Static routes can be prerendered and cached at the edge/CDN. Dynamic routes render per request. Explicit route segment config (`dynamic`, `revalidate`) documents intent. Misunderstanding this causes surprise cold TTFB.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "next-rendering-003",
+    "technology": "nextjs",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "explain-streaming-and-suspense-in-next-js-rendering",
+    "question": "Explain streaming and Suspense in Next.js rendering.",
+    "shortAnswer": "HTML streams as Server Components resolve; Suspense boundaries show fallbacks for slower parts.",
+    "detailedAnswer": "Users see shell sooner. Place Suspense around slow data fetches. Avoid blocking the entire page on one query. Works with loading.tsx as a boundary.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "streaming",
+      "suspense"
+    ]
+  },
+  {
+    "id": "next-rendering-004",
+    "technology": "nextjs",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "what-is-partial-prerendering-ppr-conceptually",
+    "question": "What is Partial Prerendering (PPR) conceptually?",
+    "shortAnswer": "Serve a static shell instantly while streaming dynamic holes.",
+    "detailedAnswer": "Combines static performance with dynamic personalization. Requires clear static/dynamic boundaries. Interviewers expect awareness of the static shell + dynamic slots mental model.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "next-rendering-005",
+    "technology": "nextjs",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "how-do-searchparams-affect-rendering",
+    "question": "How do searchParams affect rendering?",
+    "shortAnswer": "Reading searchParams can force dynamic rendering for that page.",
+    "detailedAnswer": "Design list pages carefully — caching strategies may differ for filter UIs. Consider client-side filtering for pure UX filters vs server for SEO/shareable filtered URLs.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "rendering"
+    ]
+  },
+  {
+    "id": "next-rendering-006",
+    "technology": "nextjs",
+    "category": "Rendering",
+    "categorySlug": "rendering",
+    "slug": "lead-how-do-you-choose-rendering-strategy-for-a-product-catalog",
+    "question": "Lead: how do you choose rendering strategy for a product catalog?",
+    "shortAnswer": "Static/ISR for product pages, dynamic for cart/account, stream recommendations; measure cache hit rates and freshness SLAs.",
+    "detailedAnswer": "Define business rules for price freshness. Use on-demand revalidation for publishes. Keep personalized modules in Suspense holes so the catalog shell stays fast.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "rendering"
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "nest-microservices-001",
+    "technology": "nestjs",
+    "category": "Microservices",
+    "categorySlug": "microservices",
+    "slug": "how-do-nest-microservices-differ-from-http-controllers",
+    "question": "How do Nest microservices differ from HTTP controllers?",
+    "shortAnswer": "They use transporters (TCP/Redis/NATS/Kafka/RabbitMQ/gRPC) with @MessagePattern/@EventPattern handlers.",
+    "detailedAnswer": "Hybrid apps can listen to both HTTP and microservice channels. Serialization and idempotency matter more.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "microservices"
+    ]
+  },
+  {
+    "id": "nest-microservices-002",
+    "technology": "nestjs",
+    "category": "Microservices",
+    "categorySlug": "microservices",
+    "slug": "request-response-vs-event-patterns-in-nest-microservices",
+    "question": "Request-response vs event patterns in Nest microservices?",
+    "shortAnswer": "MessagePattern expects a response; EventPattern is fire-and-forget style consumption.",
+    "detailedAnswer": "Choose based on coupling needs. Events need consumer resilience and duplicate handling.",
+    "difficulty": "junior",
+    "type": "comparison",
+    "tags": [
+      "microservices"
+    ]
+  },
+  {
+    "id": "nest-microservices-003",
+    "technology": "nestjs",
+    "category": "Microservices",
+    "categorySlug": "microservices",
+    "slug": "why-is-idempotency-critical-for-kafka-rabbit-consumers",
+    "question": "Why is idempotency critical for Kafka/Rabbit consumers?",
+    "shortAnswer": "At-least-once delivery means duplicates — handlers must tolerate retries safely.",
+    "detailedAnswer": "Store processed keys, use upserts, and design side effects carefully.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "messaging"
+    ]
+  },
+  {
+    "id": "nest-microservices-004",
+    "technology": "nestjs",
+    "category": "Microservices",
+    "categorySlug": "microservices",
+    "slug": "grpc-with-nest-when-prefer-it",
+    "question": "gRPC with Nest — when prefer it?",
+    "shortAnswer": "Internal service meshes needing typed contracts, streaming, and efficient binary protocols.",
+    "detailedAnswer": "Protobuf contracts become your API. Harder browser exposure — often behind gateways.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "microservices"
+    ]
+  },
+  {
+    "id": "nest-microservices-005",
+    "technology": "nestjs",
+    "category": "Microservices",
+    "categorySlug": "microservices",
+    "slug": "debugging-nest-microservice-hangs-waiting-for-response",
+    "question": "Debugging: Nest microservice hangs waiting for response.",
+    "shortAnswer": "Client timeout, no handler, transporter misconfig, or server crashed mid-request.",
+    "detailedAnswer": "Add timeouts, health checks, and correlation IDs across the hop. Verify patterns match.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "microservices"
+    ]
+  },
+  {
+    "id": "nest-microservices-006",
+    "technology": "nestjs",
+    "category": "Microservices",
+    "categorySlug": "microservices",
+    "slug": "lead-when-not-to-split-a-nest-monolith-into-microservices",
+    "question": "Lead: when NOT to split a Nest monolith into microservices?",
+    "shortAnswer": "When the team/domain boundaries aren't clear, ops maturity is low, or the problem is modularity not scale.",
+    "detailedAnswer": "Start with modular monolith Nest modules. Split along failure domains and team ownership later.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "microservices"
+    ]
+  }
+]

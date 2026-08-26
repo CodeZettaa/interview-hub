@@ -1,0 +1,93 @@
+[
+  {
+    "id": "nest-validation-001",
+    "technology": "nestjs",
+    "category": "Validation",
+    "categorySlug": "validation",
+    "slug": "how-does-validationpipe-class-validator-validate-bodies",
+    "question": "How does ValidationPipe + class-validator validate bodies?",
+    "shortAnswer": "Transforms plain objects to DTO classes then runs decorators; throws BadRequest on failures.",
+    "detailedAnswer": "Requires transform for nested types. Customize exceptionFactory for error shape.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "validation"
+    ]
+  },
+  {
+    "id": "nest-validation-002",
+    "technology": "nestjs",
+    "category": "Validation",
+    "categorySlug": "validation",
+    "slug": "validate-nested-arrays-of-objects-requirements",
+    "question": "Validate nested arrays of objects — requirements?",
+    "shortAnswer": "@ValidateNested({ each: true }) and @Type(() => ItemDto) with transform enabled.",
+    "detailedAnswer": "Missing @Type is the most common bug. Add unit tests for nested payloads.",
+    "commonMistake": "Forgetting @Type on nested DTO properties.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "validation"
+    ]
+  },
+  {
+    "id": "nest-validation-003",
+    "technology": "nestjs",
+    "category": "Validation",
+    "categorySlug": "validation",
+    "slug": "custom-validators-when",
+    "question": "Custom validators — when?",
+    "shortAnswer": "Cross-field rules, DB uniqueness checks (carefully), or domain formats not covered by built-ins.",
+    "detailedAnswer": "Prefer sync validators in pipes; async uniqueness often better in services to keep pipes pure.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "validation"
+    ]
+  },
+  {
+    "id": "nest-validation-004",
+    "technology": "nestjs",
+    "category": "Validation",
+    "categorySlug": "validation",
+    "slug": "zod-io-ts-vs-class-validator-in-nest-trade-offs",
+    "question": "Zod/io-ts vs class-validator in Nest — trade-offs?",
+    "shortAnswer": "Zod offers TS-first inference; class-validator is decorator-native to Nest examples and Swagger plugins.",
+    "detailedAnswer": "Either works — consistency matters. Nest pipes can adapt Zod schemas.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "validation"
+    ]
+  },
+  {
+    "id": "nest-validation-005",
+    "technology": "nestjs",
+    "category": "Validation",
+    "categorySlug": "validation",
+    "slug": "scenario-validation-passes-but-business-rule-fails-later",
+    "question": "Scenario: validation passes but business rule fails later.",
+    "shortAnswer": "Input validation is not domain invariants — enforce invariants in domain services and map to 422/409.",
+    "detailedAnswer": "Don't overload DTOs with all business rules. Keep boundaries clear.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "validation"
+    ]
+  },
+  {
+    "id": "nest-validation-006",
+    "technology": "nestjs",
+    "category": "Validation",
+    "categorySlug": "validation",
+    "slug": "lead-org-wide-validation-standards-for-nest-apis",
+    "question": "Lead: org-wide validation standards for Nest APIs?",
+    "shortAnswer": "Global pipe config, shared error format, security defaults (whitelist), and linters for DTO coverage.",
+    "detailedAnswer": "Security review for file uploads and string lengths. Fuzz critical parsers.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "validation"
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "node-memory-001",
+    "technology": "nodejs",
+    "category": "Memory",
+    "categorySlug": "memory",
+    "slug": "how-do-you-diagnose-a-node-memory-leak",
+    "question": "How do you diagnose a Node memory leak?",
+    "shortAnswer": "Heap snapshots over time, allocation timelines, and watch retained size of suspects (caches, closures, listeners).",
+    "detailedAnswer": "Reproduce with load. Compare snapshots. Check unbounded Maps, event listeners, and global arrays.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "memory"
+    ]
+  },
+  {
+    "id": "node-memory-002",
+    "technology": "nodejs",
+    "category": "Memory",
+    "categorySlug": "memory",
+    "slug": "process-memoryusage-fields-what-do-they-mean",
+    "question": "process.memoryUsage() fields — what do they mean?",
+    "shortAnswer": "rss, heapTotal, heapUsed, external, arrayBuffers — different views of memory consumption.",
+    "detailedAnswer": "rss includes more than JS heap. external/arrayBuffers matter for Buffers. Don't alert only on heapUsed.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "memory"
+    ]
+  },
+  {
+    "id": "node-memory-003",
+    "technology": "nodejs",
+    "category": "Memory",
+    "categorySlug": "memory",
+    "slug": "why-can-buffer-usage-grow-rss-without-huge-heapused",
+    "question": "Why can Buffer usage grow rss without huge heapUsed?",
+    "shortAnswer": "Buffer memory may be off-heap/external relative to V8 heap accounting.",
+    "detailedAnswer": "Track external/arrayBuffers. Stream instead of retaining buffers. Release references promptly.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "memory"
+    ]
+  },
+  {
+    "id": "node-memory-004",
+    "technology": "nodejs",
+    "category": "Memory",
+    "categorySlug": "memory",
+    "slug": "in-process-caches-safe-patterns",
+    "question": "In-process caches — safe patterns?",
+    "shortAnswer": "Bounded LRU with TTL, memory budgets, and metrics; avoid unbounded Maps.",
+    "detailedAnswer": "Per-instance caches duplicate data horizontally. Consider Redis for shared cache. Stampede protection.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "memory"
+    ]
+  },
+  {
+    "id": "node-memory-005",
+    "technology": "nodejs",
+    "category": "Memory",
+    "categorySlug": "memory",
+    "slug": "scenario-heap-grows-only-in-production-under-traffic",
+    "question": "Scenario: heap grows only in production under traffic.",
+    "shortAnswer": "Likely request-correlated retention: closures over req, orphaned timers, or growing module-level state.",
+    "detailedAnswer": "Add continuous profiling. Check ALS misuse. Verify framework middleware not buffering bodies.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "memory"
+    ]
+  },
+  {
+    "id": "node-memory-006",
+    "technology": "nodejs",
+    "category": "Memory",
+    "categorySlug": "memory",
+    "slug": "lead-memory-slos-for-node-services-on-k8s",
+    "question": "Lead: memory SLOs for Node services on K8s.",
+    "shortAnswer": "Set requests/limits from measured rss, alert on monotonic growth, OOMKill dashboards, and load-test leak checks in CI.",
+    "detailedAnswer": "Right-size before raising limits blindly. Treat OOMs as defects. Budget caches explicitly.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "memory"
+    ]
+  }
+]

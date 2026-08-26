@@ -1,0 +1,122 @@
+[
+  {
+    "id": "vue-architecture-001",
+    "technology": "vue",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "how-do-you-structure-a-scalable-vue-3-app",
+    "question": "How do you structure a scalable Vue 3 app?",
+    "shortAnswer": "Feature modules with routes, composables, components; shared UI kit; Pinia domains.",
+    "detailedAnswer": "Colocate tests. Enforce public API boundaries between features.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "vue-architecture-002",
+    "technology": "vue",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "container-vs-presentational-components-in-vue",
+    "question": "Container vs presentational components in Vue?",
+    "shortAnswer": "Containers fetch/orchestrate; presentational receive props/emit events and use slots.",
+    "detailedAnswer": "Improves reuse and testing. Don't be dogmatic for tiny views.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "vue-architecture-003",
+    "technology": "vue",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "when-choose-nuxt-vs-plain-vite-vue",
+    "question": "When choose Nuxt vs plain Vite+Vue?",
+    "shortAnswer": "Nuxt for SSR/SSG, file routing, conventions; Vite+Vue for simple SPAs or custom setups.",
+    "detailedAnswer": "Nuxt accelerates product apps with SEO needs. Understand lock-in/conventions.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "vue-architecture-004",
+    "technology": "vue",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "handling-api-clients-cleanly",
+    "question": "Handling API clients cleanly?",
+    "shortAnswer": "Thin API module, typed DTOs, map to view models, central error handling.",
+    "detailedAnswer": "Composables/stores call API—not raw axios in every component.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "vue-architecture-005",
+    "technology": "vue",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "microfrontends-with-vue-considerations",
+    "question": "Microfrontends with Vue — considerations?",
+    "shortAnswer": "Shared design tokens, routing ownership, bundle duplication, team autonomy.",
+    "detailedAnswer": "Prefer modular monolith unless org constraints demand otherwise.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "vue-architecture-006",
+    "technology": "vue",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "error-handling-strategy-across-the-app",
+    "question": "Error handling strategy across the app?",
+    "shortAnswer": "Global error hooks, route-level boundaries, user-friendly toasts, logging pipeline.",
+    "detailedAnswer": "Don't swallow errors in composables silently.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "vue-architecture-007",
+    "technology": "vue",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "design-auth-flow-architecture-in-vue",
+    "question": "Design auth flow architecture in Vue.",
+    "shortAnswer": "Auth store, router guards, token refresh interceptor, secure storage choices.",
+    "detailedAnswer": "Keep tokens out of localStorage if threat model requires; prefer httpOnly cookies when feasible.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  },
+  {
+    "id": "vue-architecture-008",
+    "technology": "vue",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "slug": "lead-migrating-a-vue-2-app-to-vue-3",
+    "question": "Lead: migrating a Vue 2 app to Vue 3?",
+    "shortAnswer": "Build/tooling first, compat build if needed, replace filters/global API, Vuex→Pinia, test critical paths.",
+    "detailedAnswer": "Incremental migration beats big bang. Train the team on Composition API.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "architecture"
+    ]
+  }
+]

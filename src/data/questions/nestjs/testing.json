@@ -1,0 +1,93 @@
+[
+  {
+    "id": "nest-testing-001",
+    "technology": "nestjs",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "what-is-testingmodule-in-nest",
+    "question": "What is TestingModule in Nest?",
+    "shortAnswer": "A DI sandbox (@nestjs/testing) to create modules with overrides for unit/e2e-style provider tests.",
+    "detailedAnswer": "overrideProvider/useValue mocks dependencies. compile() builds the Nest context without listening HTTP unless e2e.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "nest-testing-002",
+    "technology": "nestjs",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "unit-test-a-service-with-mocked-repo-pattern",
+    "question": "Unit test a service with mocked repo — pattern?",
+    "shortAnswer": "TestingModule with service + mock repo provider token; assert interactions and results.",
+    "detailedAnswer": "Don't boot the whole app for unit tests. Keep tests fast and focused.",
+    "example": "const module = await Test.createTestingModule({ providers: [UsersService, { provide: getRepositoryToken(User), useValue: mockRepo }] }).compile();",
+    "difficulty": "junior",
+    "type": "coding",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "nest-testing-003",
+    "technology": "nestjs",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "e2e-testing-nest-http-apps-approach",
+    "question": "e2e testing Nest HTTP apps — approach?",
+    "shortAnswer": "supertest against a full AppModule (or test module), real or testcontainers DB, and cleanup between tests.",
+    "detailedAnswer": "Prefer deterministic seeds. Test auth flows. Separate from unit suite in CI timing.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "nest-testing-004",
+    "technology": "nestjs",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "how-do-you-test-guards-pipes-interceptors-in-isolation",
+    "question": "How do you test guards/pipes/interceptors in isolation?",
+    "shortAnswer": "Unit-test canActivate/transform/intercept with mocked ExecutionContext/CallHandler.",
+    "detailedAnswer": "Also cover via e2e for integration confidence. Mock Reflector metadata carefully.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "nest-testing-005",
+    "technology": "nestjs",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "scenario-flaky-e2e-due-to-module-singletons-holding-state",
+    "question": "Scenario: flaky e2e due to module singletons holding state.",
+    "shortAnswer": "Reset modules between tests, avoid shared mutable singletons, or use request-scoped carefully.",
+    "detailedAnswer": "Close app after suite. Isolate DB. Watch open handles (Jest).",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "testing"
+    ]
+  },
+  {
+    "id": "nest-testing-006",
+    "technology": "nestjs",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "slug": "lead-testing-strategy-pyramid-for-a-large-nest-codebase",
+    "question": "Lead: testing strategy pyramid for a large Nest codebase?",
+    "shortAnswer": "Many unit tests of domain/services, contract tests for providers, fewer e2e; CI gates on critical journeys.",
+    "detailedAnswer": "Share test utilities. Ban excessive e2e-only coverage. Measure flake rate.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "testing"
+    ]
+  }
+]

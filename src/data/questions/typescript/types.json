@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ts-types-001",
+    "technology": "typescript",
+    "category": "Types",
+    "categorySlug": "types",
+    "slug": "primitive-types",
+    "question": "What are TypeScript's primitive types?",
+    "shortAnswer": "string, number, boolean, null, undefined, symbol, bigint — plus special any/unknown/never/void.",
+    "detailedAnswer": "Prefer precise primitives over any. Note number covers floats/ints; bigint is separate.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "types"
+    ]
+  },
+  {
+    "id": "ts-types-002",
+    "technology": "typescript",
+    "category": "Types",
+    "categorySlug": "types",
+    "slug": "any-vs-unknown-vs-never",
+    "question": "any vs unknown vs never?",
+    "shortAnswer": "any disables checking; unknown is top type needing narrowing; never is empty/uninhabited.",
+    "detailedAnswer": "Prefer unknown for untrusted input. never appears in exhaustiveness and impossible returns.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "types"
+    ]
+  },
+  {
+    "id": "ts-types-003",
+    "technology": "typescript",
+    "category": "Types",
+    "categorySlug": "types",
+    "slug": "union-types",
+    "question": "What is a union type and when do you use it?",
+    "shortAnswer": "A value that can be one of several types — model alternatives explicitly.",
+    "detailedAnswer": "Narrow with typeof/in/discriminants. Avoid huge untagged unions when objects differ.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "types"
+    ]
+  },
+  {
+    "id": "ts-types-004",
+    "technology": "typescript",
+    "category": "Types",
+    "categorySlug": "types",
+    "slug": "intersection-types",
+    "question": "Intersection types — what are they for?",
+    "shortAnswer": "Combine types (A & B); useful for mixins and object composition.",
+    "detailedAnswer": "Conflicts in same property types can become never. Prefer interfaces for object extension often.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "types"
+    ]
+  },
+  {
+    "id": "ts-types-005",
+    "technology": "typescript",
+    "category": "Types",
+    "categorySlug": "types",
+    "slug": "type-vs-interface",
+    "question": "type vs interface for object shapes?",
+    "shortAnswer": "Both describe objects; interfaces merge via declaration merging; type aliases can union/intersect freely.",
+    "detailedAnswer": "Team style often: interfaces for objects, types for unions/mapped. Be consistent.",
+    "difficulty": "mid",
+    "type": "comparison",
+    "tags": [
+      "types"
+    ]
+  },
+  {
+    "id": "ts-types-006",
+    "technology": "typescript",
+    "category": "Types",
+    "categorySlug": "types",
+    "slug": "literal-types",
+    "question": "What are literal types?",
+    "shortAnswer": "Types that are specific values like 'admin' or 42; power discriminated unions.",
+    "detailedAnswer": "as const asserts widen-prevention. Useful for event names and config keys.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "types"
+    ]
+  },
+  {
+    "id": "ts-types-007",
+    "technology": "typescript",
+    "category": "Types",
+    "categorySlug": "types",
+    "slug": "void-vs-undefined",
+    "question": "Explain void vs undefined as return types.",
+    "shortAnswer": "void means callers shouldn't use the return value; undefined is the undefined value type.",
+    "detailedAnswer": "Callbacks typed void can return values still. Avoid void for variables storing undefined.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "types"
+    ]
+  },
+  {
+    "id": "ts-types-008",
+    "technology": "typescript",
+    "category": "Types",
+    "categorySlug": "types",
+    "slug": "tuples-vs-arrays",
+    "question": "How do tuples differ from arrays in TS?",
+    "shortAnswer": "Tuples have fixed length/position types; arrays are homogeneous variable length.",
+    "detailedAnswer": "Labeled tuple elements improve readability. Optional/rest elements supported.",
+    "difficulty": "lead",
+    "type": "concept",
+    "tags": [
+      "types"
+    ]
+  }
+]

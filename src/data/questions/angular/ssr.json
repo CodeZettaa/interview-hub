@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ng-ssr-001",
+    "technology": "angular",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "what-is-angular-ssr-and-why-use-it",
+    "question": "What is Angular SSR and why use it?",
+    "shortAnswer": "Render pages on the server for faster first paint and better SEO/social previews.",
+    "detailedAnswer": "Angular Universal / @angular/ssr generate HTML before hydration. Mind browser-only APIs during server render.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "ssr"
+    ]
+  },
+  {
+    "id": "ng-ssr-002",
+    "technology": "angular",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "how-do-you-avoid-breaking-ssr-with-window-document-usage",
+    "question": "How do you avoid breaking SSR with window/document usage?",
+    "shortAnswer": "Guard with isPlatformBrowser, inject DOCUMENT carefully, or move code to afterNextRender.",
+    "detailedAnswer": "Using window at import/constructor time crashes SSR. Prefer abstracting browser APIs behind services.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "ssr"
+    ]
+  },
+  {
+    "id": "ng-ssr-003",
+    "technology": "angular",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "what-is-transferstate-used-for",
+    "question": "What is TransferState used for?",
+    "shortAnswer": "Passing server-fetched data to the client to avoid duplicate HTTP calls after hydration.",
+    "detailedAnswer": "Store responses during SSR; read on client. Prevents flicker and double fetch. Keys must be stable.",
+    "difficulty": "senior",
+    "type": "concept",
+    "tags": [
+      "ssr"
+    ]
+  },
+  {
+    "id": "ng-ssr-004",
+    "technology": "angular",
+    "category": "SSR",
+    "categorySlug": "ssr",
+    "slug": "when-is-ssr-the-wrong-tool",
+    "question": "When is SSR the wrong tool?",
+    "shortAnswer": "Highly interactive authenticated apps with little public SEO value may not justify SSR complexity.",
+    "detailedAnswer": "Consider SSG for mostly static marketing pages. Measure TTFB and caching strategy.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "ssr"
+    ]
+  }
+]

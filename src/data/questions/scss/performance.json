@@ -1,0 +1,212 @@
+[
+  {
+    "id": "scss-performance-001",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-can-scss-architecture-affect-css-performance",
+    "question": "How can SCSS architecture affect CSS performance?",
+    "shortAnswer": "Bloated compiled CSS increases download/parse; unused includes and duplicate mixin output add weight.",
+    "detailedAnswer": "Prefer shared classes, purge unused, and avoid generating exhaustive utility matrices without need.",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-002",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "does-nesting-depth-hurt-runtime-performance",
+    "question": "Does nesting depth hurt runtime performance?",
+    "shortAnswer": "Selector matching is usually not the bottleneck today; payload size and unused CSS matter more.",
+    "detailedAnswer": "Still avoid pathological selectors. Measure rather than mythologize selector speed.",
+    "difficulty": "fresh",
+    "type": "comparison",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-003",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-do-you-prevent-unused-scss-from-shipping",
+    "question": "How do you prevent unused SCSS from shipping?",
+    "shortAnswer": "Modular @use (don't load unused components), PurgeCSS/content scans, and route-level CSS splitting.",
+    "detailedAnswer": "Global main importing everything is a common SPA footgun.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-004",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "scenario-compiled-css-is-2mb-from-sass-maps-generating-every-color-utility",
+    "question": "Scenario: compiled CSS is 2MB from Sass maps generating every color utility.",
+    "shortAnswer": "Generate fewer utilities, use CSS variables + open-ended classes, or on-demand generation.",
+    "detailedAnswer": "Data-driven generation needs budgets. Not every token needs a class.",
+    "difficulty": "junior",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-005",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "extend-performance-maintainability-concerns",
+    "question": "@extend performance/maintainability concerns?",
+    "shortAnswer": "Can merge selectors in ways that create large groups and unexpected coupling across files.",
+    "detailedAnswer": "Often mixins or real shared classes are clearer. Profile output if using extend heavily.",
+    "difficulty": "junior",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-006",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "sass-compile-time-too-slow-in-ci-fixes",
+    "question": "Sass compile time too slow in CI — fixes?",
+    "shortAnswer": "Reduce @import duplication (use @use once), simplify giant loops, upgrade Dart Sass, and cache builds.",
+    "detailedAnswer": "Generation of thousands of classes dominates. Split entrypoints.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-007",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "critical-rendering-path-how-scss-delivery-strategy-helps",
+    "question": "Critical rendering path: how SCSS delivery strategy helps?",
+    "shortAnswer": "Split critical vs deferred CSS, inline critical carefully, and defer non-route styles.",
+    "detailedAnswer": "Architecture that isolates route CSS enables this. Monolithic CSS blocks rendering.",
+    "difficulty": "mid",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-008",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "are-complex-nth-child-selectors-from-scss-loops-costly",
+    "question": "Are complex :nth-child selectors from SCSS loops costly?",
+    "shortAnswer": "Can be harder to maintain and occasionally costly in complex DOMs; prefer classes for stateful styling.",
+    "detailedAnswer": "Generate clear class hooks instead of relying on structural selectors for core UI.",
+    "difficulty": "mid",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-009",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "css-containment-content-visibility-vs-scss-role",
+    "question": "CSS containment / content-visibility vs SCSS role?",
+    "shortAnswer": "SCSS can't replace modern rendering optimizations — emit rules that enable containment where useful.",
+    "detailedAnswer": "Understand browser features; preprocessor is orthogonal but should not fight them.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-010",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "duplicated-media-queries-from-nested-media-problem",
+    "question": "Duplicated media queries from nested @media — problem?",
+    "shortAnswer": "Slightly larger CSS; gzip mitigates repeated selectors/media text often — still keep breakpoints tidy.",
+    "detailedAnswer": "PostCSS tools can sort/merge sometimes. Prefer clarity first; optimize with metrics.",
+    "difficulty": "senior",
+    "type": "comparison",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-011",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "how-do-source-maps-relate-to-scss-performance-debugging",
+    "question": "How do source maps relate to SCSS performance debugging?",
+    "shortAnswer": "They map minified CSS back to partials for DevTools — essential for finding bloat sources.",
+    "detailedAnswer": "Ensure production can disable maps publicly while keeping internal access.",
+    "difficulty": "senior",
+    "type": "debugging",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-012",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "lead-set-a-css-performance-budget-for-sass-heavy-apps",
+    "question": "Lead: set a CSS performance budget for Sass-heavy apps.",
+    "shortAnswer": "Max KB per route, unused CSS %, compile time SLO, and CI fail on regressions.",
+    "detailedAnswer": "Own budgets with design system team. Pair with LCP/INP monitoring.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-013",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "when-do-icon-fonts-in-scss-pipelines-hurt-performance",
+    "question": "When do icon fonts in SCSS pipelines hurt performance?",
+    "shortAnswer": "Large font payloads, FOIT/FOUT, and extra glyphs; prefer SVG sprites/inline SVGs.",
+    "detailedAnswer": "Don't @include entire icon font for three icons. Tree-limit glyph sets.",
+    "difficulty": "lead",
+    "type": "scenario",
+    "tags": [
+      "performance"
+    ]
+  },
+  {
+    "id": "scss-performance-014",
+    "technology": "scss",
+    "category": "Performance",
+    "categorySlug": "performance",
+    "slug": "best-practice-token-css-variables-vs-generating-many-color-classes",
+    "question": "Best practice: token CSS variables vs generating many color classes?",
+    "shortAnswer": "Variables + a few utilities often smaller and more flexible than combinatorial class explosions.",
+    "detailedAnswer": "Generate only what product uses. Measure gzipped CSS.",
+    "difficulty": "lead",
+    "type": "best-practice",
+    "tags": [
+      "performance"
+    ]
+  }
+]

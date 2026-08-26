@@ -1,0 +1,182 @@
+[
+  {
+    "id": "html-security-001",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "html-xss-defense",
+    "question": "How does HTML contribute to XSS defense?",
+    "shortAnswer": "Escape untrusted text, use textContent, sanitize HTML, avoid dangerous sinks.",
+    "detailedAnswer": "Framework auto-escaping helps but bypasses exist (href javascript:, style, nested contexts).",
+    "difficulty": "fresh",
+    "type": "concept",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-002",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "target-blank-noopener",
+    "question": "Why is target=_blank a security concern?",
+    "shortAnswer": "Opened pages can access window.opener unless rel=noopener (and often noreferrer).",
+    "detailedAnswer": "Modern browsers mitigate more, but still set rel. Phishing via tabnabbing historically mattered.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-003",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "iframe-sandbox",
+    "question": "What does the sandbox attribute on iframes do?",
+    "shortAnswer": "Restricts iframe capabilities (scripts, forms, top-nav) via allow-flags.",
+    "detailedAnswer": "Default sandbox is strict. Add permissions sparingly. Combine with CSP where possible.",
+    "difficulty": "junior",
+    "type": "concept",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-004",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "csp-overview",
+    "question": "Explain Content-Security-Policy at a high level for HTML apps.",
+    "shortAnswer": "HTTP header (or meta) whitelisting sources for scripts, styles, images, etc.",
+    "detailedAnswer": "script-src matters most for XSS. Nonces/hashes beat unsafe-inline. Report-Only for rollout.",
+    "difficulty": "junior",
+    "type": "architecture",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-005",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "inline-event-handlers-risk",
+    "question": "Why is inline event handlers (onclick=) risky?",
+    "shortAnswer": "Mixes code into markup and often conflicts with CSP; harder to audit.",
+    "detailedAnswer": "Use addEventListener. CSP may block inline handlers without unsafe-inline/hashes.",
+    "difficulty": "junior",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-006",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "safe-user-generated-html",
+    "question": "How do you safely embed user-generated HTML?",
+    "shortAnswer": "Sanitize with a vetted library allowlist; never regex-strip tags alone.",
+    "detailedAnswer": "Consider markdown → sanitized HTML. Escape by default; rich text is an explicit privilege.",
+    "difficulty": "mid",
+    "type": "scenario",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-007",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "dangerous-url-schemes",
+    "question": "What are dangerous URL schemes in href/src?",
+    "shortAnswer": "javascript: and data: in navigable contexts can execute or exfiltrate.",
+    "detailedAnswer": "Validate/sanitize URLs. Prefer https:. Be careful with user-supplied redirects.",
+    "difficulty": "mid",
+    "type": "debugging",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-008",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "autocomplete-off-security",
+    "question": "How does autocomplete=off relate to security?",
+    "shortAnswer": "Limited effect; browsers/password managers often ignore for login fields.",
+    "detailedAnswer": "Don't rely on it for secrets. Use proper password manager friendly attributes instead.",
+    "difficulty": "mid",
+    "type": "concept",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-009",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "referrer-policy",
+    "question": "What is referrer policy useful for?",
+    "shortAnswer": "Controls Referer leakage across navigations and subresources.",
+    "detailedAnswer": "no-referrer or strict-origin-when-cross-origin are common defaults for privacy.",
+    "difficulty": "senior",
+    "type": "best-practice",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-010",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "meta-refresh-abuse",
+    "question": "How can meta refresh be abused?",
+    "shortAnswer": "Open redirects / phishing-like redirects if attacker controls content.",
+    "detailedAnswer": "Prefer HTTP redirects. Avoid user-controlled refresh URLs.",
+    "difficulty": "senior",
+    "type": "scenario",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-011",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "form-security-basics",
+    "question": "Form security basics beyond HTTPS?",
+    "shortAnswer": "CSRF tokens for cookie sessions, server validation, rate limits, SameSite cookies.",
+    "detailedAnswer": "HTML alone can't secure forms — backend contracts matter. Autocomplete for passwords correctly.",
+    "difficulty": "senior",
+    "type": "architecture",
+    "tags": [
+      "security"
+    ]
+  },
+  {
+    "id": "html-security-012",
+    "technology": "html",
+    "category": "Security",
+    "categorySlug": "security",
+    "slug": "rich-text-threat-model",
+    "question": "How do you threat-model a rich text comment feature?",
+    "shortAnswer": "XSS via HTML, stored payloads, admin-view escalation, CSP bypasses, SVG/math vectors.",
+    "detailedAnswer": "Sanitize on output, CSP, HttpOnly cookies, privilege separation for preview vs publish.",
+    "difficulty": "lead",
+    "type": "architecture",
+    "tags": [
+      "security"
+    ]
+  }
+]
