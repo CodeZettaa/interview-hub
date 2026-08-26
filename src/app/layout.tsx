@@ -38,6 +38,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
   },
+  icons: {
+    icon: [{ url: "/icon", type: "image/png" }],
+    apple: [{ url: "/apple-icon", type: "image/png" }],
+  },
   openGraph: {
     title: `${BRAND.product} — ${BRAND.tagline}`,
     description: BRAND.subtitle,
@@ -45,11 +49,20 @@ export const metadata: Metadata = {
     siteName: `${BRAND.name} ${BRAND.product}`,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${BRAND.name} ${BRAND.product}`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${BRAND.product} — ${BRAND.tagline}`,
     description: BRAND.subtitle,
+    images: ["/twitter-image"],
   },
   robots: {
     index: true,
