@@ -75,11 +75,21 @@ export function buildPageMetadata({
       siteName: `${BRAND.name} ${BRAND.product}`,
       type,
       locale: "en_US",
+      images: [
+        {
+          url: "/og.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${BRAND.name} ${BRAND.product}`,
+          type: "image/jpeg",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: ["/og.jpg"],
     },
     robots: {
       index: true,
